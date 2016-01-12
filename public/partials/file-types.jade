@@ -1,4 +1,4 @@
-h2 File Thumbs
+h2.text-center File Types
 
 mixin file(type, ...caption)
   .file-container
@@ -60,29 +60,29 @@ mixin file(type, ...caption)
       each item in caption
         li= item
 
-.tile.image#tile-1
+.tile#image
   +file("image", "Chanel", "Spring/Summer 2015", "Paris")
 
-.tile.design-asset#tile-2
+.tile#design-asset
   +file("design-asset", "Kraggy", "Food/Beverage", "Vector, Vertical")
 
-.tile.report#tile-3
+.tile#report
   +file("report", "Colour Evolution", "Fashion", "1. Cover")
 
-.tile.video#tile-4
+.tile#video
   +file("video", "Global Trends", "Top Trends", "3:30")
 
-.tile.map#tile-5
+.tile#map
   +file("map", "Shopping in SoHo", "Created: 01/06/16", "11 listings")
 
-.tile.color-card#tile-6
+.tile#color-card
   +file("color-card", "Colours for SS16", "Created: 01/06/16", "3 rows")
 
-.tile.place#tile-7
+.tile#place
   +file("place", "Adidas Originals", "New York")
 
-.tile.news#tile-8
+.tile#news
   +file("news", "Lululemon raises sales forecast after strong Holiday", "01/06/16")
 
-.tile.site#tile-9
+.tile#site
   +file("site", "Materials Agency Tumblr", "http://materialsagency.tumblr.com/")

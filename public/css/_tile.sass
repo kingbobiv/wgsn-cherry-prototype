@@ -34,9 +34,25 @@
       font-size: 10px
       text-transform: uppercase
       padding: 4px 6px 2px
+      transition: all 300ms
 
       .fa
         margin: 0 6px 0 0
+
+    .file-top-utilities,
+    .file-utilities
+      position: absolute
+      overflow: auto
+      width: 100%
+      transition: all 400ms
+      opacity: 0
+      box-sizing: border-box
+
+    .file-top-utilities
+      top: 0
+
+    .file-utilities
+      bottom: 0
 
   .caption-container
     .caption
@@ -51,3 +67,106 @@
 
         &:first-of-type
           @extend .text-bold
+
+  &:hover
+    cursor: pointer
+    
+    .file-type-label
+      opacity: 0
+
+    .file-top-utilities,
+    .file-utilities
+      opacity: 1
+
+// ==================================================
+
+#tile-1
+  .file-utilities
+    background: rgba(black, 0.8)
+    color: white
+    width: 100%
+    padding: 5px
+
+    .fa
+      margin: 0 6px
+      font-size: 14px
+
+#tile-2
+  .file-utilities
+    background: rgba(black, 0.8)
+    color: white
+    width: 100%
+    padding: 5px
+
+    .fa
+      margin: 0 6px
+      font-size: 14px
+      opacity: 0
+      transform: translate3d(0, 100%, 0)
+      transition: all 300ms
+
+  &:hover
+    .file-utilities
+      .fa
+        transform: translate3d(0, 0, 0)
+        opacity: 1
+
+        @for $i from 1 through 9
+          &:nth-of-type(#{$i})
+            transition-delay: 50ms * $i
+
+#tile-3
+  .file-top-utilities
+    padding: 8px
+
+  .file-utilities
+    background: rgba(black, 0.8)
+    color: white
+    width: 100%
+    padding: 14px 20px 12px
+    transform: translate3d(0, 0, 0) scale(1, 0)
+    transform-origin: center bottom
+
+    .fa
+      margin: 10px 14px
+      font-size: 20px
+      transition: all 400ms
+      opacity: 0
+      transform: translate3d(0, 50%, 0) scale(1)
+
+  &:hover
+    .file-utilities
+      transform: translate3d(0, 0, 0) scale(1, 1)
+
+      .fa
+        opacity: 1
+        transform: translate3d(0, 0, 0) scale(1)
+
+        @for $i from 1 through 9
+          &:nth-of-type(#{$i})
+            transition-delay: 200ms + (50ms * $i)
+
+#tile-4
+  .file-utilities
+    background: rgba(black, 0.8)
+    color: white
+    width: 100%
+    height: 100%
+    padding: 24px
+
+    .file-icon-btn
+      width: 50px
+      height: 50px
+      border: 1px solid white
+      @extend .pull-left
+      margin: 6px
+      transition: all 400ms
+      display: flex
+      align-items: center
+      justify-content: center
+
+      .fa
+
+
+      &:hover
+        background: rgba(white, 0.1)
