@@ -1,0 +1,31 @@
+// core
+@import "vars"
+@import "common-styles"
+
+// elements
+@import "tile"
+
+// ==================================================
+
+body
+  font-family: "Coming Soon", "Helvetica", sans-serif
+  margin: 0
+  padding: 0
+  background: $xlt-grey
+
+  .content-wrap
+    width: 80%
+    max-width: 1500px
+    margin: 0 auto
+
+  section
+    padding: 60px 0
+    border-bottom: 1px solid $lt-grey
+    overflow: auto
+
+    &:last-of-type
+      border-bottom: none
+
+    &.heading
+      padding: 80px 0 0
+      text-align: center
