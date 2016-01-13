@@ -1,64 +1,65 @@
 h2.text-center File Types
 
 mixin file(type, ...caption)
-  .file-container
-    .file
-      if type == "image"
-        i.fa.fa-4x.fa-picture-o
-      else if type == "design-asset"
-        i.fa.fa-4x.fa-paint-brush
-      else if type == "report"
-        i.fa.fa-4x.fa-file-text-o
-      else if type == "video"
-        i.fa.fa-4x.fa-play-circle
-      else if type == "map"
-        i.fa.fa-4x.fa-map-o
-      else if type == "color-card"
-        i.fa.fa-4x.fa-tags
-      else if type == "place"
-        i.fa.fa-4x.fa-map-marker
-      else if type == "news"
-        i.fa.fa-4x.fa-newspaper-o
-      else if type == "site"
-        i.fa.fa-4x.fa-desktop
-      else
-        i.fa.fa-4x.fa-file
+  .file-tile
+    .file-container
+      .file
+        if type == "image"
+          i.fa.fa-4x.fa-picture-o
+        else if type == "design-asset"
+          i.fa.fa-4x.fa-paint-brush
+        else if type == "report"
+          i.fa.fa-4x.fa-file-text-o
+        else if type == "video"
+          i.fa.fa-4x.fa-play-circle
+        else if type == "map"
+          i.fa.fa-4x.fa-map-o
+        else if type == "color-card"
+          i.fa.fa-4x.fa-tags
+        else if type == "place"
+          i.fa.fa-4x.fa-map-marker
+        else if type == "news"
+          i.fa.fa-4x.fa-newspaper-o
+        else if type == "site"
+          i.fa.fa-4x.fa-desktop
+        else
+          i.fa.fa-4x.fa-file
 
-    .file-type-label
-      if type == "image"
-        i.fa.fa-picture-o
-        span Image
-      else if type == "design-asset"
-        i.fa.fa-paint-brush
-        span Design asset
-      else if type == "report"
-        i.fa.fa-file-text-o
-        span Report
-      else if type == "video"
-        i.fa.fa-play-circle
-        span Video
-      else if type == "map"
-        i.fa.fa-map-o
-        span Map
-      else if type == "color-card"
-        i.fa.fa-tags
-        span Color card
-      else if type == "place"
-        i.fa.fa-map-marker
-        span Place
-      else if type == "news"
-        i.fa.fa-newspaper-o
-        span News
-      else if type == "site"
-        i.fa.fa-desktop
-        span Site
-      else
-        i.fa.fa-file
-  
-  .caption-container
-    ul.caption
-      each item in caption
-        li= item
+      .file-type-label
+        if type == "image"
+          i.fa.fa-picture-o
+          span Image
+        else if type == "design-asset"
+          i.fa.fa-paint-brush
+          span Design asset
+        else if type == "report"
+          i.fa.fa-file-text-o
+          span Report
+        else if type == "video"
+          i.fa.fa-play-circle
+          span Video
+        else if type == "map"
+          i.fa.fa-map-o
+          span Map
+        else if type == "color-card"
+          i.fa.fa-tags
+          span Color card
+        else if type == "place"
+          i.fa.fa-map-marker
+          span Place
+        else if type == "news"
+          i.fa.fa-newspaper-o
+          span News
+        else if type == "site"
+          i.fa.fa-desktop
+          span Site
+        else
+          i.fa.fa-file
+    
+    .caption-container
+      ul.caption
+        each item in caption
+          li= item
 
 .tile#image
   +file("image", "Chanel", "Spring/Summer 2015", "Paris")

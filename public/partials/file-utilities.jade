@@ -1,23 +1,25 @@
 h2.text-center File Utilities
 
 mixin file()
-  .file-container
-    .file: i.fa.fa-4x.fa-file
-    
-    .file-type-label
-      i.fa.fa-file
-      span File type
+  .file-tile
+    .file-container
+      .file: i.fa.fa-4x.fa-file
+      
+      .file-type-label
+        i.fa.fa-file
+        span File type
 
-    //- file-utilities
-    block
+      //- file-utilities
+      block
   
-  .caption-container
-    ul.caption
-      li Chanel
-      li Spring/Summer
-      li Paris
+    .caption-container
+      ul.caption
+        li Chanel
+        li Spring/Summer
+        li Paris
 
 .tile#tile-1
+  h4.text-uppercase Option 1
   +file()
     .file-utilities.text-center
       i.fa.fa-external-link-square
@@ -31,6 +33,7 @@ mixin file()
       i.fa.fa-trash
 
 .tile#tile-2
+  h4.text-uppercase Option 2
   +file()
     .file-utilities.text-center
       i.fa.fa-external-link-square
@@ -44,6 +47,7 @@ mixin file()
       i.fa.fa-trash
 
 .tile#tile-3
+  h4.text-uppercase Option 3
   +file()
     .file-top-utilities
       i.fa.fa-check-square-o.pull-left
@@ -59,6 +63,7 @@ mixin file()
       i.fa.fa-trash
 
 .tile#tile-4
+  h4.text-uppercase Option 4
   +file()
     .file-utilities.text-center
       .file-icon-btn: i.fa.fa-external-link-square
@@ -72,16 +77,35 @@ mixin file()
       .file-icon-btn: i.fa.fa-trash
 
 .tile#tile-5
+  h4.text-uppercase Option 5
   +file()
+    .file-utilities.text-center
+      .btn Open image
+      .stage-1
+        i.fa.fa-check-square-o.pull-left
+        i.fa.fa-ellipsis-h.pull-right
+      .stage-2.text-center
+        i.fa.fa-info-circle
+        i.fa.fa-plus-square
+        i.fa.fa-download
+        i.fa.fa-print
+        i.fa.fa-crop
+        i.fa.fa-paper-plane
+        i.fa.fa-heart-o
+        i.fa.fa-trash
 
 .tile#tile-6
+  h4.text-uppercase Option 6
   +file()
 
 .tile#tile-7
+  h4.text-uppercase Option 7
   +file()
 
 .tile#tile-8
+  h4.text-uppercase Option 8
   +file()
 
 .tile#tile-9
+  h4.text-uppercase Option 9
   +file()
