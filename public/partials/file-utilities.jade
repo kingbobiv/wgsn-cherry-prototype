@@ -96,11 +96,81 @@ mixin file()
 
 .tile#tile-6
   h4.text-uppercase Option 6
-  +file()
+  .file-tile
+    .file-container
+      .file: i.fa.fa-4x.fa-file
+      
+      .file-type-label
+        i.fa.fa-file
+        span File type
+
+      .file-utilities
+        i.fa.fa-heart-o.pull-right
+  
+    .menu-btn: i.fa.fa-ellipsis-h
+
+    ul.context-menu
+      li
+        i.fa.fa-external-link-square
+        span Open
+      li
+        i.fa.fa.fa-info-circle
+        span View details
+      li
+        i.fa.fa.fa-plus-square
+        span Add to a Board
+      li
+        i.fa.fa.fa-download
+        span Download
+      li
+        i.fa.fa.fa-print
+        span Print
+      li
+        i.fa.fa.fa-crop
+        span Crop
+      li
+        i.fa.fa.fa-paper-plane
+        span Send
+      li
+        i.fa.fa-trash
+        span Delete
+
+    .caption-container
+      ul.caption
+        li Chanel
+        li Spring/Summer
+        li Paris
 
 .tile#tile-7
   h4.text-uppercase Option 7
-  +file()
+  .file-tile
+    .file-container
+      .file: i.fa.fa-4x.fa-file
+      
+      .file-type-label
+        i.fa.fa-file
+        span File type
+
+      .file-utilities
+        i.fa.fa-heart-o.pull-right
+  
+    .menu-btn: i.fa.fa-ellipsis-h
+
+    ul.context-menu.text-center
+      li: i.fa.fa-external-link-square
+      li: i.fa.fa.fa-info-circle
+      li: i.fa.fa.fa-plus-square
+      li: i.fa.fa.fa-download
+      li: i.fa.fa.fa-print
+      li: i.fa.fa.fa-crop
+      li: i.fa.fa.fa-paper-plane
+      li: i.fa.fa-trash
+
+    .caption-container
+      ul.caption
+        li Chanel
+        li Spring/Summer
+        li Paris
 
 .tile#tile-8
   h4.text-uppercase Option 8

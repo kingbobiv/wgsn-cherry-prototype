@@ -1,5 +1,13 @@
 script(type='text/javascript', src='js/jquery-1.11.3.js')
 
+//- heart icons
+script.
+  $('.fa-heart-o').on('click', function() {
+    $(".fa-heart-o").addClass('fa-heart');
+    $(".fa-heart").removeClass('fa-heart-o');
+  });
+
+//- tile 5
 script.
   $('#tile-5 .fa-ellipsis-h').on('click', function() {
     $("#tile-5").addClass('show');
@@ -7,4 +15,24 @@ script.
 
   $('#tile-5 .stage-2').on('click', function() {
     $("#tile-5").removeClass('show');
+  });
+
+//- tile 6
+script.
+  $('#tile-6 .menu-btn').on('click', function() {
+    $("#tile-6 .context-menu").toggleClass('show');
+  });
+
+  $('#tile-6 .context-menu').on('click', function() {
+    $("#tile-6 .context-menu").removeClass('show');
+  });
+
+//- tile 7
+script.
+  $('#tile-7 .menu-btn').on('click', function() {
+    $("#tile-7 .context-menu").toggleClass('show');
+  });
+
+  $('#tile-7 .context-menu').on('click', function() {
+    $("#tile-7 .context-menu").removeClass('show');
   });
