@@ -1,0 +1,24 @@
+.right-side-panel
+  width: calc(100% - 270px)
+  float: left
+
+  &.view-tiles-sm
+    .file-outer
+      @extend .col-xs-2
+
+      .thumb-inner
+        height: 180px
+
+  &.view-tiles-md
+    .file-outer
+      @extend .col-xs-3
+
+      .thumb-inner
+        height: 240px
+
+  &.view-tiles-lg
+    .file-outer
+      @extend .col-xs-6
+
+      .thumb-inner
+        height: 480px

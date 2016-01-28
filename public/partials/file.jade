@@ -1,60 +1,59 @@
 mixin file(type, ...caption)
-  .col-xs-3
-    .block-sm
-      .file.border
-        .file-container.border-bottom
-          .file-inner
-            if type == "image"
-              i.fa.fa-4x.fa-picture-o
-            else if type == "design-asset"
-              i.fa.fa-4x.fa-paint-brush
-            else if type == "report"
-              i.fa.fa-4x.fa-file-text-o
-            else if type == "video"
-              i.fa.fa-4x.fa-play-circle
-            else if type == "map"
-              i.fa.fa-4x.fa-map-o
-            else if type == "color-card"
-              i.fa.fa-4x.fa-tags
-            else if type == "place"
-              i.fa.fa-4x.fa-map-marker
-            else if type == "news"
-              i.fa.fa-4x.fa-newspaper-o
-            else if type == "site"
-              i.fa.fa-4x.fa-desktop
-            else
-              i.fa.fa-4x.fa-file
-        
-        .caption-container
-          ul.caption
-            each item in caption
-              li= item
+  .file-container.block-sm
+    .file.border
+      .thumb-container.border-bottom
+        .thumb-inner
+          if type == "image"
+            i.fa.fa-4x.fa-picture-o
+          else if type == "design-asset"
+            i.fa.fa-4x.fa-paint-brush
+          else if type == "report"
+            i.fa.fa-4x.fa-file-text-o
+          else if type == "video"
+            i.fa.fa-4x.fa-play-circle
+          else if type == "map"
+            i.fa.fa-4x.fa-map-o
+          else if type == "color-card"
+            i.fa.fa-4x.fa-tags
+          else if type == "place"
+            i.fa.fa-4x.fa-map-marker
+          else if type == "news"
+            i.fa.fa-4x.fa-newspaper-o
+          else if type == "site"
+            i.fa.fa-4x.fa-desktop
+          else
+            i.fa.fa-4x.fa-file
+      
+      .caption-container
+        ul.caption
+          each item in caption
+            li= item
 
-        .file-utilities
-          i.fa.fa-square-o
-          i.fa.fa-heart-o
-          
-          .menu-btn.border: i.fa.fa-ellipsis-h
-          
-          ul.context-menu.clean.border.box-shadow
-            li.block-sm.tight.border-bottom
-              i.fa.fa-external-link-square
-              span Open
-            li.block-sm.tight.border-bottom
-              i.fa.fa-plus-square
-              span Add to a Board
-            li.block-sm.tight.border-bottom
-              i.fa.fa-download
-              span Download
-            li.block-sm.tight.border-bottom
-              i.fa.fa-print
-              span Print
-            li.block-sm.tight.border-bottom
-              i.fa.fa-crop
-              span Crop
-            li.block-sm.tight.border-bottom
-              i.fa.fa-paper-plane
-              span Send
-            li.block-sm.tight
-              i.fa.fa-trash
-              span Delete
+      .file-utilities
+        i.fa.fa-square-o
+        i.fa.fa-heart-o
+        
+        .menu-btn.border: i.fa.fa-ellipsis-h
+        
+        ul.context-menu.clean.border.box-shadow
+          li.block-sm.tight.border-bottom
+            i.fa.fa-external-link-square
+            span Open
+          li.block-sm.tight.border-bottom
+            i.fa.fa-plus-square
+            span Add to a Board
+          li.block-sm.tight.border-bottom
+            i.fa.fa-download
+            span Download
+          li.block-sm.tight.border-bottom
+            i.fa.fa-print
+            span Print
+          li.block-sm.tight.border-bottom
+            i.fa.fa-crop
+            span Crop
+          li.block-sm.tight.border-bottom
+            i.fa.fa-paper-plane
+            span Send
+          li.block-sm.tight
+            i.fa.fa-trash
+            span Delete

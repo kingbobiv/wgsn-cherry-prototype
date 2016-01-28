@@ -12,7 +12,7 @@ script.
   $('.fa-square-o').on('click', function() {
     $(this).addClass('fa-check-square-o');
     $(this).removeClass('fa-square-o');
-    $(this).parents().addClass('selected');
+    $(this).parentsUntil('.file-container').addClass('selected');
   });
 
 //- file menu
@@ -25,9 +25,27 @@ script.
     $(".file .context-menu").removeClass('show');
   });
 
+//- view options
+script.
+  $('.fa-th').on('click', function() {
+    $(this).removeClass('disabled');
+    $(this).siblings().addClass('disabled');
+    $(this).parentsUntil('.workspace-content').addClass('view-tiles-sm').removeClass('view-tiles-md').removeClass('view-tiles-lg');
+  });
 
+script.
+  $('.fa-th-large').on('click', function() {
+    $(this).removeClass('disabled');
+    $(this).siblings().addClass('disabled');
+    $(this).parentsUntil('.workspace-content').removeClass('view-tiles-sm').addClass('view-tiles-md').removeClass('view-tiles-lg');
+  });
 
-
+script.
+  $('.fa-square').on('click', function() {
+    $(this).removeClass('disabled');
+    $(this).siblings().addClass('disabled');
+    $(this).parentsUntil('.workspace-content').removeClass('view-tiles-sm').removeClass('view-tiles-md').addClass('view-tiles-lg');
+  });
 
 
 
