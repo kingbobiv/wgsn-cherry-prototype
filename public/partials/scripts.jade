@@ -36,3 +36,49 @@ script.
   $('#tile-7 .context-menu').on('click', function() {
     $("#tile-7 .context-menu").removeClass('show');
   });
+
+//- view options
+script.
+  $('.view-options .btn-view-small').on('click', function() {
+    $(".view-options").addClass('view-small');
+    $(".view-options").removeClass('view-medium');
+    $(".view-options").removeClass('view-large');
+    $(".view-options").removeClass('view-modal');
+    $(".btn-view-small").addClass('active');
+    $(".btn-view-medium").removeClass('active');
+    $(".btn-view-large").removeClass('active');
+    $(".btn-view-modal").removeClass('active');
+  });
+
+  $('.view-options .btn-view-medium').on('click', function() {
+    $(".view-options").removeClass('view-small');
+    $(".view-options").addClass('view-medium');
+    $(".view-options").removeClass('view-large');
+    $(".view-options").removeClass('view-modal');
+    $(".btn-view-small").removeClass('active');
+    $(".btn-view-medium").addClass('active');
+    $(".btn-view-large").removeClass('active');
+    $(".btn-view-modal").removeClass('active');
+  });
+
+  $('.view-options .btn-view-large').on('click', function() {
+    $(".view-options").removeClass('view-small');
+    $(".view-options").removeClass('view-medium');
+    $(".view-options").addClass('view-large');
+    $(".view-options").removeClass('view-modal');
+    $(".btn-view-small").removeClass('active');
+    $(".btn-view-medium").removeClass('active');
+    $(".btn-view-large").addClass('active');
+    $(".btn-view-modal").removeClass('active');
+  });
+
+  $('.view-options .btn-view-modal').on('click', function() {
+    $(".view-options").removeClass('view-small');
+    $(".view-options").removeClass('view-medium');
+    $(".view-options").removeClass('view-large');
+    $(".view-options").addClass('view-modal');
+    $(".btn-view-small").removeClass('active');
+    $(".btn-view-medium").removeClass('active');
+    $(".btn-view-large").removeClass('active');
+    $(".btn-view-modal").addClass('active');
+  });

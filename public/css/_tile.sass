@@ -1,23 +1,28 @@
 .tile
   float: left
   margin: 10px
+  position: relative
+  transition: all 400ms
 
 .file-tile
   width: 240px
   background: white
   border: 1px solid black
   display: block
+  position: relative
 
   .file-container
     border-bottom: 1px solid black
     position: relative
+    overflow: hidden
     
     .file
       background: $lt-grey
-      width: 180px
+      width: 100%
       height: 240px
       position: relative
       margin: 0 auto
+      transition: all 400ms
 
       .fa
         position: absolute
@@ -72,12 +77,3 @@
 
   &:hover
     cursor: pointer
-
-#file-utilities
-  .file-tile:hover
-    .file-type-label
-      opacity: 0
-
-    .file-top-utilities,
-    .file-utilities
-      opacity: 1

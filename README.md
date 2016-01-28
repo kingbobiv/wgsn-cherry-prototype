@@ -1,6 +1,6 @@
-hb-minimal
+WGSN Cherry Prototype
 ==========
 
-A minimal boilerplate for the Harp Application.
-
-- [docs](http://docs.harp.io/ "Learn how to develop using Harp.")
+### Run
+  cd /path/to/wgsn-cherry-prototype
+  harp server
