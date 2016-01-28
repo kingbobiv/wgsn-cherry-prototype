@@ -1,6 +1,8 @@
 .right-side-panel
-  width: calc(100% - 270px)
+  width: calc(100vw - 270px)
+  height: calc(100vh - 163px)
   float: left
+  overflow: scroll
 
   &.view-tiles-sm
     .file-outer
@@ -22,3 +24,17 @@
 
       .thumb-inner
         height: calc((100vw - 310px) / 2)
+
+  .utility-row
+    position: fixed
+    width: calc(100vw - 270px)
+    z-index: 100
+    
+    .fa
+      margin: 0 6px
+
+  .files-row
+    position: absolute
+    top: 61px
+    height: calc(100vh - 224px)
+    overflow: scroll
