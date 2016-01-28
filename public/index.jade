@@ -4,11 +4,13 @@ block append vars
   - bodyclass = 'index'
 
 block content
-  section.heading
-    h1.text-center Cherry UI Elements
+  include partials/header
 
-  section#file-types: include partials/file-types
-  section#file-utilities: include partials/file-utilities
-  section
-  section
-  section
+  .row.title-row.border-bottom
+    .col-xs-6: .block-sm: h2.tight My Folders > Spring/Summer > Inspiration Images
+    .col-xs-5: .block-sm.text-right: a.text-right.underlined.tight(href="") Share folder
+    .col-xs-1.border-left: .block-sm.text-center: i.fa.fa-comment-o
+
+  .workspace-content
+    include partials/left-side-panel
+    include partials/right-side-panel

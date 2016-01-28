@@ -2,6 +2,8 @@
 .text-bold
   text-shadow: 0 0 1px black
 
+h1, h2, h3, h4, h5
+  font-weight: normal
 
 // ALIGNMENT
 .text-left
@@ -28,6 +30,31 @@
   text-transform: capitalize
 
 
+// MARGINS
+.tight
+  margin: 0
+
+h1, h2, h3, h4, h5, p, li
+  margin: 0 0 0.5em
+
+
 // SIZE
 h1
-  font-size: 2em
+  font-size: 1.6em
+
+h2
+  font-size: 1.3em
+
+
+// STYLES
+a
+  text-decoration: none
+  color: inherit
+
+  &.underlined
+    text-decoration: underline
+
+ul.clean
+  margin: 0
+  padding: 0
+  list-style: none

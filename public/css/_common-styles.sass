@@ -3,3 +3,16 @@
 
 .pull-right
   float: right
+
+.border
+  border: 1px solid black
+
+@each $side in top, right, bottom, left
+  .border-#{$side}
+    border-#{$side}: 1px solid black
+
+.box-shadow
+  box-shadow: 0 2px 2px rgba(black, 0.2)
+
+.disabled
+  opacity: 0.3
