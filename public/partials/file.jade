@@ -1,6 +1,6 @@
 mixin file(type, ...caption)
   .file-container.block-sm
-    .file.border
+    .file.border(class!=attributes.class)
       .thumb-container.border-bottom
         .thumb-inner
           if type == "image"
