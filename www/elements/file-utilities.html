@@ -19,17 +19,22 @@ $('.file .context-menu').on('click', function() {
 </script><script>$('.fa-th').on('click', function() {
   $(this).removeClass('disabled');
   $(this).siblings().addClass('disabled');
-  $(this).parentsUntil('.workspace-content').addClass('view-tiles-sm').removeClass('view-tiles-md').removeClass('view-tiles-lg');
+  $(this).parentsUntil('.workspace-content').addClass('view-tiles-sm').removeClass('view-tiles-md').removeClass('view-tiles-lg').removeClass('view-tiles-details');
 });
 </script><script>$('.fa-th-large').on('click', function() {
   $(this).removeClass('disabled');
   $(this).siblings().addClass('disabled');
-  $(this).parentsUntil('.workspace-content').removeClass('view-tiles-sm').addClass('view-tiles-md').removeClass('view-tiles-lg');
+  $(this).parentsUntil('.workspace-content').removeClass('view-tiles-sm').addClass('view-tiles-md').removeClass('view-tiles-lg').removeClass('view-tiles-details');
 });
 </script><script>$('.fa-square').on('click', function() {
   $(this).removeClass('disabled');
   $(this).siblings().addClass('disabled');
-  $(this).parentsUntil('.workspace-content').removeClass('view-tiles-sm').removeClass('view-tiles-md').addClass('view-tiles-lg');
+  $(this).parentsUntil('.workspace-content').removeClass('view-tiles-sm').removeClass('view-tiles-md').addClass('view-tiles-lg').removeClass('view-tiles-details');
+});
+</script><script>$('.fa-columns').on('click', function() {
+  $(this).removeClass('disabled');
+  $(this).siblings().addClass('disabled');
+  $(this).parentsUntil('.workspace-content').removeClass('view-tiles-sm').removeClass('view-tiles-md').removeClass('view-tiles-lg').addClass('view-tiles-details');
 });
 
 
