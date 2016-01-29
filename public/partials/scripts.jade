@@ -3,16 +3,20 @@ script(type='text/javascript', src='https://ajax.googleapis.com/ajax/libs/jquery
 //- heart icons
 script.
   $('.fa-heart-o').on('click', function() {
-    $(this).addClass('fa-heart');
-    $(this).removeClass('fa-heart-o');
+    $(this).addClass('fa-heart').removeClass('fa-heart-o');
   });
 
 //- select icons
 script.
   $('.fa-square-o').on('click', function() {
-    $(this).addClass('fa-check-square-o');
-    $(this).removeClass('fa-square-o');
+    $(this).addClass('fa-check-square-o').removeClass('fa-square-o');
     $(this).parentsUntil('.file-container').addClass('selected');
+  });
+
+script.
+  $('.select-all').on('click', function() {
+    $('.fa-square-o').addClass('fa-check-square-o').removeClass('fa-square-o');
+    $('.file').addClass('selected');
   });
 
 //- file menu
@@ -22,7 +26,7 @@ script.
   });
 
   $('.file .context-menu').on('click', function() {
-    $(".file .context-menu").removeClass('show');
+    $('.file .context-menu').removeClass('show');
   });
 
 //- view options
