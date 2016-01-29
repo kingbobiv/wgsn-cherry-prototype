@@ -73,6 +73,11 @@ script.
     $(this).parentsUntil('.workspace-content').removeClass('view-tiles-sm').removeClass('view-tiles-md').removeClass('view-tiles-lg').addClass('view-tiles-details');
   });
 
+//- delete
+script.
+  $('.utility-row .fa-trash').on('click', function() {
+    $('.file.selected').parentsUntil('.files-container').remove();
+  });
 
 
 

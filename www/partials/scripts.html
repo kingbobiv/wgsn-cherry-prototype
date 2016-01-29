@@ -1,13 +1,30 @@
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script><script>$('.fa-heart-o').on('click', function() {
-  $(this).addClass('fa-heart').removeClass('fa-heart-o');
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script><script>$('.util-heart').on('click', function() {
+  if ($(this).hasClass('fa-heart-o')) {
+    $(this).addClass('fa-heart').removeClass('fa-heart-o');
+  } else {
+    $(this).addClass('fa-heart-o').removeClass('fa-heart');
+  }
 });
-</script><script>$('.fa-square-o').on('click', function() {
-  $(this).addClass('fa-check-square-o').removeClass('fa-square-o');
-  $(this).parentsUntil('.file-container').addClass('selected');
+</script><script>$('.util-checkbox').on('click', function() {
+  if ($(this).hasClass('fa-square-o')) {
+    $(this).addClass('fa-check-square-o').removeClass('fa-square-o');
+    $(this).parentsUntil('.file-container').addClass('selected');
+  } else {
+    $(this).addClass('fa-square-o').removeClass('fa-check-square-o');
+    $(this).parentsUntil('.file-container').removeClass('selected');
+  }
 });
-</script><script>$('.select-all').on('click', function() {
-  $('.fa-square-o').addClass('fa-check-square-o').removeClass('fa-square-o');
-  $('.file').addClass('selected');
+
+$('.select-all').on('click', function() {
+  if ($(this).hasClass('fa-square-o')) {
+    $(this).addClass('fa-check-square-o').removeClass('fa-square-o');
+    $('.util-checkbox').addClass('fa-check-square-o').removeClass('fa-square-o');
+    $('.file').addClass('selected');
+  } else {
+    $(this).addClass('fa-square-o').removeClass('fa-check-square-o');
+    $('.util-checkbox').addClass('fa-square-o').removeClass('fa-check-square-o');
+    $('.file').removeClass('selected');
+  }
 });
 </script><script>$('.file .menu-btn').on('click', function() {
   $(this).siblings('.context-menu').toggleClass('show');
