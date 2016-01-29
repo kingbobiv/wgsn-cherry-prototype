@@ -1,18 +1,20 @@
 <!DOCTYPE html><html><head><title>Project Cherry</title><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="/css/main.css"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"><link href="https://fonts.googleapis.com/css?family=Coming+Soon" rel="stylesheet" type="text/css"><link rel="shortcut icon" type="image/x-icon" href="./img/favicon.ico"></head><body><script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script><script>$('.fa-heart-o').on('click', function() {
-  $(this).addClass('fa-heart');
-  $(this).removeClass('fa-heart-o');
+  $(this).addClass('fa-heart').removeClass('fa-heart-o');
 });
 </script><script>$('.fa-square-o').on('click', function() {
-  $(this).addClass('fa-check-square-o');
-  $(this).removeClass('fa-square-o');
+  $(this).addClass('fa-check-square-o').removeClass('fa-square-o');
   $(this).parentsUntil('.file-container').addClass('selected');
+});
+</script><script>$('.select-all').on('click', function() {
+  $('.fa-square-o').addClass('fa-check-square-o').removeClass('fa-square-o');
+  $('.file').addClass('selected');
 });
 </script><script>$('.file .menu-btn').on('click', function() {
   $(this).siblings('.context-menu').toggleClass('show');
 });
 
 $('.file .context-menu').on('click', function() {
-  $(".file .context-menu").removeClass('show');
+  $('.file .context-menu').removeClass('show');
 });
 </script><script>$('.fa-th').on('click', function() {
   $(this).removeClass('disabled');

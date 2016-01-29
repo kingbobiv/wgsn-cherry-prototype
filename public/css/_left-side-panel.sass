@@ -2,6 +2,7 @@
   width: 270px
   height: calc(100vh - 163px)
   float: left
+  overflow: scroll
   
   .fa
     margin: 0 10px 0 0
@@ -25,9 +26,7 @@
         &:first-of-type,
         &:last-of-type
           border: none
-        
-        &.level-2
-          margin-left: 20px
 
-        &.level-3
-          margin-left: 40px
+        @for $i from 1 through 4
+          &.level-#{$i}
+            margin-left: 20px * ($i - 1)

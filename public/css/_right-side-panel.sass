@@ -4,6 +4,7 @@
   float: left
   overflow: scroll
 
+  // VIEW TILES SMALL
   &.view-tiles-sm
     .file-outer
       @extend .col-xs-2
@@ -11,6 +12,14 @@
       .thumb-inner
         height: calc((100vw - (270px + 7 * 20px)) / 6)
 
+      &:nth-of-type(6n + 6)
+        .context-menu
+          right: -92px
+
+          &:after
+            left: 90%
+
+  // VIEW TILES MED
   &.view-tiles-md
     .file-outer
       @extend .col-xs-3
@@ -18,12 +27,77 @@
       .thumb-inner
         height: calc((100vw - (270px + 5 * 20px)) / 4)
 
+      &:nth-of-type(4n + 4)
+        .context-menu
+          right: -92px
+
+          &:after
+            left: 90%
+
+  // VIEW TILES LARGE
   &.view-tiles-lg
     .file-outer
       @extend .col-xs-6
 
       .thumb-inner
         height: calc((100vw - (270px + 3 * 20px)) / 2)
+
+      &:nth-of-type(2n + 2)
+        .context-menu
+          right: -92px
+
+          &:after
+            left: 90%
+
+  // VIEW TILES DETAILS
+  &.view-tiles-details
+    .files-row
+      width: 800px
+      margin-left: calc(((100vw - 270px) - 800px) / 2)
+
+      $details-image-width: 500px
+
+      .file-outer
+        width: 100%
+        height: $details-image-width
+        margin: 0 0 20px
+
+        .file-container
+          height: $details-image-width
+        
+        .file
+          height: $details-image-width
+          border: none
+
+          &.original-artwork:after
+            bottom: -1px
+
+        .thumb-container
+          position: absolute
+          top: 0
+          left: 0
+          width: $details-image-width
+          @extend .border
+
+          .thumb-inner
+            height: $details-image-width
+
+        .caption-container
+          position: absolute
+          top: 0
+          right: 0
+          width: 800px - $details-image-width - 50px
+
+          li
+            font-size: 18px
+
+        .menu-btn
+          display: none
+
+        .file-utilities
+          .fa-heart,
+          .fa-heart-o
+            right: 270px
 
   .utility-row
     position: fixed
@@ -32,6 +106,9 @@
     
     .fa
       margin: 0 6px
+
+      &:hover
+        cursor: pointer
 
   .files-row
     position: absolute
