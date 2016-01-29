@@ -6,3 +6,25 @@ input[type="text"]
   padding: 10px
   font-family: "Coming Soon", "Helvetica", sans-serif
   font-size: 14px
+
+.search-input
+  input
+    border-width: 1px 0 1px 1px
+    float: left
+
+  .icon
+    border-left: none
+    height: 40px
+    width: 40px
+    float: left
+    position: relative
+    padding: 10px 8px
+
+    &:after
+      content: ""
+      position: absolute
+      top: 9px
+      left: 0
+      width: 1px
+      height: 20px
+      background: black

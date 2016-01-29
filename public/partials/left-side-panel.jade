@@ -1,3 +1,37 @@
+mixin board(name, level, caret)
+  li(class="level-" + level)
+    if caret == "open"
+      i.fa.fa-caret-down
+    else if caret == "closed"
+      i.fa.fa-caret-right
+    else
+      i.spacer
+    i.fa.fa-folder-o
+    span= name
+    i.fa.fa-ellipsis-h.pull-right
+
+mixin person(name, level, caret)
+  li(class="level-" + level)
+    if caret == "open"
+      i.fa.fa-caret-down
+    else if caret == "closed"
+      i.fa.fa-caret-right
+    else
+      i.spacer
+    i.fa.fa-user
+    span= name
+
+mixin team(name, level, caret)
+  li(class="level-" + level)
+    if caret == "open"
+      i.fa.fa-caret-down
+    else if caret == "closed"
+      i.fa.fa-caret-right
+    else
+      i.spacer
+    span= name
+
+
 .left-side-panel.border-right
   .item.block-sm.border-bottom
     i.fa.fa-envelope-o
@@ -20,25 +54,15 @@
         i.fa.fa-mobile
         span Mobile Uploads
 
-      li.level-2
-        i.fa.fa-caret-right
-        i.fa.fa-folder-o
-        span Board Name
-
-      li.level-2
-        i.fa.fa-caret-down
-        i.fa.fa-folder-o
-        span Board Name
-
-      li.level-3
-        i.fa.fa-caret-right
-        i.fa.fa-folder-o
-        span Board Name
-
-      li.level-2
-        i.fa.fa-caret-right
-        i.fa.fa-folder-o
-        span Board Name
+      +board("Board name", "2", "closed")
+      +board("Board name", "2", "closed")
+      +board("Board name", "2", "closed")
+      +board("Board name", "2", "open")
+      +board("Board name", "3", "closed")
+      +board("Board name", "3", "")
+      +board("Board name", "3", "")
+      +board("Board name", "3", "closed")
+      +board("Board name", "2", "closed")
 
   .item.block-top-sm.border-bottom  
     ul.clean
@@ -46,46 +70,22 @@
         i.fa.fa-caret-down
         span Shared With Me
 
-      li.level-2
-        i.fa.fa-caret-right
-        span Product
-
-      li.level-3
-        i.fa.fa-caret-down
-        i.fa.fa-user
-        span Julian Ramirez
-
-      li.level-4
-        i.fa.fa-caret-right
-        i.fa.fa-folder-o
-        span Board Name
-
-      li.level-4
-        i.fa.fa-caret-right
-        i.fa.fa-folder-o
-        span Board Name
-
-      li.level-3
-        i.fa.fa-caret-right
-        i.fa.fa-user
-        span Sansan Chen
-
-      li.level-3
-        i.fa.fa-caret-right
-        i.fa.fa-user
-        span Nicky Ashwell
-
-      li.level-3
-        i.fa.fa-caret-right
-        i.fa.fa-user
-        span Andrew Harris
-
-      li.level-3
-        i.fa.fa-caret-right
-        i.fa.fa-user
-        span Theba Marando
-
-      li.level-3
-        i.fa.fa-caret-right
-        i.fa.fa-user
-        span Hema Sivaram
+      +team("Product", "2", "open")
+      +person("Julian Ramirez", "3", "open")
+      +board("Board name", "4", "closed")
+      +board("Board name", "4", "closed")
+      +board("Board name", "4", "closed")
+      +board("Board name", "4", "open")
+      +board("Board name", "5", "")
+      +person("Sansan Chen", "3", "closed")
+      +person("Andrew Harris", "3", "closed")
+      +person("Nicky Ashwell", "3", "closed")
+      +person("Theba Marando", "3", "closed")
+      +person("Sarah Freiser", "3", "closed")
+      +team("Content", "2", "closed")
+      +team("Tech", "2", "closed")
+      +team("QA", "2", "closed")
+      +team("Content Graphics", "2", "closed")
+      +team("Creative Services", "2", "closed")
+      +team("Sales", "2", "closed")
+      +team("Finance", "2", "closed")

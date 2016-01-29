@@ -7,6 +7,10 @@
   .fa
     margin: 0 10px 0 0
 
+  .spacer
+    width: 15px
+    display: inline-block
+
   .inbox-number
     background: black
     color: white
@@ -27,6 +31,15 @@
         &:last-of-type
           border: none
 
-        @for $i from 1 through 4
+        @for $i from 1 through 6
           &.level-#{$i}
             margin-left: 20px * ($i - 1)
+
+        .fa-ellipsis-h
+          opacity: 0
+
+        &:hover
+          cursor: pointer
+          
+          .fa-ellipsis-h
+            opacity: 1
