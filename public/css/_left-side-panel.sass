@@ -2,7 +2,7 @@
   width: 270px
   height: calc(100vh - 163px)
   float: left
-  overflow: scroll
+  overflow-y: scroll
   
   .fa
     margin: 0 10px 0 0
@@ -23,9 +23,13 @@
 
   .item
     ul
-      li
+      .misc-row,
+      .board-row,
+      .person-row,
+      .team-row
         padding: 5px 10px
         border-bottom: 1px solid rgba(black, 0.2)
+        position: relative
 
         &:first-of-type,
         &:last-of-type
@@ -43,3 +47,37 @@
           
           .fa-ellipsis-h
             opacity: 1
+
+        .board-context-menu
+          position: absolute
+          background: white
+          z-index: 100
+          top: 28px
+          right: -90px
+          width: 200px
+          opacity: 0
+          pointer-events: none
+          transform: translate3d(-50%, 0, 0)
+
+          &:after
+            content: ""
+            position: absolute
+            width: 10px
+            height: 10px
+            background: white
+            border: solid black
+            border-width: 0 0 1px 1px
+            top: -6px
+            left: 93%
+            transform: translate3d(-50%, 0, 0) rotate(135deg)
+
+          &.show
+            opacity: 1
+            pointer-events: all
+
+          li
+            &:active
+              background: $lt-grey
+
+            .fa
+              margin: 0 10px 0 0

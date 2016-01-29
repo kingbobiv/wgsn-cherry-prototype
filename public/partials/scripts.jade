@@ -34,14 +34,24 @@ script.
     }
   });
 
-//- file menu
+//- item context menu
 script.
   $('.file .menu-btn').on('click', function() {
-    $(this).siblings('.context-menu').toggleClass('show');
+    $(this).siblings('.item-context-menu').toggleClass('show');
   });
 
-  $('.file .context-menu').on('click', function() {
-    $('.file .context-menu').removeClass('show');
+  $('.file .item-context-menu').on('click', function() {
+    $('.file .item-context-menu').removeClass('show');
+  });
+
+//- board context menu
+script.
+  $('.board-row .fa-ellipsis-h').on('click', function() {
+    $(this).siblings('.board-context-menu').toggleClass('show');
+  });
+
+  $('.board-row .board-context-menu').on('click', function() {
+    $('.board-row .board-context-menu').removeClass('show');
   });
 
 //- view options
@@ -103,21 +113,21 @@ script.
 //- //- tile 6
 //- script.
 //-   $('.view-file-utilities #tile-6 .menu-btn').on('click', function() {
-//-     $("#tile-6 .context-menu").toggleClass('show');
+//-     $("#tile-6 .item-context-menu").toggleClass('show');
 //-   });
 
-//-   $('.view-file-utilities #tile-6 .context-menu').on('click', function() {
-//-     $("#tile-6 .context-menu").removeClass('show');
+//-   $('.view-file-utilities #tile-6 .item-context-menu').on('click', function() {
+//-     $("#tile-6 .item-context-menu").removeClass('show');
 //-   });
 
 //- //- tile 7
 //- script.
 //-   $('.view-file-utilities #tile-7 .menu-btn').on('click', function() {
-//-     $("#tile-7 .context-menu").toggleClass('show');
+//-     $("#tile-7 .item-context-menu").toggleClass('show');
 //-   });
 
-//-   $('.view-file-utilities #tile-7 .context-menu').on('click', function() {
-//-     $("#tile-7 .context-menu").removeClass('show');
+//-   $('.view-file-utilities #tile-7 .item-context-menu').on('click', function() {
+//-     $("#tile-7 .item-context-menu").removeClass('show');
 //-   });
 
 //- //- view options

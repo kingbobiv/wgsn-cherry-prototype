@@ -1,5 +1,5 @@
-mixin board(name, level, caret)
-  li(class="level-" + level)
+mixin board-row(name, level, caret)
+  li.board-row(class="level-" + level)
     if caret == "open"
       i.fa.fa-caret-down
     else if caret == "closed"
@@ -10,8 +10,49 @@ mixin board(name, level, caret)
     span= name
     i.fa.fa-ellipsis-h.pull-right
 
-mixin person(name, level, caret)
-  li(class="level-" + level)
+    ul.board-context-menu.clean.border.box-shadow
+      li.block-sm.tight.border-bottom
+        i.fa.fa-plus
+        span Create new board
+      li.block-sm.tight.border-bottom
+        i.fa.fa-share
+        span Share
+      li.block-sm.tight.border-bottom
+        i.fa.fa-clone
+        span Duplicate
+      li.block-sm.tight.border-bottom
+        i.fa.fa-pencil
+        span Rename
+      li.block-sm.tight.border-bottom
+        i.fa.fa-download
+        span Download
+      li.block-sm.tight.border-bottom
+        i.fa.fa-upload
+        span Upload
+      li.block-sm.tight.border-bottom
+        i.fa.fa-print
+        span Print
+      li.block-sm.tight.border-bottom
+        i.fa.fa-paper-plane
+        span Send
+      li.block-sm.tight.border-bottom
+        i.fa.fa-bell-slash-o
+        span Turn off notifications
+      li.block-sm.tight.text-center.border-bottom
+        i.fa.fa-circle
+        i.fa.fa-circle
+        i.fa.fa-circle
+        i.fa.fa-circle
+        i.fa.fa-circle
+        i.fa.fa-circle
+        i.fa.fa-circle
+        i.fa.fa-circle
+      li.block-sm.tight
+        i.fa.fa-trash
+        span Delete
+
+mixin person-row(name, level, caret)
+  li.person-row(class="level-" + level)
     if caret == "open"
       i.fa.fa-caret-down
     else if caret == "closed"
@@ -21,8 +62,8 @@ mixin person(name, level, caret)
     i.fa.fa-user
     span= name
 
-mixin team(name, level, caret)
-  li(class="level-" + level)
+mixin team-row(name, level, caret)
+  li.team-row(class="level-" + level)
     if caret == "open"
       i.fa.fa-caret-down
     else if caret == "closed"
@@ -46,46 +87,46 @@ mixin team(name, level, caret)
     .block-sm: .btn Create New Board
     
     ul.clean
-      li
+      li.misc-row
         i.fa.fa-caret-down
         span My Boards
 
-      li.level-2
+      li.misc-row.level-2
         i.fa.fa-mobile
         span Mobile Uploads
 
-      +board("Board name", "2", "closed")
-      +board("Board name", "2", "closed")
-      +board("Board name", "2", "closed")
-      +board("Board name", "2", "open")
-      +board("Board name", "3", "closed")
-      +board("Board name", "3", "")
-      +board("Board name", "3", "")
-      +board("Board name", "3", "closed")
-      +board("Board name", "2", "closed")
+      +board-row("Board name", "2", "closed")
+      +board-row("Board name", "2", "closed")
+      +board-row("Board name", "2", "closed")
+      +board-row("Board name", "2", "open")
+      +board-row("Board name", "3", "closed")
+      +board-row("Board name", "3", "")
+      +board-row("Board name", "3", "")
+      +board-row("Board name", "3", "closed")
+      +board-row("Board name", "2", "closed")
 
   .item.block-top-sm.border-bottom  
     ul.clean
-      li
+      li.misc-row
         i.fa.fa-caret-down
         span Shared With Me
 
-      +team("Product", "2", "open")
-      +person("Julian Ramirez", "3", "open")
-      +board("Board name", "4", "closed")
-      +board("Board name", "4", "closed")
-      +board("Board name", "4", "closed")
-      +board("Board name", "4", "open")
-      +board("Board name", "5", "")
-      +person("Sansan Chen", "3", "closed")
-      +person("Andrew Harris", "3", "closed")
-      +person("Nicky Ashwell", "3", "closed")
-      +person("Theba Marando", "3", "closed")
-      +person("Sarah Freiser", "3", "closed")
-      +team("Content", "2", "closed")
-      +team("Tech", "2", "closed")
-      +team("QA", "2", "closed")
-      +team("Content Graphics", "2", "closed")
-      +team("Creative Services", "2", "closed")
-      +team("Sales", "2", "closed")
-      +team("Finance", "2", "closed")
+      +team-row("Product", "2", "open")
+      +person-row("Julian Ramirez", "3", "open")
+      +board-row("Board name", "4", "closed")
+      +board-row("Board name", "4", "closed")
+      +board-row("Board name", "4", "closed")
+      +board-row("Board name", "4", "open")
+      +board-row("Board name", "5", "")
+      +person-row("Sansan Chen", "3", "closed")
+      +person-row("Andrew Harris", "3", "closed")
+      +person-row("Nicky Ashwell", "3", "closed")
+      +person-row("Theba Marando", "3", "closed")
+      +person-row("Sarah Freiser", "3", "closed")
+      +team-row("Content", "2", "closed")
+      +team-row("Tech", "2", "closed")
+      +team-row("QA", "2", "closed")
+      +team-row("Content Graphics", "2", "closed")
+      +team-row("Creative Services", "2", "closed")
+      +team-row("Sales", "2", "closed")
+      +team-row("Finance", "2", "closed")
