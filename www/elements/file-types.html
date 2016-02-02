@@ -27,11 +27,18 @@ $('.select-all').on('click', function() {
   }
 });
 </script><script>$('.file .menu-btn').on('click', function() {
-  $(this).siblings('.context-menu').toggleClass('show');
+  $(this).siblings('.item-context-menu').toggleClass('show');
 });
 
-$('.file .context-menu').on('click', function() {
-  $('.file .context-menu').removeClass('show');
+$('.file .item-context-menu').on('click', function() {
+  $('.file .item-context-menu').removeClass('show');
+});
+</script><script>$('.board-row .fa-ellipsis-h').on('click', function() {
+  $(this).siblings('.board-context-menu').toggleClass('show');
+});
+
+$('.board-row .board-context-menu').on('click', function() {
+  $('.board-row .board-context-menu').removeClass('show');
 });
 </script><script>$('.fa-th').on('click', function() {
   $(this).removeClass('disabled');
