@@ -3,10 +3,29 @@
   // VIEW TILES SMALL
   &.view-tiles-sm
     .file-outer
-      @extend .col-xs-2
+      @media screen and (min-width: 0)
+        width: 20%
+
+      @media screen and (min-width: 1000px)
+        width: 16.666%
+
+      @media screen and (min-width: 1200px)
+        width: 14.285%
+
+      @media screen and (min-width: 1400px)
+        width: 12.5%
+
+      @media screen and (min-width: 1600px)
+        width: 11.11%
+
+      @media screen and (min-width: 1800px)
+        width: 10%
+
+      @media screen and (min-width: 2000px)
+        width: 9.09%
 
       .thumb-inner
-        height: calc((100vw - (270px + 7 * 20px)) / 6)
+        height: 150px
 
       &:nth-of-type(6n + 6)
         .item-context-menu
@@ -18,10 +37,29 @@
   // VIEW TILES MED
   &.view-tiles-md
     .file-outer
-      @extend .col-xs-3
+      @media screen and (min-width: 0)
+        width: 33.33% 
+
+      @media screen and (min-width: 1000px)
+        width: 25%
+
+      @media screen and (min-width: 1200px)
+        width: 20%
+
+      @media screen and (min-width: 1400px)
+        width: 16.666%
+
+      @media screen and (min-width: 1600px)
+        width: 14.285%
+
+      @media screen and (min-width: 1800px)
+        width: 12.5%
+
+      @media screen and (min-width: 2000px)
+        width: 11.11% 
 
       .thumb-inner
-        height: calc((100vw - (270px + 5 * 20px)) / 4)
+        height: 200px
 
       &:nth-of-type(4n + 4)
         .item-context-menu
@@ -33,10 +71,29 @@
   // VIEW TILES LARGE
   &.view-tiles-lg
     .file-outer
-      @extend .col-xs-6
+      @media screen and (min-width: 0)
+        width: 50% 
+
+      @media screen and (min-width: 1000px)
+        width: 33.33%
+
+      @media screen and (min-width: 1300px)
+        width: 25% 
+
+      @media screen and (min-width: 1600px)
+        width: 20% 
+
+      @media screen and (min-width: 1900px)
+        width: 16.666%
+
+      @media screen and (min-width: 2200px)
+        width: 14.285%
+
+      @media screen and (min-width: 2500px)
+        width: 12.5%
 
       .thumb-inner
-        height: calc((100vw - (270px + 3 * 20px)) / 2)
+        height: 300px
 
       &:nth-of-type(2n + 2)
         .item-context-menu
