@@ -21,4 +21,20 @@
   @extend .border
   @extend .text-center
   display: block
-  padding: 8px 6px 6px
+  padding: 12px 10px 10px
+  +border-radius(3px)
+  @extend .font-wgsn
+  font-size: 12px
+  +transition(all 300ms)
+
+  &.btn-white
+    background: white
+
+  &.btn-black
+    background: black
+    border-color: black
+    color: white
+
+
+.bg-grey
+  background: rgba($lt-grey, 0.1)

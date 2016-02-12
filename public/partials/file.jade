@@ -1,8 +1,8 @@
-mixin file(type, ...caption)
+mixin file(type, img, ...caption)
   .file-container.block-sm
     .file.border(class!=attributes.class)
       .thumb-container.border-bottom
-        .thumb-inner
+        .thumb-inner(style="background-image: url('" + img + "');")
           if type == "image"
             i.fa.fa-4x.fa-picture-o
           else if type == "design-asset"

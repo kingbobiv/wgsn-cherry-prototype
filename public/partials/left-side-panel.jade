@@ -73,7 +73,7 @@ mixin team-row(name, level, caret)
     span= name
 
 
-.left-side-panel.border-right
+.left-side-panel.border-right.bg-grey
   .item.block-sm.border-bottom
     i.fa.fa-envelope-o
     span Inbox
@@ -84,7 +84,7 @@ mixin team-row(name, level, caret)
     span Favourites
   
   .item.block-bot-sm.border-bottom
-    .block-sm: .btn Create New Board
+    .block-sm: a.btn.btn-white(href="") Create New Board
     
     ul.clean
       li.misc-row
@@ -105,7 +105,7 @@ mixin team-row(name, level, caret)
       +board-row("Board name", "3", "closed")
       +board-row("Board name", "2", "closed")
 
-  .item.block-sm.border-bottom  
+  .item.block-ver-sm.border-bottom  
     ul.clean
       li.misc-row
         i.fa.fa-caret-down
