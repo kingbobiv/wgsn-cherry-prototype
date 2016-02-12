@@ -4,8 +4,14 @@ input[type="text"]
   height: 40px
   min-width: 300px
   padding: 10px
-  font-family: "Coming Soon", "Helvetica", sans-serif
+  font-family: "Helvetica", sans-serif
+  @extend .text-normal
   font-size: 14px
+  +transition(all 300ms)
+
+  &:focus
+    outline: none
+    border-color: $yellow
 
 .search-input
   input
@@ -19,6 +25,7 @@ input[type="text"]
     float: left
     position: relative
     padding: 10px 8px
+    color: $lt-grey
 
     &:after
       content: ""
@@ -27,4 +34,4 @@ input[type="text"]
       left: 0
       width: 1px
       height: 20px
-      background: black
+      background: $lt-grey
