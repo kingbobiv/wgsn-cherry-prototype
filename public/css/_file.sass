@@ -61,13 +61,14 @@
 
     .menu-btn
       position: absolute
-      bottom: 62px
+      bottom: 51px
       right: 5px
       width: 24px
       height: 24px
       background: white
       border-radius: 50%
       padding: 2px 0
+      color: $lt-grey
 
     .item-context-menu
       position: absolute
@@ -86,7 +87,7 @@
         width: 10px
         height: 10px
         background: white
-        border: solid black
+        border: solid $lt-grey
         border-width: 0 0 1px 1px
         top: -6px
         left: 50%
@@ -111,16 +112,17 @@
       opacity: 1
 
   &.selected
-    box-shadow: 0 0 0 2px rgba(black, 0.2)
+    box-shadow: 0 0 0 2px rgba($lt-grey, 0.2)
 
   &.original-artwork:after
     content: "ORIGINAL ARTWORK"
+    @extend .font-wgsn
     position: absolute
     display: block
-    bottom: 74px
+    bottom: 63px
     left: 0
     background: black
     color: white
-    font-size: 0.8em
-    padding: 2px 6px
+    font-size: 10px
+    padding: 2px 4px
     transition: all 400ms
