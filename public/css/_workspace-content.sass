@@ -4,8 +4,15 @@
   width: 100%
 
   .right-side-panel
-    left: $left-side-panel-width
+    left: 0
     right: 0
+
+  &.show-left-side-panel
+    .right-side-panel
+      left: $left-side-panel-width
+
+    .left-side-panel
+      display: block
 
   &.show-comments-panel
     .right-side-panel

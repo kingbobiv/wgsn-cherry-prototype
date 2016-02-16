@@ -99,9 +99,15 @@ script.
     $('.file.selected').parentsUntil('.files-container').remove();
   });
 
+//- left-side panel
+script.
+  $('.btn-left-side-panel').on('click', function() {
+    $('.workspace-content').toggleClass('show-left-side-panel');
+  });
+
 //- comments panel
 script.
-  $('.btn-comments').on('click', function() {
+  $('.btn-comments-panel').on('click', function() {
     $('.workspace-content').toggleClass('show-comments-panel');
   });
 
