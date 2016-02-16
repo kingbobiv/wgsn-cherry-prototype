@@ -7,9 +7,15 @@ block content
   include partials/header
 
   .row.title-row.border-bottom.bg-grey
-    .col-xs-6: .block-sm: h2.tight My Boards > Autumn/Winter 2016 > Yeezy
-    .col-xs-5: .block-sm.text-right: a.text-right.underlined.tight(href="") Share folder
-    .col-xs-1.border-left: .block-ver-sm.text-center: i.fa.fa-comment-o
+    .block-sm.title-block.pull-left
+      h2.tight
+        | My Boards
+        i.fa.fa-angle-right
+        | Fashion Shows
+        i.fa.fa-angle-right
+        | Yeezy
+    .block-sm.share-block.text-right.pull-left: a.text-right.underlined.tight(href="") Share folder
+    .block-sm.btn-comments.text-center.border-left.pull-right: i.fa.fa-comment-o
 
   .row.workspace-content
     .col-xs-12.col-sm-4.col-md-2.hidden-xs: include partials/left-side-panel
