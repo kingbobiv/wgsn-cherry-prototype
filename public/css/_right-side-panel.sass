@@ -59,6 +59,34 @@
         .fa
           margin: 0 10px 0 0
 
+  .utility-row[min-width~="0px"]
+    .fa-plus-square,
+    .fa-download,
+    .fa-print,
+    .fa-paper-plane,
+    .fa-trash
+      display: none
+
+    .block-inline:nth-of-type(1),
+    .block-inline:nth-of-type(2)
+      display: none
+
+  .utility-row[min-width~="1000px"]
+    .block-inline:nth-of-type(1),
+    .block-inline:nth-of-type(2)
+      display: inline-block
+
+  .utility-row[min-width~="1200px"]
+    .fa-plus-square,
+    .fa-download,
+    .fa-print,
+    .fa-paper-plane,
+    .fa-trash
+      display: inline-block
+  
+    .fa-ellipsis-h
+      display: none
+
   .files-row
     position: absolute
     top: 64px

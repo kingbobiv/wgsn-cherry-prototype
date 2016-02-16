@@ -1,5 +1,14 @@
 .right-side-panel
 
+  &.view-tiles-sm,
+  &.view-tiles-md,
+  &.view-tiles-lg
+    .file-outer
+      display: block
+
+    .file-outer-details-view
+      display: none
+
   // VIEW TILES SMALL
   &.view-tiles-sm
     .files-container[min-width~="0px"]
@@ -64,7 +73,7 @@
         width: calc(100% / 8)
 
     .thumb-inner
-      height: 200px
+      height: 250px
 
   // VIEW TILES LARGE
   &.view-tiles-lg
@@ -97,53 +106,18 @@
         width: calc(100% / 7)
 
     .thumb-inner
-      height: 300px
+      height: 400px
 
   // VIEW TILES DETAILS
   &.view-tiles-details
-    .files-row
-      width: 800px
-      margin-left: calc(((100vw - 270px) - 800px) / 2)
+    .file-outer
+      display: none
 
-      $details-image-width: 500px
+    .file-outer-details-view
+      display: block
 
-      .file-outer
-        width: 100%
-        height: $details-image-width
-        margin: 0 0 20px
-
-        .file-container
-          height: $details-image-width
-        
-        .file
-          height: $details-image-width
-          border: none
-
-          &.original-artwork:after
-            bottom: -1px
-
-        .thumb-container
-          position: absolute
-          top: 0
-          left: 0
-          width: $details-image-width
-          @extend .border
-
-          .thumb-inner
-            height: $details-image-width
-
-        .caption-container
-          position: absolute
-          top: 0
-          right: 0
-          width: 800px - $details-image-width - 50px
-
-          li
-            font-size: 18px
-
-        .menu-btn
-          display: none
-
-        .file-utilities
-          .util-heart
-            right: 270px
+    .files-container
+      width: 900px
+      position: relative
+      left: 50%
+      +transform(translate3d(-50%, 0, 0))
