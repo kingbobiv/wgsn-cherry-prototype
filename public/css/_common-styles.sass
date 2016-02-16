@@ -35,6 +35,26 @@
     border-color: black
     color: white
 
-
 .bg-grey
   background: rgba($lt-grey, 0.1)
+
+// HIDDEN
+.hidden-xs
+  @media (max-width: $screen-xs-max)
+    display: none !important
+
+.hidden-sm
+  @media (max-width: $screen-sm-max)
+    display: none !important
+
+.hidden-md
+  @media (max-width: $screen-md-max)
+    display: none !important
+
+.hidden-lg
+  @media (max-width: $screen-lg-max)
+    display: none !important
+
+.hidden-xl
+  @media (min-width: $screen-xl-min)
+    display: none !important

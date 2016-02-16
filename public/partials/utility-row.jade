@@ -1,20 +1,20 @@
 .row.utility-row.border-bottom
-  .col-xs-6.col-sm-5
+  .col-xs-6.col-sm-4
     .block-sm
       .search-input
         input(type="text", placeholder="Search this board")
         span.icon.border: i.fa.fa-search
 
-  .col-xs-6.col-sm-7.text-right
+  .col-xs-6.col-sm-8.text-right
     .block-sm
-      .block-sm.block-inline
+      .block-sm.block-inline.hidden-md
         p.tight Displaying 15 of 1000 items
 
-      .block-sm.block-inline: p |
+      .block-sm.block-inline.hidden-md: p |
       
       .block-sm.block-inline
         i.fa.fa-square-o.select-all
-        span Select all
+        span Select all (1000)
 
       .block-sm.block-inline: p |
       
@@ -32,8 +32,26 @@
       .block-sm.block-inline: p |
       
       .block-sm.block-inline
-        i.fa.fa-plus-square
-        i.fa.fa-download
-        i.fa.fa-print
-        i.fa.fa-paper-plane
-        i.fa.fa-trash
+        i.fa.fa-plus-square.hidden-lg
+        i.fa.fa-download.hidden-lg
+        i.fa.fa-print.hidden-lg
+        i.fa.fa-paper-plane.hidden-lg
+        i.fa.fa-trash.hidden-lg
+        i.fa.fa-ellipsis-h.hidden-xl
+
+        ul.utility-row-context-menu.clean.border.box-shadow.text-left
+          li.block-sm.tight.border-bottom
+            i.fa.fa-plus-square
+            span Add to a Board
+          li.block-sm.tight.border-bottom
+            i.fa.fa-download
+            span Download
+          li.block-sm.tight.border-bottom
+            i.fa.fa-print
+            span Print
+          li.block-sm.tight.border-bottom
+            i.fa.fa-paper-plane
+            span Send
+          li.block-sm.tight
+            i.fa.fa-trash
+            span Delete

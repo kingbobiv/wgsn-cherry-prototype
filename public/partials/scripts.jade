@@ -54,6 +54,16 @@ script.
     $('.board-row .board-context-menu').removeClass('show');
   });
 
+//- utility row context menu
+script.
+  $('.utility-row .fa-ellipsis-h').on('click', function() {
+    $(this).siblings('.utility-row-context-menu').toggleClass('show');
+  });
+
+  $('.utility-row .utility-row-context-menu').on('click', function() {
+    $(this).removeClass('show');
+  });
+
 //- view options
 script.
   $('.fa-th').on('click', function() {

@@ -3,26 +3,26 @@ mixin file(type, img, ...caption)
     .file.border(class!=attributes.class)
       .thumb-container.border-bottom
         .thumb-inner(style="background-image: url('" + img + "');")
-          if type == "image"
-            i.fa.fa-4x.fa-picture-o
-          else if type == "design-asset"
-            i.fa.fa-4x.fa-paint-brush
-          else if type == "report"
-            i.fa.fa-4x.fa-file-text-o
-          else if type == "video"
-            i.fa.fa-4x.fa-play-circle
-          else if type == "map"
-            i.fa.fa-4x.fa-map-o
-          else if type == "color-card"
-            i.fa.fa-4x.fa-tags
-          else if type == "place"
-            i.fa.fa-4x.fa-map-marker
-          else if type == "news"
-            i.fa.fa-4x.fa-newspaper-o
-          else if type == "site"
-            i.fa.fa-4x.fa-desktop
-          else
-            i.fa.fa-4x.fa-file
+          //- if type == "image"
+          //-   i.fa.fa-4x.fa-picture-o
+          //- else if type == "design-asset"
+          //-   i.fa.fa-4x.fa-paint-brush
+          //- else if type == "report"
+          //-   i.fa.fa-4x.fa-file-text-o
+          //- else if type == "video"
+          //-   i.fa.fa-4x.fa-play-circle
+          //- else if type == "map"
+          //-   i.fa.fa-4x.fa-map-o
+          //- else if type == "color-card"
+          //-   i.fa.fa-4x.fa-tags
+          //- else if type == "place"
+          //-   i.fa.fa-4x.fa-map-marker
+          //- else if type == "news"
+          //-   i.fa.fa-4x.fa-newspaper-o
+          //- else if type == "site"
+          //-   i.fa.fa-4x.fa-desktop
+          //- else
+          //-   i.fa.fa-4x.fa-file
       
       .caption-container
         ul.caption

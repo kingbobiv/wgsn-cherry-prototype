@@ -35,3 +35,15 @@ input[type="text"]
       width: 1px
       height: 20px
       background: $lt-grey
+      +transition(all 300ms)
+
+    .fa
+      +transition(all 300ms)
+
+  input:focus
+    + .icon
+      border-color: $yellow
+      color: $yellow
+
+      &:after
+        background: $yellow
