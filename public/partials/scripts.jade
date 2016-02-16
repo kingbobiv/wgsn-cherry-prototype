@@ -99,72 +99,9 @@ script.
     $('.file.selected').parentsUntil('.files-container').remove();
   });
 
+//- comments panel
+script.
+  $('.btn-comments').on('click', function() {
+    $('.workspace-content').toggleClass('show-comments-panel');
+  });
 
-
-
-
-
-
-
-
-
-
-
-//- //- tile 5
-//- script.
-//-   $('.view-file-utilities #tile-5 .fa-ellipsis-h').on('click', function() {
-//-     $("#tile-5").addClass('show');
-//-   });
-
-//-   $('.view-file-utilities #tile-5 .stage-2').on('click', function() {
-//-     $("#tile-5").removeClass('show');
-//-   });
-
-//- //- tile 6
-//- script.
-//-   $('.view-file-utilities #tile-6 .menu-btn').on('click', function() {
-//-     $("#tile-6 .item-context-menu").toggleClass('show');
-//-   });
-
-//-   $('.view-file-utilities #tile-6 .item-context-menu').on('click', function() {
-//-     $("#tile-6 .item-context-menu").removeClass('show');
-//-   });
-
-//- //- tile 7
-//- script.
-//-   $('.view-file-utilities #tile-7 .menu-btn').on('click', function() {
-//-     $("#tile-7 .item-context-menu").toggleClass('show');
-//-   });
-
-//-   $('.view-file-utilities #tile-7 .item-context-menu').on('click', function() {
-//-     $("#tile-7 .item-context-menu").removeClass('show');
-//-   });
-
-//- //- view options
-//- script.
-//-   $('.view-options .btn-view-small').on('click', function() {
-//-     $(".view-options").addClass('view-small');
-//-     $(".view-options").removeClass('view-medium');
-//-     $(".view-options").removeClass('view-large');
-//-     $(".btn-view-small").addClass('active');
-//-     $(".btn-view-medium").removeClass('active');
-//-     $(".btn-view-large").removeClass('active');
-//-   });
-
-//-   $('.view-options .btn-view-medium').on('click', function() {
-//-     $(".view-options").removeClass('view-small');
-//-     $(".view-options").addClass('view-medium');
-//-     $(".view-options").removeClass('view-large');
-//-     $(".btn-view-small").removeClass('active');
-//-     $(".btn-view-medium").addClass('active');
-//-     $(".btn-view-large").removeClass('active');
-//-   });
-
-//-   $('.view-options .btn-view-large').on('click', function() {
-//-     $(".view-options").removeClass('view-small');
-//-     $(".view-options").removeClass('view-medium');
-//-     $(".view-options").addClass('view-large');
-//-     $(".btn-view-small").removeClass('active');
-//-     $(".btn-view-medium").removeClass('active');
-//-     $(".btn-view-large").addClass('active');
-//-   });

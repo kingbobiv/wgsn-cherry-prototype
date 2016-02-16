@@ -1,4 +1,15 @@
 .workspace-content
   position: absolute
-  top: 169px
+  top: $header-height + $title-row-height
   width: 100%
+
+  .right-side-panel
+    left: $left-side-panel-width
+    right: 0
+
+  &.show-comments-panel
+    .right-side-panel
+      right: $comments-panel-width
+
+    .comments-panel
+      display: block

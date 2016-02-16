@@ -1,7 +1,9 @@
 .left-side-panel
-  width: 100%
-  height: calc(100vh - 163px)
-  float: left
+  width: $left-side-panel-width
+  height: calc(100vh - (#{$header-height} + #{$title-row-height}))
+  position: absolute
+  top: 0
+  left: 0
   overflow-y: scroll
   
   .fa
@@ -21,6 +23,9 @@
     text-shadow: 0 0 1px white
     margin: 1px
     padding: 1px 0
+
+  span.font-wgsn
+    font-size: 12px
 
   .item
     ul
@@ -91,7 +96,7 @@
             margin-left: 20px * ($i - 1)
 
             .board-name
-              max-width: calc(100% - (56px + (#{$i} * 20px)))
+              max-width: calc(100% - (56px + (#{$i} * 18px)))
 
         .fa-ellipsis-h
           opacity: 0

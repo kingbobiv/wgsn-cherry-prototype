@@ -74,15 +74,15 @@ mixin team-row(name, level, caret)
     span= name
 
 
-.left-side-panel.border-right.bg-grey
+.left-side-panel.border-right.bg-grey.hidden-xs
   .item.block-sm.border-bottom
     i.fa.fa-envelope-o
-    span Inbox
+    span.font-wgsn Inbox
     .inbox-number.pull-right.text-center 2
   
   .item.block-sm.border-bottom
     i.fa.fa-heart
-    span Favourites
+    span.font-wgsn Favourites
   
   .item.block-bot-sm.border-bottom
     .block-sm: a.btn.btn-white(href="") Create New Board
@@ -90,7 +90,7 @@ mixin team-row(name, level, caret)
     ul.clean
       li.misc-row
         i.fa.fa-caret-down
-        span My Boards
+        span.font-wgsn My Boards
 
       li.misc-row.level-2
         i.fa.fa-mobile
@@ -110,7 +110,7 @@ mixin team-row(name, level, caret)
     ul.clean
       li.misc-row
         i.fa.fa-caret-down
-        span Shared With Me
+        span.font-wgsn Shared With Me
 
       +team-row("Product", "2", "open", "yes")
       +person-row("Julian Ramirez", "3", "open")
