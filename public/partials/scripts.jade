@@ -114,3 +114,15 @@ script.
     $('.workspace-content').toggleClass('show-comments-panel');
   });
 
+//- item detail modal
+script.
+  $('.file').on('dblclick', function() {
+    $('.overlay').addClass('show');
+    $('.item-detail-modal').addClass('show');
+  });
+
+script.
+  $('.item-detail-modal .fa-times').on('click', function() {
+    $('.overlay').removeClass('show');
+    $('.item-detail-modal').removeClass('show');
+  });

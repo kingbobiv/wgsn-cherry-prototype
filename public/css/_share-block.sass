@@ -24,6 +24,19 @@
         border-radius: 0
         border: none
 
+      &.online
+        &:before
+          content: ""
+          position: absolute
+          display: block
+          width: 10px
+          height: 10px
+          bottom: -2px
+          left: -2px
+          background: $label-green
+          border: 1px solid $xlt-grey
+          border-radius: 50%
+
       &.sharing-other
         background: white
         color: $lt-grey
@@ -46,6 +59,7 @@
         +transform(translate3d(-50%, 0, 0))
         +transition(all 300ms)
         @extend .box-shadow
+        pointer-events: none
 
         &:after
           content: ""
