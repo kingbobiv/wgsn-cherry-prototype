@@ -2,7 +2,6 @@
   position: fixed
   width: 100%
   height: $title-row-height
-  top: $header-height
   z-index: 100
 
   .block-sm
@@ -33,3 +32,11 @@
 
     .fa-comment-o
       margin-top: 11px
+
+body.image-library-view
+  .title-row
+    top: $header-height
+
+body.workspace-view
+  .title-row
+    top: $header-height - $product-row-height

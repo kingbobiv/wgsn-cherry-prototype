@@ -1,4 +1,5 @@
-input[type="text"]
+input[type="text"],
+textarea
   -webkit-appearance: none
   @extend .border 
   height: 40px
@@ -14,6 +15,8 @@ input[type="text"]
     border-color: $yellow
 
 .search-input
+  +clearfix()
+  
   input
     border-width: 1px 0 1px 1px
     float: left
@@ -43,7 +46,9 @@ input[type="text"]
   input:focus
     + .icon
       border-color: $yellow
-      color: $yellow
+
+      i
+        color: $yellow
 
       &:after
         background: $yellow

@@ -1,0 +1,133 @@
+mixin board-row(name, number, level, caret, shared)
+  li.board-row(class="level-" + level)
+    if caret == "open"
+      i.fa.fa-caret-down
+    else if caret == "closed"
+      i.fa.fa-caret-right
+    else
+      i.spacer
+    i.fa.fa-folder
+    span.board-name= name 
+    span.board-number.text-bold= number
+    if shared == "yes"
+      i.fa.fa-users
+    i.fa.fa-ellipsis-h
+
+    ul.board-context-menu.clean.border.box-shadow
+      li.block-sm.tight.border-bottom
+        i.fa.fa-plus
+        span Create new board
+      li.block-sm.tight.border-bottom
+        i.fa.fa-share
+        span Share
+      li.block-sm.tight.border-bottom
+        i.fa.fa-clone
+        span Duplicate
+      li.block-sm.tight.border-bottom
+        i.fa.fa-pencil
+        span Rename
+      li.block-sm.tight.border-bottom
+        i.fa.fa-download
+        span Download
+      li.block-sm.tight.border-bottom
+        i.fa.fa-upload
+        span Upload
+      li.block-sm.tight.border-bottom
+        i.fa.fa-print
+        span Print
+      li.block-sm.tight.border-bottom
+        i.fa.fa-paper-plane
+        span Send
+      li.block-sm.tight.border-bottom
+        i.fa.fa-bell-slash-o
+        span Turn off notifications
+      li.block-sm.tight.text-center.border-bottom
+        i.fa.fa-circle.label-red
+        i.fa.fa-circle.label-orange
+        i.fa.fa-circle.label-yellow
+        i.fa.fa-circle.label-green
+        i.fa.fa-circle.label-blue
+        i.fa.fa-circle.label-purple
+      li.block-sm.tight
+        i.fa.fa-trash
+        span Delete
+
+mixin person-row(name, level, caret)
+  li.person-row(class="level-" + level)
+    if caret == "open"
+      i.fa.fa-caret-down
+    else if caret == "closed"
+      i.fa.fa-caret-right
+    else
+      i.spacer
+    i.fa.fa-user
+    span= name
+
+mixin team-row(name, level, caret)
+  li.team-row(class="level-" + level)
+    if caret == "open"
+      i.fa.fa-caret-down
+    else if caret == "closed"
+      i.fa.fa-caret-right
+    else
+      i.spacer
+    span= name
+
+
+.left-side-panel.border-right.bg-grey.hidden-xs
+  .item.block-sm.border-bottom
+    i.fa.fa-envelope-o
+    span.font-wgsn Inbox
+    .inbox-number.pull-right.text-center 2
+  
+  .item.block-sm.border-bottom
+    i.fa.fa-heart
+    span.font-wgsn Favourites
+  
+  .item.block-bot-sm.border-bottom
+    .block-sm: a.btn.btn-white(href="") Create New Board
+    
+    ul.clean
+      li.misc-row
+        i.fa.fa-caret-down
+        span.font-wgsn My Boards
+
+      li.misc-row.level-2
+        i.fa.fa-mobile
+        span Mobile Uploads
+
+      +board-row("Autumn/Winter 2016", "200", "2", "closed", "yes")
+      +board-row("Inspiration Images", "200", "2", "closed", "no")
+      +board-row("Reports to Read", "200", "2", "closed", "yes")
+      +board-row("Fashion Shows", "200", "2 label-red", "open", "no")
+      +board-row("Yeezy", "200", "3 active", "closed", "yes")
+      +board-row("Celine", "200", "3", "", "no")
+      +board-row("Alexander Wang", "200", "3", "", "yes")
+      +board-row("Opening Ceremony", "200", "3", "closed", "yes")
+      +board-row("Lookbooks", "200", "2", "closed", "no")
+
+  .item.block-ver-sm.border-bottom  
+    ul.clean
+      li.misc-row
+        i.fa.fa-caret-down
+        span.font-wgsn Shared With Me
+
+      +team-row("Product", "2", "open", "yes")
+      +person-row("Julian Ramirez", "3", "open")
+      +board-row("Board name", "200", "4", "closed", "yes")
+      +board-row("Board name", "200", "4", "closed", "yes")
+      +board-row("Board name", "200", "4", "closed", "yes")
+      +board-row("Board name", "200", "4", "open", "yes")
+      +board-row("Board name", "200", "5", "", "yes")
+      +person-row("Sansan Chen", "3", "closed")
+      +person-row("Andrew Harris", "3", "closed")
+      +person-row("Nicky Ashwell", "3", "closed")
+      +person-row("Theba Marando", "3", "closed")
+      +person-row("Sarah Freiser", "3", "closed")
+      +team-row("Content", "2", "closed", "yes")
+      +team-row("Tech", "2", "closed", "yes")
+      +team-row("QA", "2", "closed", "yes")
+      +team-row("Content Graphics", "2", "closed", "yes")
+      +team-row("Creative Services", "2", "closed", "yes")
+      +team-row("Sales", "2", "closed", "yes")
+      +team-row("Finance", "2", "closed", "yes")
