@@ -1,6 +1,6 @@
 mixin file(type, img, ...caption)
   .file-container
-    .file.border.hoverable(class!=attributes.class)
+    .file.border(class!=attributes.class)
       .thumb-container.border-bottom
         .thumb-inner(style="background-image: url('" + img + "');")
           //- if type == "image"
@@ -35,49 +35,49 @@ mixin file(type, img, ...caption)
         
         .menu-btn.border.text-center: i.fa.fa-ellipsis-h
         
-        ul.context-menu.clean.border.box-shadow#item-context-menu
-          li.block-xs.tight.border-bottom
+        ul.item-context-menu.clean.border.box-shadow
+          li.block-sm.tight.border-bottom
             i.fa.fa-external-link-square
             span Open
-          li.block-xs.tight.border-bottom
+          li.block-sm.tight.border-bottom
             i.fa.fa-plus-square
             span Add to a Board
-          li.block-xs.tight.border-bottom
+          li.block-sm.tight.border-bottom
             i.fa.fa-download
             span Download
-          li.block-xs.tight.border-bottom
+          li.block-sm.tight.border-bottom
             i.fa.fa-print
             span Print
-          li.block-xs.tight.border-bottom
+          li.block-sm.tight.border-bottom
             i.fa.fa-crop
             span Crop
-          li.block-xs.tight.border-bottom
+          li.block-sm.tight.border-bottom
             i.fa.fa-paper-plane
             span Send
-          li.block-xs.tight
+          li.block-sm.tight
             i.fa.fa-trash
             span Delete
 
 
 mixin file-details-view(type, img, ...caption)
-  .file-container.block-xs
-    .file-details-view.hoverable(class!=attributes.class)
+  .file-container.block-sm
+    .file-details-view(class!=attributes.class)
       .thumb-container
         img(src=img)
         i.util-checkbox.fa.fa-square-o
         i.util-heart.fa.fa-heart-o
       
-      .caption-container.block-xs
+      .caption-container.block-sm
         ul.clean
           li.font-wgsn.block-hor-sm= type
           each item in caption
             li.caption.block-hor-sm= item
         
         ul.clean
-          li.block-xs.tight.block-inline: i.fa.fa-external-link-square
-          li.block-xs.tight.block-inline: i.fa.fa-plus-square
-          li.block-xs.tight.block-inline: i.fa.fa-download
-          li.block-xs.tight.block-inline: i.fa.fa-print
-          li.block-xs.tight.block-inline: i.fa.fa-crop
-          li.block-xs.tight.block-inline: i.fa.fa-paper-plane
-          li.block-xs.tight.block-inline: i.fa.fa-trash
+          li.block-sm.tight.block-inline: i.fa.fa-external-link-square
+          li.block-sm.tight.block-inline: i.fa.fa-plus-square
+          li.block-sm.tight.block-inline: i.fa.fa-download
+          li.block-sm.tight.block-inline: i.fa.fa-print
+          li.block-sm.tight.block-inline: i.fa.fa-crop
+          li.block-sm.tight.block-inline: i.fa.fa-paper-plane
+          li.block-sm.tight.block-inline: i.fa.fa-trash

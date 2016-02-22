@@ -54,7 +54,7 @@
         white-space: nowrap
         opacity: 0
         border-radius: 2px
-        @extend .block-xs
+        @extend .block-sm
         @extend .text-center
         +transform(translate3d(-50%, 0, 0))
         +transition(all 300ms)
@@ -72,6 +72,8 @@
           transform: translate3d(-50%, 0, 0) rotate(135deg)
 
       &:hover
+        cursor: pointer
+
         .sharing-label
           opacity: 1
           +transition-delay(200ms)

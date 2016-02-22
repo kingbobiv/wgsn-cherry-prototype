@@ -1,0 +1,167 @@
+extends ../layout
+
+block append vars
+  - bodyclass = 'view-file-utilities'
+
+block content
+  .content-wrap
+    section.heading
+      h1.text-center File Utilities
+
+    section
+      mixin file-utilities-tile()
+        .file-tile
+          .file-container
+            .file: i.fa.fa-4x.fa-file
+
+            //- file-utilities
+            block
+        
+          .caption-container
+            ul.caption
+              li Chanel
+              li Spring/Summer
+              li Paris
+
+      .tile#tile-1
+        h4.text-uppercase Option 1
+        +file-utilities-tile()
+          .file-utilities.text-center
+            i.fa.fa-external-link-square
+            i.fa.fa-plus-square
+            i.fa.fa-download
+            i.fa.fa-print
+            i.fa.fa-crop
+            i.fa.fa-paper-plane
+            i.fa.fa-heart-o
+            i.fa.fa-trash
+
+      .tile#tile-2
+        h4.text-uppercase Option 2
+        +file-utilities-tile()
+          .file-utilities.text-center
+            i.fa.fa-external-link-square
+            i.fa.fa-plus-square
+            i.fa.fa-download
+            i.fa.fa-print
+            i.fa.fa-crop
+            i.fa.fa-paper-plane
+            i.fa.fa-heart-o
+            i.fa.fa-trash
+
+      .tile#tile-3
+        h4.text-uppercase Option 3
+        +file-utilities-tile()
+          .file-top-utilities
+            i.fa.fa-check-square-o.pull-left
+            i.fa.fa-heart-o.pull-right
+          .file-utilities.text-center
+            i.fa.fa-external-link-square
+            i.fa.fa-plus-square
+            i.fa.fa-download
+            i.fa.fa-print
+            i.fa.fa-crop
+            i.fa.fa-paper-plane
+            i.fa.fa-trash
+
+      .tile#tile-4
+        h4.text-uppercase Option 4
+        +file-utilities-tile()
+          .file-utilities.text-center
+            .file-icon-btn: i.fa.fa-external-link-square
+            .file-icon-btn: i.fa.fa-plus-square
+            .file-icon-btn: i.fa.fa-download
+            .file-icon-btn: i.fa.fa-print
+            .file-icon-btn: i.fa.fa-crop
+            .file-icon-btn: i.fa.fa-paper-plane
+            .file-icon-btn: i.fa.fa-heart-o
+            .file-icon-btn: i.fa.fa-trash
+
+      .tile#tile-5
+        h4.text-uppercase Option 5
+        +file-utilities-tile()
+          .file-utilities.text-center
+            .btn Open image
+            .stage-1
+              i.fa.fa-check-square-o.pull-left
+              i.fa.fa-ellipsis-h.pull-right
+            .stage-2.text-center
+              i.fa.fa-plus-square
+              i.fa.fa-download
+              i.fa.fa-print
+              i.fa.fa-crop
+              i.fa.fa-paper-plane
+              i.fa.fa-heart-o
+              i.fa.fa-trash
+
+      .tile#tile-6
+        h4.text-uppercase Option 6
+        .file-tile
+          .file-container
+            .file: i.fa.fa-4x.fa-file
+
+            .file-utilities
+              i.fa.fa-check-square-o.pull-left
+              i.fa.fa-heart-o.pull-right
+        
+          .menu-btn: i.fa.fa-ellipsis-h
+
+          ul.item-context-menu
+            li
+              i.fa.fa-external-link-square
+              span Open
+            li
+              i.fa.fa.fa-plus-square
+              span Add to a Board
+            li
+              i.fa.fa.fa-download
+              span Download
+            li
+              i.fa.fa.fa-print
+              span Print
+            li
+              i.fa.fa.fa-crop
+              span Crop
+            li
+              i.fa.fa.fa-paper-plane
+              span Send
+            li
+              i.fa.fa-trash
+              span Delete
+
+          .caption-container
+            ul.caption
+              li Chanel
+              li Spring/Summer
+              li Paris
+
+      .tile#tile-7
+        h4.text-uppercase Option 7
+        .file-tile
+          .file-container
+            .file: i.fa.fa-4x.fa-file
+
+            .file-utilities
+              i.fa.fa-check-square-o.pull-left
+              i.fa.fa-heart-o.pull-right
+        
+          .menu-btn: i.fa.fa-ellipsis-h
+
+          ul.item-context-menu.text-center
+            li: i.fa.fa-external-link-square
+            li: i.fa.fa.fa-plus-square
+            li: i.fa.fa.fa-download
+            li: i.fa.fa.fa-print
+            li: i.fa.fa.fa-crop
+            li: i.fa.fa.fa-paper-plane
+            li: i.fa.fa-trash
+
+          .caption-container
+            ul.caption
+              li Chanel
+              li Spring/Summer
+              li Paris
+
+      //- .tile#tile-8
+      //-   h4.text-uppercase Option 8
+      //-   +file()

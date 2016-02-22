@@ -7,7 +7,7 @@
   background: white
   @extend .border
   @extend .box-shadow
-  z-index: 320
+  z-index: 200
   opacity: 0
   +transform(translate3d(0, 5%, 0))
   +transition(all 300ms)
@@ -73,12 +73,20 @@
         //   font-size: 12px
 
     .modal-section-other
-      .tabs
+      .modal-tabs
         font-size: 10px
+        height: 40px
+
+        .block-sm
+          height: 40px
+          padding: 14px 10px
+
+        &:hover
+          cursor: pointer
       
       .comments-scroll-container
         overflow-y: scroll
-        height: calc((100vh - 60px) - #{$modal-info-caption-height} - 37px - 104px - 2px) // height of modal - caption - tabs - comment input - modal border
+        height: calc((100vh - 60px) - #{$modal-info-caption-height} - 40px - 104px - 2px) // height of modal - caption - tabs - comment input - modal border
       
       .comment
         +clearfix()
@@ -135,6 +143,7 @@
         @extend .flex-center
 
         &:hover
+          cursor: pointer
           background: $xlt-grey
 
     .item-count

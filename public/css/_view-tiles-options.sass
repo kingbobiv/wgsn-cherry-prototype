@@ -1,0 +1,124 @@
+.right-side-panel
+
+  &.view-tiles-sm,
+  &.view-tiles-md,
+  &.view-tiles-lg
+    .file-outer
+      display: block
+
+    .file-outer-details-view
+      display: none
+
+  // VIEW TILES SMALL
+  &.view-tiles-sm
+    .files-container[min-width~="0px"]
+      .file-outer
+        width: calc(100% / 4)
+
+    .files-container[min-width~="1000px"]
+      .file-outer
+        width: calc(100% / 5)
+
+    .files-container[min-width~="1200px"]
+      .file-outer
+        width: calc(100% / 6)
+
+    .files-container[min-width~="1400px"]
+      .file-outer
+        width: calc(100% / 7)
+
+    .files-container[min-width~="1600px"]
+      .file-outer
+        width: calc(100% / 8)
+
+    .files-container[min-width~="1800px"]
+      .file-outer
+        width: calc(100% / 9)
+
+    .files-container[min-width~="2000px"]
+      .file-outer
+        width: calc(100% / 10)
+
+    .thumb-inner
+      height: 150px
+
+  // VIEW TILES MED
+  &.view-tiles-md
+    .files-container[min-width~="0px"]
+      .file-outer
+        width: calc(100% / 2)
+
+    .files-container[min-width~="1000px"]
+      .file-outer
+        width: calc(100% / 3)
+
+    .files-container[min-width~="1200px"]
+      .file-outer
+        width: calc(100% / 4)
+
+    .files-container[min-width~="1400px"]
+      .file-outer
+        width: calc(100% / 5)
+
+    .files-container[min-width~="1600px"]
+      .file-outer
+        width: calc(100% / 6)
+
+    .files-container[min-width~="1800px"]
+      .file-outer
+        width: calc(100% / 7)
+
+    .files-container[min-width~="2000px"]
+      .file-outer
+        width: calc(100% / 8)
+
+    .thumb-inner
+      height: 250px
+
+  // VIEW TILES LARGE
+  &.view-tiles-lg
+    .files-container[min-width~="0px"]
+      .file-outer
+        width: calc(100% / 1)
+
+    .files-container[min-width~="1000px"]
+      .file-outer
+        width: calc(100% / 2)
+
+    .files-container[min-width~="1300px"]
+      .file-outer
+        width: calc(100% / 3)
+
+    .files-container[min-width~="1600px"]
+      .file-outer
+        width: calc(100% / 4)
+
+    .files-container[min-width~="1900px"]
+      .file-outer
+        width: calc(100% / 5)
+
+    .files-container[min-width~="2200px"]
+      .file-outer
+        width: calc(100% / 6)
+
+    .files-container[min-width~="2500px"]
+      .file-outer
+        width: calc(100% / 7)
+
+    .thumb-inner
+      height: 500px
+
+  // VIEW TILES DETAILS
+  &.view-tiles-details
+    .file-outer
+      display: none
+
+    .file-outer-details-view
+      display: block
+
+    .files-container
+      width: 80%
+      max-width: 1200px
+      position: relative
+      left: 50%
+      +transform(translate3d(-50%, 0, 0))

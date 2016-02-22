@@ -1,144 +1,5 @@
-script(type='text/javascript', src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js')
-//- script(type='text/javascript', src='/js/elementQuery.js')
-//- script(type="text/javascript", src="js/ResizeSensor.js")
-//- script(type="text/javascript", src="js/ElementQueries.js")
-
-//- heart icons
-script.
-  $('.util-heart').on('click', function() {
-    if ($(this).hasClass('fa-heart-o')) {
-      $(this).addClass('fa-heart').removeClass('fa-heart-o');
-    } else {
-      $(this).addClass('fa-heart-o').removeClass('fa-heart');
-    }
-  });
-
-//- select icons
-script.
-  $('.util-checkbox').on('click', function() {
-    if ($(this).hasClass('fa-square-o')) {
-      $(this).addClass('fa-check-square-o').removeClass('fa-square-o');
-      $(this).parentsUntil('.file-container').addClass('selected');
-    } else {
-      $(this).addClass('fa-square-o').removeClass('fa-check-square-o');
-      $(this).parentsUntil('.file-container').removeClass('selected');
-    }
-  });
-
-  $('.select-all').on('click', function() {
-    if ($(this).hasClass('fa-square-o')) {
-      $(this).addClass('fa-check-square-o').removeClass('fa-square-o');
-      $('.util-checkbox').addClass('fa-check-square-o').removeClass('fa-square-o');
-      $('.file').addClass('selected');
-    } else {
-      $(this).addClass('fa-square-o').removeClass('fa-check-square-o');
-      $('.util-checkbox').addClass('fa-square-o').removeClass('fa-check-square-o');
-      $('.file').removeClass('selected');
-    }
-  });
-
-//- item context menu
-script.
-  $('.file .menu-btn').on('click', function() {
-    $(this).siblings('.item-context-menu').toggleClass('show');
-  });
-
-  $('.file .item-context-menu').on('click', function() {
-    $('.file .item-context-menu').removeClass('show');
-  });
-
-//- board context menu
-script.
-  $('.board-row .fa-ellipsis-h').on('click', function() {
-    $(this).siblings('.board-context-menu').toggleClass('show');
-  });
-
-  $('.board-row .board-context-menu').on('click', function() {
-    $('.board-row .board-context-menu').removeClass('show');
-  });
-
-//- utility row context menu
-script.
-  $('.utility-row .fa-ellipsis-h').on('click', function() {
-    $(this).siblings('.utility-row-context-menu').toggleClass('show');
-  });
-
-  $('.utility-row .utility-row-context-menu').on('click', function() {
-    $(this).removeClass('show');
-  });
-
-//- view options
-script.
-  $('.fa-th').on('click', function() {
-    $(this).removeClass('disabled');
-    $(this).siblings().addClass('disabled');
-    $(this).parentsUntil('.page-content').addClass('view-tiles-sm').removeClass('view-tiles-md').removeClass('view-tiles-lg').removeClass('view-tiles-details');
-  });
-
-script.
-  $('.fa-th-large').on('click', function() {
-    $(this).removeClass('disabled');
-    $(this).siblings().addClass('disabled');
-    $(this).parentsUntil('.page-content').removeClass('view-tiles-sm').addClass('view-tiles-md').removeClass('view-tiles-lg').removeClass('view-tiles-details');
-  });
-
-script.
-  $('.fa-square').on('click', function() {
-    $(this).removeClass('disabled');
-    $(this).siblings().addClass('disabled');
-    $(this).parentsUntil('.page-content').removeClass('view-tiles-sm').removeClass('view-tiles-md').addClass('view-tiles-lg').removeClass('view-tiles-details');
-  });
-
-script.
-  $('.fa-columns').on('click', function() {
-    $(this).removeClass('disabled');
-    $(this).siblings().addClass('disabled');
-    $(this).parentsUntil('.page-content').removeClass('view-tiles-sm').removeClass('view-tiles-md').removeClass('view-tiles-lg').addClass('view-tiles-details');
-  });
-
-//- delete
-script.
-  $('.utility-row .fa-trash').on('click', function() {
-    $('.file.selected').parentsUntil('.files-container').remove();
-  });
-
-//- left-side panel
-script.
-  $('.btn-left-side-panel').on('click', function() {
-    $('.page-content').toggleClass('show-left-side-panel');
-  });
-
-//- comments panel
-script.
-  $('.btn-comments-panel').on('click', function() {
-    $('.page-content').toggleClass('show-comments-panel');
-  });
-
-//- item detail modal
-script.
-  $('.file').on('dblclick', function() {
-    $('.overlay').addClass('show');
-    $('.item-detail-modal').addClass('show');
-  });
-
-script.
-  $('.fa-external-link-square').on('click', function() {
-    $('.overlay').addClass('show');
-    $('.item-detail-modal').addClass('show');
-  });
-
-script.
-  $('.item-detail-modal .fa-times').on('click', function() {
-    $('.overlay').removeClass('show');
-    $('.item-detail-modal').removeClass('show');
-  });
-
-
-
-
-//- /*! elementQuery | Author: Tyson Matanich (http://matanich.com), 2013 | License: MIT */
-script.
-  (function (window, document, undefined) {
+/*! elementQuery | Author: Tyson Matanich (http://matanich.com), 2013 | License: MIT */
+(function (window, document, undefined) {
     // Enable strict mode
     "use strict";
 
@@ -500,11 +361,10 @@ script.
         window.attachEvent("onresize", refresh);
         window.attachEvent("onload", init);
     }
-  }(this, document, undefined));
+}(this, document, undefined));
 
-//- /*! getEmPixels  | Author: Tyson Matanich (http://matanich.com), 2013 | License: MIT */
-script.
-  (function (document, documentElement) {
+/*! getEmPixels  | Author: Tyson Matanich (http://matanich.com), 2013 | License: MIT */
+(function (document, documentElement) {
     // Enable strict mode
     "use strict";
 
@@ -543,4 +403,4 @@ script.
         // Return the em value in pixels
         return value;
     };
-  }(document, document.documentElement));
+}(document, document.documentElement));

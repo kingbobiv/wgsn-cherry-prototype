@@ -23,12 +23,11 @@ textarea
 
   .icon
     border-left: none
-    background: white
     height: 40px
     width: 40px
     float: left
     position: relative
-    @extend .flex-center
+    padding: 10px 8px
     color: $lt-grey
 
     &:after
@@ -44,36 +43,12 @@ textarea
     .fa
       +transition(all 300ms)
 
-body.workspace-view
-  input[type="text"]
-    &:focus
-      outline: none
+  input:focus
+    + .icon
       border-color: $yellow
 
-  .search-input
-    input:focus
-      + .icon
-        border-color: $yellow
+      i
+        color: $yellow
 
-        i
-          color: $yellow
-
-        &:after
-          background: $yellow
-
-body.image-library-view
-  input[type="text"]
-    &:focus
-      outline: none
-      border-color: $fashion
-  
-  .search-input
-    input:focus
-      + .icon
-        border-color: $fashion
-
-        i
-          color: $fashion
-
-        &:after
-          background: $fashion
+      &:after
+        background: $yellow
