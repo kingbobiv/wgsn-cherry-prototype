@@ -1,11 +1,11 @@
 .left-side-panel
   width: $left-side-panel-width
-  height: calc(100vh - (#{$header-height} + #{$title-row-height}))
   position: absolute
   top: 0
   left: 0
   overflow-y: scroll
   display: none
+  z-index: 300
   
   .fa
     margin: 0 10px 0 0
@@ -13,6 +13,19 @@
   .spacer
     width: 15px
     display: inline-block
+
+  .tabs
+    font-size: 10px
+
+    .block-sm
+      border-top: 4px solid transparent
+      background: rgba($lt-grey, 0.3)
+      @extend .border-bottom
+
+      &.active
+        border-top-color: $fashion
+        background: transparent
+        border-bottom-color: transparent
 
   .inbox-number
     background: $yellow
@@ -37,7 +50,7 @@
         padding: 10px
         border-bottom: 1px solid $xlt-grey
         position: relative
-        @extend .tight
+        margin: 0
 
         &.active
           background: rgba($xlt-grey, 0.5)
@@ -106,62 +119,38 @@
           right: 6px
 
         &:hover
-          cursor: pointer
-          
           .fa-ellipsis-h
             opacity: 1
 
-        .board-context-menu
-          position: absolute
-          background: white
-          z-index: 100
-          top: 18px
-          right: -75px
-          width: 200px
-          opacity: 0
-          pointer-events: none
-          transform: translate3d(-50%, 0, 0)
+  .panel-filters
+    .item
+      &.active
+        background: $dk-grey
+        
+        span, i
+          color: white
 
-          // &:after
-          //   content: ""
-          //   position: absolute
-          //   width: 10px
-          //   height: 10px
-          //   background: white
-          //   border: solid black
-          //   border-width: 0 0 1px 1px
-          //   top: -6px
-          //   left: 93%
-          //   transform: translate3d(-50%, 0, 0) rotate(135deg)
+  .panel-folders
+    display: none
 
-          &.show
-            opacity: 1
-            pointer-events: all
+  &.image-library-filters-active
+    .panel-filters
+      display: block
 
-          li
-            &:active
-              background: $lt-grey
+    .panel-folders
+      display: none
 
-            .fa
-              margin: 0 10px 0 0
+  &.image-library-folders-active
+    .panel-filters
+      display: none
 
-            .fa-circle
-              margin: 0 8px
+    .panel-folders
+      display: block
 
-            .label-red
-              color: $label-red
+body.image-library-view
+  .left-side-panel
+    height: calc(100vh - (#{$header-height} + #{$title-row-height}))
 
-            .label-orange
-              color: $label-orange
-
-            .label-yellow
-              color: $label-yellow
-
-            .label-green
-              color: $label-green
-
-            .label-blue
-              color: $label-blue
-
-            .label-purple
-              color: $label-purple
+body.workspace-view
+  .left-side-panel
+    height: calc(100vh - (#{$header-height} + #{$title-row-height} - #{$product-row-height}))

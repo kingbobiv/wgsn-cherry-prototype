@@ -1,57 +1,57 @@
 .row.utility-row.border-bottom
   .col-xs-6.col-sm-4
-    .block-sm
+    .block-xs
       .search-input
         input(type="text", placeholder="Search this board")
         span.icon.border: i.fa.fa-search
 
   .col-xs-6.col-sm-8.text-right
-    .block-sm
-      .block-sm.block-inline
+    .block-xs
+      .block-xs.block-inline
         span Displaying 15 of 1000 items
 
-      .block-sm.block-inline: p |
+      .block-xs.block-inline: p |
       
-      .block-sm.block-inline
+      .block-xs.block-inline
         i.fa.fa-square-o.select-all
         span Select all (1000)
 
-      .block-sm.block-inline: p |
+      .block-xs.block-inline: p |
       
-      .block-sm.block-inline
-        i.fa.fa-gear
+      .block-xs.block-inline
+        i.fa.fa-gear.hoverable
 
-      .block-sm.block-inline: p |
+      .block-xs.block-inline: p |
       
-      .block-sm.block-inline
-        i.fa.fa-th.disabled
-        i.fa.fa-th-large
-        i.fa.fa-square.disabled
-        i.fa.fa-columns.disabled
+      .block-xs.block-inline
+        i.fa.fa-th.disabled.hoverable
+        i.fa.fa-th-large.hoverable
+        i.fa.fa-square.disabled.hoverable
+        i.fa.fa-columns.disabled.hoverable
 
-      .block-sm.block-inline: p |
+      .block-xs.block-inline: p |
       
-      .block-sm.block-inline
-        i.fa.fa-plus-square
-        i.fa.fa-download
-        i.fa.fa-print
-        i.fa.fa-paper-plane
-        i.fa.fa-trash
-        i.fa.fa-ellipsis-h
+      .block-xs.block-inline
+        i.fa.fa-plus-square.hoverable.multi-utility-icon
+        i.fa.fa-download.hoverable.multi-utility-icon
+        i.fa.fa-print.hoverable.multi-utility-icon
+        i.fa.fa-paper-plane.hoverable.multi-utility-icon
+        i.fa.fa-trash.hoverable.multi-utility-icon
+        i.fa.fa-ellipsis-h.hoverable
 
-        ul.utility-row-context-menu.clean.border.box-shadow.text-left
-          li.block-sm.tight.border-bottom
+        ul.context-menu.clean.border.box-shadow.text-left#utility-row-context-menu
+          li.block-xs.tight.border-bottom
             i.fa.fa-plus-square
             span Add to a Board
-          li.block-sm.tight.border-bottom
+          li.block-xs.tight.border-bottom
             i.fa.fa-download
             span Download
-          li.block-sm.tight.border-bottom
+          li.block-xs.tight.border-bottom
             i.fa.fa-print
             span Print
-          li.block-sm.tight.border-bottom
+          li.block-xs.tight.border-bottom
             i.fa.fa-paper-plane
             span Send
-          li.block-sm.tight
+          li.block-xs.tight
             i.fa.fa-trash
             span Delete

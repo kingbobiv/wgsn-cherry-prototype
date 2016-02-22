@@ -77,43 +77,7 @@
       &:hover
         background: rgba($xlt-grey, 0.5)
 
-    .item-context-menu
-      position: absolute
-      background: white
-      z-index: 100
-      bottom: -197px
-      right: -253px
-      width: 180px
-      opacity: 0
-      pointer-events: none
-      transform: translate3d(-50%, 0, 0)
-
-      // &:after
-      //   content: ""
-      //   position: absolute
-      //   width: 10px
-      //   height: 10px
-      //   background: white
-      //   border: solid $lt-grey
-      //   border-width: 0 0 1px 1px
-      //   top: -6px
-      //   left: 50%
-      //   transform: translate3d(-50%, 0, 0) rotate(135deg)
-
-      &.show
-        opacity: 1
-        pointer-events: all
-
-      li
-        &:active
-          background: $lt-grey
-
-        .fa
-          margin: 0 10px 0 0
-
   &:hover
-    cursor: pointer
-
     .fa-square-o,
     .fa-heart-o
       opacity: 1
@@ -166,6 +130,3 @@
 
     .font-wgsn
       font-size: 10px
-
-  &:hover
-    cursor: pointer

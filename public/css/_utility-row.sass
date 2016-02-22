@@ -4,9 +4,6 @@
   .fa
     margin: 0 6px
 
-    &:hover
-      cursor: pointer
-
   .fa-square-o,
   .fa-check-square-o
     margin: 0 6px 0 0
@@ -17,34 +14,8 @@
       min-width: 100px
       max-width: 300px
 
-  .utility-row-context-menu
-    position: absolute
-    background: white
-    z-index: 100
-    top: 30px
-    right: -64px
-    width: 180px
-    opacity: 0
-    pointer-events: none
-    transform: translate3d(-50%, 0, 0)
-
-    &.show
-      opacity: 1
-      pointer-events: all
-
-    li
-      &:active
-        background: $lt-grey
-
-      .fa
-        margin: 0 10px 0 0
-
 .utility-row[min-width~="0px"]
-  .fa-plus-square,
-  .fa-download,
-  .fa-print,
-  .fa-paper-plane,
-  .fa-trash
+  .multi-utility-icon
     display: none
 
   .block-inline:nth-of-type(1),
@@ -57,11 +28,7 @@
     display: inline-block
 
 .utility-row[min-width~="1200px"]
-  .fa-plus-square,
-  .fa-download,
-  .fa-print,
-  .fa-paper-plane,
-  .fa-trash
+  .multi-utility-icon
     display: inline-block
 
   .fa-ellipsis-h
