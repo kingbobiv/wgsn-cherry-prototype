@@ -1,5 +1,6 @@
 script(type='text/javascript', src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js')
-//- script(type='text/javascript', src='/js/elementQuery.js')
+script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/headroom/0.7.0/headroom.min.js')
+script(type='text/javascript', src='/js/elementQuery.js')
 //- script(type="text/javascript", src="js/ResizeSensor.js")
 //- script(type="text/javascript", src="js/ElementQueries.js")
 
@@ -180,6 +181,15 @@ script.
   });
 
 //- ============================================================
+
+script.
+  // grab an element
+  var myElement = document.querySelector("header");
+  // construct an instance of Headroom, passing the element
+  var headroom  = new Headroom(myElement);
+  // initialise
+  headroom.init();
+
 
 
 

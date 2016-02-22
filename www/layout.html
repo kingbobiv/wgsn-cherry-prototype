@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>Project Cherry</title><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="/css/main.css"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"><link href="https://fonts.googleapis.com/css?family=Coming+Soon" rel="stylesheet" type="text/css"><link rel="shortcut icon" type="image/x-icon" href="./img/favicon.ico"></head><body><script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script><script>$('.util-heart').on('click', function() {
+<!DOCTYPE html><html><head><title>WGSN Cherry</title><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="/css/main.css"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"><link href="https://fonts.googleapis.com/css?family=Coming+Soon" rel="stylesheet" type="text/css"><link rel="shortcut icon" type="image/x-icon" href="./img/favicon.ico"></head><body><script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script><script>$('.util-heart').on('click', function() {
   if ($(this).hasClass('fa-heart-o')) {
     $(this).addClass('fa-heart').removeClass('fa-heart-o');
   } else {
@@ -27,24 +27,24 @@ $('.select-all').on('click', function() {
   }
 });
 </script><script>$('.file .menu-btn').on('click', function() {
-  $(this).siblings('.item-context-menu').toggleClass('show');
+  $(this).siblings('#item-context-menu').toggleClass('show');
 });
 
-$('.file .item-context-menu').on('click', function() {
-  $('.file .item-context-menu').removeClass('show');
+$('#item-context-menu').on('click', function() {
+  $('#item-context-menu').removeClass('show');
 });
 </script><script>$('.board-row .fa-ellipsis-h').on('click', function() {
-  $(this).siblings('.board-context-menu').toggleClass('show');
+  $(this).siblings('#board-context-menu').toggleClass('show');
 });
 
-$('.board-row .board-context-menu').on('click', function() {
-  $('.board-row .board-context-menu').removeClass('show');
+$('#board-context-menu').on('click', function() {
+  $('#board-context-menu').removeClass('show');
 });
 </script><script>$('.utility-row .fa-ellipsis-h').on('click', function() {
-  $(this).siblings('.utility-row-context-menu').toggleClass('show');
+  $(this).siblings('#utility-row-context-menu').toggleClass('show');
 });
 
-$('.utility-row .utility-row-context-menu').on('click', function() {
+$('#utility-row-context-menu').on('click', function() {
   $(this).removeClass('show');
 });
 </script><script>$('.fa-th').on('click', function() {
@@ -89,9 +89,37 @@ $('.utility-row .utility-row-context-menu').on('click', function() {
   $('.item-detail-modal').removeClass('show');
 });
 
+</script><script>$('#tab-filters').on('click', function() {
+  $(this).addClass('active');
+  $('#tab-folders').removeClass('active');
+  $('.image-library-view .left-side-panel').addClass('image-library-filters-active').removeClass('image-library-folders-active');
+});
+
+$('#tab-folders').on('click', function() {
+  $(this).addClass('active');
+  $('#tab-filters').removeClass('active');
+  $('.image-library-view .left-side-panel').addClass('image-library-folders-active').removeClass('image-library-filters-active');
+});
+</script><script>$('#filter-btn-category').on('click', function() {
+  $(this).toggleClass('active');
+  $('#filter-category').toggleClass('show');
+});
+</script><script>$('#filter-btn-market').on('click', function() {
+  $(this).toggleClass('active');
+  $('#filter-market').toggleClass('show');
+});
+</script><script>$('#filter-btn-products').on('click', function() {
+  $(this).toggleClass('active');
+  $('#filter-products').toggleClass('show');
+});
+</script><script>$('#filter-btn-designer').on('click', function() {
+  $(this).toggleClass('active');
+  $('#filter-designer').toggleClass('show');
+});
+</script>
 
 
-</script><script>(function (window, document, undefined) {
+<script>(function (window, document, undefined) {
   // Enable strict mode
   "use strict";
 
