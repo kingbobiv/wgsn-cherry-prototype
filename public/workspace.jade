@@ -3,6 +3,9 @@ extends layout
 block append vars
   - bodyclass = 'workspace-view'
 
+block prepend title
+  | Workspace | 
+
 block content
   include partials/header
 

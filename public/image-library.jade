@@ -3,6 +3,9 @@ extends layout
 block append vars
   - bodyclass = 'image-library-view'
 
+block prepend title
+  | Image Library | 
+
 block content
   include partials/header
 
