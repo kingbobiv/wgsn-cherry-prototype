@@ -1,15 +1,15 @@
 header
   .row.global-product-row
     .col-xs-8
-      a.product-link.active#product-link-fashion(href="#") Fashion
+      .product-link.active#product-link-fashion Fashion
       span /
-      a.product-link#product-link-li(href="#") Lifestyle &amp; Interiors
+      .product-link#product-link-li Lifestyle &amp; Interiors
       span /
-      a.product-link#product-link-instock(href="#") Instock
+      .product-link#product-link-instock Instock
       span /
-      a.product-link#product-link-styletrial(href="#") Styletrial
+      .product-link#product-link-styletrial Styletrial
       span /
-      a.product-link#product-link-mindset(href="#") Mindset
+      .product-link#product-link-mindset Mindset
 
     .col-xs-4.text-right
       i.fa.fa-user
@@ -18,4 +18,8 @@ header
       i.fa.fa-comments
       i.fa.fa-question-circle
 
-  .row.product-row.border-bottom: .col-xs-12.text-center: img.product-logo(src="https://od.stylesight.com/content/assets/images/wgsn_logo.png")
+  .row.product-row-bg.border-bottom
+  .row.product-row
+    #btn-menu: i.fa.fa-bars
+    #product-logo(style="background-image: url('https://od.stylesight.com/content/assets/images/wgsn_logo.png');")
+    #btn-search.border-left: i.fa.fa-search

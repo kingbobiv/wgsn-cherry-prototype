@@ -6,6 +6,7 @@
 @import "typography" 
 @import "grid"
 @import "header"
+@import "headroom"
 
 // ==================================================
 
@@ -15,7 +16,6 @@ body
   padding: 0
   background: white
   font-size: 14px
-  overflow: hidden
 
   .content-wrap
     width: 80%
@@ -23,15 +23,10 @@ body
     margin: 0 auto
 
   section
-    padding: 40px 0
-    border-bottom: 1px solid $lt-grey
     overflow: auto
 
-    &:last-of-type
-      border-bottom: none
-
-    &.heading
-      padding: 80px 0 0
+  #dummy-content
+    margin-top: $header-height
 
 *
   box-sizing: border-box
