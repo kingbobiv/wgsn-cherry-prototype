@@ -1,0 +1,142 @@
+// ============================================================
+// OPTION 1
+// ============================================================
+
+.option-1
+  header
+    &.headroom--pinned
+      +transform(translate3d(0, 0, 0))
+
+    &.headroom--unpinned
+      +transform(translate3d(0, (-1 * $global-product-row-height), 0))
+
+
+
+// ============================================================
+// OPTION 2
+// ============================================================
+
+.option-2
+  header
+    &.headroom--pinned
+      +transform(translate3d(0, 0, 0))
+
+    &.headroom--unpinned
+      +transform(translate3d(0, (-1 * $global-product-row-height), 0))
+
+      .product-row-bg
+        +transform-origin(center top)
+        +transform(translate3d(0, 0, 0) scale(1, 0.8))
+
+      .product-row
+        #btn-menu
+          +transform-origin(left top)
+          +transform(translate3d(0, 0, 0) scale(0.8))
+
+          i
+            border-color: transparent
+
+        #product-logo
+          +transform-origin(center top)
+          +transform(translate3d(0, 0, 0) scale(0.8))
+
+        #btn-search
+          +transform-origin(right top)
+          +transform(translate3d(0, 0, 0) scale(0.8))
+
+
+
+// ============================================================
+// OPTION 3
+// ============================================================
+
+.option-3
+  header
+    &.headroom--pinned
+      +transform(translate3d(0, 0, 0))
+
+    &.headroom--unpinned
+      +transform(translate3d(0, (-1 * $global-product-row-height), 0))
+
+      .product-row-bg
+        +transform-origin(center top)
+        +transform(translate3d(0, 0, 0) scale(1, 0.8))
+
+      .product-row
+        #btn-menu
+          +transform-origin(left top)
+          +transform(translate3d(0, 0, 0) scale(0.8))
+
+          i
+            border-color: transparent
+
+        #product-logo
+          +transform-origin(left top)
+          +transform(translate3d(0, 0, 0) scale(0.8))
+          background-position: left 60px center
+
+        #btn-search
+          +transform-origin(right top)
+          +transform(translate3d(0, 0, 0) scale(0.8))
+
+
+
+// ============================================================
+// OPTION 4
+// ============================================================
+
+.option-4
+  header
+    &.headroom--pinned
+      +transform(translate3d(0, 0, 0))
+
+    &.headroom--unpinned
+      +transform(translate3d(0, (-1 * $header-height), 0))
+
+
+
+// ============================================================
+// OPTION 5
+// ============================================================
+
+.option-5
+  header
+    &.headroom--pinned
+      +transform(translate3d(0, 0, 0))
+
+    &.headroom--unpinned
+      .global-product-row
+        .col-xs-8
+          +transform(translate3d(40px, 0, 0))
+
+          .product-link:not(.active),
+          span
+            opacity: 0
+
+        .col-xs-4
+          opacity: 0
+
+      .product-row-bg
+        +transform(translate3d(0, -100%, 0))
+
+      .product-row
+        +transform(translate3d(0, -75%, 0))
+        
+        #btn-menu
+          +transform-origin(left top)
+          +transform(translate3d(0, 0, 0) scale(0.8))
+
+          i
+            border-color: transparent
+            color: white
+
+        #product-logo
+          opacity: 0
+
+        #btn-search
+          +transform-origin(right top)
+          +transform(translate3d(0, 0, 0) scale(0.8))
+          border: none
+
+          i
+            color: white
