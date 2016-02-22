@@ -40,30 +40,30 @@ script.
 //- item context menu
 script.
   $('.file .menu-btn').on('click', function() {
-    $(this).siblings('.item-context-menu').toggleClass('show');
+    $(this).siblings('#item-context-menu').toggleClass('show');
   });
 
-  $('.file .item-context-menu').on('click', function() {
-    $('.file .item-context-menu').removeClass('show');
+  $('#item-context-menu').on('click', function() {
+    $('#item-context-menu').removeClass('show');
   });
 
 //- board context menu
 script.
   $('.board-row .fa-ellipsis-h').on('click', function() {
-    $(this).siblings('.board-context-menu').toggleClass('show');
+    $(this).siblings('#board-context-menu').toggleClass('show');
   });
 
-  $('.board-row .board-context-menu').on('click', function() {
-    $('.board-row .board-context-menu').removeClass('show');
+  $('#board-context-menu').on('click', function() {
+    $('#board-context-menu').removeClass('show');
   });
 
 //- utility row context menu
 script.
   $('.utility-row .fa-ellipsis-h').on('click', function() {
-    $(this).siblings('.utility-row-context-menu').toggleClass('show');
+    $(this).siblings('#utility-row-context-menu').toggleClass('show');
   });
 
-  $('.utility-row .utility-row-context-menu').on('click', function() {
+  $('#utility-row-context-menu').on('click', function() {
     $(this).removeClass('show');
   });
 
@@ -132,6 +132,54 @@ script.
     $('.overlay').removeClass('show');
     $('.item-detail-modal').removeClass('show');
   });
+
+
+//- image library left-side tabs
+script.
+  $('#tab-filters').on('click', function() {
+    $(this).addClass('active');
+    $('#tab-folders').removeClass('active');
+    $('.image-library-view .left-side-panel').addClass('image-library-filters-active').removeClass('image-library-folders-active');
+  });
+
+  $('#tab-folders').on('click', function() {
+    $(this).addClass('active');
+    $('#tab-filters').removeClass('active');
+    $('.image-library-view .left-side-panel').addClass('image-library-folders-active').removeClass('image-library-filters-active');
+  });
+
+//- ============================================================
+
+//- FILTERS
+//- category
+script.
+  $('#filter-btn-category').on('click', function() {
+    $(this).toggleClass('active');
+    $('#filter-category').toggleClass('show');
+  });
+
+//- market
+script.
+  $('#filter-btn-market').on('click', function() {
+    $(this).toggleClass('active');
+    $('#filter-market').toggleClass('show');
+  });
+
+//- products
+script.
+  $('#filter-btn-products').on('click', function() {
+    $(this).toggleClass('active');
+    $('#filter-products').toggleClass('show');
+  });
+
+//- designer
+script.
+  $('#filter-btn-designer').on('click', function() {
+    $(this).toggleClass('active');
+    $('#filter-designer').toggleClass('show');
+  });
+
+//- ============================================================
 
 
 

@@ -50,31 +50,31 @@ $('.utility-row .utility-row-context-menu').on('click', function() {
 </script><script>$('.fa-th').on('click', function() {
   $(this).removeClass('disabled');
   $(this).siblings().addClass('disabled');
-  $(this).parentsUntil('.workspace-content').addClass('view-tiles-sm').removeClass('view-tiles-md').removeClass('view-tiles-lg').removeClass('view-tiles-details');
+  $(this).parentsUntil('.page-content').addClass('view-tiles-sm').removeClass('view-tiles-md').removeClass('view-tiles-lg').removeClass('view-tiles-details');
 });
 </script><script>$('.fa-th-large').on('click', function() {
   $(this).removeClass('disabled');
   $(this).siblings().addClass('disabled');
-  $(this).parentsUntil('.workspace-content').removeClass('view-tiles-sm').addClass('view-tiles-md').removeClass('view-tiles-lg').removeClass('view-tiles-details');
+  $(this).parentsUntil('.page-content').removeClass('view-tiles-sm').addClass('view-tiles-md').removeClass('view-tiles-lg').removeClass('view-tiles-details');
 });
 </script><script>$('.fa-square').on('click', function() {
   $(this).removeClass('disabled');
   $(this).siblings().addClass('disabled');
-  $(this).parentsUntil('.workspace-content').removeClass('view-tiles-sm').removeClass('view-tiles-md').addClass('view-tiles-lg').removeClass('view-tiles-details');
+  $(this).parentsUntil('.page-content').removeClass('view-tiles-sm').removeClass('view-tiles-md').addClass('view-tiles-lg').removeClass('view-tiles-details');
 });
 </script><script>$('.fa-columns').on('click', function() {
   $(this).removeClass('disabled');
   $(this).siblings().addClass('disabled');
-  $(this).parentsUntil('.workspace-content').removeClass('view-tiles-sm').removeClass('view-tiles-md').removeClass('view-tiles-lg').addClass('view-tiles-details');
+  $(this).parentsUntil('.page-content').removeClass('view-tiles-sm').removeClass('view-tiles-md').removeClass('view-tiles-lg').addClass('view-tiles-details');
 });
 </script><script>$('.utility-row .fa-trash').on('click', function() {
   $('.file.selected').parentsUntil('.files-container').remove();
 });
 </script><script>$('.btn-left-side-panel').on('click', function() {
-  $('.workspace-content').toggleClass('show-left-side-panel');
+  $('.page-content').toggleClass('show-left-side-panel');
 });
 </script><script>$('.btn-comments-panel').on('click', function() {
-  $('.workspace-content').toggleClass('show-comments-panel');
+  $('.page-content').toggleClass('show-comments-panel');
 });
 </script><script>$('.file').on('dblclick', function() {
   $('.overlay').addClass('show');

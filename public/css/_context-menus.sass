@@ -1,0 +1,64 @@
+.context-menu
+  position: absolute
+  background: white
+  z-index: 100
+  opacity: 0
+  pointer-events: none
+  width: 180px
+
+  &.show
+    opacity: 1
+    pointer-events: all
+
+  // &:after
+  //   content: ""
+  //   position: absolute
+  //   width: 10px
+  //   height: 10px
+  //   background: white
+  //   border: solid $lt-grey
+  //   border-width: 0 0 1px 1px
+  //   top: -6px
+  //   left: 50%
+  //   transform: translate3d(-50%, 0, 0) rotate(135deg)
+
+  li
+    &:active
+      background: $lt-grey
+
+    .fa
+      margin: 0 10px 0 0
+
+#item-context-menu
+  bottom: -197px
+  right: -162px
+
+#board-context-menu
+  top: 18px
+  right: 15px
+  width: 200px
+
+  .fa-circle
+    margin: 0 8px
+
+  .label-red
+    color: $label-red
+
+  .label-orange
+    color: $label-orange
+
+  .label-yellow
+    color: $label-yellow
+
+  .label-green
+    color: $label-green
+
+  .label-blue
+    color: $label-blue
+
+  .label-purple
+    color: $label-purple
+
+#utility-row-context-menu
+  top: 30px
+  right: 25px
