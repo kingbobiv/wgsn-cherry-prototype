@@ -5,10 +5,12 @@
   top: 0
   left: 0
   overflow-y: scroll
+  overflow-x: visible
   display: none
   z-index: 300
   color: $md-grey
   
+  .fa-folder,
   .fa-folder-o,
   .fa-caret-right,
   .fa-caret-down,
@@ -46,25 +48,28 @@
     margin: 1px
     padding: 1px 0
 
-  span.font-wgsn
-    font-size: 10px
+  // span.font-wgsn
+  //   font-size: 10px
 
   .header-row
-    padding: 10px 16px
+    padding: 10px 12px
 
   .misc-row,
   .board-row,
   .person-row,
   .team-row
-    padding: 6px
     // border-bottom: 1px solid $xlt-grey
     position: relative
+    padding: 6px
 
     &:hover
-      background: rgba($xlt-grey, 0.75)
+      background: rgba($lt-grey, 0.15)
 
     &.active
-      background: $xlt-grey
+      background: rgba($lt-grey, 0.3)
+
+      &:hover
+        background: rgba($lt-grey, 0.4)
 
       .board-name
         color: $dk-grey
@@ -127,7 +132,7 @@
         padding-left: 6 + 20px * ($i - 1)
 
         .board-name
-          max-width: calc(100% - (56px + (#{$i} * 18px)))
+          max-width: calc(100% - (56px + (#{$i} * 5px)))
 
     .fa-ellipsis-h
       opacity: 0

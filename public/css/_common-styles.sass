@@ -23,28 +23,10 @@
     border-#{$side}: 1px solid $lt-grey
 
 .box-shadow
-  box-shadow: 0 2px 2px rgba(black, 0.2)
+  box-shadow: 2px 2px 4px rgba(black, 0.15)
 
 .disabled
   opacity: 0.3
-
-.btn
-  @extend .border
-  @extend .text-center
-  display: block
-  padding: 12px 10px 10px
-  +border-radius(3px)
-  @extend .font-wgsn
-  font-size: 12px
-  +transition(all 300ms)
-
-  &.btn-white
-    background: white
-
-  &.btn-black
-    background: black
-    border-color: black
-    color: white
 
 .bg-grey
   background: lighten($lt-grey, 10)

@@ -1,17 +1,18 @@
 .right-side-panel
-  height: calc(100vh - (#{$header-height} + #{$title-row-height}))
+  height: calc(100vh - (#{$global-product-row-height} + #{$title-row-height}))
   position: absolute
   top: 0
 
   .btn-left-side-panel
     position: absolute
     left: -1px
-    bottom: 6px
+    top: 50%
     width: 12px
     height: 40px
     padding: 12px 3px
-    color: $md-grey
+    color: $dk-grey
     font-size: 10px
+    border-radius: 0 2px 2px 0
     z-index: 100
   
     &:hover
@@ -19,7 +20,7 @@
 
   .files-row
     position: absolute
-    top: 64px
+    top: 55px
     width: 100%
     height: 100%
     overflow: scroll

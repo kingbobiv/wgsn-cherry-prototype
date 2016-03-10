@@ -16,31 +16,41 @@ script.
 
 //- select icons
 script.
+  //- $('.util-checkbox').on('click', function() {
+  //-   if ($(this).hasClass('fa-square-o')) {
+  //-     $(this).addClass('fa-check-square-o').removeClass('fa-square-o');
+  //-     $(this).parentsUntil('.file-container').addClass('selected');
+  //-   } else {
+  //-     $(this).addClass('fa-square-o').removeClass('fa-check-square-o');
+  //-     $(this).parentsUntil('.file-container').removeClass('selected');
+  //-   }
+  //- });
+
+  //- $('.select-all').on('click', function() {
+  //-   if ($(this).hasClass('fa-square-o')) {
+  //-     $(this).addClass('fa-check-square-o').removeClass('fa-square-o');
+  //-     $('.util-checkbox').addClass('fa-check-square-o').removeClass('fa-square-o');
+  //-     $('.file').addClass('selected');
+  //-   } else {
+  //-     $(this).addClass('fa-square-o').removeClass('fa-check-square-o');
+  //-     $('.util-checkbox').addClass('fa-square-o').removeClass('fa-check-square-o');
+  //-     $('.file').removeClass('selected');
+  //-   }
+  //- });
+
+script.
   $('.util-checkbox').on('click', function() {
-    if ($(this).hasClass('fa-square-o')) {
-      $(this).addClass('fa-check-square-o').removeClass('fa-square-o');
-      $(this).parentsUntil('.file-container').addClass('selected');
-    } else {
-      $(this).addClass('fa-square-o').removeClass('fa-check-square-o');
-      $(this).parentsUntil('.file-container').removeClass('selected');
-    }
+    $(this).toggleClass('selected');
+    $(this).parentsUntil('.file-container').toggleClass('selected');
   });
 
   $('.select-all').on('click', function() {
-    if ($(this).hasClass('fa-square-o')) {
-      $(this).addClass('fa-check-square-o').removeClass('fa-square-o');
-      $('.util-checkbox').addClass('fa-check-square-o').removeClass('fa-square-o');
-      $('.file').addClass('selected');
-    } else {
-      $(this).addClass('fa-square-o').removeClass('fa-check-square-o');
-      $('.util-checkbox').addClass('fa-square-o').removeClass('fa-check-square-o');
-      $('.file').removeClass('selected');
-    }
+    $('.file').toggleClass('selected');
   });
 
 //- item context menu
 script.
-  $('.file .menu-btn').on('click', function() {
+  $('.file #btn-item-menu').on('click', function() {
     $(this).siblings('#item-context-menu').toggleClass('show');
   });
 

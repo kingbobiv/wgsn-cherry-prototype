@@ -1,0 +1,24 @@
+.btn
+  @extend .border
+  @extend .text-center
+  display: block
+  padding: 8px 12px
+  +border-radius(3px)
+  @extend .font-wgsn
+  +transition(all 300ms)
+
+  &.btn-white
+    background: white
+
+  &.btn-black
+    background: black
+    border-color: black
+    color: white
+
+  &.btn-clear
+    border-color: white
+    color: white
+
+    &:hover
+      background: rgba(black, 0.5)
+      +transition-delay(0ms !important)

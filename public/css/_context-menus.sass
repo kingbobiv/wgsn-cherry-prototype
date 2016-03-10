@@ -5,6 +5,10 @@
   opacity: 0
   pointer-events: none
   width: 180px
+  @extend .box-shadow
+  @extend .border
+  @extend .clean
+  color: $dk-grey
 
   &.show
     opacity: 1
@@ -23,23 +27,26 @@
   //   transform: translate3d(-50%, 0, 0) rotate(135deg)
 
   li
+    &:hover
+      background: rgba($lt-grey, 0.15)
+
     &:active
-      background: $lt-grey
+      background: rgba($lt-grey, 0.3)
 
     .fa
       margin: 0 10px 0 0
 
 #item-context-menu
-  bottom: -197px
-  right: -162px
+  bottom: -117px
+  left: calc(50% + 54px)
 
 #board-context-menu
   top: 18px
-  right: 15px
+  right: 10px
   width: 200px
 
   .fa-circle
-    margin: 0 8px
+    margin: 0 7px
 
   .label-red
     color: $label-red
@@ -58,6 +65,9 @@
 
   .label-purple
     color: $label-purple
+
+  .label-grey
+    color: $label-grey
 
 #utility-row-context-menu
   top: 30px

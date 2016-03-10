@@ -10,31 +10,31 @@ mixin file(type, img, ...caption)
             li= item
 
       .file-utilities
-        i.util-checkbox.fa.fa-square-o
+        i.util-checkbox: i.fa.fa-check
         i.util-heart.fa.fa-heart-o
+        .btn.btn-clear#btn-add-to-board Add to board
+        .btn.btn-clear#btn-item-menu: i.fa.fa-ellipsis-h
         
-        .menu-btn.border.text-center: i.fa.fa-ellipsis-h
-        
-        ul.context-menu.clean.border.box-shadow#item-context-menu
-          li.block-xs.tight.border-bottom
+        ul.context-menu#item-context-menu
+          li.block-xs.tight
             i.fa.fa-external-link-square
             span Open
-          li.block-xs.tight.border-bottom
+          li.block-xs.tight
             i.fa.fa-plus-square
             span Add to a Board
-          li.block-xs.tight.border-bottom
+          li.block-xs.tight
             i.fa.fa-download
             span Download
-          li.block-xs.tight.border-bottom
+          li.block-xs.tight
             i.fa.fa-print
             span Print
-          li.block-xs.tight.border-bottom
+          li.block-xs.tight
             i.fa.fa-crop
             span Crop
-          li.block-xs.tight.border-bottom
+          li.block-xs.tight
             i.fa.fa-paper-plane
             span Send
-          li.block-xs.tight
+          li.block-xs.tight.border-top
             i.fa.fa-trash
             span Delete
 

@@ -6,36 +6,37 @@ mixin board-row(name, number, level, caret, shared)
       i.fa.fa-caret-right
     else
       i.spacer
-    i.fa.fa-folder-o
-    span.board-name= name 
-    span.board-number.text-bold= number
     if shared == "yes"
-      i.fa.fa-users
+      i.fa.fa-folder-o
+    if shared == "no"
+      i.fa.fa-folder
+    span.board-name= name 
+    span.board-number= number
     i.fa.fa-ellipsis-h
 
-    ul.context-menu.clean.border.box-shadow#board-context-menu
+    ul.context-menu#board-context-menu
       li.block-xs.tight.border-bottom
-        i.fa.fa-plus
+        i.fa.fa-plus-circle
         span Create new board
-      li.block-xs.tight.border-bottom
+      li.block-xs.tight
         i.fa.fa-share
         span Share
-      li.block-xs.tight.border-bottom
+      li.block-xs.tight
         i.fa.fa-clone
         span Duplicate
-      li.block-xs.tight.border-bottom
+      li.block-xs.tight
         i.fa.fa-pencil
         span Rename
-      li.block-xs.tight.border-bottom
+      li.block-xs.tight
         i.fa.fa-download
         span Download
-      li.block-xs.tight.border-bottom
+      li.block-xs.tight
         i.fa.fa-upload
         span Upload
-      li.block-xs.tight.border-bottom
+      li.block-xs.tight
         i.fa.fa-print
         span Print
-      li.block-xs.tight.border-bottom
+      li.block-xs.tight
         i.fa.fa-paper-plane
         span Send
       li.block-xs.tight.border-bottom
@@ -48,6 +49,7 @@ mixin board-row(name, number, level, caret, shared)
         i.fa.fa-circle.label-green
         i.fa.fa-circle.label-blue
         i.fa.fa-circle.label-purple
+        i.fa.fa-circle.label-grey
       li.block-xs.tight
         i.fa.fa-trash
         span Delete
@@ -75,18 +77,18 @@ mixin team-row(name, level, caret)
 
 
 //- ============================================================but in
-  
 
-.block-xs
+
+.header-row.border-bottom
+  span.font-wgsn My Boards
+
+.block-top-xs.block-hor-xs
   a.btn.btn-white(href="")
     i.fa.fa-plus
     span Create New Board
-
-.header-row.border-top.border-bottom
-  span.font-wgsn My Boards
   
 .block-xs
-  .misc-row.level-1
+  .misc-row.block-xs.level-1
     i.fa.fa-mobile
     span Mobile Uploads
 

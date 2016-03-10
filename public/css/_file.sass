@@ -46,47 +46,74 @@
     top: 0
     width: 100%
     height: 100%
+    color: white
+    @extend .flex-center
 
     .util-checkbox,
     .util-heart
       position: absolute
       top: 10px
-
-    .fa-square-o,
-    .fa-heart-o
       opacity: 0
+
+    .util-heart
+      font-size: 16px
+
+    .fa-heart
+      opacity: 1 !important
+      color: $label-red
 
     .util-checkbox
       left: 10px
+      width: 16px
+      height: 16px
+      border-radius: 50%
+      border: 1px solid white
+      @extend .flex-center
+      font-size: 8px
+
+      &.selected
+        background: $fashion
+        border-color: $fashion
+        opacity: 1 !important
 
     .util-heart
       right: 10px
 
-    .menu-btn
-      position: absolute
-      bottom: 51px
-      right: 5px
-      width: 24px
-      height: 24px
-      background: white
-      border-radius: 50%
-      padding: 3px 0
-      color: $lt-grey
-      +transition(all 300ms)
-
-      &:hover
-        background: rgba($xlt-grey, 0.5)
+    #btn-add-to-board,
+    #btn-item-menu
+      display: inline-block
+      margin: 0 4px
+      +transform(translate3d(0, 10px, 0))
+      opacity: 0
 
   &:hover
-    cursor: pointer
+    .file-utilities
+      background: rgba(black, 0.5)
+      
+      #btn-add-to-board,
+      #btn-item-menu
+        +transform(translate3d(0, 0, 0))
+        opacity: 1
 
-    .fa-square-o,
-    .fa-heart-o
+      #btn-add-to-board
+        +transition-delay(200ms)
+      
+      #btn-item-menu
+        +transition-delay(300ms)
+
+    .util-checkbox,
+    .util-heart
       opacity: 1
 
   &.selected
-    border-color: $yellow
+    border-color: $dk-grey
 
+    .file-utilities
+      background: rgba(black, 0.5)
+
+    .util-checkbox
+      @extend .selected
+  
   &.original-artwork:after
     content: "ORIGINAL ARTWORK"
     @extend .font-wgsn
