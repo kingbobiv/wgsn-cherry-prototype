@@ -41,6 +41,37 @@
         &:first-of-type
           @extend .text-bold
 
+  .util-checkbox,
+  .util-heart
+    position: absolute
+    top: 10px
+    opacity: 0
+    color: white
+
+  .util-heart
+    font-size: 16px
+
+  .fa-heart
+    opacity: 1 !important
+    color: $label-red
+
+  .util-checkbox
+    left: 10px
+    width: 16px
+    height: 16px
+    border-radius: 50%
+    border: 1px solid white
+    @extend .flex-center
+    font-size: 8px
+
+    &.selected
+      background: $fashion
+      border-color: $fashion
+      opacity: 1 !important
+
+  .util-heart
+    right: 10px
+
   .file-utilities
     position: absolute
     top: 0
@@ -48,36 +79,6 @@
     height: 100%
     color: white
     @extend .flex-center
-
-    .util-checkbox,
-    .util-heart
-      position: absolute
-      top: 10px
-      opacity: 0
-
-    .util-heart
-      font-size: 16px
-
-    .fa-heart
-      opacity: 1 !important
-      color: $label-red
-
-    .util-checkbox
-      left: 10px
-      width: 16px
-      height: 16px
-      border-radius: 50%
-      border: 1px solid white
-      @extend .flex-center
-      font-size: 8px
-
-      &.selected
-        background: $fashion
-        border-color: $fashion
-        opacity: 1 !important
-
-    .util-heart
-      right: 10px
 
     #btn-add-to-board,
     #btn-item-menu
@@ -87,6 +88,10 @@
       opacity: 0
 
   &:hover
+    .util-checkbox,
+    .util-heart
+      opacity: 1
+
     .file-utilities
       background: rgba(black, 0.5)
       
@@ -100,10 +105,6 @@
       
       #btn-item-menu
         +transition-delay(300ms)
-
-    .util-checkbox,
-    .util-heart
-      opacity: 1
 
   &.selected
     border-color: $dk-grey

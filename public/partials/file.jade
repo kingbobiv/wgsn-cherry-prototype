@@ -10,8 +10,6 @@ mixin file(type, img, ...caption)
             li= item
 
       .file-utilities
-        i.util-checkbox: i.fa.fa-check
-        i.util-heart.fa.fa-heart-o
         .btn.btn-clear#btn-add-to-board Add to board
         .btn.btn-clear#btn-item-menu: i.fa.fa-ellipsis-h
         
@@ -37,6 +35,9 @@ mixin file(type, img, ...caption)
           li.block-xs.tight.border-top
             i.fa.fa-trash
             span Delete
+
+      i.util-checkbox: i.fa.fa-check
+      i.util-heart.fa.fa-heart-o
 
 
 mixin file-details-view(type, img, ...caption)

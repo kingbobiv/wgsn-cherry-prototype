@@ -16,15 +16,15 @@ script.
 
 //- select icons
 script.
-  //- $('.util-checkbox').on('click', function() {
-  //-   if ($(this).hasClass('fa-square-o')) {
-  //-     $(this).addClass('fa-check-square-o').removeClass('fa-square-o');
-  //-     $(this).parentsUntil('.file-container').addClass('selected');
-  //-   } else {
-  //-     $(this).addClass('fa-square-o').removeClass('fa-check-square-o');
-  //-     $(this).parentsUntil('.file-container').removeClass('selected');
-  //-   }
-  //- });
+  $('.util-checkbox').on('click', function() {
+    if ($(this).hasClass('fa-square-o')) {
+      $(this).addClass('fa-check-square-o').removeClass('fa-square-o');
+      //- $(this).parentsUntil('.file-container').addClass('selected');
+    } else {
+      $(this).addClass('fa-square-o').removeClass('fa-check-square-o');
+      //- $(this).parentsUntil('.file-container').removeClass('selected');
+    }
+  });
 
   //- $('.select-all').on('click', function() {
   //-   if ($(this).hasClass('fa-square-o')) {
