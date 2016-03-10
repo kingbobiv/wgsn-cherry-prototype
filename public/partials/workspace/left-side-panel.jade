@@ -1,11 +1,20 @@
 .left-side-panel.border-right.bg-grey
-  .item.block-xs.border-bottom
-    i.fa.fa-envelope-o
-    span.font-wgsn Inbox
-    .inbox-number.pull-right.text-center 2
+  .header-row.border-bottom
+    span.font-wgsn Messages
+    i.fa.fa-angle-up.pull-right
+
+  .block-xs
+    .misc-row
+      i.fa.fa-envelope-o
+      span Inbox
+      .inbox-number.pull-right.text-center 2
+
+    .misc-row
+      i.fa.fa-envelope-o
+      span Sent
   
-  .item.block-xs.border-bottom
-    i.fa.fa-heart
+  .header-row.border-top.border-bottom
+    i.fa.fa-heart-o
     span.font-wgsn Favourites
   
   include folder-structure
