@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>WGSN Cherry</title><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="/css/main.css"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"><link href="https://fonts.googleapis.com/css?family=Coming+Soon" rel="stylesheet" type="text/css"><link rel="shortcut icon" type="image/x-icon" href="./img/favicon.ico"></head><body class="index"><div class="block-sm"><a href="/workspace.html">Workspace</a></div><div class="block-sm"><a href="/image-library.html">Image &amp; Design Library</a></div><script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script><script>$('.util-heart').on('click', function() {
+<!DOCTYPE html><html><head><title>WGSN Cherry</title><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="/css/main.css"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"><link href="https://fonts.googleapis.com/css?family=Coming+Soon" rel="stylesheet" type="text/css"><link rel="shortcut icon" type="image/x-icon" href="./img/favicon.ico"></head><body class="index"><div class="block-xl"><ul class="clean"><li><a href="/workspace.html"><h1>Workspace</h1></a></li><li><a href="/image-library.html"><h1>Image &amp; Design Library</h1></a></li></ul></div><script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.7.0/headroom.min.js"></script><script type="text/javascript" src="/js/elementQuery.js"></script><script>$('.file-heart').on('click', function() {
   if ($(this).hasClass('fa-heart-o')) {
     $(this).addClass('fa-heart').removeClass('fa-heart-o');
   } else {
@@ -8,25 +8,38 @@
 </script><script>$('.util-checkbox').on('click', function() {
   if ($(this).hasClass('fa-square-o')) {
     $(this).addClass('fa-check-square-o').removeClass('fa-square-o');
-    $(this).parentsUntil('.file-container').addClass('selected');
+    //- $(this).parentsUntil('.file-container').addClass('selected');
   } else {
     $(this).addClass('fa-square-o').removeClass('fa-check-square-o');
-    $(this).parentsUntil('.file-container').removeClass('selected');
+    //- $(this).parentsUntil('.file-container').removeClass('selected');
   }
 });
 
-$('.select-all').on('click', function() {
-  if ($(this).hasClass('fa-square-o')) {
-    $(this).addClass('fa-check-square-o').removeClass('fa-square-o');
-    $('.util-checkbox').addClass('fa-check-square-o').removeClass('fa-square-o');
-    $('.file').addClass('selected');
-  } else {
-    $(this).addClass('fa-square-o').removeClass('fa-check-square-o');
-    $('.util-checkbox').addClass('fa-square-o').removeClass('fa-check-square-o');
-    $('.file').removeClass('selected');
-  }
+//- $('.select-all').on('click', function() {
+//-   if ($(this).hasClass('fa-square-o')) {
+//-     $(this).addClass('fa-check-square-o').removeClass('fa-square-o');
+//-     $('.util-checkbox').addClass('fa-check-square-o').removeClass('fa-square-o');
+//-     $('.file').addClass('selected');
+//-   } else {
+//-     $(this).addClass('fa-square-o').removeClass('fa-check-square-o');
+//-     $('.util-checkbox').addClass('fa-square-o').removeClass('fa-check-square-o');
+//-     $('.file').removeClass('selected');
+//-   }
+//- });
+</script><script>$('.file').on('click', function() {
+  $(this).toggleClass('selected');
+  $(this).children('.file-checkbox').toggleClass('selected');
 });
-</script><script>$('.file .menu-btn').on('click', function() {
+
+$('.file-checkbox').on('click', function() {
+  $(this).toggleClass('selected');
+  $(this).parentsUntil('.file-container').toggleClass('selected');
+});
+
+$('.select-all').on('click', function() {
+  $('.file').toggleClass('selected');
+});
+</script><script>$('.file #btn-item-menu').on('click', function() {
   $(this).siblings('#item-context-menu').toggleClass('show');
 });
 
@@ -116,10 +129,17 @@ $('#tab-folders').on('click', function() {
   $(this).toggleClass('active');
   $('#filter-designer').toggleClass('show');
 });
-</script>
+</script><script>// grab an element
+var myElement = document.querySelector("header");
+// construct an instance of Headroom, passing the element
+var headroom  = new Headroom(myElement);
+// initialise
+headroom.init();
 
 
-<script>(function (window, document, undefined) {
+
+
+</script><script>(function (window, document, undefined) {
   // Enable strict mode
   "use strict";
 

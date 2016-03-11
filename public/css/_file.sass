@@ -27,6 +27,27 @@
         transform: translate3d(-50%, -50%, 0)
         color: rgba(black, 0.05)
 
+    .original-artwork
+      @extend .font-wgsn
+      position: absolute
+      bottom: 0
+      left: 0
+      background: rgba(black, 0.8)
+      color: white
+      padding: 4px 4px 3px 6px
+      letter-spacing: 0.1em
+      font-size: 9px 
+
+      &:after
+        content: ""
+        position: absolute
+        top: 0
+        right: -10px
+        width: 0
+        height: 0
+        border-bottom: 19px solid rgba(black, 0.8)
+        border-right: 10px solid transparent
+
   .caption-container
     .caption
       list-style: none
@@ -41,21 +62,21 @@
         &:first-of-type
           @extend .text-bold
 
-  .util-checkbox,
-  .util-heart
+  .file-checkbox,
+  .file-heart
     position: absolute
     top: 10px
     opacity: 0
     color: white
 
-  .util-heart
+  .file-heart
     font-size: 16px
 
   .fa-heart
     opacity: 1 !important
     color: $label-red
 
-  .util-checkbox
+  .file-checkbox
     left: 10px
     width: 16px
     height: 16px
@@ -69,7 +90,7 @@
       border-color: $fashion
       opacity: 1 !important
 
-  .util-heart
+  .file-heart
     right: 10px
 
   .file-utilities
@@ -88,12 +109,12 @@
       opacity: 0
 
   &:hover
-    .util-checkbox,
-    .util-heart
+    .file-checkbox,
+    .file-heart
       opacity: 1
 
     .file-utilities
-      background: rgba(black, 0.5)
+      background: rgba(black, 0.4)
       
       #btn-add-to-board,
       #btn-item-menu
@@ -112,21 +133,8 @@
     .file-utilities
       background: rgba(black, 0.5)
 
-    .util-checkbox
+    .file-checkbox
       @extend .selected
-  
-  &.original-artwork:after
-    content: "ORIGINAL ARTWORK"
-    @extend .font-wgsn
-    position: absolute
-    display: block
-    bottom: 63px
-    left: 0
-    background: black
-    color: white
-    font-size: 10px
-    padding: 2px 4px
-    transition: all 400ms
 
 .file-outer-details-view
   +clearfix()
