@@ -3,7 +3,7 @@ mixin filter-tag(name)
     span= name
     i.fa.fa-times
 
-.row.filter-row.border-bottom.bg-grey
+.row.filter-row.border-bottom.bg-grey.condensed
   .block-xs.filter-container.pull-left
     +filter-tag("Alice & Olivia")
     +filter-tag("Chanel")
@@ -12,6 +12,21 @@ mixin filter-tag(name)
     +filter-tag("Acne Studios")
     +filter-tag("Sass & Bide")
     +filter-tag("Zara")
+    +filter-tag("Kenzo")
+    +filter-tag("Nike")
+    +filter-tag("Converse")
+    +filter-tag("Gap")
+    +filter-tag("Chloe")
+    +filter-tag("Fendi")
+    +filter-tag("American Apparel")
+    +filter-tag("Isabel Marant")
+    +filter-tag("Alexander Wang")
+    +filter-tag("Louis Vuitton")
+    +filter-tag("Rag & Bone")
+    +filter-tag("Equipment")
+    +filter-tag("Céline")
+    +filter-tag("Dior")
+    +filter-tag("Adidas Originals")
 
-  .block-ver-xs.block-hor-sm.pull-right.border-left
-    .border#btn-filter-row-expand: i.fa.fa-angle-double-down
+  .filter-row-controls.block-ver-xs.block-hor-sm.pull-right.border-left.flex-center
+    .border.hoverable#btn-filter-row-expand: i.fa.fa-angle-double-down

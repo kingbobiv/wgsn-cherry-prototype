@@ -1,13 +1,18 @@
 .filter-row
   z-index: 100
+  position: relative
+
+  .filter-container
+    width: calc(100% - 58px)
+    padding-bottom: 2px
 
   .filter-tag
     background: white
     @extend .border
-    @extend .block-inline
     @extend .hoverable
+    display: inline-block
     padding: 6px
-    margin: 0 4px
+    margin: 0 4px 8px
     border-radius: 2px
 
     .fa
@@ -20,7 +25,30 @@
       .fa
         color: $md-grey
 
+  .filter-row-controls
+    height: 100%
+    position: absolute
+    right: 0
+    top: 50%
+    +transform(translate3d(0, -50%, 0))
+
   #btn-filter-row-expand
     padding: 6px 8px
     border-radius: 2px
     color: $md-grey
+
+  &.condensed
+    .filter-container
+      height: 48px
+      overflow: hidden
+      white-space: nowrap
+
+  &.expanded
+    .filter-container
+      height: auto
+      overflow: visible
+      white-space: break-word
+
+    #btn-filter-row-expand
+      .fa
+        +transform(rotate(180deg))

@@ -14,6 +14,7 @@ script.
     }
   });
 
+
 //- toggle icons
 script.
   showCaptions = function() {
@@ -43,6 +44,7 @@ script.
       showFilenames();
     }
   });
+
 
 //- context menus
 script.
@@ -76,6 +78,7 @@ script.
     $('.context-menu').removeClass('show');
   });
 
+
 //- checkbox icons
 script.
   $('.util-checkbox').on('click', function() {
@@ -87,6 +90,7 @@ script.
       //- $(this).parentsUntil('.file-container').removeClass('selected');
     }
   });
+
 
 //- select files
 script.
@@ -104,6 +108,7 @@ script.
   $('.select-all').on('click', function() {
     $('.file').toggleClass('selected');
   });
+
 
 //- view options
 script.
@@ -131,11 +136,13 @@ script.
     $(this).parentsUntil('.page-content').removeClass('view-tiles-sm').removeClass('view-tiles-md').removeClass('view-tiles-lg').addClass('view-tiles-details');
   });
 
+
 //- delete
 script.
   $('.utility-row .fa-trash').on('click', function() {
     $('.file.selected').parentsUntil('.files-container').remove();
   });
+
 
 //- left-side panel
 script.
@@ -143,11 +150,13 @@ script.
     $('.page-content').toggleClass('show-left-side-panel');
   });
 
+
 //- comments panel
 script.
   $('#btn-comments-panel').on('click', function() {
     $('.page-content').toggleClass('show-comments-panel');
   });
+
 
 //- item detail modal
 script.
@@ -179,6 +188,17 @@ script.
     $(this).addClass('active');
     $('#tab-filters').removeClass('active');
     $('.image-library-view .left-side-panel').addClass('image-library-folders-active').removeClass('image-library-filters-active');
+  });
+
+
+//- filter row expand/condense
+script.
+  $('#btn-filter-row-expand').on('click', function() {
+    if ($('.filter-row').hasClass('condensed')) {
+      $('.filter-row').addClass('expanded').removeClass('condensed');
+    } else {
+      $('.filter-row').addClass('condensed').removeClass('expanded');
+    }
   });
 
 //- ============================================================
