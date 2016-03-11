@@ -1,17 +1,17 @@
 mixin filter(id, search, anchors, ...items)
-  .filter.border-right(id="filter-" +id)
+  .filter.border-right.bg-grey(id="filter-" +id)
     if search
-      .filter-search.block-xs.border-bottom.bg-grey
+      .filter-search.block-xs.border-bottom
         .search-input
           input(type="text", placeholder="Search " + id)
           span.icon.border: i.fa.fa-search
 
     if anchors
-      .filter-anchors.block-xs.border-bottom.text-center.bg-grey
+      .filter-anchors.block-xs.border-bottom.text-center
         for letter, i in "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
           span.anchor-letter.text-bold.hoverable.block-inline= letter
 
-    .filter-list.block-xs
+    .filter-list.block-sm
       ul.clean
         each item in items
           li.hoverable

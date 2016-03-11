@@ -146,11 +146,20 @@
 
   .panel-filters
     .item
+      position: relative
+      
       &.active
-        background: $dk-grey
-        
         span, i
-          color: white
+          color: $fashion
+
+        &:after
+          content: ""
+          position: absolute
+          top: 0
+          right: -1px
+          background: white
+          height: 100%
+          width: 1px
 
   .panel-folders
     display: none
