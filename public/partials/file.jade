@@ -17,27 +17,30 @@ mixin file(type, img, original, filename, ...caption)
         .btn.btn-clear#btn-item-menu: i.fa.fa-ellipsis-h
         
         ul.context-menu#item-context-menu
-          li.border-bottom
-            i.fa.fa-external-link-square
-            span Open
-          li
-            i.fa.fa-plus-square
-            span Add to a Board
-          li
-            i.fa.fa-download
-            span Download
-          li
-            i.fa.fa-print
-            span Print
-          li
-            i.fa.fa-crop
-            span Crop
-          li
-            i.fa.fa-paper-plane
-            span Send
-          li.border-top
-            i.fa.fa-trash
-            span Delete
+          .block-xs.border-bottom
+            li
+              i.fa.fa-external-link-square
+              span Open
+          .block-xs.border-bottom
+            li
+              i.fa.fa-plus-square
+              span Add to a Board
+            li
+              i.fa.fa-download
+              span Download
+            li
+              i.fa.fa-print
+              span Print
+            li
+              i.fa.fa-crop
+              span Crop
+            li
+              i.fa.fa-paper-plane
+              span Send
+          .block-xs
+            li
+              i.fa.fa-trash
+              span Delete
 
       i.file-checkbox: i.fa.fa-check
       i.file-heart.fa.fa-heart-o

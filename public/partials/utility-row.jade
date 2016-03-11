@@ -20,14 +20,16 @@
         i.fa.fa-gear.hoverable
 
         ul.context-menu.text-left#utility-row-settings-context-menu
-          li.block-xs.tight
-            span Show Captions
-            i.toggle.fa.fa-toggle-on.pull-right#toggle-show-caption
-          li.block-xs.tight
-            span Show Filenames
-            i.toggle.fa.fa-toggle-off.pull-right#toggle-show-filename
-          li.block-xs.tight.text-center.border-top
-            span.text-underline More Settings
+          .block-xs
+            li
+              span Show Captions
+              i.toggle.fa.fa-toggle-on.pull-right#toggle-show-caption
+            li
+              span Show Filenames
+              i.toggle.fa.fa-toggle-off.pull-right#toggle-show-filename
+          .block-xs.text-center.border-top  
+            li
+              span.text-underline More Settings
       
       .block-hor-xs.block-inline
         .btn-view-option.block-inline.hoverable.border.disabled#btn-view-option-sm: i.fa.fa-th
@@ -44,18 +46,20 @@
         i.fa.fa-ellipsis-h.hoverable
 
         ul.context-menu.text-left#utility-row-context-menu
-          li.block-xs.tight
-            i.fa.fa-plus-square
-            span Add to a Board
-          li.block-xs.tight
-            i.fa.fa-download
-            span Download
-          li.block-xs.tight
-            i.fa.fa-print
-            span Print
-          li.block-xs.tight
-            i.fa.fa-paper-plane
-            span Send
-          li.block-xs.tight.border-top
-            i.fa.fa-trash
-            span Delete
+          .block-xs.border-bottom
+            li
+              i.fa.fa-plus-square
+              span Add to a Board
+            li
+              i.fa.fa-download
+              span Download
+            li
+              i.fa.fa-print
+              span Print
+            li
+              i.fa.fa-paper-plane
+              span Send
+          .block-xs
+            li
+              i.fa.fa-trash
+              span Delete

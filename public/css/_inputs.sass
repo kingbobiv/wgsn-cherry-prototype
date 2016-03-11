@@ -1,10 +1,12 @@
 input[type="text"],
 textarea
   -webkit-appearance: none
-  @extend .border 
+  @extend .border
+  background: $xlt-grey
   height: 34px
   min-width: 300px
   padding: 10px
+  color: $dk-grey
   font-family: "Helvetica", sans-serif
   @extend .text-normal
   font-size: 12px
@@ -12,23 +14,36 @@ textarea
 
   &:focus
     outline: none
-    border-color: $yellow
+    // border-color: $dk-grey
+
+::-webkit-input-placeholder
+   color: $md-grey
+
+:-moz-placeholder
+   color: $md-grey
+
+::-moz-placeholder
+   color: $md-grey
+
+:-ms-input-placeholder
+   color: $md-grey
 
 .search-input
   +clearfix()
   
   input
-    border-width: 1px 0 1px 1px
+    border-right: none
     float: left
 
   .icon
     border-left: none
     height: 34px
+    background: $xlt-grey
     width: 40px
     float: left
     position: relative
-    padding: 8px
-    color: $lt-grey
+    @extend .flex-center
+    color: $md-grey
 
     // &:after
     //   content: ""
@@ -45,10 +60,10 @@ textarea
 
   input:focus
     + .icon
-      border-color: $yellow
+      // border-color: $dk-grey
 
       i
-        color: $yellow
+        color: $dk-grey
 
-      &:after
-        background: $yellow
+      // &:after
+      //   background: $dk-grey

@@ -44,6 +44,21 @@
         @extend .flex-center
         @extend .font-wgsn
 
+      @media screen and (max-width: 1000px)
+        &:nth-of-type(6)
+          display: none
+
+      @media screen and (max-width: 960px)
+        &:nth-of-type(5)
+          display: none
+
+      @media screen and (max-width: 920px)
+        &:nth-of-type(4)
+          display: none
+
+      @media screen and (max-width: 900px)
+        display: none !important
+
       .sharing-label
         position: absolute
         background: rgba(black, 0.8)
@@ -54,7 +69,7 @@
         white-space: nowrap
         opacity: 0
         border-radius: 2px
-        @extend .block-sm
+        padding: 8px 10px
         @extend .text-center
         +transform(translate3d(-50%, 0, 0))
         +transition(all 300ms)

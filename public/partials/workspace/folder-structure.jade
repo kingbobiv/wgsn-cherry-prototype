@@ -15,44 +15,48 @@ mixin board-row(name, number, level, caret, shared)
     i.fa.fa-ellipsis-h
 
     ul.context-menu#board-context-menu
-      li.block-xs.tight.border-bottom
-        i.fa.fa-plus-circle
-        span Create new board
-      li.block-xs.tight
-        i.fa.fa-share
-        span Share
-      li.block-xs.tight
-        i.fa.fa-clone
-        span Duplicate
-      li.block-xs.tight
-        i.fa.fa-pencil
-        span Rename
-      li.block-xs.tight
-        i.fa.fa-download
-        span Download
-      li.block-xs.tight
-        i.fa.fa-upload
-        span Upload
-      li.block-xs.tight
-        i.fa.fa-print
-        span Print
-      li.block-xs.tight
-        i.fa.fa-paper-plane
-        span Send
-      li.block-xs.tight.border-bottom
-        i.fa.fa-bell-slash-o
-        span Turn off notifications
-      li.block-xs.tight.text-center.border-bottom
-        i.fa.fa-circle.label-red
-        i.fa.fa-circle.label-orange
-        i.fa.fa-circle.label-yellow
-        i.fa.fa-circle.label-green
-        i.fa.fa-circle.label-blue
-        i.fa.fa-circle.label-purple
-        i.fa.fa-circle.label-grey
-      li.block-xs.tight
-        i.fa.fa-trash
-        span Delete
+      .block-xs.border-bottom
+        li
+          i.fa.fa-plus-circle
+          span Create new board
+      .block-xs.border-bottom  
+        li
+          i.fa.fa-share
+          span Share
+        li
+          i.fa.fa-clone
+          span Duplicate
+        li
+          i.fa.fa-pencil
+          span Rename
+        li
+          i.fa.fa-download
+          span Download
+        li
+          i.fa.fa-upload
+          span Upload
+        li
+          i.fa.fa-print
+          span Print
+        li
+          i.fa.fa-paper-plane
+          span Send
+        li
+          i.fa.fa-bell-slash-o
+          span Turn off notifications
+      .block-xs.border-bottom
+        li.text-center
+          i.fa.fa-circle.label-red
+          i.fa.fa-circle.label-orange
+          i.fa.fa-circle.label-yellow
+          i.fa.fa-circle.label-green
+          i.fa.fa-circle.label-blue
+          i.fa.fa-circle.label-purple
+          i.fa.fa-circle.label-grey
+      .block-xs
+        li
+          i.fa.fa-trash
+          span Delete
 
 mixin person-row(name, level, caret)
   .person-row.hoverable(class="level-" + level)
