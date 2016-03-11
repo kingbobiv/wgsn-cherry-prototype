@@ -4,7 +4,5 @@ block append vars
   - bodyclass = 'index'
 
 block content
-  .block-xl
-    ul.clean
-      li: a(href="/workspace.html"): h1 Workspace
-      li: a(href="/image-library.html"): h1 Image &amp; Design Library
+  .block-xl.border-right.flex-center.text-center: a.block-inline(href="/workspace.html"): h1 Workspace
+  .block-xl.flex-center.text-center: a.block-inline(href="/image-library.html"): h1 Image &amp; Design Library
