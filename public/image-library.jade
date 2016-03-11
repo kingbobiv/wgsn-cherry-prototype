@@ -9,10 +9,16 @@ block prepend title
 block content
   include partials/header
 
-  .row.title-row.border-bottom.bg-grey
-    .block-xs.title-block.pull-left
-      h2.tight
-        span.block-inline Image &amp; Design Library
+  .row.title-row.border-bottom
+    .block-sm.title-block.pull-left
+      h2.tight.block-inline Image &amp; Design Library
+
+    .block-xs.search-block.pull-right
+      .block-ver-xs.block-hor-sm.pull-left: i.fa.fa-list-ul
+      .search-input.pull-left
+        input(type="text", placeholder="Search Image & Design Library")
+        span.icon.border: i.fa.fa-search
+      .block-left-sm.pull-left: a.btn.btn-white.tight#btn-save-search(href="") Save Search
 
   .row.page-content.show-left-side-panel
     include partials/image-library/left-side-panel

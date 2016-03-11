@@ -1,3 +1,4 @@
+// POSITIONING
 .pull-left
   float: left
 
@@ -12,9 +13,13 @@
   align-items: center
   justify-content: center
 
+
+// HOVER CURSOR
 .hoverable:hover
   cursor: pointer
 
+
+// BORDERS & SHADOWS
 .border
   border: 1px solid $lt-grey
 
@@ -25,11 +30,14 @@
 .box-shadow
   box-shadow: 2px 2px 4px rgba(black, 0.15)
 
+
+// MISC
 .disabled
   opacity: 0.3
 
 .bg-grey
   background: lighten($lt-grey, 10)
+
 
 // HIDDEN
 .hidden-xs
@@ -50,4 +58,12 @@
 
 .hidden-xl
   @media (min-width: $screen-xl-min)
+    display: none !important
+
+body.workspace-view
+  .hidden-workspace
+    display: none !important
+
+body.image-library-view
+  .hidden-image-library
     display: none !important
