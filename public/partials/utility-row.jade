@@ -17,7 +17,17 @@
         span Select all (1000)
       
       .block-hor-xs.block-inline
-        i.fa.fa-gear
+        i.fa.fa-gear.hoverable
+
+        ul.context-menu.text-left#utility-row-settings-context-menu
+          li.block-xs.tight
+            span Show Captions
+            i.toggle.fa.fa-toggle-on.pull-right#toggle-show-caption
+          li.block-xs.tight
+            span Show Filenames
+            i.toggle.fa.fa-toggle-off.pull-right#toggle-show-filename
+          li.block-xs.tight.text-center.border-top
+            span.text-underline More Settings
       
       .block-hor-xs.block-inline
         .btn-view-option.block-inline.border: i.fa.fa-th.disabled.hoverable
@@ -34,18 +44,18 @@
         i.fa.fa-ellipsis-h.hoverable
 
         ul.context-menu.text-left#utility-row-context-menu
-          li.block-xs.tight.border-bottom
+          li.block-xs.tight
             i.fa.fa-plus-square
             span Add to a Board
-          li.block-xs.tight.border-bottom
+          li.block-xs.tight
             i.fa.fa-download
             span Download
-          li.block-xs.tight.border-bottom
+          li.block-xs.tight
             i.fa.fa-print
             span Print
-          li.block-xs.tight.border-bottom
+          li.block-xs.tight
             i.fa.fa-paper-plane
             span Send
-          li.block-xs.tight
+          li.block-xs.tight.border-top
             i.fa.fa-trash
             span Delete

@@ -14,6 +14,37 @@ script.
     }
   });
 
+//- toggle icons
+script.
+  showCaptions = function() {
+    if ($('#toggle-show-caption').hasClass('fa-toggle-on')) {
+      $('.file').addClass('show-caption');
+    } else if ($('#toggle-show-caption').hasClass('fa-toggle-off')) {
+      $('.file').removeClass('show-caption');
+    }
+  };
+
+  showFilenames = function() {
+    if ($('#toggle-show-filename').hasClass('fa-toggle-on')) {
+      $('.file').addClass('show-filename');
+    } else if ($('#toggle-show-filename').hasClass('fa-toggle-off')) {
+      $('.file').removeClass('show-filename');
+    }
+  };
+  
+  $('.toggle').on('click', function() {
+    if ($(this).hasClass('fa-toggle-on')) {
+      $(this).addClass('fa-toggle-off').removeClass('fa-toggle-on');
+      showCaptions();
+      showFilenames();
+    } else {
+      $(this).addClass('fa-toggle-on').removeClass('fa-toggle-off');
+      showCaptions();
+      showFilenames();
+    }
+  });
+
+//- context menus
 script.
   //- item context menu
   $('.file #btn-item-menu').on('click', function() {
@@ -27,10 +58,21 @@ script.
 
   //- utility row context menu
   $('.utility-row .fa-ellipsis-h').on('click', function() {
-    $(this).siblings('#utility-row-context-menu').toggleClass('show');
+    $('#utility-row-context-menu').toggleClass('show');
   });
 
-  $('.context-menu').on('click', function() {
+  //- utility row settings context menu
+  $('.utility-row .fa-gear').on('click', function() {
+    $('#utility-row-settings-context-menu').toggleClass('show');
+  });
+
+  //- close context menu
+  $('.context-menu').click(function(e, evt) {
+    if($(e.target).is('.toggle')) {
+      e.preventDefault();
+      return;
+    }
+    
     $('.context-menu').removeClass('show');
   });
 
@@ -71,21 +113,18 @@ script.
     $(this).parentsUntil('.page-content').addClass('view-tiles-sm').removeClass('view-tiles-md').removeClass('view-tiles-lg').removeClass('view-tiles-details');
   });
 
-script.
   $('.fa-th-large').on('click', function() {
     $(this).removeClass('disabled');
     $(this).siblings().addClass('disabled');
     $(this).parentsUntil('.page-content').removeClass('view-tiles-sm').addClass('view-tiles-md').removeClass('view-tiles-lg').removeClass('view-tiles-details');
   });
 
-script.
   $('.fa-square').on('click', function() {
     $(this).removeClass('disabled');
     $(this).siblings().addClass('disabled');
     $(this).parentsUntil('.page-content').removeClass('view-tiles-sm').removeClass('view-tiles-md').addClass('view-tiles-lg').removeClass('view-tiles-details');
   });
 
-script.
   $('.fa-columns').on('click', function() {
     $(this).removeClass('disabled');
     $(this).siblings().addClass('disabled');
@@ -117,13 +156,11 @@ script.
     $('.item-detail-modal').addClass('show');
   });
 
-script.
   $('.fa-external-link-square').on('click', function() {
     $('.overlay').addClass('show');
     $('.item-detail-modal').addClass('show');
   });
 
-script.
   $('.item-detail-modal .fa-times').on('click', function() {
     $('.overlay').removeClass('show');
     $('.item-detail-modal').removeClass('show');
@@ -147,29 +184,26 @@ script.
 //- ============================================================
 
 //- FILTERS
-//- category
 script.
+  //- category
   $('#filter-btn-category').on('click', function() {
     $(this).toggleClass('active');
     $('#filter-category').toggleClass('show');
   });
 
-//- market
-script.
+  //- market
   $('#filter-btn-market').on('click', function() {
     $(this).toggleClass('active');
     $('#filter-market').toggleClass('show');
   });
 
-//- products
-script.
+  //- products
   $('#filter-btn-products').on('click', function() {
     $(this).toggleClass('active');
     $('#filter-products').toggleClass('show');
   });
 
-//- designer
-script.
+  //- designer
   $('#filter-btn-designer').on('click', function() {
     $(this).toggleClass('active');
     $('#filter-designer').toggleClass('show');
@@ -187,7 +221,8 @@ script.
 
 
 
-
+//- ========================================================================================================================
+//- ========================================================================================================================
 
 //- /*! elementQuery | Author: Tyson Matanich (http://matanich.com), 2013 | License: MIT */
 script.

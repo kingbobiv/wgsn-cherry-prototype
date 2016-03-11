@@ -1,15 +1,16 @@
-mixin file(type, img, original, ...caption)
+mixin file(type, img, original, filename, ...caption)
   .file-container
-    .file.border.hoverable(class!=attributes.class)
-      .thumb-container.border-bottom
+    .file.border.hoverable.show-caption(class!=attributes.class)
+      .thumb-container
         .thumb-inner(style="background-image: url('" + img + "');")
         if original == "yes"
           .original-artwork WGSN Original Artwork
       
-      .caption-container
-        ul.caption
+      .caption-container.border-top
+        ul.clean
           each item in caption
-            li= item
+            li.tight= item
+          li.filename.tight.block-top-xs= filename
 
       .file-utilities
         .btn.btn-clear#btn-add-to-board Add to board
@@ -42,7 +43,7 @@ mixin file(type, img, original, ...caption)
       i.file-heart.fa.fa-heart-o
 
 
-mixin file-details-view(type, img, original, ...caption)
+mixin file-details-view(type, img, original, filename, ...caption)
   .file-container.block-xs
     .file-details-view.hoverable(class!=attributes.class)
       .thumb-container

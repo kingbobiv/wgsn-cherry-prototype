@@ -14,21 +14,23 @@
     opacity: 1
     pointer-events: all
 
-  // &:after
-  //   content: ""
-  //   position: absolute
-  //   width: 10px
-  //   height: 10px
-  //   background: white
-  //   border: solid $lt-grey
-  //   border-width: 0 0 1px 1px
-  //   top: -6px
-  //   left: 50%
-  //   transform: translate3d(-50%, 0, 0) rotate(135deg)
+  &:after
+    content: ""
+    position: absolute
+    width: 10px
+    height: 10px
+    background: white
+    border: solid $lt-grey
+    border-width: 0 0 1px 1px
+    top: -6px
+    left: 50%
+    z-index: -1
+    +transform(translate3d(-50%, 0, 0) rotate(135deg))
 
   li
     @extend .tight
     @extend .block-xs
+    @extend .hoverable
 
     &:hover
       background: rgba($lt-grey, 0.15)
@@ -42,6 +44,9 @@
 #item-context-menu
   bottom: -117px
   left: calc(50% + 54px)
+
+  &:after
+    display: none
 
 #board-context-menu
   top: 18px
@@ -72,6 +77,17 @@
   .label-grey
     color: $label-grey
 
+  &:after
+    display: none
+
 #utility-row-context-menu
   top: 30px
-  right: 25px
+  right: 0
+
+  &:after
+    left: 89%
+
+#utility-row-settings-context-menu
+  top: 30px
+  left: 50%
+  +transform(translate3d(-50%, 0, 0))

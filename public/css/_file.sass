@@ -49,18 +49,18 @@
         border-right: 10px solid transparent
 
   .caption-container
-    .caption
-      list-style: none
+    display: none
+    
+    ul
       padding: 10px
-      margin: 0
-      font-size: 12px
       min-height: 54px
 
-      li
-        margin: 0
+      li:first-of-type
+        @extend .text-bold
 
-        &:first-of-type
-          @extend .text-bold
+      .filename
+        color: $md-grey
+        display: none
 
   .file-checkbox,
   .file-heart
@@ -135,6 +135,14 @@
 
     .file-checkbox
       @extend .selected
+
+  &.show-caption
+    .caption-container
+      display: block
+
+  &.show-filename
+    .caption-container .filename
+      display: block
 
 .file-outer-details-view
   +clearfix()
