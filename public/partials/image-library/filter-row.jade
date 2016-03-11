@@ -1,0 +1,17 @@
+mixin filter-tag(name)
+  .filter-tag
+    span= name
+    i.fa.fa-times
+
+.row.filter-row.border-bottom.bg-grey
+  .block-xs.filter-container.pull-left
+    +filter-tag("Alice & Olivia")
+    +filter-tag("Chanel")
+    +filter-tag("Adidas")
+    +filter-tag("Bassike")
+    +filter-tag("Acne Studios")
+    +filter-tag("Sass & Bide")
+    +filter-tag("Zara")
+
+  .block-ver-xs.block-hor-sm.pull-right.border-left
+    .border#btn-filter-row-expand: i.fa.fa-angle-double-down

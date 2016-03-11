@@ -1,0 +1,26 @@
+.filter-row
+  z-index: 100
+
+  .filter-tag
+    background: white
+    @extend .border
+    @extend .block-inline
+    @extend .hoverable
+    padding: 6px
+    margin: 0 4px
+    border-radius: 2px
+
+    .fa
+      margin-left: 10px
+      color: $lt-grey
+
+    &:hover
+      border-color: $md-grey
+
+      .fa
+        color: $md-grey
+
+  #btn-filter-row-expand
+    padding: 6px 8px
+    border-radius: 2px
+    color: $md-grey
