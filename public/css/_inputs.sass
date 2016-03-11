@@ -7,12 +7,14 @@ textarea
   min-width: 300px
   padding: 10px
   color: $dk-grey
+  font-size: 12px
   font-family: "Helvetica", sans-serif
   @extend .text-normal
 
   &:focus
     outline: none
     // border-color: $dk-grey
+    background: rgba($xlt-grey, 0.5)
 
 ::-webkit-input-placeholder
    color: $md-grey
@@ -80,6 +82,7 @@ select
   input:focus
     + .icon
       // border-color: $dk-grey
+      background: rgba($xlt-grey, 0.5)
 
       i
         color: $dk-grey

@@ -1,13 +1,13 @@
 mixin filter(id, search, anchors, ...items)
   .filter.border-right.bg-grey(id="filter-" +id)
     if search
-      .filter-search.block-xs.border-bottom
+      .filter-search.block-sm.border-bottom
         .search-input
           input(type="text", placeholder="Search " + id)
           span.icon.border: i.fa.fa-search
 
     if anchors
-      .filter-anchors.block-xs.border-bottom.text-center
+      .filter-anchors.block-top-sm.block-hor-sm.block-bot-xs.text-center
         for letter, i in "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
           span.anchor-letter.text-bold.hoverable.block-inline= letter
 
@@ -18,8 +18,9 @@ mixin filter(id, search, anchors, ...items)
             .util-checkbox.fa.fa-square-o
             span= item
 
-    .filter-bottom-row.text-right.block-xs.border-top
-      p.tight.text-underline Reset filter  
+    .filter-bottom-row.text-right.block-sm.border-top
+      i.fa.fa-repeat.block-inline.hoverable
+      p.tight.block-inline.hoverable Reset filter
 
 +filter(
   "category",

@@ -1,9 +1,5 @@
 <!DOCTYPE html><html><head><title>WGSN Cherry</title><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="/css/main.css"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"><link href="https://fonts.googleapis.com/css?family=Coming+Soon" rel="stylesheet" type="text/css"><link rel="shortcut icon" type="image/x-icon" href="./img/favicon.ico"></head><body class="index"><div class="block-xl border-right flex-center text-center"><a href="/workspace.html" class="block-inline"><h1>Workspace</h1></a></div><div class="block-xl flex-center text-center"><a href="/image-library.html" class="block-inline"><h1>Image &amp; Design Library</h1></a></div><script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script><script type="text/javascript" src="/js/elementQuery.js"></script><script>$('.file-heart').on('click', function() {
-  if ($(this).hasClass('fa-heart-o')) {
-    $(this).addClass('fa-heart').removeClass('fa-heart-o');
-  } else {
-    $(this).addClass('fa-heart-o').removeClass('fa-heart');
-  }
+  $(this).toggleClass('fa-heart-o fa-heart');
 });
 
 </script><script>showCaptions = function() {
@@ -23,15 +19,9 @@ showFilenames = function() {
 };
 
 $('.toggle').on('click', function() {
-  if ($(this).hasClass('fa-toggle-on')) {
-    $(this).addClass('fa-toggle-off').removeClass('fa-toggle-on');
-    showCaptions();
-    showFilenames();
-  } else {
-    $(this).addClass('fa-toggle-on').removeClass('fa-toggle-off');
-    showCaptions();
-    showFilenames();
-  }
+  $(this).toggleClass('fa-toggle-on fa-toggle-off');
+  showCaptions();
+  showFilenames();
 });
 
 </script><script>//- item context menu
@@ -65,13 +55,7 @@ $('.context-menu').click(function(e, evt) {
 });
 
 </script><script>$('.util-checkbox').on('click', function() {
-  if ($(this).hasClass('fa-square-o')) {
-    $(this).addClass('fa-check-square-o').removeClass('fa-square-o');
-    //- $(this).parentsUntil('.file-container').addClass('selected');
-  } else {
-    $(this).addClass('fa-square-o').removeClass('fa-check-square-o');
-    //- $(this).parentsUntil('.file-container').removeClass('selected');
-  }
+  $(this).toggleClass('fa-square-o fa-check-square-o');
 });
 
 </script><script>$('.file').click(function(e, evt) {
@@ -117,7 +101,7 @@ $('#btn-view-option-details').on('click', function() {
   $('.file.selected').parentsUntil('.files-container').remove();
 });
 
-</script><script>$('.btn-left-side-panel').on('click', function() {
+</script><script>$('#btn-left-side-panel').on('click', function() {
   $('.page-content').toggleClass('show-left-side-panel');
 });
 
@@ -153,11 +137,7 @@ $('#tab-folders').on('click', function() {
 });
 
 </script><script>$('#btn-filter-row-expand').on('click', function() {
-  if ($('.filter-row').hasClass('condensed')) {
-    $('.filter-row').addClass('expanded').removeClass('condensed');
-  } else {
-    $('.filter-row').addClass('condensed').removeClass('expanded');
-  }
+  $('.filter-row').toggleClass('condensed expanded');
 });
 </script><script>//- category
 $('#filter-btn-category').on('click', function() {

@@ -130,7 +130,7 @@ script.
 
 //- left-side panel
 script.
-  $('.btn-left-side-panel').on('click', function() {
+  $('#btn-left-side-panel').on('click', function() {
     $('.page-content').toggleClass('show-left-side-panel');
   });
 
@@ -181,7 +181,13 @@ script.
     $('.filter-row').toggleClass('condensed expanded');
   });
 
+  $('.filter-tag .fa-times').on('click', function() {
+    $(this).parentsUntil('.filter-container').remove();
+  });  
+
+
 //- ============================================================
+
 
 //- FILTERS
 script.
