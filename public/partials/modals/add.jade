@@ -7,14 +7,18 @@
     .block-bot-sm
       h3 Choose a Board
 
-      .row.border.hoverable
+      .row.border.hoverable.bg-grey
         .block-xs.pull-left: i.icon.icon-folder
         .block-ver-xs.pull-left: span Spring/Summer 2016
         .block-xs.pull-right: i.icon.icon-caret-down
     
-    h3 or
+    .block-bot-sm
+      h3 or
+      input(type="text", placeholder="Enter a name for your new board")
 
-    input(type="text", placeholder="Enter a name for your new board")
+    .row
+      .image-preview.border.pull-left(style="background-image: url('http://www.wgsn.com/storage/vol20/ss_image_store/96/53/61/42/media_yzy_aw16_009.jpg');")
+      .block-left-sm.pull-left: textarea(placeholder="Add a comment (optional)")
 
   .modal-footer
     p.tight.block-top-xs.hoverable.pull-left.close-modal Cancel

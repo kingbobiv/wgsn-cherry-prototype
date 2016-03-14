@@ -11,6 +11,7 @@
 
   &.show
     opacity: 1
+    pointer-events: all
 
 .modal
   position: absolute
@@ -43,7 +44,8 @@
     @extend .block-sm
 
   .modal-footer
-    @extend .block-sm
+    @extend .block-hor-sm
+    @extend .block-bot-sm
     overflow: auto
 
   &.show
@@ -103,3 +105,12 @@
 #add-modal
   input[type="text"]
     width: 100%
+
+  .image-preview
+    width: 220px
+    height: 220px
+    background: white no-repeat center / contain
+
+  textarea
+    width: calc(100% + 15px)
+    height: 220px
