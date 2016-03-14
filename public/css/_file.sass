@@ -102,8 +102,8 @@
     color: white
     @extend .flex-center
 
-    #btn-add-to-board,
-    #btn-item-menu
+    .btn-add-to-board,
+    .btn-item-menu
       display: inline-block
       margin: 0 4px
       +transform(translate3d(0, 10px, 0))
@@ -117,15 +117,15 @@
     .file-utilities
       background: rgba(black, 0.4)
       
-      #btn-add-to-board,
-      #btn-item-menu
+      .btn-add-to-board,
+      .btn-item-menu
         +transform(translate3d(0, 0, 0))
         opacity: 1
 
-      #btn-add-to-board
+      .btn-add-to-board
         +transition-delay(200ms)
       
-      #btn-item-menu
+      .btn-item-menu
         +transition-delay(300ms)
 
   &.selected

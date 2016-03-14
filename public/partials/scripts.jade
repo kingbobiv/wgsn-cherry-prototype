@@ -33,11 +33,20 @@ script.
     showFilenames();
   });
 
+//- checkbox icons
+script.
+  $('.util-checkbox').on('click', function() {
+    $(this).toggleClass('fa-square-o fa-check-square-o');
+  });
 
-//- context menus
+
+//- ============================================================
+//- CONTEXT MENUS
+//- ============================================================
+
 script.
   //- item context menu
-  $('.file #btn-item-menu').on('click', function() {
+  $('.file #.tn-item-menu').on('click', function() {
     $(this).siblings('#item-context-menu').toggleClass('show');
   });
 
@@ -67,14 +76,10 @@ script.
   });
 
 
-//- checkbox icons
-script.
-  $('.util-checkbox').on('click', function() {
-    $(this).toggleClass('fa-square-o fa-check-square-o');
-  });
+//- ============================================================
+//- SELECT FILES
+//- ============================================================
 
-
-//- select files
 script.
   $('.file').click(function(e, evt) {
     if($(e.target).is('.file-heart, .btn, .context-menu')) {
@@ -92,7 +97,10 @@ script.
   });
 
 
-//- view options
+//- ============================================================
+//- VIEW TILE OPTIONS
+//- ============================================================
+
 script.
   $('#btn-view-option-sm').on('click', function() {
     $(this).removeClass('disabled');
@@ -119,12 +127,19 @@ script.
   });
 
 
-//- delete
+//- ============================================================
+//- DELETE ITEM
+//- ============================================================
+
 script.
   $('.utility-row .icon-trash').on('click', function() {
     $('.file.selected').parentsUntil('.files-container').remove();
   });
 
+
+//- ============================================================
+//- PAGE STRUCTURE
+//- ============================================================
 
 //- left-side panel
 script.
@@ -137,24 +152,6 @@ script.
 script.
   $('#btn-comments-panel').on('click', function() {
     $('.page-content').toggleClass('show-comments-panel');
-  });
-
-
-//- item detail modal
-script.
-  $('.file').on('dblclick', function() {
-    $('.overlay').addClass('show');
-    $('.item-detail-modal').addClass('show');
-  });
-
-  $('.fa-external-link-square').on('click', function() {
-    $('.overlay').addClass('show');
-    $('.item-detail-modal').addClass('show');
-  });
-
-  $('.item-detail-modal .fa-times').on('click', function() {
-    $('.overlay').removeClass('show');
-    $('.item-detail-modal').removeClass('show');
   });
 
 
@@ -185,9 +182,9 @@ script.
 
 
 //- ============================================================
-
-
 //- FILTERS
+//- ============================================================
+
 script.
   //- category
   $('#filter-btn-category').on('click', function() {
@@ -213,10 +210,11 @@ script.
     $('#filter-designer').toggleClass('show');
   });
 
+
+//- ============================================================
+//- MODALS
 //- ============================================================
 
-
-//- MODALS
 script.
   //- share
   $('#share-block').on('click', function() {
@@ -224,10 +222,33 @@ script.
     $('#share-modal').addClass('show');
   });
 
+  //- add
+  $('.btn-add-to-board').on('click', function() {
+    $('.overlay').addClass('show');
+    $('#add-modal').addClass('show');
+  });
+
   //- close modal
   $('.modal .close-modal').on('click', function() {
     $('.overlay').removeClass('show');
     $('.modal').removeClass('show');
+  });
+
+//- item detail modal
+script.
+  $('.file').on('dblclick', function() {
+    $('.overlay').addClass('show');
+    $('.item-detail-modal').addClass('show');
+  });
+
+  $('.fa-external-link-square').on('click', function() {
+    $('.overlay').addClass('show');
+    $('.item-detail-modal').addClass('show');
+  });
+
+  $('.item-detail-modal .fa-times').on('click', function() {
+    $('.overlay').removeClass('show');
+    $('.item-detail-modal').removeClass('show');
   });
 
 
