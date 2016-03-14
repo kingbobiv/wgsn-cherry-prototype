@@ -215,6 +215,25 @@ script.
 
 //- ============================================================
 
+
+//- MODALS
+script.
+  //- share
+  $('#share-block').on('click', function() {
+    $('.overlay').addClass('show');
+    $('#share-modal').addClass('show');
+  });
+
+  //- close modal
+  $('.modal .close-modal').on('click', function() {
+    $('.overlay').removeClass('show');
+    $('.modal').removeClass('show');
+  });
+
+
+
+
+
 //- script.
 //-   // grab an element
 //-   var myElement = document.querySelector("header");

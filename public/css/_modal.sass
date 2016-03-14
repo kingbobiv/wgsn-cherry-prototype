@@ -4,11 +4,77 @@
   right: 0
   left: 0
   bottom: 0
-  background: rgba(black, 0.9)
+  background: rgba(black, 0.8)
   pointer-events: none
-  z-index: 320
+  z-index: 350
   opacity: 0
-  +transition(all 500ms)
 
   &.show
     opacity: 1
+
+.modal
+  position: absolute
+  top: 50%
+  left: 50%
+  +transform(translate3d(-50%, -40%, 0))
+  width: 580px
+  min-height: 100px
+  z-index: 400
+  background: white
+  // @extend .border
+  @extend .box-shadow
+  opacity: 0
+  pointer-events: none
+
+  .modal-header
+    background: $dk-grey
+    color: white
+    @extend .block-sm
+    overflow: auto
+
+    .fa-times
+      font-size: 18px
+      opacity: 0.6
+
+      &:hover
+        opacity: 1
+
+  .modal-content
+    @extend .block-sm
+
+  .modal-footer
+    @extend .block-sm
+    overflow: auto
+
+  &.show
+    opacity: 1
+    pointer-events: all
+    +transform(translate3d(-50%, -50%, 0))
+
+
+// ==================================================
+// SHARE
+// ==================================================
+
+#share-modal
+  .share-user-container
+    height: 220px
+    overflow: scroll
+    
+    .share-user
+      padding: 2px
+      
+      .avatar
+        width: 26px
+        height: 26px
+        background: $md-grey no-repeat center / cover
+        border-radius: 50%
+        margin: 3px 6px
+        position: relative
+        @extend .flex-center
+        @extend .pull-left
+        @extend .font-wgsn
+        color: white
+
+      &:last-of-type
+        border: none
