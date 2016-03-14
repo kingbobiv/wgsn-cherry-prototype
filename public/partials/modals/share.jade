@@ -1,7 +1,7 @@
 .modal#share-modal
   .modal-header
     h2.pull-left.tight Share
-    i.fa.fa-times.pull-right.hoverable.close-modal
+    i.icon.icon-cross.pull-right.hoverable.close-modal
 
   .modal-content
     .block-sm.border
@@ -9,11 +9,11 @@
       .border.row
         .block-xs.pull-left.hoverable.border-right
           span Can edit
-          .block-left-xs.inline-block: i.fa.fa-caret-down
+          .block-left-xs.inline-block: i.icon.icon-caret-down
 
         .input-container.pull-left
           input(type="text", placeholder="Enter a name")
-          span.icon-container.border: i.fa.fa-caret-down
+          span.icon-container.border: i.icon.icon-caret-down
 
     .block-top-sm
       h3 Who has access
@@ -40,8 +40,8 @@
                 if permission == "view"
                   .block-left-xs.inline-block.hoverable: span Can view
 
-                .block-xs.inline-block.hoverable: i.fa.fa-caret-down
-                .block-xs.inline-block.hoverable: i.fa.fa-times-circle-o
+                .block-left-xs.inline-block.hoverable: i.icon.icon-caret-down
+                .block-xs.inline-block.hoverable: i.icon.icon-cross-circle
 
         +share-user("https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/7/005/05b/332/0aa54b4.jpg", "AL", "Amelia Lewis", "yes", "")
         +share-user("https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAT6AAAAJGZiMmIwM2E3LTMzNzMtNDEzNi1iN2JhLWJlZmYzM2MwNmI2Nw.jpg", "JR", "Julian Ramirez", "no", "edit")
@@ -56,8 +56,9 @@
 
         .row.hoverable#make-folder-public
           .col-xs-12.text-center
-            p.tight.block-ver-sm.text-underline Make folder public
-              i.fa.fa-info-circle.block-left-xs
+            p.tight.block-ver-sm
+              span.text-underline Make folder public
+              i.icon.icon-info-circle.block-left-xs
 
   .modal-footer
     p.tight.block-top-xs.hoverable.pull-left.close-modal Cancel

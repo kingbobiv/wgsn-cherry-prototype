@@ -61,10 +61,11 @@ mixin file-details-view(type, img, original, filename, ...caption)
             li.caption.block-hor-sm= item
         
         ul.clean
-          li.block-xs.tight.inline-block: i.fa.fa-external-link-square
-          li.block-xs.tight.inline-block: i.fa.fa-plus-square
-          li.block-xs.tight.inline-block: i.fa.fa-download
-          li.block-xs.tight.inline-block: i.fa.fa-print
-          li.block-xs.tight.inline-block: i.fa.fa-crop
-          li.block-xs.tight.inline-block: i.fa.fa-paper-plane
-          li.block-xs.tight.inline-block: i.fa.fa-trash
+          .block-hor-sm
+            li.block-ver-xs.block-right-xs.tight.inline-block: i.icon.icon-export
+            li.block-xs.tight.inline-block: i.icon.icon-plus-circle
+            li.block-xs.tight.inline-block: i.icon.icon-download
+            li.block-xs.tight.inline-block: i.icon.icon-print
+            li.block-xs.tight.inline-block: i.icon.icon-crop
+            li.block-xs.tight.inline-block: i.icon.icon-paper-plane
+            li.block-xs.tight.inline-block: i.icon.icon-trash
