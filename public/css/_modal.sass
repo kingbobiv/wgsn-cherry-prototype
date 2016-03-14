@@ -57,8 +57,20 @@
 // ==================================================
 
 #share-modal
+  .input-container
+    width: calc(100% - 83px)
+    
+    input[type="text"],
+    .icon
+      border: none
+
+    input[type="text"]
+      width: calc(100% - 40px)
+
   .share-user-container
-    height: 220px
+    height: 36vh
+    min-height: 100px
+    max-height: 400px
     overflow: scroll
     
     .share-user

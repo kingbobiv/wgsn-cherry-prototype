@@ -6,7 +6,14 @@
   .modal-content
     .block-sm.border
       h3 Invite people
-      .block-sm.border
+      .border.row
+        .block-xs.pull-left.hoverable.border-right
+          span Can edit
+          .block-left-xs.inline-block: i.fa.fa-caret-down
+
+        .input-container.pull-left
+          input(type="text", placeholder="Enter a name")
+          span.icon.border: i.fa.fa-caret-down
 
     .block-top-sm
       h3 Who has access
@@ -16,7 +23,7 @@
           .row.share-user.border-bottom
             .col-xs-6
               if img
-                .avatar(style="background-image: url('" + "')")
+                .avatar(style="background-image: url('" + img + "')")
               else
                 .avatar= initials
 
@@ -28,20 +35,20 @@
 
               if owner == "no"
                 if permission == "edit"
-                  .block-left-xs.inline-block: span Can edit
+                  .block-left-xs.inline-block.hoverable: span Can edit
 
                 if permission == "view"
-                  .block-left-xs.inline-block: span Can view
+                  .block-left-xs.inline-block.hoverable: span Can view
 
-                .block-xs.inline-block: i.fa.fa-caret-down
-                .block-xs.inline-block: i.fa.fa-times-circle-o
+                .block-xs.inline-block.hoverable: i.fa.fa-caret-down
+                .block-xs.inline-block.hoverable: i.fa.fa-times-circle-o
 
-        +share-user("", "AL", "Amelia Lewis", "yes", "")
-        +share-user("", "JR", "Julian Ramirez", "no", "edit")
-        +share-user("", "AH", "Andrew Harris", "no", "view")
-        +share-user("", "SC", "Sansan Chen", "no", "view")
+        +share-user("https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/7/005/05b/332/0aa54b4.jpg", "AL", "Amelia Lewis", "yes", "")
+        +share-user("https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAT6AAAAJGZiMmIwM2E3LTMzNzMtNDEzNi1iN2JhLWJlZmYzM2MwNmI2Nw.jpg", "JR", "Julian Ramirez", "no", "edit")
+        +share-user("https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/1/005/06d/1ea/349ef69.jpg", "AH", "Andrew Harris", "no", "view")
+        +share-user("https://media.licdn.com/media/AAEAAQAAAAAAAAZVAAAAJDBlZWUwZWE0LTk1OWYtNGMyYi1iYmU5LTA3NDNlNDYxZmYwMQ.jpg", "SC", "Sansan Chen", "no", "view")
         +share-user("", "SF", "Sarah Freiser", "no", "view")
-        +share-user("", "NA", "Nicky Ashwell", "no", "view")
+        +share-user("https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAFZAAAAJDM1YTk4OTc5LTJjZGUtNGJkMS1iMTM4LTBmMjIzYTM3NGYzMQ.jpg", "NA", "Nicky Ashwell", "no", "view")
         +share-user("", "HS", "Hema Sivaram", "no", "view")
         +share-user("", "AG", "Anna Glassman", "no", "view")
         +share-user("", "HZ", "Hans Zhou", "no", "view")
@@ -50,4 +57,4 @@
 
   .modal-footer
     p.tight.hoverable.pull-left.close-modal Cancel
-    .btn.btn-white.pull-right Done
+    .btn.btn-white.pull-right.close-modal Done
