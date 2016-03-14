@@ -29,7 +29,7 @@
 
               .block-ver-xs.inline-block: span= name
             
-            .col-xs-6.text-right
+            .col-xs-6.text-right.text-grey
               if owner == "yes"
                 .block-xs.inline-block: span Is Owner
 
@@ -54,7 +54,11 @@
         +share-user("", "HZ", "Hans Zhou", "no", "view")
         +share-user("", "PT", "Pathik Tanna", "no", "view")
 
+        .row.hoverable#make-folder-public
+          .col-xs-12.text-center
+            p.tight.block-ver-sm.text-underline Make folder public
+              i.fa.fa-info-circle.block-left-xs
 
   .modal-footer
-    p.tight.hoverable.pull-left.close-modal Cancel
+    p.tight.block-top-xs.hoverable.pull-left.close-modal Cancel
     .btn.btn-white.pull-right.close-modal Done
