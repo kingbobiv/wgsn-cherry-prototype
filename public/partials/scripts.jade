@@ -5,7 +5,7 @@ script(type='text/javascript', src='/js/elementQuery.js')
 //- heart icons
 script.
   $('.file-heart').on('click', function() {
-    $(this).toggleClass('fa-heart-o fa-heart');
+    $(this).toggleClass('icon-heart-o icon-heart');
   });
 
 
@@ -42,17 +42,17 @@ script.
   });
 
   //- board context menu
-  $('.board-row .fa-ellipsis-h').on('click', function() {
+  $('.board-row .icon-ellipsis').on('click', function() {
     $(this).siblings('#board-context-menu').toggleClass('show');
   });
 
   //- utility row context menu
-  $('.utility-row .fa-ellipsis-h').on('click', function() {
+  $('.utility-row .icon-ellipsis').on('click', function() {
     $('#utility-row-context-menu').toggleClass('show');
   });
 
   //- utility row settings context menu
-  $('.utility-row .fa-gear').on('click', function() {
+  $('.utility-row .icon-gear').on('click', function() {
     $('#utility-row-settings-context-menu').toggleClass('show');
   });
 
@@ -121,7 +121,7 @@ script.
 
 //- delete
 script.
-  $('.utility-row .fa-trash').on('click', function() {
+  $('.utility-row .icon-trash').on('click', function() {
     $('.file.selected').parentsUntil('.files-container').remove();
   });
 
@@ -179,7 +179,7 @@ script.
     $('.filter-row').toggleClass('condensed expanded');
   });
 
-  $('.filter-tag .fa-times').on('click', function() {
+  $('.filter-tag .icon-cross').on('click', function() {
     $(this).parentsUntil('.filter-container').remove();
   });  
 

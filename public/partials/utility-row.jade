@@ -3,7 +3,7 @@
     .block-xs
       .input-container.hidden-image-library
         input(type="text", placeholder="Search this board")
-        span.icon.border: i.fa.fa-search
+        span.icon-container.border: i.icon.icon-search
 
       .sort-input.hidden-workspace.block-hor-xs
         span Sort:
@@ -24,7 +24,7 @@
         span Select all (1000)
       
       .block-hor-xs.inline-block
-        i.fa.fa-gear.hoverable
+        i.icon-gear.hoverable
 
         ul.context-menu.text-left#utility-row-settings-context-menu
           .block-xs
@@ -39,34 +39,34 @@
               span.text-underline More Settings
       
       .block-hor-xs.inline-block
-        .btn-view-option.inline-block.hoverable.border.disabled#btn-view-option-sm: i.fa.fa-th
-        .btn-view-option.inline-block.hoverable.border#btn-view-option-md: i.fa.fa-th-large
-        .btn-view-option.inline-block.hoverable.border.disabled#btn-view-option-lg: i.fa.fa-square
-        .btn-view-option.inline-block.hoverable.border.disabled#btn-view-option-details: i.fa.fa-columns
+        .btn-view-option.inline-block.hoverable.border.disabled#btn-view-option-sm: i.icon.icon-grid-sm
+        .btn-view-option.inline-block.hoverable.border#btn-view-option-md: i.icon.icon-grid-md
+        .btn-view-option.inline-block.hoverable.border.disabled#btn-view-option-lg: i.icon.icon-grid-lg
+        .btn-view-option.inline-block.hoverable.border.disabled#btn-view-option-details: i.icon.icon-grid-details
       
       .block-hor-xs.inline-block
-        i.fa.fa-plus-square.multi-utility-icon.hoverable
-        i.fa.fa-download.multi-utility-icon.hoverable
-        i.fa.fa-print.multi-utility-icon.hoverable
-        i.fa.fa-paper-plane.multi-utility-icon.hoverable
-        i.fa.fa-trash.multi-utility-icon.hoverable
-        i.fa.fa-ellipsis-h.hoverable
+        i.icon.icon-plus-circle.multi-utility-icon.hoverable
+        i.icon.icon-download.multi-utility-icon.hoverable
+        i.icon.icon-print.multi-utility-icon.hoverable
+        i.icon.icon-paper-plane.multi-utility-icon.hoverable
+        i.icon.icon-trash.multi-utility-icon.hoverable
+        i.icon.icon-ellipsis.hoverable
 
         ul.context-menu.text-left#utility-row-context-menu
           .block-xs.border-bottom
             li
-              i.fa.fa-plus-square
+              i.icon.icon-plus-circle
               span Add to a Board
             li
-              i.fa.fa-download
+              i.icon.icon-download
               span Download
             li
-              i.fa.fa-print
+              i.icon.icon-print
               span Print
             li
-              i.fa.fa-paper-plane
+              i.icon.icon-paper-plane
               span Send
           .block-xs
             li
-              i.fa.fa-trash
+              i.icon.icon-trash
               span Delete

@@ -1,7 +1,7 @@
 mixin filter-tag(name)
   .filter-tag.border
     span= name
-    i.fa.fa-times.hoverable
+    i.icon.icon-cross.hoverable
 
 .row.filter-row.border-bottom.bg-grey.condensed
   .block-xs.filter-container.pull-left
@@ -29,4 +29,4 @@ mixin filter-tag(name)
     +filter-tag("Adidas Originals")
 
   .filter-row-controls.block-ver-xs.block-hor-sm.pull-right.border-left.flex-center
-    .border.hoverable#btn-filter-row-expand: i.fa.fa-angle-double-down
+    .border.hoverable#btn-filter-row-expand: i.icon.icon-double-angle-down

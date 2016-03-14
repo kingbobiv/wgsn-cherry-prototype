@@ -1,49 +1,49 @@
 mixin board-row(name, number, level, caret, shared)
   .board-row.hoverable(class="level-" + level)
     if caret == "open"
-      i.fa.fa-caret-down
+      i.icon.icon-caret-down
     else if caret == "closed"
-      i.fa.fa-caret-right
+      i.icon.icon-caret-right
     else
       i.spacer
     if shared == "yes"
-      i.fa.fa-folder-o
+      i.icon.icon-folder-shared
     if shared == "no"
-      i.fa.fa-users
+      i.icon.icon-folder
     span.board-name= name 
     span.board-number= number
-    i.fa.fa-ellipsis-h
+    i.icon.icon-ellipsis
 
     ul.context-menu#board-context-menu
       .block-xs.border-bottom
         li
-          i.fa.fa-plus-circle
+          i.icon.icon-plus-circle
           span Create new board
       .block-xs.border-bottom  
         li
-          i.fa.fa-share
+          i.icon.icon-share-right
           span Share
         li
-          i.fa.fa-clone
+          i.icon.icon-clone
           span Duplicate
         li
-          i.fa.fa-pencil
+          i.icon.icon-pencil
           span Rename
         li
-          i.fa.fa-download
+          i.icon.icon-download
           span Download
         li
-          i.fa.fa-upload
+          i.icon.icon-upload
           span Upload
         li
-          i.fa.fa-print
+          i.icon.icon-print
           span Print
         li
-          i.fa.fa-paper-plane
+          i.icon.icon-paper-plane
           span Send
-        li
-          i.fa.fa-bell-slash-o
-          span Turn off notifications
+        //- li
+        //-   i.fa.fa-bell-slash-o
+        //-   span Turn off notifications
       .block-xs.border-bottom
         li.text-center
           i.fa.fa-circle.label-red
@@ -55,26 +55,26 @@ mixin board-row(name, number, level, caret, shared)
           i.fa.fa-circle.label-grey
       .block-xs
         li
-          i.fa.fa-trash
+          i.icon.icon-trash
           span Delete
 
 mixin person-row(name, level, caret)
   .person-row.hoverable(class="level-" + level)
     if caret == "open"
-      i.fa.fa-caret-down
+      i.icon.icon-caret-down
     else if caret == "closed"
-      i.fa.fa-caret-right
+      i.icon.icon-caret-right
     else
       i.spacer
-    i.fa.fa-user
+    i.icon.icon-user
     span= name
 
 mixin team-row(name, level, caret)
   .team-row.hoverable(class="level-" + level)
     if caret == "open"
-      i.fa.fa-caret-down
+      i.icon.icon-caret-down
     else if caret == "closed"
-      i.fa.fa-caret-right
+      i.icon.icon-caret-right
     else
       i.spacer
     span= name
@@ -88,7 +88,7 @@ mixin team-row(name, level, caret)
 
 .block-top-xs.block-hor-xs
   a.btn.btn-white(href="")
-    i.fa.fa-plus
+    i.icon.icon-plus
     span Create New Board
   
 .block-xs

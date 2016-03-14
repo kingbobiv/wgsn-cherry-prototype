@@ -31,7 +31,7 @@ textarea
 .bg-grey
   input[type="text"],
   textarea,
-  .search-input .icon
+  .search-input .icon-container
     background: white
 
 select
@@ -56,7 +56,7 @@ select
     border-right: none
     float: left
 
-  .icon
+  .icon-container
     border-left: none
     height: 34px
     background: $xlt-grey
@@ -80,7 +80,7 @@ select
       +transition(all 300ms)
 
   input:focus
-    + .icon
+    + .icon-container
       // border-color: $dk-grey
       background: rgba($xlt-grey, 0.5)
 
