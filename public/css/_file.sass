@@ -69,30 +69,25 @@
     opacity: 0
     color: white
     @extend .no-transition
+    font-size: 16px
+
+  .file-checkbox
+    left: 10px
 
   .file-heart
-    font-size: 16px
+    right: 10px
 
   .icon-heart
     opacity: 1 !important
     color: $label-red
 
-  .file-checkbox
-    left: 10px
+  .icon-tick-circle-filled
+    background: white
     width: 16px
     height: 16px
     border-radius: 50%
-    border: 1px solid white
-    @extend .flex-center
-    font-size: 8px
-
-    &.selected
-      background: $fashion
-      border-color: $fashion
-      opacity: 1 !important
-
-  .file-heart
-    right: 10px
+    opacity: 1 !important
+    color: $fashion
 
   .file-utilities
     position: absolute
@@ -138,7 +133,8 @@
       background: rgba(black, 0.5)
 
     .file-checkbox
-      @extend .selected
+      opacity: 1 !important
+      color: $fashion
 
   &.show-caption
     .caption-container

@@ -2,10 +2,20 @@ script(type='text/javascript', src='https://ajax.googleapis.com/ajax/libs/jquery
 //- script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/headroom/0.7.0/headroom.min.js')
 script(type='text/javascript', src='/js/elementQuery.js')
 
+
+//- ============================================================
+
+
 //- heart icons
 script.
   $('.file-heart').on('click', function() {
     $(this).toggleClass('icon-heart-o icon-heart');
+  });
+
+//- checkbox icons
+script.
+  $('.util-checkbox').on('click', function() {
+    $(this).toggleClass('fa-square-o fa-check-square-o');
   });
 
 
@@ -31,12 +41,6 @@ script.
     $(this).toggleClass('fa-toggle-on fa-toggle-off');
     showCaptions();
     showFilenames();
-  });
-
-//- checkbox icons
-script.
-  $('.util-checkbox').on('click', function() {
-    $(this).toggleClass('fa-square-o fa-check-square-o');
   });
 
 
@@ -136,12 +140,13 @@ script.
     }
     
     $(this).toggleClass('selected');
-    $(this).children('.file-checkbox').toggleClass('selected');
+    $(this).children('.file-checkbox').toggleClass('icon-tick-circle icon-tick-circle-filled');
     $('.context-menu').removeClass('show');
   });
 
   $('.select-all').on('click', function() {
     $('.file').toggleClass('selected');
+    $('.file-checkbox').toggleClass('icon-tick-circle icon-tick-circle-filled');
   });
 
 
