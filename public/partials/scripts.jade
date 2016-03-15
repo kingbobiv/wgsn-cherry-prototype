@@ -134,7 +134,7 @@ script.
 
 script.
   $('.file').click(function(e, evt) {
-    if($(e.target).is('.file-heart, .btn, .context-menu')) {
+    if($(e.target).is('.file-heart, .btn, ul.context-menu, ul.context-menu li, ul.context-menu li span, ul.context-menu li .icon')) {
       e.preventDefault();
       return;
     }
