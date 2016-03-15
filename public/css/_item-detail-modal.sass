@@ -1,4 +1,4 @@
-.item-detail-modal
+#item-detail-modal
   position: absolute
   top: 40px
   left: 30px
@@ -7,7 +7,7 @@
   background: white
   @extend .border
   @extend .box-shadow
-  z-index: 400
+  z-index: 380
   opacity: 0
   +transform(translate3d(0, 5%, 0))
   +transition(all 300ms)
@@ -19,26 +19,27 @@
     pointer-events: all
 
   .modal-controls
-    .fa-times,
-    .fa-chevron-left,
-    .fa-chevron-right
+    .icon-cross,
+    .icon-angle-left,
+    .icon-angle-right
       position: absolute
       color: white
+      font-size: 16px
 
       &:hover
         cursor: pointer
 
-    .fa-times
+    .icon-cross
       top: -24px
       right: 0
 
-    .fa-chevron-left
+    .icon-angle-left
       top: 50%
-      left: -20px
+      left: -24px
 
-    .fa-chevron-right
+    .icon-angle-right
       top: 50%
-      right: -20px
+      right: -24px
 
   .modal-info-panel,
   .modal-image-panel,
@@ -49,7 +50,7 @@
 
   $modal-info-panel-width: 400px
   $tool-info-panel-width: 50px
-  $modal-info-caption-height: 231px
+  $modal-info-caption-height: 208px
 
   .modal-info-panel
     left: 0
@@ -59,57 +60,46 @@
       height: $modal-info-caption-height
       
       ul
-        li:nth-of-type(1)
-          font-size: 10px
-
-        li:nth-of-type(2)
+        .modal-file-name
           font-size: 20px
-
-        // li:nth-of-type(5),
-        // li:nth-of-type(6),
-        // li:nth-of-type(7),
-        // li:nth-of-type(8),
-        // li:nth-of-type(9)
-        //   font-size: 12px
 
     .modal-section-other
       .modal-tabs
-        height: 40px
-
         .block-sm
           height: 40px
-          padding: 14px 10px
 
-        &:hover
-          cursor: pointer
+          &.active
+            background: white
+            border-bottom-color: transparent
       
-      .comments-scroll-container
+      .modal-scroll-container
         overflow-y: scroll
-        height: calc((100vh - 60px) - #{$modal-info-caption-height} - 40px - 104px - 2px) // height of modal - caption - tabs - comment input - modal border
+        height: calc((100vh - 60px) - #{$modal-info-caption-height} - 40px - 104px - 2px - 10px) // height of modal - caption - tabs - comment input - borders
       
       .comment
-        +clearfix()
+        overflow: auto
+
+        &:last-of-type
+          border: none
         
-        .user-avatar
+        .avatar
           float: left
-          width: 30px
-          height: 30px
-          background: $md-grey
+          width: 32px
+          height: 32px
+          background: $md-grey no-repeat center / cover
           color: white
           border-radius: 50%
-          margin: 0 10px 0 0
           @extend .flex-center
+          @extend .font-wgsn
           font-size: 10px
 
         .text
           float: left
-          width: calc(100% - 40px)
-          // font-size: 12px
+          width: calc(100% - 42px)
 
           .comment-time
-            font-size: 12px
+            font-size: 11px
             color: $md-grey
-            @extend .tight
 
       .comment-input
         position: absolute
@@ -121,6 +111,39 @@
         textarea
           width: 100%
           height: 80px
+
+      &.show-comments
+        .btn-modal-show-comments
+          @extend .active
+
+        .modal-comments
+          display: block
+
+        .modal-related-images,
+        .modal-related-reports
+          display: none
+
+      &.show-related-images
+        .btn-modal-show-related-images
+          @extend .active
+
+        .modal-related-images
+          display: block
+
+        .modal-comments,
+        .modal-related-reports
+          display: none
+
+      &.show-related-reports
+        .btn-modal-show-related-reports
+          @extend .active
+
+        .modal-related-reports
+          display: block
+
+        .modal-comments,
+        .modal-related-images
+          display: none
 
   .modal-image-panel
     background: $dk-grey

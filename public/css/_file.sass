@@ -104,6 +104,9 @@
       +transform(translate3d(0, 10px, 0))
       opacity: 0
 
+      .icon
+        pointer-events: none
+
   &:hover
     .file-checkbox,
     .file-heart
@@ -119,9 +122,6 @@
 
       .btn-add-to-board
         +transition-delay(200ms)
-
-        .icon
-          pointer-events: none
       
       .btn-item-menu
         +transition-delay(300ms)

@@ -2,9 +2,9 @@ mixin filter(id, search, anchors, ...items)
   .filter.border-right.bg-grey(id="filter-" +id)
     if search
       .filter-search.block-sm.border-bottom
-        .search-input
+        .input-container
           input(type="text", placeholder="Search " + id)
-          span.icon.border: i.fa.fa-search
+          span.icon-container.border: i.icon.icon-search
 
     if anchors
       .filter-anchors.block-top-sm.block-hor-sm.block-bot-xs.text-center

@@ -286,25 +286,38 @@ script.
 
   //- close modal
   $('.modal .close-modal').on('click', function() {
-    $('.overlay').removeClass('show');
-    $('.modal').removeClass('show');
+    $(this).parentsUntil('body').removeClass('show');
+
+    //- keep overlay if it was a second level modal
+    if ($('#item-detail-modal').hasClass('show')) {
+      return;
+    } else {
+      $('.overlay').removeClass('show');
+    }
   });
 
 //- item detail modal
 script.
   $('.file').on('dblclick', function() {
     $('.overlay').addClass('show');
-    $('.item-detail-modal').addClass('show');
+    $('#item-detail-modal').addClass('show');
   });
 
   $('.btn-open').on('click', function() {
     $('.overlay').addClass('show');
-    $('.item-detail-modal').addClass('show');
+    $('#item-detail-modal').addClass('show');
   });
 
-  $('.item-detail-modal .fa-times').on('click', function() {
-    $('.overlay').removeClass('show');
-    $('.item-detail-modal').removeClass('show');
+  $('.btn-modal-show-comments').on('click', function() {
+    $('.modal-section-other').addClass('show-comments').removeClass('show-related-images').removeClass('show-related-reports');
+  });
+
+  $('.btn-modal-show-related-images').on('click', function() {
+    $('.modal-section-other').removeClass('show-comments').addClass('show-related-images').removeClass('show-related-reports');
+  });
+
+  $('.btn-modal-show-related-reports').on('click', function() {
+    $('.modal-section-other').removeClass('show-comments').removeClass('show-related-images').addClass('show-related-reports');
   });
 
 

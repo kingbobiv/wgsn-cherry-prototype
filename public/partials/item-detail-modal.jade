@@ -1,89 +1,78 @@
-.item-detail-modal.bg-grey
+.modal.bg-grey#item-detail-modal
   .modal-controls
-    i.fa.fa-times
-    i.fa.fa-chevron-left
-    i.fa.fa-chevron-right
+    i.icon.icon-cross.close-modal
+    i.icon.icon-angle-left
+    i.icon.icon-angle-right
   
   .modal-info-panel.border-right
     .modal-section-caption.block-md.border-bottom
-      ul.clean
-        li.font-wgsn Image
-        li.text-bold Yeezy
-        li.text-bold.tight Autumn/Winter 2016
-        li.text-bold New York
-        li.tight Image name: yzy_aw16_003.jpg
-        li.tight Format: JPG
-        li.tight Market: Menswear
-        li.tight View: Complete look
-        li.tight Category: Showroom
+      .block-bot-sm
+        ul.clean
+          li.modal-file-type.font-wgsn.tight Image
+          li.modal-file-name.text-bold.tight Yeezy
+          li.modal-file-caption.text-bold.tight Autumn/Winter 2016
+          li.modal-file-caption.text-bold.tight New York
+      .block-right-sm.inline-block
+        ul.clean
+          li.tight Image name:
+          li.tight Format:
+          li.tight Market:
+          li.tight View:
+          li.tight Category:
+      .block-right-sm.inline-block
+        ul.clean
+          li.tight yzy_aw16_003.jpg
+          li.tight JPG
+          li.tight Menswear
+          li.tight Complete look
+          li.tight Showroom
 
-    .modal-section-other
+    .modal-section-other.show-comments
       .row.modal-tabs
-        .col-xs-4.text-center: .block-sm.border-right.hoverable: span.font-wgsn Comments
-        .col-xs-4.text-center: .block-sm.border-right.border-bottom.bg-grey.hoverable: span.font-wgsn Related Images
-        .col-xs-4.text-center: .block-sm.border-bottom.bg-grey.hoverable: span.font-wgsn Reports
+        .col-xs-4.text-center: .block-sm.border-right.border-bottom.bg-grey.flex-center.hoverable.btn-modal-show-comments: span.font-wgsn Comments
+        .col-xs-4.text-center: .block-sm.border-right.border-bottom.bg-grey.flex-center.hoverable.btn-modal-show-related-images: span.font-wgsn Related Images
+        .col-xs-4.text-center: .block-sm.border-bottom.bg-grey.flex-center.hoverable.btn-modal-show-related-reports: span.font-wgsn Reports
       
-      .comments-scroll-container.block-xs
-        .comment.block-xs.border-bottom
-          .user-avatar AL
-          .text
-            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac ante mauris. Vestibulum aliquam venenatis nisl, nec venenatis libero pretium at. In pretium. 
-            p.comment-time 02/03/2016 at 11:00am
+      mixin comment(img, initials, comment, time)
+        .comment.block-ver-sm.border-bottom
+          if img
+            .block-right-xs.pull-left: .avatar(style="background-image: url('" + img + "')")
+          else
+            .block-right-xs.pull-left: .avatar= initials
+          .text.pull-left
+            p= comment
+            p.comment-time.tight.text-grey= time
 
-        .comment.block-xs.border-bottom
-          .user-avatar AL
-          .text
-            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac ante mauris. Vestibulum aliquam venenatis nisl, nec venenatis libero pretium at. In pretium. 
-            p.comment-time 02/03/2016 at 11:00am
+      .block-top-xs
+        .modal-comments
+          .modal-scroll-container.block-hor-sm
+            +comment("https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/7/005/05b/332/0aa54b4.jpg", "AL", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac ante mauris.", "02/03/2016 at 11:00am")
+            +comment("https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/1/005/06d/1ea/349ef69.jpg", "AH", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac ante mauris. Vestibulum aliquam venenatis nisl, nec venenatis libero pretium at. In pretium. Vestibulum aliquam venenatis nisl, nec venenatis libero pretium at. In pretium.", "02/03/2016 at 11:00am")
+            +comment("", "SC", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac ante mauris. Vestibulum aliquam venenatis nisl, nec venenatis libero pretium at. In pretium.", "02/03/2016 at 11:00am")
+            +comment("", "SC", "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "02/03/2016 at 11:00am")
+            +comment("https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/7/005/05b/332/0aa54b4.jpg", "AL", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac ante mauris. Vestibulum aliquam venenatis nisl, nec venenatis libero pretium at.", "Yesterday at 11:14am")
+            +comment("", "NA", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac ante mauris. Vestibulum aliquam venenatis nisl, nec venenatis libero pretium at. In pretium.", "Yesterday at 11:52am")
+            +comment("", "NA", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac ante mauris. Vestibulum aliquam venenatis nisl, nec venenatis libero pretium at.", "4 hours ago")
+            +comment("https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/1/005/06d/1ea/349ef69.jpg", "AH", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac ante mauris.", "10 minutes ago")
+            +comment("https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/7/005/05b/332/0aa54b4.jpg", "AL", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac ante mauris. Vestibulum aliquam venenatis nisl, nec venenatis libero pretium at. In pretium.", "A moment ago")
+          .comment-input.block-xs.border-top: textarea(placeholder="Add a comment")
+        
+        .modal-related-images.block-hor-sm
+          h2 related images
 
-        .comment.block-xs.border-bottom
-          .user-avatar AL
-          .text
-            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac ante mauris. Vestibulum aliquam venenatis nisl, nec venenatis libero pretium at. In pretium. 
-            p.comment-time 02/03/2016 at 11:00am
-
-        .comment.block-xs.border-bottom
-          .user-avatar AL
-          .text
-            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac ante mauris. Vestibulum aliquam venenatis nisl, nec venenatis libero pretium at. In pretium. 
-            p.comment-time 02/03/2016 at 11:00am
-
-        .comment.block-xs.border-bottom
-          .user-avatar AL
-          .text
-            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac ante mauris. Vestibulum aliquam venenatis nisl, nec venenatis libero pretium at. In pretium. 
-            p.comment-time 02/03/2016 at 11:00am
-
-        .comment.block-xs.border-bottom
-          .user-avatar AL
-          .text
-            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac ante mauris. Vestibulum aliquam venenatis nisl, nec venenatis libero pretium at. In pretium. 
-            p.comment-time 02/03/2016 at 11:00am
-
-        .comment.block-xs.border-bottom
-          .user-avatar AL
-          .text
-            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac ante mauris. Vestibulum aliquam venenatis nisl, nec venenatis libero pretium at. In pretium. 
-            p.comment-time 02/03/2016 at 11:00am
-
-        .comment.block-xs
-          .user-avatar AL
-          .text
-            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac ante mauris. Vestibulum aliquam venenatis nisl, nec venenatis libero pretium at. In pretium. 
-            p.comment-time 02/03/2016 at 11:00am
-
-      .comment-input.block-xs.border-top: textarea(placeholder="Add a comment")
+        .modal-related-reports.block-hor-sm
+          h2 related reports
 
   .modal-image-panel
     .img(style="background-image: url('http://www.wgsn.com/storage/vol20/ss_image_store/36/53/61/42/original_yzy_aw16_003.jpg');")
 
   .modal-tool-panel.border-left
     ul.clean.text-center
-      li.tight.border-bottom.hoverable: i.fa.fa-arrows-alt
-      li.tight.border-bottom.hoverable: i.fa.fa-crop
-      li.tight.border-bottom.hoverable: i.fa.fa-plus-square
-      li.tight.border-bottom.hoverable: i.fa.fa-print
-      li.tight.border-bottom.hoverable: i.fa.fa-download
-      li.tight.border-bottom.hoverable: i.fa.fa-paper-plane
+      li.tight.border-bottom.hoverable: i.icon.icon-fullscreen
+      li.tight.border-bottom.hoverable: i.icon.icon-crop
+      li.tight.border-bottom.hoverable.btn-add-to-board: i.icon.icon-plus-circle
+      li.tight.border-bottom.hoverable: i.icon.icon-print
+      li.tight.border-bottom.hoverable: i.icon.icon-download
+      li.tight.border-bottom.hoverable.btn-send: i.icon.icon-paper-plane
       //- li.tight.border-bottom: i.fa.fa-trash
     .item-count.text-center 3/43
