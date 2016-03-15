@@ -46,7 +46,7 @@ script.
 
 script.
   //- item context menu
-  $('.file #.tn-item-menu').on('click', function() {
+  $('.file .btn-item-menu').on('click', function() {
     $(this).siblings('#item-context-menu').toggleClass('show');
   });
 
@@ -147,13 +147,11 @@ script.
     $('.page-content').toggleClass('show-left-side-panel');
   });
 
-
 //- comments panel
 script.
   $('#btn-comments-panel').on('click', function() {
     $('.page-content').toggleClass('show-comments-panel');
   });
-
 
 //- image library left-side tabs
 script.
@@ -168,7 +166,6 @@ script.
     $('#tab-filters').removeClass('active');
     $('.image-library-view .left-side-panel').addClass('image-library-folders-active').removeClass('image-library-filters-active');
   });
-
 
 //- filter row expand/condense
 script.

@@ -1,5 +1,5 @@
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script><script type="text/javascript" src="/js/elementQuery.js"></script><script>$('.file-heart').on('click', function() {
-  $(this).toggleClass('fa-heart-o fa-heart');
+  $(this).toggleClass('icon-heart-o icon-heart');
 });
 
 </script><script>showCaptions = function() {
@@ -23,24 +23,27 @@ $('.toggle').on('click', function() {
   showCaptions();
   showFilenames();
 });
+</script><script>$('.util-checkbox').on('click', function() {
+  $(this).toggleClass('fa-square-o fa-check-square-o');
+});
 
 </script><script>//- item context menu
-$('.file #btn-item-menu').on('click', function() {
+$('.file #.tn-item-menu').on('click', function() {
   $(this).siblings('#item-context-menu').toggleClass('show');
 });
 
 //- board context menu
-$('.board-row .fa-ellipsis-h').on('click', function() {
+$('.board-row .icon-ellipsis').on('click', function() {
   $(this).siblings('#board-context-menu').toggleClass('show');
 });
 
 //- utility row context menu
-$('.utility-row .fa-ellipsis-h').on('click', function() {
+$('.utility-row .icon-ellipsis').on('click', function() {
   $('#utility-row-context-menu').toggleClass('show');
 });
 
 //- utility row settings context menu
-$('.utility-row .fa-gear').on('click', function() {
+$('.utility-row .icon-gear').on('click', function() {
   $('#utility-row-settings-context-menu').toggleClass('show');
 });
 
@@ -52,10 +55,6 @@ $('.context-menu').click(function(e, evt) {
   }
   
   $('.context-menu').removeClass('show');
-});
-
-</script><script>$('.util-checkbox').on('click', function() {
-  $(this).toggleClass('fa-square-o fa-check-square-o');
 });
 
 </script><script>$('.file').click(function(e, evt) {
@@ -97,7 +96,7 @@ $('#btn-view-option-details').on('click', function() {
   $(this).parentsUntil('.page-content').removeClass('view-tiles-sm').removeClass('view-tiles-md').removeClass('view-tiles-lg').addClass('view-tiles-details');
 });
 
-</script><script>$('.utility-row .fa-trash').on('click', function() {
+</script><script>$('.utility-row .icon-trash').on('click', function() {
   $('.file.selected').parentsUntil('.files-container').remove();
 });
 
@@ -107,21 +106,6 @@ $('#btn-view-option-details').on('click', function() {
 
 </script><script>$('#btn-comments-panel').on('click', function() {
   $('.page-content').toggleClass('show-comments-panel');
-});
-
-</script><script>$('.file').on('dblclick', function() {
-  $('.overlay').addClass('show');
-  $('.item-detail-modal').addClass('show');
-});
-
-$('.fa-external-link-square').on('click', function() {
-  $('.overlay').addClass('show');
-  $('.item-detail-modal').addClass('show');
-});
-
-$('.item-detail-modal .fa-times').on('click', function() {
-  $('.overlay').removeClass('show');
-  $('.item-detail-modal').removeClass('show');
 });
 
 </script><script>$('#tab-filters').on('click', function() {
@@ -140,12 +124,11 @@ $('#tab-folders').on('click', function() {
   $('.filter-row').toggleClass('condensed expanded');
 });
 
-$('.filter-tag .fa-times').on('click', function() {
+$('.filter-tag .icon-cross').on('click', function() {
   $(this).parentsUntil('.filter-container').remove();
 });  
 
-</script>
-<script>//- category
+</script><script>//- category
 $('#filter-btn-category').on('click', function() {
   $(this).toggleClass('active');
   $('#filter-category').toggleClass('show');
@@ -168,5 +151,40 @@ $('#filter-btn-designer').on('click', function() {
   $(this).toggleClass('active');
   $('#filter-designer').toggleClass('show');
 });
-</script>
 
+</script><script>//- share
+$('#share-block').on('click', function() {
+  $('.overlay').addClass('show');
+  $('#share-modal').addClass('show');
+});
+
+//- add
+$('.btn-add-to-board').on('click', function() {
+  $('.overlay').addClass('show');
+  $('#add-modal').addClass('show');
+});
+
+//- close modal
+$('.modal .close-modal').on('click', function() {
+  $('.overlay').removeClass('show');
+  $('.modal').removeClass('show');
+});
+</script><script>$('.file').on('dblclick', function() {
+  $('.overlay').addClass('show');
+  $('.item-detail-modal').addClass('show');
+});
+
+$('.fa-external-link-square').on('click', function() {
+  $('.overlay').addClass('show');
+  $('.item-detail-modal').addClass('show');
+});
+
+$('.item-detail-modal .fa-times').on('click', function() {
+  $('.overlay').removeClass('show');
+  $('.item-detail-modal').removeClass('show');
+});
+
+
+
+
+</script>
