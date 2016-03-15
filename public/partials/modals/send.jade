@@ -1,0 +1,18 @@
+.modal#send-modal
+  .modal-header
+    h2.pull-left.tight Send
+    i.icon.icon-cross.pull-right.hoverable.close-modal
+
+  .modal-content
+    .block-bot-sm
+      input(type="text", placeholder="Recipient(s). You can enter your co-workers names or comma-seperated emails.")
+
+    .row
+      .image-preview.border.pull-left(style="background-image: url('http://www.wgsn.com/storage/vol20/ss_image_store/96/53/61/42/media_yzy_aw16_009.jpg');")
+      .block-left-sm.pull-left
+        input(type="text", placeholder="Message from WGSN")
+        .block-top-sm: textarea(placeholder="Check this out on WGSN.")
+
+  .modal-footer
+    p.tight.block-top-xs.hoverable.pull-left.close-modal Cancel
+    .btn.btn-white.pull-right.close-modal Done

@@ -14,15 +14,15 @@ mixin file(type, img, original, filename, ...caption)
 
       .file-utilities
         .btn.btn-clear.btn-add-to-board Add to board
-        .btn.btn-clear.btn-item-menu: i.fa.fa-ellipsis-h
+        .btn.btn-clear.btn-item-menu: i.icon.icon-ellipsis
         
         ul.context-menu#item-context-menu
           .block-xxs.border-bottom
-            li
+            li.btn-open
               i.icon.icon-export
               span Open
           .block-xxs.border-bottom
-            li
+            li.btn-add-to-board
               i.icon.icon-plus-circle
               span Add to a Board
             li
@@ -34,7 +34,7 @@ mixin file(type, img, original, filename, ...caption)
             li
               i.icon.icon-crop
               span Crop
-            li
+            li.btn-send
               i.icon.icon-paper-plane
               span Send
           .block-xxs

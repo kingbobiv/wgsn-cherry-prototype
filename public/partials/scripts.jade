@@ -75,7 +75,12 @@ script.
     $('.context-menu').removeClass('show');
   });
 
-  //- color labels
+
+//- ============================================================
+//- BOARD COLOR LABELS
+//- ============================================================
+
+script.
   $('.label-circle.label-circle-red').on('click', function() {
     $(this).addClass('selected');
     $(this).siblings().removeClass('selected');
@@ -257,7 +262,7 @@ script.
 
 script.
   //- share
-  $('#share-block').on('click', function() {
+  $('.btn-share').on('click', function() {
     $('.overlay').addClass('show');
     $('#share-modal').addClass('show');
   });
@@ -266,6 +271,12 @@ script.
   $('.btn-add-to-board').on('click', function() {
     $('.overlay').addClass('show');
     $('#add-modal').addClass('show');
+  });
+
+  //- add
+  $('.btn-send').on('click', function() {
+    $('.overlay').addClass('show');
+    $('#send-modal').addClass('show');
   });
 
   //- close modal
@@ -281,7 +292,7 @@ script.
     $('.item-detail-modal').addClass('show');
   });
 
-  $('.fa-external-link-square').on('click', function() {
+  $('.btn-open').on('click', function() {
     $('.overlay').addClass('show');
     $('.item-detail-modal').addClass('show');
   });
