@@ -49,7 +49,7 @@
 
   $modal-info-panel-width: 480px
   $tool-info-panel-width: 50px
-  $modal-info-caption-height: 208px
+  $modal-info-caption-height: 222px
 
   .modal-info-panel
     left: 0
@@ -169,18 +169,28 @@
       height: 100%
       background: no-repeat center / contain
 
+    #btn-modal-left-side-panel
+      position: absolute
+      background: white
+      border-left: none
+      left: -1px
+      top: 20px
+      width: 12px
+      height: 40px
+      padding: 12px 3px
+      color: $dk-grey
+      font-size: 10px
+      border-radius: 0 2px 2px 0
+
   .modal-tool-panel
     right: 0
     width: $tool-info-panel-width
 
-    ul
-      li
-        height: 50px
-        @extend .flex-center
-
-        &:hover
-          cursor: pointer
-          background: $xlt-grey
+    .btn-modal-tool
+      font-size: 16px
+      
+      &:hover
+        background: $xlt-grey
 
     .item-count
       position: absolute
