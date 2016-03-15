@@ -1,4 +1,4 @@
-.modal.bg-grey#item-detail-modal
+.modal#item-detail-modal
   .modal-controls
     i.icon.icon-cross.close-modal
     i.icon.icon-angle-left
@@ -32,20 +32,20 @@
         .col-xs-4.text-center: .block-sm.border-right.border-bottom.bg-grey.flex-center.hoverable.btn-modal-show-comments: span.font-wgsn Comments
         .col-xs-4.text-center: .block-sm.border-right.border-bottom.bg-grey.flex-center.hoverable.btn-modal-show-related-images: span.font-wgsn Related Images
         .col-xs-4.text-center: .block-sm.border-bottom.bg-grey.flex-center.hoverable.btn-modal-show-related-reports: span.font-wgsn Reports
-      
-      mixin comment(img, initials, comment, time)
-        .comment.block-ver-sm.border-bottom
-          if img
-            .block-right-xs.pull-left: .avatar(style="background-image: url('" + img + "')")
-          else
-            .block-right-xs.pull-left: .avatar= initials
-          .text.pull-left
-            p= comment
-            p.comment-time.tight.text-grey= time
 
-      .block-top-xs
+      .block-top-sm
         .modal-comments
           .modal-scroll-container.block-hor-sm
+            mixin comment(img, initials, comment, time)
+              .comment.block-ver-sm.border-bottom
+                if img
+                  .block-right-xs.pull-left: .avatar(style="background-image: url('" + img + "')")
+                else
+                  .block-right-xs.pull-left: .avatar= initials
+                .text.pull-left
+                  p= comment
+                  p.comment-time.tight.text-grey= time
+            
             +comment("https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/7/005/05b/332/0aa54b4.jpg", "AL", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac ante mauris.", "02/03/2016 at 11:00am")
             +comment("https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/1/005/06d/1ea/349ef69.jpg", "AH", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac ante mauris. Vestibulum aliquam venenatis nisl, nec venenatis libero pretium at. In pretium. Vestibulum aliquam venenatis nisl, nec venenatis libero pretium at. In pretium.", "02/03/2016 at 11:00am")
             +comment("", "SC", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac ante mauris. Vestibulum aliquam venenatis nisl, nec venenatis libero pretium at. In pretium.", "02/03/2016 at 11:00am")
@@ -57,11 +57,55 @@
             +comment("https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/7/005/05b/332/0aa54b4.jpg", "AL", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac ante mauris. Vestibulum aliquam venenatis nisl, nec venenatis libero pretium at. In pretium.", "A moment ago")
           .comment-input.block-xs.border-top: textarea(placeholder="Add a comment")
         
-        .modal-related-images.block-hor-sm
-          h2 related images
+        .modal-related-images
+          mixin related-image(img)
+            .block-xxs.pull-left: .img.border.hoverable(style="background-image: url('" + img + "')")
 
-        .modal-related-reports.block-hor-sm
-          h2 related reports
+          .modal-scroll-container.block-hor-sm
+            +related-image("http://www.wgsn.com/storage/vol20/ss_image_store/07/53/61/42/media_yzy_aw16_010.jpg")
+            +related-image("http://www.wgsn.com/storage/vol20/ss_image_store/17/53/61/42/media_yzy_aw16_011.jpg")
+            +related-image("http://www.wgsn.com/storage/vol20/ss_image_store/27/53/61/42/media_yzy_aw16_012.jpg")
+            +related-image("http://www.wgsn.com/storage/vol20/ss_image_store/37/53/61/42/media_yzy_aw16_013.jpg")
+            +related-image("http://www.wgsn.com/storage/vol20/ss_image_store/47/53/61/42/media_yzy_aw16_014.jpg")
+            +related-image("http://www.wgsn.com/storage/vol20/ss_image_store/57/53/61/42/media_yzy_aw16_015.jpg")
+            +related-image("http://www.wgsn.com/storage/vol20/ss_image_store/67/53/61/42/media_yzy_aw16_016.jpg")
+            +related-image("http://www.wgsn.com/storage/vol20/ss_image_store/77/53/61/42/media_yzy_aw16_017.jpg")
+            +related-image("http://www.wgsn.com/storage/vol20/ss_image_store/87/53/61/42/media_yzy_aw16_018.jpg")
+            +related-image("http://www.wgsn.com/storage/vol20/ss_image_store/97/53/61/42/media_yzy_aw16_019.jpg")
+            +related-image("http://www.wgsn.com/storage/vol20/ss_image_store/08/53/61/42/media_yzy_aw16_020.jpg")
+            +related-image("http://www.wgsn.com/storage/vol20/ss_image_store/18/53/61/42/media_yzy_aw16_021.jpg")
+            +related-image("http://www.wgsn.com/storage/vol20/ss_image_store/28/53/61/42/media_yzy_aw16_022.jpg")
+            +related-image("http://www.wgsn.com/storage/vol20/ss_image_store/38/53/61/42/media_yzy_aw16_023.jpg")
+            +related-image("http://www.wgsn.com/storage/vol20/ss_image_store/48/53/61/42/media_yzy_aw16_024.jpg")
+            +related-image("http://www.wgsn.com/storage/vol20/ss_image_store/58/53/61/42/media_yzy_aw16_025.jpg")
+            +related-image("http://www.wgsn.com/storage/vol20/ss_image_store/68/53/61/42/media_yzy_aw16_026.jpg")
+            +related-image("http://www.wgsn.com/storage/vol20/ss_image_store/08/53/61/42/media_yzy_aw16_020.jpg")
+            +related-image("http://www.wgsn.com/storage/vol20/ss_image_store/18/53/61/42/media_yzy_aw16_021.jpg")
+            +related-image("http://www.wgsn.com/storage/vol20/ss_image_store/28/53/61/42/media_yzy_aw16_022.jpg")
+            +related-image("http://www.wgsn.com/storage/vol20/ss_image_store/38/53/61/42/media_yzy_aw16_023.jpg")
+            +related-image("http://www.wgsn.com/storage/vol20/ss_image_store/48/53/61/42/media_yzy_aw16_024.jpg")
+            +related-image("http://www.wgsn.com/storage/vol20/ss_image_store/58/53/61/42/media_yzy_aw16_025.jpg")
+            +related-image("http://www.wgsn.com/storage/vol20/ss_image_store/68/53/61/42/media_yzy_aw16_026.jpg")
+
+        .modal-related-reports
+          mixin related-report(img, category, name, date)
+            .block-xxs.pull-left.hoverable
+              .block-bot-xs
+                .img(style="background-image: url('" + img + "')")
+              .block-bot-xs
+                p.text-grey.tight= category
+                p.text-bold.tight= name
+                p.text-grey.tight= date
+
+          .modal-scroll-container.block-hor-sm
+            +related-report("http://www.wgsn.com/storage/vol20/fo_image_store/cached/boards/65060/featured.jpg", "Must Haves", "Must Haves A/W 16/17: Accessories", "02/03/2016")
+            +related-report("http://www.wgsn.com/storage/vol20/fo_image_store/cached/boards/65060/featured.jpg", "Must Haves", "Must Haves A/W 16/17: Accessories", "02/03/2016")
+            +related-report("http://www.wgsn.com/storage/vol20/fo_image_store/cached/boards/65060/featured.jpg", "Must Haves", "Must Haves A/W 16/17: Accessories", "02/03/2016")
+            +related-report("http://www.wgsn.com/storage/vol20/fo_image_store/cached/boards/65060/featured.jpg", "Must Haves", "Must Haves A/W 16/17: Accessories", "02/03/2016")
+            +related-report("http://www.wgsn.com/storage/vol20/fo_image_store/cached/boards/65060/featured.jpg", "Must Haves", "Must Haves A/W 16/17: Accessories", "02/03/2016")
+            +related-report("http://www.wgsn.com/storage/vol20/fo_image_store/cached/boards/65060/featured.jpg", "Must Haves", "Must Haves A/W 16/17: Accessories", "02/03/2016")
+            +related-report("http://www.wgsn.com/storage/vol20/fo_image_store/cached/boards/65060/featured.jpg", "Must Haves", "Must Haves A/W 16/17: Accessories", "02/03/2016")
+            +related-report("http://www.wgsn.com/storage/vol20/fo_image_store/cached/boards/65060/featured.jpg", "Must Haves", "Must Haves A/W 16/17: Accessories", "02/03/2016")
 
   .modal-image-panel
     .img(style="background-image: url('http://www.wgsn.com/storage/vol20/ss_image_store/36/53/61/42/original_yzy_aw16_003.jpg');")
