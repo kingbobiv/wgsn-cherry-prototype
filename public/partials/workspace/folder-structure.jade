@@ -44,15 +44,15 @@ mixin board-row(name, number, level, caret, shared)
         //- li
         //-   i.fa.fa-bell-slash-o
         //-   span Turn off notifications
-      .block-xxs.border-bottom
+      .block-ver-xxs.border-bottom
         li.text-center
-          i.fa.fa-circle.label-red
-          i.fa.fa-circle.label-orange
-          i.fa.fa-circle.label-yellow
-          i.fa.fa-circle.label-green
-          i.fa.fa-circle.label-blue
-          i.fa.fa-circle.label-purple
-          i.fa.fa-circle.label-grey
+          .label-circle.label-circle-red: i.icon.icon-cross
+          .label-circle.label-circle-orange: i.icon.icon-cross
+          .label-circle.label-circle-yellow: i.icon.icon-cross
+          .label-circle.label-circle-green: i.icon.icon-cross
+          .label-circle.label-circle-blue: i.icon.icon-cross
+          .label-circle.label-circle-purple: i.icon.icon-cross
+          .label-circle.label-circle-grey: i.icon.icon-cross
       .block-xxs
         li
           i.icon.icon-trash
@@ -91,7 +91,7 @@ mixin team-row(name, level, caret)
     i.icon.icon-plus
     span Create New Board
   
-.block-xs
+.block-xs.board-container
   .misc-row.block-xs.level-1
     i.fa.fa-mobile
     span Mobile Uploads
@@ -99,7 +99,7 @@ mixin team-row(name, level, caret)
   +board-row("Autumn/Winter 2016", "200", "1", "closed", "yes")
   +board-row("Inspiration Images", "200", "1", "closed", "no")
   +board-row("Reports to Read", "200", "1", "closed", "yes")
-  +board-row("Fashion Shows", "200", "1 label-red", "open", "no")
+  +board-row("Fashion Shows", "200", "1", "open", "no")
   +board-row("Yeezy", "200", "2 active", "closed", "yes")
   +board-row("Celine", "200", "2", "", "no")
   +board-row("Alexander Wang", "200", "2", "", "yes")

@@ -75,6 +75,49 @@ script.
     $('.context-menu').removeClass('show');
   });
 
+  //- color labels
+  $('.label-circle.label-circle-red').on('click', function() {
+    $(this).addClass('selected');
+    $(this).siblings().removeClass('selected');
+    $(this).parentsUntil('.board-container').addClass('label-red').removeClass('label-orange').removeClass('label-yellow').removeClass('label-green').removeClass('label-blue').removeClass('label-purple').removeClass('label-grey');
+  });
+
+  $('.label-circle.label-circle-orange').on('click', function() {
+    $(this).addClass('selected');
+    $(this).siblings().removeClass('selected');
+    $(this).parentsUntil('.board-container').removeClass('label-red').addClass('label-orange').removeClass('label-yellow').removeClass('label-green').removeClass('label-blue').removeClass('label-purple').removeClass('label-grey');
+  });
+
+  $('.label-circle.label-circle-yellow').on('click', function() {
+    $(this).addClass('selected');
+    $(this).siblings().removeClass('selected');
+    $(this).parentsUntil('.board-container').removeClass('label-red').removeClass('label-orange').addClass('label-yellow').removeClass('label-green').removeClass('label-blue').removeClass('label-purple').removeClass('label-grey');
+  });
+
+  $('.label-circle.label-circle-green').on('click', function() {
+    $(this).addClass('selected');
+    $(this).siblings().removeClass('selected');
+    $(this).parentsUntil('.board-container').removeClass('label-red').removeClass('label-orange').removeClass('label-yellow').addClass('label-green').removeClass('label-blue').removeClass('label-purple').removeClass('label-grey');
+  });
+
+  $('.label-circle.label-circle-blue').on('click', function() {
+    $(this).addClass('selected');
+    $(this).siblings().removeClass('selected');
+    $(this).parentsUntil('.board-container').removeClass('label-red').removeClass('label-orange').removeClass('label-yellow').removeClass('label-green').addClass('label-blue').removeClass('label-purple').removeClass('label-grey');
+  });
+
+  $('.label-circle.label-circle-purple').on('click', function() {
+    $(this).addClass('selected');
+    $(this).siblings().removeClass('selected');
+    $(this).parentsUntil('.board-container').removeClass('label-red').removeClass('label-orange').removeClass('label-yellow').removeClass('label-green').removeClass('label-blue').addClass('label-purple').removeClass('label-grey');
+  });
+
+  $('.label-circle.label-circle-grey').on('click', function() {
+    $(this).addClass('selected');
+    $(this).siblings().removeClass('selected');
+    $(this).parentsUntil('.board-container').removeClass('label-red').removeClass('label-orange').removeClass('label-yellow').removeClass('label-green').removeClass('label-blue').removeClass('label-purple').addClass('label-grey');
+  });
+
 
 //- ============================================================
 //- SELECT FILES

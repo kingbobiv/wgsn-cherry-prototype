@@ -53,29 +53,81 @@
   right: 10px
   width: 200px
 
-  .fa-circle
-    margin: 0 6px
+  .label-circle
+    width: 12px
+    height: 12px
+    margin: 0 7px
+    border-radius: 50%
+    @extend .inline-block
+    position: relative
+    
+    .icon
+      color: white
+      opacity: 0
 
-  .label-red
-    color: $label-red
+    &:after
+      content: ""
+      position: absolute
+      top: -2px
+      right: -2px
+      bottom: -2px
+      left: -2px
+      border-width: 1px
+      border-style: solid
+      opacity: 0
+      border-radius: 50%
+      +transition(all 400ms)
 
-  .label-orange
-    color: $label-orange
+    &:hover,
+    &.selected
+      &:after
+        opacity: 1
 
-  .label-yellow
-    color: $label-yellow
+    &.selected:hover
+      .icon
+        opacity: 1
 
-  .label-green
-    color: $label-green
+  .label-circle-red
+    background: $label-red
 
-  .label-blue
-    color: $label-blue
+    &:after
+      border-color: $label-red
 
-  .label-purple
-    color: $label-purple
+  .label-circle-orange
+    background: $label-orange
 
-  .label-grey
-    color: $label-grey
+    &:after
+      border-color: $label-orange
+
+  .label-circle-yellow
+    background: $label-yellow
+
+    &:after
+      border-color: $label-yellow
+
+  .label-circle-green
+    background: $label-green
+
+    &:after
+      border-color: $label-green
+
+  .label-circle-blue
+    background: $label-blue
+
+    &:after
+      border-color: $label-blue
+
+  .label-circle-purple
+    background: $label-purple
+
+    &:after
+      border-color: $label-purple
+
+  .label-circle-grey
+    background: $label-grey
+
+    &:after
+      border-color: $label-grey
 
   &:after
     display: none
