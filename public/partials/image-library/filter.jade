@@ -15,7 +15,7 @@ mixin filter(id, search, anchors, ...items)
       ul.clean
         each item in items
           li.hoverable
-            .util-checkbox.fa.fa-square-o
+            input(type="checkbox")
             span= item
 
     .filter-bottom-row.text-right.block-sm.border-top
