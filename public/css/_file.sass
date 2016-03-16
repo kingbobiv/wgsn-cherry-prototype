@@ -29,11 +29,6 @@
     opacity: 1 !important
     color: $fashion
 
-  &:hover
-    .file-checkbox,
-    .file-heart
-      opacity: 1
-
 
 // ============================================================
 // STANDARD FILE
@@ -131,6 +126,9 @@
         pointer-events: none
 
   &:hover
+    .file-checkbox,
+    .file-heart
+      opacity: 1
     .file-utilities
       background: rgba(black, 0.4)
       
@@ -180,7 +178,7 @@
     img
       width: 100%
 
-    .file-utilities
+    .file-utilities-1
       position: absolute
       top: 0
       left: 0
@@ -211,9 +209,13 @@
         right: 15px
 
     &:hover
-      .file-utilities
+      .file-utilities-1
         &:after
           opacity: 1
+
+      .file-checkbox,
+      .file-heart
+        opacity: 1
 
   .caption-container
     float: left
@@ -228,6 +230,15 @@
 
     .font-wgsn
       font-size: 10px
+
+    .file-utilities-2
+      li
+        .icon
+          color: $md-grey
+
+        &:hover
+          .icon
+            color: $dk-grey
 
   &.selected
     .file-utilities:after

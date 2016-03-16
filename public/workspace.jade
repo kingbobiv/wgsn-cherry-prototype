@@ -12,18 +12,63 @@ block content
   .row.title-row.border-bottom.bg-grey
     .title-block.block-sm.pull-left
       h2.tight.inline-block WGSN Workspace
-      p.inline-block.block-hor-sm
-        span My Boards
-        i.icon.icon-angle-right
-        span Fashion Shows
-        i.icon.icon-angle-right
-        span Yeezy
-        i.icon.icon-caret-down
+      .block-left-xs.inline-block
+        .block-xxs.inline-block.board-name.hoverable: span My Boards
+        .block-xxs.inline-block: i.icon.icon-angle-right
+        .block-xxs.inline-block.board-name.hoverable: span Fashion Shows
+        .block-xxs.inline-block: i.icon.icon-angle-right
+        .block-xxs.inline-block.board-name.hoverable.btn-top-board-context-menu
+          span My Boards
+          i.icon.icon-caret-down
+
+          ul.context-menu#top-board-context-menu
+            .block-xxs.border-bottom
+              li
+                i.icon.icon-plus-circle
+                span Create new board
+            .block-xxs.border-bottom  
+              li.btn-share
+                i.icon.icon-share-right
+                span Share
+              li
+                i.icon.icon-clone
+                span Duplicate
+              li
+                i.icon.icon-pencil
+                span Rename
+              li
+                i.icon.icon-download
+                span Download
+              li
+                i.icon.icon-upload
+                span Upload
+              li
+                i.icon.icon-print
+                span Print
+              li.btn-send
+                i.icon.icon-paper-plane
+                span Send
+              //- li
+              //-   i.fa.fa-bell-slash-o
+              //-   span Turn off notifications
+            .block-ver-xxs.border-bottom
+              li.text-center
+                .label-circle.label-circle-red: i.icon.icon-cross
+                .label-circle.label-circle-orange: i.icon.icon-cross
+                .label-circle.label-circle-yellow: i.icon.icon-cross
+                .label-circle.label-circle-green: i.icon.icon-cross
+                .label-circle.label-circle-blue: i.icon.icon-cross
+                .label-circle.label-circle-purple: i.icon.icon-cross
+                .label-circle.label-circle-grey: i.icon.icon-cross
+            .block-xxs
+              li
+                i.icon.icon-trash
+                span Delete
     
-    .block-xs.border-left.pull-right.flex-center.hoverable#btn-comments-panel: i.icon.icon-comment
+    .block-xs.border-left.pull-right.flex-center.hoverable.btn-comments-panel: i.icon.icon-comment
 
     .block-xs.text-right.pull-right.btn-share#share-block
-      .btn.btn-white.pull-right.hoverable#btn-sharing-settings Share Board
+      .btn.btn-white.pull-right.hoverable Share Board
       ul.clean.pull-right
         li.hoverable.owner.online(style="background-image: url('https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/7/005/05b/332/0aa54b4.jpg')"): span.tooltip.nowrap Amelia Lewis is the owner
         li.divider

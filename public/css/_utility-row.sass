@@ -19,24 +19,15 @@
         opacity: 1
         +transition-delay(200ms)
 
-  .icon-trash
-    .tooltip
-      left: -50%
-
-      &:after
-        left: 72%
-
   .icon-plus-circle
     margin: 0 6px 0 0
 
   .icon-trash
     margin: 0 0 0 6px
 
-  .util-checkbox
-    margin: 0 6px 0 0
-
-  .fa-toggle-on
-    color: $yellow
+  .multi-utility-icon
+    color: $lt-grey
+    pointer-events: none
 
   .input-container
     input
@@ -94,3 +85,28 @@ body.image-library-view
   .utility-row
     .icon-trash
       display: none
+
+    .icon-paper-plane
+      .tooltip
+        left: -50%
+
+        &:after
+          left: 72%
+
+body.workspace-view
+  .utility-row
+    .icon-trash
+      .tooltip
+        left: -50%
+
+        &:after
+          left: 72%
+
+.right-side-panel
+  &.has-file-selected
+    .multi-utility-icon
+      color: $md-grey
+      pointer-events: all
+
+      &:hover
+        color: $dk-grey

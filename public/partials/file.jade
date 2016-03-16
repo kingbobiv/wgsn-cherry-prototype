@@ -52,7 +52,7 @@ mixin file-details-view(type, img, original, filename, ...caption)
       .thumb-container.hoverable
         img(src=img)
 
-        .file-utilities
+        .file-utilities-1
           i.file-checkbox.icon.icon-tick-circle
           i.file-heart.icon.icon-heart-o
       
@@ -79,11 +79,11 @@ mixin file-details-view(type, img, original, filename, ...caption)
             li.tight Showroom
         
         .block-bot-sm.border-top
-          ul.clean
-            li.block-right-xs.block-ver-sm.tight.inline-block.btn-open: i.icon.icon-export
-            li.block-hor-xs.block-ver-sm.tight.inline-block.btn-add-to-board: i.icon.icon-plus-circle
-            li.block-hor-xs.block-ver-sm.tight.inline-block: i.icon.icon-download
-            li.block-hor-xs.block-ver-sm.tight.inline-block: i.icon.icon-print
-            li.block-hor-xs.block-ver-sm.tight.inline-block: i.icon.icon-crop
-            li.block-hor-xs.block-ver-sm.tight.inline-block.btn-send: i.icon.icon-paper-plane
-            li.block-hor-xs.block-ver-sm.tight.inline-block.hidden-image-library: i.icon.icon-trash
+          ul.clean.file-utilities-2
+            li.block-right-xs.block-ver-sm.tight.inline-block.hoverable.btn-open: i.icon.icon-export
+            li.block-hor-xs.block-ver-sm.tight.inline-block.hoverable.btn-add-to-board: i.icon.icon-plus-circle
+            li.block-hor-xs.block-ver-sm.tight.inline-block.hoverable: i.icon.icon-download
+            li.block-hor-xs.block-ver-sm.tight.inline-block.hoverable: i.icon.icon-print
+            li.block-hor-xs.block-ver-sm.tight.inline-block.hoverable: i.icon.icon-crop
+            li.block-hor-xs.block-ver-sm.tight.inline-block.hoverable.btn-send: i.icon.icon-paper-plane
+            li.block-hor-xs.block-ver-sm.tight.inline-block.hoverable.hidden-image-library: i.icon.icon-trash

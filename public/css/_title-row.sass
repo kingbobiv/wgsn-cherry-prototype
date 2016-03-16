@@ -8,27 +8,30 @@
     height: 100%
 
   .title-block
-    // width: calc(60% - 30px)
-    padding-top: 19px
+    .board-name
+      border: 1px solid transparent
+      border-radius: 2px
+      position: relative
 
-    p
-      font-size: 14px
-
-      .icon
-        margin: 0 10px
+      .icon-caret-down
+        margin-left: 6px
         color: $md-grey
 
-  // .share-block
-  //   width: calc(40% - 30px)
+      &:hover
+        border-color: $lt-grey
+
+    .icon-angle-right
+      font-size: 10px
+      color: $md-grey
 
   .search-block
     margin-top: 3px
 
-  #btn-comments-panel
+  .btn-comments-panel
     width: 60px
     font-size: 18px
 
-  #btn-save-search
+  .btn-save-search
     padding: 10px 12px 9px
 
 body.image-library-view

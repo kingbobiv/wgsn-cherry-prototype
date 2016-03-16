@@ -59,6 +59,11 @@ script.
     $(this).siblings('#board-context-menu').toggleClass('show');
   });
 
+  //- board context menu
+  $('.btn-top-board-context-menu').on('click', function() {
+    $('#top-board-context-menu').toggleClass('show');
+  });
+
   //- utility row context menu
   $('.utility-row .icon-ellipsis').on('click', function() {
     $('#utility-row-context-menu').toggleClass('show');
@@ -147,6 +152,12 @@ script.
     $(this).toggleClass('selected');
     $(this).children('.file-checkbox').toggleClass('icon-tick-circle icon-tick-circle-filled');
     $('.context-menu').removeClass('show');
+
+    if ($('.file').hasClass('selected')) {
+      $('.right-side-panel').addClass('has-file-selected');
+    } else {
+      $('.right-side-panel').removeClass('has-file-selected');
+    }
   });
 
   $('.file-details-view .thumb-container').click(function(e, evt) {
@@ -217,7 +228,7 @@ script.
 
 //- comments panel
 script.
-  $('#btn-comments-panel').on('click', function() {
+  $('.btn-comments-panel').on('click', function() {
     $('.page-content').toggleClass('show-comments-panel');
   });
 
