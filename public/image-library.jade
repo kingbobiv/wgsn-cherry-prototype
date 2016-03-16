@@ -10,7 +10,7 @@ block content
   include partials/header
 
   .row.title-row.border-bottom.bg-grey
-    .block-sm.title-block.pull-left
+    .title-block.block-sm.pull-left
       h2.tight.inline-block Image &amp; Design Library
 
     .block-xs.search-block.pull-right
@@ -18,7 +18,7 @@ block content
       .input-container.pull-left
         input(type="text", placeholder="Search Image & Design Library")
         span.icon-container.border: i.icon.icon-search
-      .block-left-xs.pull-left: .btn.btn-white.tight.btn-save-search Save Search
+      .block-left-xs.pull-left: .btn.btn-white.btn-disabled.tight.btn-save-search Save Search
 
   .row.page-content.show-left-side-panel
     include partials/image-library/left-side-panel

@@ -11,7 +11,7 @@
     display: inline-block
     padding: 6px
     margin: 0 4px 8px
-    border-radius: 2px
+    +border-radius(3px)
 
     .icon
       margin-left: 10px
@@ -31,15 +31,15 @@
     top: 50%
     +transform(translate3d(0, -50%, 0))
 
-  #btn-filter-row-expand
+  .btn-filter-row-expand
     padding: 6px 8px
-    border-radius: 2px
+    +border-radius(3px)
     color: $md-grey
-    +transform(rotate(0deg))
 
     .icon
       display: block
       @extend .no-transition
+      +transform(rotate(0deg))
 
   &.condensed
     .filter-container
@@ -53,6 +53,6 @@
       overflow: visible
       white-space: normal
 
-    #btn-filter-row-expand
+    .btn-filter-row-expand
       .icon
         +transform(rotate(180deg))

@@ -8,7 +8,6 @@ textarea
   @extend .border
   background: $xlt-grey
   height: 34px
-  min-width: 300px
   padding: 10px
   color: $dk-grey
   font-size: 12px
@@ -31,6 +30,9 @@ textarea
 
 :-ms-input-placeholder
    color: $md-grey
+
+input[type="text"]
+  min-width: 300px
 
 textarea
   background: $xlt-grey
@@ -118,7 +120,7 @@ input[type="checkbox"]
     height: 100%
     background: white
     @extend .border
-    border-radius: 2px
+    +border-radius(3px)
     @extend .text-center
     color: $dk-grey
 
@@ -144,7 +146,7 @@ input[type="checkbox"]
     content: ""
     display: block
     position: absolute
-    border-radius: 50%
+    +border-radius(50%)
     background: white
     top: 1px
     left: 1px

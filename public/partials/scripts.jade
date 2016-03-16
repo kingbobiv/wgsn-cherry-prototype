@@ -248,13 +248,27 @@ script.
 
 //- filter row expand/condense
 script.
-  $('#btn-filter-row-expand').on('click', function() {
+  $('.btn-filter-row-expand').on('click', function() {
     $('.filter-row').toggleClass('condensed expanded');
   });
 
   $('.filter-tag .icon-cross').on('click', function() {
     $(this).parentsUntil('.filter-container').remove();
   });  
+
+//- comments panel tabs
+script.
+  $('#tab-board-comments').on('click', function() {
+    $(this).addClass('active');
+    $('#tab-item-comments').removeClass('active');
+    $('.comments-panel').addClass('comments-board-active').removeClass('comments-item-active');
+  });
+
+  $('#tab-item-comments').on('click', function() {
+    $(this).addClass('active');
+    $('#tab-board-comments').removeClass('active');
+    $('.comments-panel').addClass('comments-item-active').removeClass('comments-board-active');
+  });
 
 
 //- ============================================================

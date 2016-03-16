@@ -1,8 +1,87 @@
 .comments-panel
   width: $comments-panel-width
-  height: calc(100vh - (#{$header-height} + #{$title-row-height}))
+  height: calc(100vh - (#{$header-height} - #{$product-row-height} + #{$title-row-height}))
   position: absolute
   top: 0
   right: 0
-  overflow-y: scroll
+  overflow-y: hidden
   display: none
+
+  .tabs
+    .tab
+      height: 56px
+      @extend .border-bottom
+      @extend .flex-center
+      @extend .no-transition
+
+      span
+        @extend .no-transition
+
+      &.active
+        border-bottom: 4px solid $yellow
+        color: $yellow
+
+  .panel-board-comments,
+  .panel-item-comments
+    height: 100%
+
+  .panel-item-comments
+    .comments-scroll-container
+      height: calc(100% - 54px)
+      overflow-y: auto
+
+  .panel-board-comments
+    .comments-scroll-container
+      height: calc(100% - 158px)
+      overflow-y: auto
+
+  .comment
+    overflow: auto
+
+    &:first-of-type
+      padding-top: 0
+
+    &:last-of-type
+      border: none
+
+    .comment-time
+      font-size: 11px
+      color: $md-grey
+
+  .comment-input
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 100%
+
+    textarea
+      width: 100%
+      height: 80px
+
+  .item-comments
+    .item-description
+      overflow: auto
+      
+      .img
+        width: 70px
+        height: 70px
+        background: white no-repeat center / contain
+
+    textarea
+      width: 100%
+      height: 80px
+
+  // tabs show/hide
+  &.comments-board-active
+    .panel-board-comments
+      display: block
+
+    .panel-item-comments
+      display: none
+
+  &.comments-item-active
+    .panel-board-comments
+      display: none
+
+    .panel-item-comments
+      display: block

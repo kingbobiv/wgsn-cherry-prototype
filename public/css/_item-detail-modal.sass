@@ -69,8 +69,10 @@
 
     .modal-section-other
       .modal-tabs
-        .block-sm
+        .tab
           height: 40px
+          @extend .flex-center
+          @extend .no-transition
 
           &.active
             background: white
@@ -131,6 +133,7 @@
           height: 140px
           background: white no-repeat center / cover
 
+      // tabs show/hide
       &.show-comments
         .btn-modal-show-comments
           @extend .active

@@ -83,12 +83,12 @@ mixin team-row(name, level, caret)
 //- ============================================================but in
 
 
-.header-row.border-bottom
+.header-row.border-bottom.hoverable
   span.font-wgsn My Boards
   i.icon.icon-angle-up.pull-right
 
 .block-top-xs.block-hor-xs
-  a.btn.btn-white(href="")
+  .btn.btn-white
     i.icon.icon-plus
     span Create New Board
   
@@ -107,7 +107,7 @@ mixin team-row(name, level, caret)
   +board-row("Opening Ceremony", "200", "2", "closed", "yes")
   +board-row("Lookbooks", "200", "1", "closed", "no")
 
-.header-row.border-top.border-bottom
+.header-row.border-top.border-bottom.hoverable
   span.font-wgsn Shared With Me
   i.icon.icon-angle-up.pull-right
 

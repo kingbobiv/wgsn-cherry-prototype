@@ -107,8 +107,11 @@ header
       .icon
         padding: 10px 15px
         border: 1px solid $fashion
-        border-radius: 4px
+        +border-radius(3px)
         color: $fashion
+
+        &:before
+          top: 3px
 
     #btn-search
       width: $product-row-height
@@ -143,7 +146,6 @@ header
   //       +transform-origin(right top)
   //       +transform(translate3d(0, 0, 0) scale(0.8))
 
-body.workspace-view
-  .product-row,
-  .product-row-bg
-    display: none
+body.image-library-view
+  #product-link-fashion
+    @extend .active
