@@ -1,3 +1,44 @@
+// ============================================================
+// HEART & CHECKBOX
+// ============================================================
+
+.file,
+.file-details-view
+  .file-checkbox,
+  .file-heart
+    position: absolute
+    top: 10px
+    opacity: 0
+    color: white
+    @extend .no-transition
+    font-size: 16px
+    z-index: 10
+
+    &:before
+      top: 0
+  
+  .icon-heart
+    opacity: 1 !important
+    color: $label-red !important
+
+  .icon-tick-circle-filled
+    background: white
+    width: 16px
+    height: 16px
+    border-radius: 50%
+    opacity: 1 !important
+    color: $fashion
+
+  &:hover
+    .file-checkbox,
+    .file-heart
+      opacity: 1
+
+
+// ============================================================
+// STANDARD FILE
+// ============================================================
+
 .file-outer
   float: left
 
@@ -16,7 +57,6 @@
     .thumb-inner
       background: white no-repeat center / contain
       width: 100%
-      // height: calc((100vw - 270px) / 4)
       position: relative
       margin: 0 auto
 
@@ -64,33 +104,13 @@
 
   .file-checkbox,
   .file-heart
-    position: absolute
     top: 10px
-    opacity: 0
-    color: white
-    @extend .no-transition
-    font-size: 16px
-
-    &:before
-      top: 0
 
   .file-checkbox
     left: 10px
 
   .file-heart
     right: 10px
-
-  .icon-heart
-    opacity: 1 !important
-    color: $label-red
-
-  .icon-tick-circle-filled
-    background: white
-    width: 16px
-    height: 16px
-    border-radius: 50%
-    opacity: 1 !important
-    color: $fashion
 
   .file-utilities
     position: absolute
@@ -111,10 +131,6 @@
         pointer-events: none
 
   &:hover
-    .file-checkbox,
-    .file-heart
-      opacity: 1
-
     .file-utilities
       background: rgba(black, 0.4)
       
@@ -147,6 +163,11 @@
     .caption-container .filename
       display: block
 
+
+// ============================================================
+// DETAILS VIEW
+// ============================================================
+
 .file-outer-details-view
   +clearfix()
 
@@ -159,26 +180,55 @@
     img
       width: 100%
 
-    .util-checkbox,
-    .util-heart
+    .file-utilities
       position: absolute
-      top: 10px
+      top: 0
+      left: 0
+      width: 100%
+      color: white
+      font-size: 16px
 
-    .util-checkbox
-      left: 10px
+      &:after
+        content: ""
+        background: -webkit-linear-gradient(top, rgba(black, 0.3) 0%, rgba(black, 0) 100%)
+        position: absolute
+        display: block
+        top: 0
+        left: 0
+        width: 100%
+        height: 70px
+        opacity: 0
+        +transition(all 400ms)
 
-    .util-heart
-      right: 10px
+      .file-checkbox,
+      .file-heart
+        top: 15px
+
+      .file-checkbox
+        left: 15px
+
+      .file-heart
+        right: 15px
+
+    &:hover
+      .file-utilities
+        &:after
+          opacity: 1
 
   .caption-container
     float: left
 
-    .caption:nth-of-type(2)
-      font-size: 18px
-      @extend .text-bold
+    .caption
+      &:nth-of-type(2)
+        font-size: 18px
+      
+      &:nth-of-type(3),
+      &:nth-of-type(4)
+        @extend .tight
 
     .font-wgsn
       font-size: 10px
 
-  &:hover
-    cursor: pointer
+  &.selected
+    .file-utilities:after
+      opacity: 1

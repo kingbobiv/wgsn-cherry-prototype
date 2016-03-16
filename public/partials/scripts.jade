@@ -12,7 +12,12 @@ script.
     $(this).toggleClass('icon-heart-o icon-heart');
   });
 
-//- checkbox icons
+//- checkbox icons (for detail view file)
+script.
+  $('.file-details-view .file-checkbox').on('click', function() {
+    $(this).toggleClass('icon-tick-circle icon-tick-circle-filled');
+  });
+
 script.
   $('.util-checkbox').on('click', function() {
     $(this).toggleClass('fa-square-o fa-check-square-o');
@@ -67,6 +72,11 @@ script.
   //- utility row settings context menu
   $('.utility-row .icon-gear').on('click', function() {
     $('#utility-row-settings-context-menu').toggleClass('show');
+  });
+
+  //- utility row settings context menu
+  $('.utility-row .sort-input').on('click', function() {
+    $('#sort-by-context-menu').toggleClass('show');
   });
 
   //- close context menu
@@ -142,6 +152,16 @@ script.
     $(this).toggleClass('selected');
     $(this).children('.file-checkbox').toggleClass('icon-tick-circle icon-tick-circle-filled');
     $('.context-menu').removeClass('show');
+  });
+
+  $('.file-details-view .thumb-container').click(function(e, evt) {
+    if($(e.target).is('.file-utilites, .file-heart')) {
+      e.preventDefault();
+      return;
+    }
+    
+    $(this).parentsUntil('.file-outer-details-view').toggleClass('selected');
+    $(this).find('.file-checkbox').toggleClass('icon-tick-circle icon-tick-circle-filled');
   });
 
   $('.select-all').on('click', function() {

@@ -5,12 +5,23 @@
         input(type="text", placeholder="Search this board")
         span.icon-container.border: i.icon.icon-search
 
-      .sort-input.hidden-workspace.block-hor-xs
-        span Sort:
-        select
-          option Best match
-          option Newest first
-          option Oldest first
+      .hidden-workspace.block-hor-xs
+        .block-ver-xs.block-right-xs.inline-block Sort by:
+        .inline-block.border.sort-input.hoverable
+          span Best match
+          i.icon.icon-caret-down
+
+        ul.context-menu.dropdown.text-left#sort-by-context-menu
+          .block-xxs
+            li
+              i.icon.icon-tick
+              span Best match
+            li
+              i.spacer
+              span Date: newest first
+            li
+              i.spacer
+              span Date: oldest first
 
   .col-xs-6.col-sm-8.text-right
     .block-xs

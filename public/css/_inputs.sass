@@ -36,12 +36,6 @@ textarea
     // border-color: $dk-grey
     background: rgba($xlt-grey, 0.5)
 
-.bg-grey
-  input[type="text"],
-  textarea,
-  .input-container .icon-container
-    background: white
-
 select
   // -webkit-appearance: none
   @extend .border
@@ -74,26 +68,23 @@ select
     @extend .flex-center
     color: $md-grey
 
-    // &:after
-    //   content: ""
-    //   position: absolute
-    //   top: 9px
-    //   left: 0
-    //   width: 1px
-    //   height: 20px
-    //   background: $lt-grey
-    //   +transition(all 300ms)
-
     .fa
       +transition(all 300ms)
 
   input:focus
     + .icon-container
-      // border-color: $dk-grey
       background: rgba($xlt-grey, 0.5)
 
       i
         color: $dk-grey
 
-      // &:after
-      //   background: $dk-grey
+// grey background containers
+.bg-grey
+  input[type="text"],
+  textarea,
+  .input-container .icon-container
+    background: white
+
+  input:focus
+    + .icon-container
+      background: white
