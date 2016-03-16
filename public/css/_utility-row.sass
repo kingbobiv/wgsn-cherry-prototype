@@ -11,6 +11,21 @@
   .icon
     margin: 0 6px
 
+    .tooltip
+      top: 24px
+
+    &:hover
+      .tooltip
+        opacity: 1
+        +transition-delay(200ms)
+
+  .icon-trash
+    .tooltip
+      left: -50%
+
+      &:after
+        left: 72%
+
   .icon-plus-circle
     margin: 0 6px 0 0
 
@@ -52,13 +67,13 @@
   .multi-utility-icon
     display: none
 
-  .inline-block:nth-of-type(1),
-  .inline-block:nth-of-type(2)
+  .displaying-results,
+  .divider
     display: none
 
 .utility-row[min-width~="1000px"]
-  .inline-block:nth-of-type(1),
-  .inline-block:nth-of-type(2)
+  .displaying-results,
+  .divider
     display: inline-block
 
 .utility-row[min-width~="1200px"]

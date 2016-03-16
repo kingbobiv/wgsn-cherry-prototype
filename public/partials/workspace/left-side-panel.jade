@@ -1,20 +1,21 @@
 .left-side-panel.border-right.bg-grey
-  .header-row.border-bottom
-    span.font-wgsn Messages
-    i.icon.icon-angle-up.pull-right
+  .panel-filters
+    .header-row.border-bottom.hoverable
+      span.font-wgsn Messages
+      i.icon.icon-angle-up.pull-right
 
-  .block-xs
-    .misc-row
-      i.icon.icon-envelope
-      span Inbox
-      .inbox-number.pull-right.text-center 2
+    .block-xs
+      .misc-row
+        i.icon.icon-envelope
+        span Inbox
+        .inbox-number.pull-right.text-center 2
 
-    .misc-row
-      i.icon.icon-envelope
-      span Sent
-  
-  .header-row.border-top.border-bottom
-    i.icon.icon-heart-o
-    span.font-wgsn Favourites
-  
-  include folder-structure
+      .misc-row
+        i.icon.icon-envelope
+        span Sent
+    
+    .header-row.border-top.border-bottom.hoverable
+      i.icon.icon-heart-o
+      span.font-wgsn Favourites
+    
+    include folder-structure

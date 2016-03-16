@@ -4,46 +4,26 @@
     .col-xs-6.text-center: .block-sm.hoverable#tab-folders: span.font-wgsn Workspace
 
   .panel-filters
-    .filter-btn.block-xs.border-bottom.hoverable#filter-btn-category
-      span Category
-      i.icon.icon-angle-right.pull-right.tight
-    
-    .filter-btn.block-xs.border-bottom.hoverable#filter-btn-market
-      span Market
-      i.icon.icon-angle-right.pull-right.tight
-    
-    .filter-btn.block-xs.border-bottom.hoverable#filter-btn-products
-      span Products
-      i.icon.icon-angle-right.pull-right.tight
-    
-    .filter-btn.block-xs.border-bottom.hoverable#filter-btn-designer
-      span Designer
-      i.icon.icon-angle-right.pull-right.tight
-    
-    .filter-btn.block-xs.border-bottom.hoverable#filter-btn-city
-      span City
-      i.icon.icon-angle-right.pull-right.tight
-    
-    .filter-btn.block-xs.border-bottom.hoverable#filter-btn-season
-      span Season
-      i.icon.icon-angle-right.pull-right.tight
+    mixin filter-btn(name)
+      .filter-btn.block-ver-xs.block-left-sm.block-right-xs.border-bottom.hoverable(id!=attributes.id)
+        span= name
+        i.icon.icon-angle-right.pull-right.tight
+
+    +filter-btn("Category")(id="filter-btn-category")
+    +filter-btn("Market")(id="filter-btn-market")
+    +filter-btn("Products")(id="filter-btn-products")
+    +filter-btn("Designer")(id="filter-btn-designer")
+    +filter-btn("City")(id="filter-btn-city")
+    +filter-btn("Season")(id="filter-btn-season")
 
     .item.block-xs
 
     .header-row.border-top.border-bottom
       span.font-wgsn Advanced filter options
 
-    .filter-btn.block-xs.border-bottom.hoverable#filter-btn-colour
-      span Colour
-      i.icon.icon-angle-right.pull-right.tight
-
-     .filter-btn.block-xs.border-bottom.hoverable#filter-btn-prints
-      span Prints &amp; Graphics
-      i.icon.icon-angle-right.pull-right.tight
-
-    .filter-btn.block-xs.border-bottom.hoverable#filter-btn-fabric
-      span Fabric
-      i.icon.icon-angle-right.pull-right.tight
+    +filter-btn("Colour")(id="filter-btn-colour")
+    +filter-btn("Prints & Graphics")(id="filter-btn-prints")
+    +filter-btn("Fabric")(id="filter-btn-fabric")
 
   .panel-folders
     include ../workspace/folder-structure

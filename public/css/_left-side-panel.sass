@@ -4,11 +4,11 @@
   position: absolute
   top: 0
   left: 0
-  overflow-y: scroll
-  overflow-x: visible
+  overflow-y: hidden
+  // overflow-x: visible
   display: none
   z-index: 300
-  color: $md-grey
+  color: darken($md-grey, 25)
   
   .icon
     margin: 0 6px 0 0
@@ -16,16 +16,17 @@
   .tabs
     .block-sm
       border-top: 4px solid transparent
-      background: rgba($lt-grey, 0.3)
+      // background: rgba($lt-grey, 0.3)
       @extend .border-bottom
 
       &.active
         border-top-color: $fashion
         background: transparent
         border-bottom-color: transparent
+        color: $fashion
 
   .spacer
-    width: 15px
+    width: 16px
     display: inline-block
 
   .inbox-number
@@ -40,6 +41,9 @@
 
   .header-row
     padding: 10px 12px
+
+    .icon
+      margin: 0
 
   .misc-row,
   .board-row,
@@ -130,11 +134,24 @@
       .icon-ellipsis
         opacity: 1
 
+  .panel-filters,
+  .panel-folders
+    height: 100%
+    overflow-y: auto
+
   .panel-filters
     .filter-btn
       position: relative
-      
+
+      &:hover
+        background: rgba($lt-grey, 0.15)
+
       &.active
+        background: rgba($lt-grey, 0.3)
+
+        &:hover
+          background: rgba($lt-grey, 0.4)
+        
         span, i
           color: $fashion
 
