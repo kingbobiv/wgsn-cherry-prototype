@@ -328,6 +328,7 @@ script.
     $('#item-detail-modal').addClass('show');
   });
 
+  //- tabs
   $('.btn-modal-show-comments').on('click', function() {
     $('.modal-section-other').addClass('show-comments').removeClass('show-related-images').removeClass('show-related-reports');
   });
@@ -338,6 +339,11 @@ script.
 
   $('.btn-modal-show-related-reports').on('click', function() {
     $('.modal-section-other').removeClass('show-comments').removeClass('show-related-images').addClass('show-related-reports');
+  });
+  
+  //- left side panel
+  $('.btn-modal-left-side-panel').on('click', function() {
+    $('#item-detail-modal').toggleClass('show-left-side-panel');
   });
 
 

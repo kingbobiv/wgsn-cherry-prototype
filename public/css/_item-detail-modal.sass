@@ -54,6 +54,7 @@
   .modal-info-panel
     left: 0
     width: $modal-info-panel-width
+    display: none
 
     .modal-section-caption
       height: $modal-info-caption-height
@@ -161,7 +162,7 @@
 
   .modal-image-panel
     background: $dk-grey
-    left: $modal-info-panel-width
+    left: 0
     right: $tool-info-panel-width
 
     .img
@@ -177,10 +178,27 @@
       top: 20px
       width: 12px
       height: 40px
-      padding: 12px 3px
+      padding: 12px 0
       color: $dk-grey
       font-size: 10px
       border-radius: 0 2px 2px 0
+
+      .icon
+        display: block
+        +transform(translate3d(0, 0, 0) rotate(180deg))
+        @extend .no-transition
+
+    .file-heart
+      position: absolute
+      top: 15px
+      right: 15px
+      color: white
+      font-size: 16px
+      @extend .no-transition
+
+    .icon-heart
+      opacity: 1 !important
+      color: $label-red !important
 
   .modal-tool-panel
     right: 0
@@ -198,3 +216,14 @@
       right: 0
       width: 100%
       font-size: 12px
+
+  &.show-left-side-panel
+    .modal-info-panel
+      display: block
+
+    .modal-image-panel
+      left: $modal-info-panel-width
+
+    .btn-modal-left-side-panel
+      .icon
+        +transform(translate3d(0, 0, 0) rotate(0deg))
