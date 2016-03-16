@@ -1,9 +1,13 @@
 #item-detail-modal
   position: absolute
-  top: 40px
-  left: 30px
-  width: calc(100vw - 60px)
-  height: calc(100vh - 60px)
+  // top: 40px
+  // left: 30px
+  // width: calc(100vw - 60px)
+  // height: calc(100vh - 60px)
+  top: 20px
+  left: 20px
+  width: calc(100vw - 40px)
+  height: calc(100vh - 40px)
   background: white
   @extend .box-shadow
   z-index: 380
@@ -199,6 +203,26 @@
     .icon-heart
       opacity: 1 !important
       color: $label-red !important
+
+    .modal-arrow-left,
+    .modal-arrow-right
+      position: absolute
+      top: calc(50% - 20px)
+      color: white
+      font-size: 16px
+      background: rgba(black, 0.2)
+      @extend .flex-center
+      width: 40px
+      height: 40px
+
+      &:hover
+        background: rgba(black, 0.4)
+
+    .modal-arrow-left
+      left: 0
+
+    .modal-arrow-right
+      right: 0
 
   .modal-tool-panel
     right: 0
