@@ -18,32 +18,27 @@ script.
     $(this).toggleClass('icon-tick-circle icon-tick-circle-filled');
   });
 
-script.
-  $('.util-checkbox').on('click', function() {
-    $(this).toggleClass('fa-square-o fa-check-square-o');
-  });
-
 
 //- toggle icons
 script.
   showCaptions = function() {
-    if ($('#toggle-show-caption').hasClass('fa-toggle-on')) {
+    if ($('#toggle-show-caption').hasClass('toggle-on')) {
       $('.file').addClass('show-caption');
-    } else if ($('#toggle-show-caption').hasClass('fa-toggle-off')) {
+    } else if ($('#toggle-show-caption').hasClass('toggle-off')) {
       $('.file').removeClass('show-caption');
     }
   };
 
   showFilenames = function() {
-    if ($('#toggle-show-filename').hasClass('fa-toggle-on')) {
+    if ($('#toggle-show-filename').hasClass('toggle-on')) {
       $('.file').addClass('show-filename');
-    } else if ($('#toggle-show-filename').hasClass('fa-toggle-off')) {
+    } else if ($('#toggle-show-filename').hasClass('toggle-off')) {
       $('.file').removeClass('show-filename');
     }
   };
   
   $('.toggle').on('click', function() {
-    $(this).toggleClass('fa-toggle-on fa-toggle-off');
+    $(this).toggleClass('toggle-on toggle-off');
     showCaptions();
     showFilenames();
   });
