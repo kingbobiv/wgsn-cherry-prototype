@@ -5,28 +5,25 @@
 </script><script>$('.file-details-view .file-checkbox').on('click', function() {
   $(this).toggleClass('icon-tick-circle icon-tick-circle-filled');
 });
-</script><script>$('.util-checkbox').on('click', function() {
-  $(this).toggleClass('fa-square-o fa-check-square-o');
-});
 
 </script><script>showCaptions = function() {
-  if ($('#toggle-show-caption').hasClass('fa-toggle-on')) {
+  if ($('#toggle-show-caption').hasClass('toggle-on')) {
     $('.file').addClass('show-caption');
-  } else if ($('#toggle-show-caption').hasClass('fa-toggle-off')) {
+  } else if ($('#toggle-show-caption').hasClass('toggle-off')) {
     $('.file').removeClass('show-caption');
   }
 };
 
 showFilenames = function() {
-  if ($('#toggle-show-filename').hasClass('fa-toggle-on')) {
+  if ($('#toggle-show-filename').hasClass('toggle-on')) {
     $('.file').addClass('show-filename');
-  } else if ($('#toggle-show-filename').hasClass('fa-toggle-off')) {
+  } else if ($('#toggle-show-filename').hasClass('toggle-off')) {
     $('.file').removeClass('show-filename');
   }
 };
 
 $('.toggle').on('click', function() {
-  $(this).toggleClass('fa-toggle-on fa-toggle-off');
+  $(this).toggleClass('toggle-on toggle-off');
   showCaptions();
   showFilenames();
 });
@@ -39,6 +36,11 @@ $('.file .btn-item-menu').on('click', function() {
 //- board context menu
 $('.board-row .icon-ellipsis').on('click', function() {
   $(this).siblings('#board-context-menu').toggleClass('show');
+});
+
+//- board context menu
+$('.btn-top-board-context-menu').on('click', function() {
+  $('#top-board-context-menu').toggleClass('show');
 });
 
 //- utility row context menu
@@ -117,6 +119,12 @@ $('.label-circle.label-circle-grey').on('click', function() {
   $(this).toggleClass('selected');
   $(this).children('.file-checkbox').toggleClass('icon-tick-circle icon-tick-circle-filled');
   $('.context-menu').removeClass('show');
+
+  if ($('.file').hasClass('selected')) {
+    $('.right-side-panel').addClass('has-file-selected');
+  } else {
+    $('.right-side-panel').removeClass('has-file-selected');
+  }
 });
 
 $('.file-details-view .thumb-container').click(function(e, evt) {
@@ -129,7 +137,7 @@ $('.file-details-view .thumb-container').click(function(e, evt) {
   $(this).find('.file-checkbox').toggleClass('icon-tick-circle icon-tick-circle-filled');
 });
 
-$('.select-all').on('click', function() {
+$('.select-all').click(function() {
   $('.file').toggleClass('selected');
   $('.file-checkbox').toggleClass('icon-tick-circle icon-tick-circle-filled');
 });
@@ -165,7 +173,7 @@ $('#btn-view-option-details').on('click', function() {
 </script><script>$('.btn-left-side-panel').on('click', function() {
   $('.page-content').toggleClass('show-left-side-panel');
 });
-</script><script>$('#btn-comments-panel').on('click', function() {
+</script><script>$('.btn-comments-panel').on('click', function() {
   $('.page-content').toggleClass('show-comments-panel');
 });
 </script><script>$('#tab-filters').on('click', function() {
@@ -179,13 +187,24 @@ $('#tab-folders').on('click', function() {
   $('#tab-filters').removeClass('active');
   $('.image-library-view .left-side-panel').addClass('image-library-folders-active').removeClass('image-library-filters-active');
 });
-</script><script>$('#btn-filter-row-expand').on('click', function() {
+</script><script>$('.btn-filter-row-expand').on('click', function() {
   $('.filter-row').toggleClass('condensed expanded');
 });
 
 $('.filter-tag .icon-cross').on('click', function() {
   $(this).parentsUntil('.filter-container').remove();
 });  
+</script><script>$('#tab-board-comments').on('click', function() {
+  $(this).addClass('active');
+  $('#tab-item-comments').removeClass('active');
+  $('.comments-panel').addClass('comments-board-active').removeClass('comments-item-active');
+});
+
+$('#tab-item-comments').on('click', function() {
+  $(this).addClass('active');
+  $('#tab-board-comments').removeClass('active');
+  $('.comments-panel').addClass('comments-item-active').removeClass('comments-board-active');
+});
 
 </script><script>//- category
 $('#filter-btn-category').on('click', function() {
@@ -246,10 +265,10 @@ $('.modal .close-modal').on('click', function() {
 });
 
 $('.btn-open').on('click', function() {
-  $('.overlay').addClass('show');
   $('#item-detail-modal').addClass('show');
 });
 
+//- tabs
 $('.btn-modal-show-comments').on('click', function() {
   $('.modal-section-other').addClass('show-comments').removeClass('show-related-images').removeClass('show-related-reports');
 });
@@ -260,6 +279,11 @@ $('.btn-modal-show-related-images').on('click', function() {
 
 $('.btn-modal-show-related-reports').on('click', function() {
   $('.modal-section-other').removeClass('show-comments').removeClass('show-related-images').addClass('show-related-reports');
+});
+
+//- left side panel
+$('.btn-modal-left-side-panel').on('click', function() {
+  $('#item-detail-modal').toggleClass('show-left-side-panel');
 });
 
 
