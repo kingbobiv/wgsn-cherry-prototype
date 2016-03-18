@@ -27,19 +27,13 @@
     left: 50%
     z-index: -1
     +transform(translate3d(-50%, 0, 0) rotate(135deg))
-
-  .block-xxs
-    padding-left: 0
-    padding-right: 0
-
+  
   li
     @extend .tight
     @extend .hoverable
     padding: 6px 12px
 
-    &:hover
-      background: rgba($lt-grey, 0.15)
-
+    &:hover,
     &:active
       background: rgba($lt-grey, 0.3)
 

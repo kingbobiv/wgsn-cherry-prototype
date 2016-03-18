@@ -3,7 +3,7 @@
   position: absolute
   top: 0
   left: 0
-  overflow-y: hidden
+  overflow: hidden
   display: none
   z-index: 300
   color: darken($md-grey, 25)
@@ -161,8 +161,7 @@
       bottom: 0
       width: calc(#{$left-side-panel-width} - 1px)
       @extend .border-top
-      @extend .bg-grey
-      box-shadow: 0 2px 10px rgba(black, 0.1)
+      @extend .bg-white
 
   .panel-filters
     .scroll-container
