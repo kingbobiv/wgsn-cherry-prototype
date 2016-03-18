@@ -79,6 +79,11 @@ script.
     $('#sort-by-context-menu').toggleClass('show');
   });
 
+  //- saved searches context menu
+  $('.btn-saved-searches').on('click', function() {
+    $('#saved-searches-context-menu').toggleClass('show');
+  });
+
   //- close context menu
   $('.context-menu').click(function(e, evt) {
     if($(e.target).is('.toggle')) {

@@ -1,0 +1,39 @@
+#saved-searches-context-menu
+  .icon-bookmark
+    color: $fashion
+
+  .header-row
+    padding: 15px
+    
+    &:hover
+      background: none
+      cursor: default
+
+  .scroll-container
+    max-height: 400px
+    overflow: auto
+
+    li
+      padding: 15px
+      position: relative
+
+      &:last-of-type
+        border: none
+
+      .icon-angle-right
+        margin: 0 6px
+        font-size: 10px 
+
+      .icon-trash
+        position: absolute
+        top: calc(50% - 8px)
+        right: 10px
+        color: $md-grey
+        opacity: 0
+
+        &:hover
+          color: $dk-grey
+
+      &:hover
+        .icon-trash
+          opacity: 1
