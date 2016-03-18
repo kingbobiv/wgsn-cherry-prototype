@@ -330,16 +330,29 @@ script.
     $('#send-modal').addClass('show');
   });
 
+  //- create new board
+  $('.btn-create-new-board').on('click', function() {
+    $('.overlay').addClass('show');
+    $('#create-new-board-modal').addClass('show');
+  });
+
+  //- save search
+  $('.btn-save-search').on('click', function() {
+    $('.overlay').addClass('show');
+    $('#save-search-modal').addClass('show');
+  });
+
   //- close modal
   $('.modal .close-modal').on('click', function() {
     $(this).parentsUntil('body').removeClass('show');
+    $('.overlay').removeClass('show');
 
     //- keep overlay if it was a second level modal
-    if ($('#item-detail-modal').hasClass('show')) {
-      return;
-    } else {
-      $('.overlay').removeClass('show');
-    }
+    //- if ($('#item-detail-modal').hasClass('show')) {
+    //-   return;
+    //- } else {
+    //-   $('.overlay').removeClass('show');
+    //- }
   });
 
 //- item detail modal
@@ -350,6 +363,7 @@ script.
   });
 
   $('.btn-open').on('click', function() {
+    $('.overlay').addClass('show');
     $('#item-detail-modal').addClass('show');
   });
 

@@ -79,12 +79,12 @@
             border-bottom-color: transparent
       
       .modal-scroll-container
-        overflow-y: scroll
-        height: calc((100vh - 60px) - #{$modal-info-caption-height} - 40px - 15px) // height of modal - caption - tabs - comment input - borders
+        overflow-y: auto
+        height: calc((100vh - 60px) - #{$modal-info-caption-height} - 20px - 15px) // height of modal - caption - tabs - comment input - borders
       
       .modal-comments
         .modal-scroll-container
-          height: calc((100vh - 60px) - #{$modal-info-caption-height} - 40px - 104px - 15px) // height of modal - caption - tabs - comment input - borders
+          height: calc((100vh - 60px) - #{$modal-info-caption-height} - 40px - 84px - 15px) // height of modal - caption - tabs - comment input - borders
         
         .comment
           overflow: auto
