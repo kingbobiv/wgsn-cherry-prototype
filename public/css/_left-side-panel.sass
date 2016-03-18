@@ -12,17 +12,38 @@
     margin: 0 6px 0 0
 
   .tabs
+    position: relative
+    height: 56px
+
+    .col-xs-6:first-of-type
+      .tab
+        &:after
+          content: ""
+          display: block
+          position: absolute
+          bottom: 0
+          left: 0
+          background: $fashion
+          width: 100%
+          height: 4px
+          +transform(translate3d(0, 0, 0))
+          +transition(all 400ms)
+
+        &:not(.active)
+          &:after
+            +transform(translate3d(100%, 0, 0))
+
     .tab
       height: 56px
       @extend .border-bottom
       @extend .flex-center
       @extend .no-transition
 
-      span
-        @extend .no-transition
+      // span
+      //   @extend .no-transition
 
       &.active
-        border-bottom: 4px solid $fashion
+        // border-bottom: 4px solid $fashion
         color: $fashion
 
   .inbox-number
