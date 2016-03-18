@@ -12,12 +12,24 @@
     margin: 0 6px
 
     .tooltip
-      top: 24px
+      top: 28px
 
     &:hover
       .tooltip
         opacity: 1
         +transition-delay(200ms)
+
+  .icon-plus-circle,
+  .icon-download,
+  .icon-print,
+  .icon-paper-plane,
+  .icon-trash,
+  .icon-ellipsis,
+  .icon-gear
+    font-size: 15px
+
+    &:before
+      top: 3px
 
   .icon-plus-circle
     margin: 0 6px 0 0
@@ -38,7 +50,7 @@
   .btn-view-option
     padding: 5px
     margin-left: -1px
-
+    
     &:first-of-type
       +border-radius(3px 0 0 3px)
 
@@ -46,7 +58,7 @@
       +border-radius(0 3px 3px 0)
 
     &:hover
-      background: rgba($lt-grey, 0.15)
+      background: $xlt-grey
 
     &.disabled
       opacity: 1
@@ -60,6 +72,9 @@
 
     .icon
       margin: 0 0 0 15px
+
+    // &:hover
+    //   border-color: $dk-grey
 
 .utility-row[min-width~="0px"]
   .multi-utility-icon

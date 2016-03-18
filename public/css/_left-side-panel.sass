@@ -153,10 +153,22 @@
 
   .panel-filters,
   .panel-folders
-    height: 100%
-    overflow-y: auto
+    height: calc(100% - 56px)
+    position: relative
+
+    .static-bottom-row
+      position: fixed
+      bottom: 0
+      width: calc(#{$left-side-panel-width} - 1px)
+      @extend .border-top
+      @extend .bg-grey
+      box-shadow: 0 2px 10px rgba(black, 0.1)
 
   .panel-filters
+    .scroll-container
+      height: calc(100% - 51px)
+      overflow-y: auto
+    
     .filter-btn
       position: relative
 
@@ -184,6 +196,23 @@
   .panel-folders
     display: none
 
+    .scroll-container
+      height: calc(100% - 35px)
+      overflow-y: auto
+
+    .board-preview
+      .icon-double-angle-down
+        +transform(translate3d(0, 0, 0) rotate(0deg))
+
+      &.closed
+        .icon-double-angle-down
+          +transform(translate3d(0, 0, 0) rotate(180deg))
+
+      &.open
+        .icon-double-angle-down
+          +transform(translate3d(0, 0, 0) rotate(0deg))
+
+
   // tabs show/hide
   &.image-library-filters-active
     .panel-filters
@@ -201,8 +230,8 @@
 
 body.image-library-view
   .left-side-panel
-    height: calc(100vh - (#{$header-height} + #{$title-row-height}))
+    height: calc(100vh - #{$header-height} - #{$title-row-height})
 
 body.workspace-view
   .left-side-panel
-    height: calc(100vh - (#{$header-height} + #{$title-row-height} - #{$product-row-height}))
+    height: calc(100vh - #{$header-height} - #{$title-row-height} + #{$product-row-height})

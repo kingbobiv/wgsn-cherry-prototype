@@ -18,9 +18,10 @@ mixin filter(id, search, anchors, ...items)
             input(type="checkbox")
             span= item
 
-    .filter-bottom-row.text-right.block-sm.border-top
-      i.icon.icon-repeat.inline-block.hoverable
-      p.tight.inline-block.hoverable Reset filter
+    .filter-bottom-row.text-right.block-xs.border-top
+      .btn.btn-white.pull-right
+        i.icon.icon-reset
+        span Reset filter
 
 +filter(
   "category",

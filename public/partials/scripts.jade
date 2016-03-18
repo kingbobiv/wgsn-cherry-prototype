@@ -258,8 +258,8 @@ script.
     $('.filter-row').toggleClass('condensed expanded');
   });
 
-  $('.filter-tag .icon-cross').on('click', function() {
-    $(this).parentsUntil('.filter-container').remove();
+  $('.filter-tag').on('click', function() {
+    $(this).remove();
   });  
 
 //- comments panel tabs
@@ -334,6 +334,18 @@ script.
   $('.btn-create-new-board').on('click', function() {
     $('.overlay').addClass('show');
     $('#create-new-board-modal').addClass('show');
+  });
+
+  //- duplicate board
+  $('.btn-duplicate-board').on('click', function() {
+    $('.overlay').addClass('show');
+    $('#duplicate-board-modal').addClass('show');
+  });
+
+  //- rename board
+  $('.btn-rename-board').on('click', function() {
+    $('.overlay').addClass('show');
+    $('#rename-board-modal').addClass('show');
   });
 
   //- save search

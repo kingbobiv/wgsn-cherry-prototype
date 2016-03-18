@@ -28,10 +28,14 @@
     z-index: -1
     +transform(translate3d(-50%, 0, 0) rotate(135deg))
 
+  .block-xxs
+    padding-left: 0
+    padding-right: 0
+
   li
     @extend .tight
     @extend .hoverable
-    padding: 6px
+    padding: 6px 12px
 
     &:hover
       background: rgba($lt-grey, 0.15)
@@ -158,6 +162,7 @@
 #sort-by-context-menu
   top: 54px
   left: 70px
+  width: auto
 
   &:after
     left: 10%

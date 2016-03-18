@@ -4,28 +4,39 @@
     .col-xs-6.text-center: .tab.hoverable#tab-folders: span.font-wgsn Workspace
 
   .panel-filters
-    mixin filter-btn(name)
-      .filter-btn.block-ver-xs.block-left-sm.block-right-xs.border-bottom.hoverable(id!=attributes.id)
-        span= name
-        i.icon.icon-angle-right.pull-right.tight
+    .scroll-container
+      mixin filter-btn(name)
+        .filter-btn.block-ver-xs.block-left-sm.block-right-xs.border-bottom.hoverable(id!=attributes.id)
+          span= name
+          i.icon.icon-angle-right.pull-right.tight
 
-    +filter-btn("Category")(id="filter-btn-category")
-    +filter-btn("Market")(id="filter-btn-market")
-    +filter-btn("Products")(id="filter-btn-products")
-    +filter-btn("Designer")(id="filter-btn-designer")
-    +filter-btn("City")(id="filter-btn-city")
-    +filter-btn("Season")(id="filter-btn-season")
+      +filter-btn("Category")(id="filter-btn-category")
+      +filter-btn("Market")(id="filter-btn-market")
+      +filter-btn("Products")(id="filter-btn-products")
+      +filter-btn("Designer")(id="filter-btn-designer")
+      +filter-btn("City")(id="filter-btn-city")
+      +filter-btn("Season")(id="filter-btn-season")
 
-    .item.block-xs
+      .item.block-xs
 
-    .header-row.border-top.border-bottom
-      span.font-wgsn Advanced filter options
+      .header-row.border-top.border-bottom
+        span.font-wgsn Advanced filter options
 
-    +filter-btn("Colour")(id="filter-btn-colour")
-    +filter-btn("Prints & Graphics")(id="filter-btn-prints")
-    +filter-btn("Fabric")(id="filter-btn-fabric")
+      +filter-btn("Colour")(id="filter-btn-colour")
+      +filter-btn("Prints & Graphics")(id="filter-btn-prints")
+      +filter-btn("Fabric")(id="filter-btn-fabric")
+
+    .static-bottom-row.block-xs
+      .btn.btn-white
+        i.icon.icon-reset
+        span Reset all filters
 
   .panel-folders
-    include ../workspace/folder-structure
+    .scroll-container
+      include ../workspace/folder-structure
+
+    .static-bottom-row.block-xs.hoverable.board-preview.closed
+      span.font-wgsn Board preview
+      i.icon.icon-double-angle-down.pull-right
 
 include filter

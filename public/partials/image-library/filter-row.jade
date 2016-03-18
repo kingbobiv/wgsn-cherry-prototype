@@ -1,7 +1,7 @@
 mixin filter-tag(name)
-  .filter-tag.border
+  .filter-tag.border.hoverable
     span= name
-    i.icon.icon-cross.hoverable
+    i.icon.icon-cross
 
 .row.filter-row.border-bottom.bg-grey.condensed
   .block-xs.filter-container.pull-left
@@ -28,5 +28,4 @@ mixin filter-tag(name)
     +filter-tag("Dior")
     +filter-tag("Adidas Originals")
 
-  .filter-row-controls.block-ver-xs.block-hor-sm.pull-right.border-left.flex-center
-    .border.hoverable.btn-filter-row-expand: i.icon.icon-double-angle-down
+  .filter-row-controls.block-sm.pull-right.border-left.flex-center.hoverable.btn-filter-row-expand: i.icon.icon-double-angle-down
