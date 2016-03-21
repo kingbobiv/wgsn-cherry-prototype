@@ -5,8 +5,9 @@
   // background: darken($xlt-grey, 2)
 
   .filter-container
-    width: calc(100% - 42px)
+    width: calc(100% - 86px)
     padding-bottom: 2px
+    margin-left: 43px
 
   .filter-tag
     background: white
@@ -29,10 +30,15 @@
   .filter-row-controls
     height: 100%
     position: absolute
-    right: 0
     top: 50%
     +transform(translate3d(0, -50%, 0))
     // box-shadow: 0 0 0 2px rgba(black, 0.05)
+
+    &.pull-left
+      left: 0
+
+    &.pull-right
+      right: 0
 
   .btn-filter-row-expand
     color: $md-grey
@@ -57,5 +63,5 @@
     .btn-filter-row-expand
       box-shadow: none
 
-      .icon
+      .icon-double-angle-down
         +transform(rotate(180deg))

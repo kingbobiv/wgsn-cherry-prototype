@@ -83,18 +83,20 @@
             li: h4.tight Download Preferences
             li: span Images:
             li
-              input(type="radio")
-              span Standard quality
-            li
-              input(type="radio" checked)
-              span Best quality
+              form
+                input(type="radio" checked)
+                label Standard quality
+                br
+                input(type="radio")
+                label Best quality
             li: span Design Assets:
             li
-              input(type="radio")
-              span Flat image
-            li
-              input(type="radio" checked)
-              span Design file
+              form
+                input(type="radio")
+                label Flat image
+                br
+                input(type="radio" checked)
+                label Design file
           .block-ver-xxs.text-center
             li
               span.text-underline More Settings
