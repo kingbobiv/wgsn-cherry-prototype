@@ -1,6 +1,7 @@
 .page-content
   position: absolute
   width: 100%
+  top: $header-height - $product-row-height + $title-row-height
 
   .right-side-panel
     left: 0
@@ -26,11 +27,3 @@
 
     .comments-panel
       display: block
-
-body.image-library-view
-  .page-content
-    top: $header-height + $title-row-height
-
-body.workspace-view
-  .page-content
-    top: $header-height - $product-row-height + $title-row-height
