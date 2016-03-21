@@ -1,5 +1,5 @@
 .utility-row
-  z-index: 100
+  z-index: 110
   height: $utility-row-height
 
   .inline-block
@@ -7,17 +7,6 @@
 
   .col-sm-8
     padding-top: 4px
-  
-  .icon
-    margin: 0 6px
-
-    .tooltip
-      top: 28px
-
-    &:hover
-      .tooltip
-        opacity: 1
-        +transition-delay(200ms)
 
   .icon-plus-circle,
   .icon-download,
@@ -31,15 +20,24 @@
     &:before
       top: 3px
 
+  .multi-utility-icon
+    color: $lt-grey
+    pointer-events: none
+    margin: 0 6px
+
+    .tooltip
+      top: 28px
+
+    &:hover
+      .tooltip
+        opacity: 1
+        +transition-delay(200ms)
+
   .icon-plus-circle
     margin: 0 6px 0 0
 
   .icon-trash
     margin: 0 0 0 6px
-
-  .multi-utility-icon
-    color: $lt-grey
-    pointer-events: none
 
   .input-container
     input
@@ -48,7 +46,7 @@
       max-width: 300px
 
   .btn-view-option
-    padding: 5px
+    padding: 5px 10px
     margin-left: -1px
     
     &:first-of-type
@@ -95,27 +93,6 @@
 
   .icon-ellipsis
     display: none
-
-body.image-library-view
-  .utility-row
-    .icon-trash
-      display: none
-
-    .icon-paper-plane
-      .tooltip
-        left: -50%
-
-        &:after
-          left: 72%
-
-body.workspace-view
-  .utility-row
-    .icon-trash
-      .tooltip
-        left: -50%
-
-        &:after
-          left: 72%
 
 .right-side-panel
   &.has-file-selected

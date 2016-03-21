@@ -1,7 +1,6 @@
 .context-menu
   position: absolute
   background: white
-  z-index: 100
   opacity: 0
   pointer-events: none
   width: 180px
@@ -90,6 +89,12 @@
       +border-radius(50%)
       +transition(all 400ms)
 
+    &:first-of-type
+      margin-left: 0
+
+    &:last-of-type
+      margin-right: 0
+
     &:hover,
     &.selected
       &:after
@@ -136,10 +141,10 @@
       border-color: $label-purple
 
   .label-circle-grey
-    background: $label-grey
+    background: $label-pink
 
     &:after
-      border-color: $label-grey
+      border-color: $label-pink
 
 #utility-row-context-menu
   top: 30px
@@ -150,8 +155,12 @@
 
 #utility-row-settings-context-menu
   top: 30px
-  left: 50%
-  +transform(translate3d(-50%, 0, 0))
+  right: 0
+  width: 220px
+
+  &:after
+    left: auto
+    right: 5px
 
 #sort-by-context-menu
   top: 54px
@@ -159,7 +168,7 @@
   width: auto
 
   &:after
-    left: 10%
+    left: 15px
 
 #saved-searches-context-menu
   top: 40px

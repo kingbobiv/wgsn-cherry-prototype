@@ -58,6 +58,11 @@ $('.utility-row .sort-input').on('click', function() {
   $('#sort-by-context-menu').toggleClass('show');
 });
 
+//- saved searches context menu
+$('.btn-saved-searches').on('click', function() {
+  $('#saved-searches-context-menu').toggleClass('show');
+});
+
 //- close context menu
 $('.context-menu').click(function(e, evt) {
   if($(e.target).is('.toggle')) {
@@ -175,6 +180,7 @@ $('#btn-view-option-details').on('click', function() {
 });
 </script><script>$('.btn-comments-panel').on('click', function() {
   $('.page-content').toggleClass('show-comments-panel');
+  $('.btn-comments-panel').toggleClass('active');
 });
 </script><script>$('#tab-filters').on('click', function() {
   $(this).addClass('active');
@@ -191,8 +197,8 @@ $('#tab-folders').on('click', function() {
   $('.filter-row').toggleClass('condensed expanded');
 });
 
-$('.filter-tag .icon-cross').on('click', function() {
-  $(this).parentsUntil('.filter-container').remove();
+$('.filter-tag').on('click', function() {
+  $(this).remove();
 });  
 </script><script>$('#tab-board-comments').on('click', function() {
   $(this).addClass('active');
@@ -248,16 +254,41 @@ $('.btn-send').on('click', function() {
   $('#send-modal').addClass('show');
 });
 
+//- create new board
+$('.btn-create-new-board').on('click', function() {
+  $('.overlay').addClass('show');
+  $('#create-new-board-modal').addClass('show');
+});
+
+//- duplicate board
+$('.btn-duplicate-board').on('click', function() {
+  $('.overlay').addClass('show');
+  $('#duplicate-board-modal').addClass('show');
+});
+
+//- rename board
+$('.btn-rename-board').on('click', function() {
+  $('.overlay').addClass('show');
+  $('#rename-board-modal').addClass('show');
+});
+
+//- save search
+$('.btn-save-search').on('click', function() {
+  $('.overlay').addClass('show');
+  $('#save-search-modal').addClass('show');
+});
+
 //- close modal
 $('.modal .close-modal').on('click', function() {
   $(this).parentsUntil('body').removeClass('show');
+  $('.overlay').removeClass('show');
 
   //- keep overlay if it was a second level modal
-  if ($('#item-detail-modal').hasClass('show')) {
-    return;
-  } else {
-    $('.overlay').removeClass('show');
-  }
+  //- if ($('#item-detail-modal').hasClass('show')) {
+  //-   return;
+  //- } else {
+  //-   $('.overlay').removeClass('show');
+  //- }
 });
 </script><script>$('.file').on('dblclick', function() {
   $('.overlay').addClass('show');
@@ -265,6 +296,7 @@ $('.modal .close-modal').on('click', function() {
 });
 
 $('.btn-open').on('click', function() {
+  $('.overlay').addClass('show');
   $('#item-detail-modal').addClass('show');
 });
 

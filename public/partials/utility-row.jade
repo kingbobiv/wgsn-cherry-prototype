@@ -28,27 +28,6 @@
       .block-hor-xs.inline-block.displaying-results
         span Displaying 15 of 1000 items
 
-      .inline-block.divider: p |
-      
-      .block-hor-xs.inline-block
-        input.select-all(type="checkbox")
-        span Select all (1000)
-      
-      .block-hor-xs.inline-block
-        i.icon.icon-gear.hoverable
-
-        ul.context-menu.text-left#utility-row-settings-context-menu
-          .block-xs
-            li
-              span Show Captions
-              .toggle.toggle-on.pull-right#toggle-show-caption
-            li
-              span Show Filenames
-              .toggle.toggle-off.pull-right#toggle-show-filename
-          .block-xs.text-center.border-top  
-            li
-              span.text-underline More Settings
-      
       .block-hor-xs.inline-block
         .btn-view-option.inline-block.hoverable.border.disabled#btn-view-option-sm: i.icon.icon-grid-sm
         .btn-view-option.inline-block.hoverable.border#btn-view-option-md: i.icon.icon-grid-md
@@ -56,11 +35,15 @@
         .btn-view-option.inline-block.hoverable.border.disabled#btn-view-option-details: i.icon.icon-grid-details
       
       .block-hor-xs.inline-block
+        input.select-all(type="checkbox")
+        span Select all (1000)
+      
+      .block-hor-xs.inline-block
         i.icon.icon-plus-circle.multi-utility-icon.hoverable.btn-add-to-board: span.tooltip.nowrap Add to Board
         i.icon.icon-download.multi-utility-icon.hoverable: span.tooltip.nowrap Download
         i.icon.icon-print.multi-utility-icon.hoverable: span.tooltip.nowrap Print
         i.icon.icon-paper-plane.multi-utility-icon.hoverable.btn-send: span.tooltip.nowrap Send
-        i.icon.icon-trash.multi-utility-icon.hoverable: span.tooltip.nowrap Delete
+        i.icon.icon-trash.multi-utility-icon.hoverable.hidden-image-library: span.tooltip.nowrap Delete
         i.icon.icon-ellipsis.hoverable.tight
 
         ul.context-menu.text-left#utility-row-context-menu
@@ -81,3 +64,37 @@
             li
               i.icon.icon-trash
               span Delete
+
+      .block-hor-xs.inline-block.divider: p |
+
+      .block-hor-xs.inline-block
+        i.icon.icon-gear.hoverable
+
+        ul.context-menu.text-left#utility-row-settings-context-menu
+          .block-ver-xxs.border-bottom
+            li: h4.tight Display
+            li
+              span Captions
+              .toggle.toggle-on.pull-right#toggle-show-caption
+            li
+              span Filenames
+              .toggle.toggle-off.pull-right#toggle-show-filename
+          .block-ver-xxs.border-bottom
+            li: h4.tight Download Preferences
+            li: span Images:
+            li
+              input(type="radio")
+              span Standard quality
+            li
+              input(type="radio" checked)
+              span Best quality
+            li: span Design Assets:
+            li
+              input(type="radio")
+              span Flat image
+            li
+              input(type="radio" checked)
+              span Design file
+          .block-ver-xxs.text-center
+            li
+              span.text-underline More Settings

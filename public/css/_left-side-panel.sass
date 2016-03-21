@@ -7,6 +7,10 @@
   display: none
   z-index: 300
   color: darken($md-grey, 25)
+
+  .scroll-container
+    height: 100%
+    overflow-y: auto
   
   .icon
     margin: 0 6px 0 0
@@ -166,7 +170,6 @@
   .panel-filters
     .scroll-container
       height: calc(100% - 51px)
-      overflow-y: auto
     
     .filter-btn
       position: relative
@@ -197,7 +200,6 @@
 
     .scroll-container
       height: calc(100% - 35px)
-      overflow-y: auto
 
     .board-preview
       .icon-double-angle-down
