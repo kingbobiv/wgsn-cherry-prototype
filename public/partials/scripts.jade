@@ -258,6 +258,10 @@ script.
     $('.filter-row').toggleClass('condensed expanded');
   });
 
+  $('.btn-filter-row-delete').on('click', function() {
+    $('.filter-row').remove();
+  });
+
   $('.filter-tag').on('click', function() {
     $(this).remove();
   });  
