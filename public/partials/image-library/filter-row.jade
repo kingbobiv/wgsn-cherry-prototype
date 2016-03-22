@@ -10,8 +10,34 @@ mixin filter-tag(search, name)
       span= name
       i.icon.icon-cross
 
-.row.filter-row.block-sm.hidden-workspace
-  //- h4.pull-left.block-ver-xs.tight.block-right-xs.block-left-xxs Filter by:
+.row.filter-row.block-hor-sm.block-top-sm.hidden-workspace
+  h4.pull-left.block-ver-xs.tight.block-right-xs.block-left-xxs Filter by:
+  +filter-tag("pea coats", "")
+  +filter-tag("", "Yeezy")
+  +filter-tag("", "Chanel")
+  +filter-tag("", "Adidas")
+  +filter-tag("", "Bassike")
+  +filter-tag("", "Acne Studios")
+  +filter-tag("", "Sass & Bide")
+  +filter-tag("", "Nike")
+  +filter-tag("", "American Apparel")
+  +filter-tag("", "Isabel Marant")
+  +filter-tag("", "Alexander Wang")
+  +filter-tag("", "Rag & Bone")
+  +filter-tag("", "Equipment")
+  +filter-tag("", "Céline")
+  +filter-tag("", "Adidas Originals")
+  .btn.btn-white.btn-filter-row-delete
+    i.icon.icon-cross
+    span Clear all
+  .btn.btn-white.btn-save-search
+    i.icon.icon-bookmark
+    span Save search
+
+.btn-filter-row-fixed: i.icon.icon-plus
+
+.row.filter-row.filter-row-fixed.block-sm.hidden-workspace
+  h4.pull-left.block-ver-xs.tight.block-right-xs.block-left-xxs Filter by:
   +filter-tag("pea coats", "")
   +filter-tag("", "Yeezy")
   +filter-tag("", "Chanel")

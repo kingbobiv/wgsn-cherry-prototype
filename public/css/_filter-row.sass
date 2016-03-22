@@ -1,12 +1,4 @@
 .filter-row
-  background: rgba($xlt-grey, 0.9)
-  position: fixed
-  top: $header-height + $title-row-height + $utility-row-height
-  left: $left-side-panel-width
-  z-index: 100
-  +transform(translate3d(0, 0, 0) scale(1, 0))
-  +transform-origin(center top)
-  
   .filter-tag
     background: lighten($xlt-grey, 1)
     float: left
@@ -36,5 +28,38 @@
     .icon
       margin: 0 6px 0 0
 
-  &.headroom--pinned
-    +transform(translate3d(0, 0, 0) scale(1, 1))
+  &.filter-row-fixed
+    background: rgba($xlt-grey, 0.9)
+    position: fixed
+    top: $header-height + $title-row-height + $utility-row-height
+    left: $left-side-panel-width
+    z-index: 100
+    display: none
+
+    &.show
+      display: block
+
+.btn-filter-row-fixed
+  position: fixed
+  top: 210px
+  right: 10px
+  background: white
+  @extend .border
+  @extend .flex-center
+  @extend .hoverable
+  z-index: 400
+  width: 30px
+  height: 30px
+  display: none
+  pointer-events: none
+
+.files-row
+  &.headroom--top
+    .btn-filter-row-fixed
+      display: none
+      pointer-events: none
+
+  &.headroom--not-top
+    .btn-filter-row-fixed
+      display: block
+      pointer-events: all
