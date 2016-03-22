@@ -31,3 +31,26 @@
     &:hover
       background: rgba(black, 0.5)
       +transition-delay(0ms !important)
+
+.btn-back-to-top
+  position: fixed
+  bottom: 20px
+  right: 20px
+  @extend .flex-center
+  background: rgba($dk-grey, 0.7)
+  width: 40px
+  height: 40px
+  color: white
+  @extend .hoverable
+  visibility: hidden
+  opacity: 0
+
+  &:hover
+    background: rgba($dk-grey, 0.9)
+
+  &.is-visible
+    visibility: visible
+    opacity: 1
+
+  &.fade-out
+    opacity: 0.5
