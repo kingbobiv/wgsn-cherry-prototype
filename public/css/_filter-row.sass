@@ -1,5 +1,11 @@
 .filter-row
-  background: rgba($xlt-grey, 0.8)
+  background: rgba($xlt-grey, 0.9)
+  position: fixed
+  top: $header-height + $title-row-height + $utility-row-height
+  left: $left-side-panel-width
+  z-index: 100
+  +transform(translate3d(0, 0, 0) scale(1, 0))
+  +transform-origin(center top)
   
   .filter-tag
     background: lighten($xlt-grey, 1)
@@ -29,3 +35,6 @@
 
     .icon
       margin: 0 6px 0 0
+
+  &.headroom--pinned
+    +transform(translate3d(0, 0, 0) scale(1, 1))

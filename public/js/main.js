@@ -377,15 +377,11 @@ $('.btn-modal-left-side-panel').on('click', function() {
   $('#item-detail-modal').toggleClass('show-left-side-panel');
 });
 
-//- scrolling for the filter row
-// grab an element
-var myElement = document.querySelector(".filter-row");
-// construct an instance of Headroom, passing the element
-var headroom  = new Headroom(myElement);
-// initialise
-headroom.init();
 
-//- back to top button
+//- ============================================================
+//- BACK TO TOP
+//- ============================================================
+
 jQuery(document).ready(function($){
   // browser window scroll (in pixels) after which the "back to top" link is shown
   var offset = 300,
@@ -412,4 +408,14 @@ jQuery(document).ready(function($){
       }, scroll_top_duration
     );
   });
+});
+
+
+//- ============================================================
+//- FILTER ROW UP/DOWN ON SCROLL
+//- ============================================================
+
+var scroller = $('.files-row')[0];
+$(".filter-row").headroom({
+  "scroller": scroller
 });
