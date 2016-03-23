@@ -430,5 +430,16 @@ $(".files-row").headroom({
 });
 
 $('.btn-filter-row-fixed').on('click', function() {
+  var height = $('.filter-row-fixed').height() + 31;
+  
+  $(this).toggleClass('active');
   $('.filter-row-fixed').toggleClass('show');
+
+  if ($(this).hasClass('active')) {
+    $(this).children('span').text('Hide filters');
+    $(this).css({transform: 'translate3d(0,' + height + 'px, 0)'});
+  } else {
+    $(this).children('span').text('Show filters');
+    $(this).css({transform: 'translate3d(0, 0, 0)'});
+  }
 });

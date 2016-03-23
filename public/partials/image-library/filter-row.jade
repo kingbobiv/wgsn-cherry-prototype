@@ -27,16 +27,18 @@ mixin filter-tag(search, name)
   +filter-tag("", "Equipment")
   +filter-tag("", "Céline")
   +filter-tag("", "Adidas Originals")
-  .btn.btn-white.btn-filter-row-delete
-    i.icon.icon-cross
-    span Clear all
-  .btn.btn-white.btn-save-search
+  .btn.btn-black.btn-save-search
     i.icon.icon-bookmark
     span Save search
+  .btn.btn-clear
+    i.icon.icon-cross
+    span.text-underline Clear all
 
-.btn-filter-row-fixed: i.icon.icon-plus
+.btn-filter-row-fixed.border-left.border-bottom.hoverable.font-wgsn.no-transition
+  i.icon.icon-double-angle-down.no-transition.inline-block
+  span Show Filters
 
-.row.filter-row.filter-row-fixed.block-sm.hidden-workspace
+.row.filter-row.filter-row-fixed.block-sm.border-bottom.hidden-workspace
   h4.pull-left.block-ver-xs.tight.block-right-xs.block-left-xxs Filter by:
   +filter-tag("pea coats", "")
   +filter-tag("", "Yeezy")
@@ -53,9 +55,9 @@ mixin filter-tag(search, name)
   +filter-tag("", "Equipment")
   +filter-tag("", "Céline")
   +filter-tag("", "Adidas Originals")
-  .btn.btn-white.btn-filter-row-delete
-    i.icon.icon-cross
-    span Clear all
-  .btn.btn-white.btn-save-search
+  .btn.btn-black.btn-save-search
     i.icon.icon-bookmark
     span Save search
+  .btn.btn-clear
+    i.icon.icon-cross
+    span.text-underline Clear all
