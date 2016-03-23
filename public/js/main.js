@@ -297,6 +297,12 @@ $('#filter-btn-designer').on('click', function() {
   $('#filter-designer').addClass('show');
 });
 
+//- close all filters
+$('.title-row').on('click', function() {
+  $('.filter').removeClass('show');
+  $('.filter-btn').removeClass('active');
+});
+
 
 //- ============================================================
 //- MODALS
