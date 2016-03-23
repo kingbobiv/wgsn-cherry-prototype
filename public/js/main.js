@@ -240,6 +240,7 @@ $('.btn-filter-row-expand').on('click', function() {
 
 $('.btn-filter-row-delete').on('click', function() {
   $('.filter-row').remove();
+  $('.btn-filter-row-fixed').remove();
 });
 
 $('.filter-tag').on('click', function() {
