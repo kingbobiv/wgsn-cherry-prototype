@@ -25,12 +25,15 @@
     position: absolute
     width: 100%
     height: 100%
-    overflow: scroll
+    overflow: auto
     z-index: 100
     padding-bottom: 120px
 
     .files-container
       +clearfix()
+
+  .files-container
+    overflow: hidden
 
 // body.workspace-view
 //   .files-row
