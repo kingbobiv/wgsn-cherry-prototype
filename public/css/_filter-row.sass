@@ -2,7 +2,7 @@
   width: calc(100vw - #{$left-side-panel-width})
   
   .filter-tag
-    background: lighten($xlt-grey, 1)
+    background: lighten($lt-grey, 5)
     float: left
     padding: 7px
     margin: 0 4px 8px
@@ -13,8 +13,7 @@
       color: $md-grey
 
     &:hover
-      border-color: $md-grey
-      background: $xlt-grey
+      background: $lt-grey
 
       .icon
         color: $dk-grey
@@ -23,23 +22,19 @@
     background: white
     // border-color: $lt-grey
 
-  .btn
+  .btn,
+  .btn-filter-row-delete
     margin: 0 4px 8px
     float: left
 
     .icon
       margin: 0 6px 0 0
 
-    &.btn-clear
-      border-color: transparent
-      padding-left: 0
-      color: $dk-grey
-
-      &:hover
-        background: none
+  .btn-filter-row-delete
+    padding: 8px 0 0 4px
 
   &.filter-row-fixed
-    background: rgba($xlt-grey, 0.9)
+    background: $xlt-grey
     position: fixed
     top: $header-height + $title-row-height + $utility-row-height
     left: $left-side-panel-width
@@ -52,12 +47,13 @@
 .btn-filter-row-fixed
   position: fixed
   top: 223px
-  right: 0
-  background: white
+  right: 10px
+  background: $xlt-grey
   padding: 5px 10px
   z-index: 400
   display: none
   pointer-events: none
+  +border-radius(0 0 3px 3px)
 
   .icon
     margin: 0 6px 0 0

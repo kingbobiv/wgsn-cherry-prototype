@@ -437,7 +437,7 @@ $(".files-row").headroom({
 });
 
 $('.btn-filter-row-fixed').on('click', function() {
-  var height = $('.filter-row-fixed').height() + 31;
+  var height = $('.filter-row-fixed').height() + 30;
   
   $(this).toggleClass('active');
   $('.filter-row-fixed').toggleClass('show');
