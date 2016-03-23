@@ -265,43 +265,32 @@ $('#tab-item-comments').on('click', function() {
 //- FILTERS
 //- ============================================================
 
-//- category
-$('#filter-btn-category').on('click', function() {
+openFilter = function(filtername) {
+  $('#filter-btn-' + filtername).on('click', function() {
+    if($(this).hasClass('active')) {
+      console.log("hello");
+      $('.filter').removeClass('show');
+      $('.filter-btn').removeClass('active');
+    } else {
+      $('.filter').removeClass('show');
+      $('.filter-btn').removeClass('active');
+      $(this).addClass('active');
+      $('#filter-'+ filtername).addClass('show');
+    }
+  });
+};
+
+$('header, .title-row').on('click', function() {
   $('.filter').removeClass('show');
   $('.filter-btn').removeClass('active');
-  $(this).addClass('active');
-  $('#filter-category').addClass('show');
 });
 
-//- market
-$('#filter-btn-market').on('click', function() {
-  $('.filter').removeClass('show');
-  $('.filter-btn').removeClass('active');
-  $(this).addClass('active');
-  $('#filter-market').addClass('show');
-});
-
-//- products
-$('#filter-btn-products').on('click', function() {
-  $('.filter').removeClass('show');
-  $('.filter-btn').removeClass('active');
-  $(this).addClass('active');
-  $('#filter-products').addClass('show');
-});
-
-//- designer
-$('#filter-btn-designer').on('click', function() {
-  $('.filter').removeClass('show');
-  $('.filter-btn').removeClass('active');
-  $(this).addClass('active');
-  $('#filter-designer').addClass('show');
-});
-
-//- close all filters
-$('.title-row').on('click', function() {
-  $('.filter').removeClass('show');
-  $('.filter-btn').removeClass('active');
-});
+openFilter("category");
+openFilter("market");
+openFilter("products");
+openFilter("designer");
+openFilter("city");
+openFilter("season");
 
 
 //- ============================================================
