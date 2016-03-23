@@ -1,18 +1,10 @@
 .filter-row
-  z-index: 100
-  position: relative
-  overflow: hidden
-  // background: darken($xlt-grey, 2)
-
-  .filter-container
-    width: calc(100% - 86px)
-    padding-bottom: 2px
-    margin-left: 43px
-
+  width: calc(100vw - #{$left-side-panel-width})
+  
   .filter-tag
-    background: white
-    display: inline-block
-    padding: 6px
+    background: lighten($xlt-grey, 1)
+    float: left
+    padding: 7px
     margin: 0 4px 8px
     +border-radius(3px)
 
@@ -27,41 +19,61 @@
       .icon
         color: $dk-grey
 
-  .filter-row-controls
-    height: 100%
-    position: absolute
-    top: 50%
-    +transform(translate3d(0, -50%, 0))
-    // box-shadow: 0 0 0 2px rgba(black, 0.05)
+  .filter-search-tag
+    background: white
+    // border-color: $lt-grey
 
-    &.pull-left
-      left: 0
-
-    &.pull-right
-      right: 0
-
-  .btn-filter-row-expand
-    color: $md-grey
+  .btn
+    margin: 0 4px 8px
+    float: left
 
     .icon
+      margin: 0 6px 0 0
+
+    &.btn-clear
+      border-color: transparent
+      padding-left: 0
+      color: $dk-grey
+
+      &:hover
+        background: none
+
+  &.filter-row-fixed
+    background: rgba($xlt-grey, 0.9)
+    position: fixed
+    top: $header-height + $title-row-height + $utility-row-height
+    left: $left-side-panel-width
+    z-index: 100
+    display: none
+
+    &.show
       display: block
-      @extend .no-transition
-      +transform(rotate(0deg))
 
-  &.condensed
-    .filter-container
-      height: 48px
-      overflow: hidden
-      white-space: nowrap
+.btn-filter-row-fixed
+  position: fixed
+  top: 223px
+  right: 0
+  background: white
+  padding: 5px 10px
+  z-index: 400
+  display: none
+  pointer-events: none
 
-  &.expanded
-    .filter-container
-      height: auto
-      overflow: visible
-      white-space: normal
+  .icon
+    margin: 0 6px 0 0
+    +transform(translate3d(0, 0, 0) rotate(0deg))
 
-    .btn-filter-row-expand
-      box-shadow: none
+  &.active
+    .icon
+      +transform(translate3d(0, 0, 0) rotate(180deg))
 
-      .icon-double-angle-down
-        +transform(rotate(180deg))
+.files-row
+  &.headroom--top
+    .btn-filter-row-fixed
+      display: none
+      pointer-events: none
+
+  &.headroom--not-top
+    .btn-filter-row-fixed
+      display: block
+      pointer-events: all

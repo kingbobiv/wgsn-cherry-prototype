@@ -1,33 +1,63 @@
-mixin filter-tag(name)
-  .filter-tag.border.hoverable
-    span= name
+mixin filter-tag(search, name)
+  if search  
+    .filter-tag.filter-search-tag.border.hoverable.inline-block
+      span Searched for: "
+      span.text-bold= search
+      span "
+
+  if name
+    .filter-tag.border.hoverable.inline-block
+      span= name
+      i.icon.icon-cross
+
+.row.filter-row.block-hor-sm.block-top-sm.hidden-workspace
+  h4.pull-left.block-ver-xs.tight.block-right-xs.block-left-xxs Filter by:
+  +filter-tag("pea coats", "")
+  +filter-tag("", "Yeezy")
+  +filter-tag("", "Chanel")
+  +filter-tag("", "Adidas")
+  +filter-tag("", "Bassike")
+  +filter-tag("", "Acne Studios")
+  +filter-tag("", "Sass & Bide")
+  +filter-tag("", "Nike")
+  +filter-tag("", "American Apparel")
+  +filter-tag("", "Isabel Marant")
+  +filter-tag("", "Alexander Wang")
+  +filter-tag("", "Rag & Bone")
+  +filter-tag("", "Equipment")
+  +filter-tag("", "Céline")
+  +filter-tag("", "Adidas Originals")
+  .btn.btn-black.btn-save-search
+    i.icon.icon-bookmark
+    span Save search
+  .btn.btn-clear.btn-filter-row-delete
     i.icon.icon-cross
+    span.text-underline Clear all
 
-.row.filter-row.bg-grey.border-bottom.condensed.hidden-workspace
-  .filter-row-controls.block-sm.pull-left.border-right.flex-center.hoverable.btn-filter-row-delete: i.icon.icon-cross-circle
+.btn-filter-row-fixed.border-left.border-bottom.hoverable.font-wgsn.no-transition
+  i.icon.icon-double-angle-down.no-transition.inline-block
+  span Show Filters
 
-  .block-xs.filter-container.pull-left
-    +filter-tag("Alice & Olivia")
-    +filter-tag("Chanel")
-    +filter-tag("Adidas")
-    +filter-tag("Bassike")
-    +filter-tag("Acne Studios")
-    +filter-tag("Sass & Bide")
-    +filter-tag("Zara")
-    +filter-tag("Kenzo")
-    +filter-tag("Nike")
-    +filter-tag("Converse")
-    +filter-tag("Gap")
-    +filter-tag("Chloe")
-    +filter-tag("Fendi")
-    +filter-tag("American Apparel")
-    +filter-tag("Isabel Marant")
-    +filter-tag("Alexander Wang")
-    +filter-tag("Louis Vuitton")
-    +filter-tag("Rag & Bone")
-    +filter-tag("Equipment")
-    +filter-tag("Céline")
-    +filter-tag("Dior")
-    +filter-tag("Adidas Originals")
-
-  .filter-row-controls.block-sm.pull-right.border-left.flex-center.hoverable.btn-filter-row-expand: i.icon.icon-double-angle-down
+.row.filter-row.filter-row-fixed.block-sm.border-bottom.hidden-workspace
+  h4.pull-left.block-ver-xs.tight.block-right-xs.block-left-xxs Filter by:
+  +filter-tag("pea coats", "")
+  +filter-tag("", "Yeezy")
+  +filter-tag("", "Chanel")
+  +filter-tag("", "Adidas")
+  +filter-tag("", "Bassike")
+  +filter-tag("", "Acne Studios")
+  +filter-tag("", "Sass & Bide")
+  +filter-tag("", "Nike")
+  +filter-tag("", "American Apparel")
+  +filter-tag("", "Isabel Marant")
+  +filter-tag("", "Alexander Wang")
+  +filter-tag("", "Rag & Bone")
+  +filter-tag("", "Equipment")
+  +filter-tag("", "Céline")
+  +filter-tag("", "Adidas Originals")
+  .btn.btn-black.btn-save-search
+    i.icon.icon-bookmark
+    span Save search
+  .btn.btn-clear.btn-filter-row-delete
+    i.icon.icon-cross
+    span.text-underline Clear all
