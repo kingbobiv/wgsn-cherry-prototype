@@ -38,6 +38,7 @@
 
   &.filter-row-fixed
     background: $xlt-grey
+    pointer-events: all
     +transform(translate3d(0, -100%, 0))
 
     &.show
@@ -50,6 +51,7 @@
   top: $header-height + $title-row-height + $utility-row-height
   left: $left-side-panel-width
   z-index: 100
+  pointer-events: none
 
 .btn-filter-row-fixed
   position: fixed
@@ -72,6 +74,9 @@
 
 .files-row
   &.headroom--top
+    .filter-row-fixed
+      +transform(translate3d(0, -100%, 0))
+    
     .btn-filter-row-fixed
       opacity: 0
       pointer-events: none
