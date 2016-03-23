@@ -11,23 +11,21 @@
   display: none
   background: lighten($lt-grey, 7)
 
-  &:after
-    content: ""
+  .filter-overlay
     background: rgba(white, 0.8)
     position: absolute
     display: block
     top: 0
-    right: calc(-100vw - 1px)
+    left: calc(100% + 1px)
     width: 100vw
     height: 100%
-    +transition(all 300ms)
     opacity: 0
     pointer-events: none
 
   &.show
     +transform(translate3d(0, 0, 0))
 
-    &:after
+    .filter-overlay
       opacity: 1
       pointer-events: all
 

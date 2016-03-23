@@ -280,7 +280,7 @@ openFilter = function(filtername) {
   });
 };
 
-$('header, .title-row').on('click', function() {
+$('header, .title-row, .filter-overlay').on('click', function() {
   $('.filter').removeClass('show');
   $('.filter-btn').removeClass('active');
 });

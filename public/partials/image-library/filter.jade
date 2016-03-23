@@ -1,5 +1,7 @@
 mixin filter(id, search, anchors, ...items)
   .filter.bg-grey.border-right(id="filter-" +id)
+    .filter-overlay
+    
     if search
       .filter-search.block-sm.border-bottom
         .input-container
