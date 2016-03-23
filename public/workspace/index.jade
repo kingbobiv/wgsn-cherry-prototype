@@ -1,4 +1,4 @@
-extends layout
+extends ../layout
 
 block append vars
   - bodyclass = 'workspace-view'
@@ -7,7 +7,7 @@ block prepend title
   | Workspace | 
 
 block content
-  include partials/header
+  include ../partials/header
 
   .row.title-row.border-bottom
     .title-block.block-sm.pull-left
@@ -79,6 +79,6 @@ block content
         li.hoverable.sharing-other +6
 
   .row.page-content.show-left-side-panel
-    include partials/workspace/left-side-panel
-    include partials/right-side-panel
-    include partials/workspace/comments-panel
+    include ../partials/workspace/left-side-panel
+    include ../partials/right-side-panel
+    include ../partials/workspace/comments-panel
