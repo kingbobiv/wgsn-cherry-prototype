@@ -445,15 +445,10 @@ $('.btn-filter-row-fixed').on('click', function() {
 //- MESSAGES
 //- ============================================================
 
-$('.message').click(function(e, evt) {
-  if($(e.target).is('.file, .select-all')) {
-    e.preventDefault();
-    return;
-  }
-
+$('.message').on('click', function() {
   $(this).toggleClass('message-closed message-open');
 
-  var height = $('.message-content').height() + 30;
+  var height = $(this).find('.message-content').height() + 30;
 
   if ($(this).hasClass('message-open')) {
     $(this).children('.message-content-container').css({height: height + "px"})
