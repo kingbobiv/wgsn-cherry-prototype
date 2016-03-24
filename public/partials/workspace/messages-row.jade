@@ -14,7 +14,10 @@ mixin message(unread, img, initials, name, time, attachments, subject, message)
           span.message-time.text-grey.block-left-xxs= time
         p.tight
           span= attachments
-          span  images
+          if attachments == 1
+            span  image
+          else
+            span  images
           span &nbsp; &middot; &nbsp;
           span= subject
 
