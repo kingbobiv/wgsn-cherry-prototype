@@ -327,7 +327,8 @@ $(document).ready(function() {
       "Andrew Harris"
     ],
     autocomplete: {delay: 0, minLength: 2},
-    showAutocompleteOnFocus: true
+    showAutocompleteOnFocus: true,
+    removeConfirmation: true
   });
 });
 

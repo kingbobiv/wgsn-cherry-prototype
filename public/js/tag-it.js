@@ -482,7 +482,7 @@
                 // Button for removing the tag.
                 var removeTagIcon = $('<span></span>')
                     .addClass('ui-icon ui-icon-close');
-                var removeTag = $('<a><span class="text-icon">\xd7</span></a>') // \xd7 is an X
+                var removeTag = $('<a><i class="icon icon-cross"></i></a>') // \xd7 is an X
                     .addClass('tagit-close')
                     .append(removeTagIcon)
                     .click(function(e) {

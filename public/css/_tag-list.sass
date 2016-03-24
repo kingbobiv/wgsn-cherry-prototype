@@ -1,36 +1,57 @@
 ul.tagit
   @extend .border
   background: $xlt-grey
-  padding: 5px
   color: $dk-grey
-  font-size: 12px
-  +border-radius(3px)
+  // font-size: 12px
+  padding: 5px
   margin: 0
   min-height: 44px
+  +border-radius(3px)
 
   &:hover
     cursor: text
 
   li.tagit-choice
-    background: white
-    color: black
-    @extend .font-normal
-    padding: 6px 24px 6px 10px
+    @extend .pull-left
+    @extend .no-transition
+    display: block
+    background: lighten($lt-grey, 5)
+    border: 1px solid lighten($lt-grey, 5)
+    padding: 6px 24px 5px 10px
+    margin: 2px 5px 2px 0
+    +border-radius(3px)
 
     a.tagit-close
+      @extend .hoverable
+      display: block
+      position: absolute
+      top: calc(50% - 7px)
       right: 5px
-      background: black
-      width: 10px
-      height: 10px
+      margin: 0 // delete when tagit.css is gone
+      line-height: 17px // delete when tagit.css is gone
+
+    &.ui-state-highlight.remove
+      background: $lt-grey
 
   li.tagit-new
     input
       height: auto
+      width: auto
       padding: 3px 5px
 
 ul.tagit-autocomplete
-  position: absolute
-  top: 0
-  left: 0
-  z-index: 10000
   @extend .no-transition
+  @extend .border
+  list-style: none
+  position: absolute
+  z-index: 1000
+  background: white
+  padding: 0
+  margin: 10px 0 0 0
+
+  li
+    @extend .tight
+    padding: 6px 12px
+
+    &.ui-state-focus
+      background: $xlt-grey
