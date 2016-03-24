@@ -1,0 +1,30 @@
+ul.context-menu#utility-row-settings-context-menu
+  .block-ver-xxs.border-bottom
+    li: h4.tight Display
+    li
+      span Captions
+      .toggle.toggle-on.pull-right#toggle-show-caption
+    li
+      span Filenames
+      .toggle.toggle-off.pull-right#toggle-show-filename
+  .block-ver-xxs.border-bottom
+    li: h4.tight Download Preferences
+    li: span Images:
+    li
+      form
+        input(type="radio" checked)
+        label Standard quality
+        br
+        input(type="radio")
+        label Best quality
+    li: span Design Assets:
+    li
+      form
+        input(type="radio")
+        label Flat image
+        br
+        input(type="radio" checked)
+        label Design file
+  .block-ver-xxs.text-center
+    li
+      span.text-underline More Settings

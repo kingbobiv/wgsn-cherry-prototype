@@ -70,7 +70,7 @@
   .board-row,
   .person-row,
   .team-row
-    // border-bottom: 1px solid $xlt-grey
+    display: block
     position: relative
     padding: 6px
 
@@ -236,3 +236,14 @@ body.image-library-view
 body.workspace-view
   .left-side-panel
     height: calc(100vh - #{$header-height} - #{$title-row-height} + #{$product-row-height})
+
+    .board-container .board-row:first-of-type
+      @extend .active
+
+body.workspace-inbox-view
+  .left-side-panel
+    .btn-inbox
+      @extend .active
+
+    .inbox-number
+      display: none

@@ -174,25 +174,25 @@ $('.select-all').click(function() {
 $('#btn-view-option-sm').on('click', function() {
   $(this).removeClass('disabled');
   $(this).siblings().addClass('disabled');
-  $(this).parentsUntil('.page-content').addClass('view-tiles-sm').removeClass('view-tiles-md').removeClass('view-tiles-lg').removeClass('view-tiles-details');
+  $('.files-row').addClass('view-tiles-sm').removeClass('view-tiles-md').removeClass('view-tiles-lg').removeClass('view-tiles-details');
 });
 
 $('#btn-view-option-md').on('click', function() {
   $(this).removeClass('disabled');
   $(this).siblings().addClass('disabled');
-  $(this).parentsUntil('.page-content').removeClass('view-tiles-sm').addClass('view-tiles-md').removeClass('view-tiles-lg').removeClass('view-tiles-details');
+  $('.files-row').removeClass('view-tiles-sm').addClass('view-tiles-md').removeClass('view-tiles-lg').removeClass('view-tiles-details');
 });
 
 $('#btn-view-option-lg').on('click', function() {
   $(this).removeClass('disabled');
   $(this).siblings().addClass('disabled');
-  $(this).parentsUntil('.page-content').removeClass('view-tiles-sm').removeClass('view-tiles-md').addClass('view-tiles-lg').removeClass('view-tiles-details');
+  $('.files-row').removeClass('view-tiles-sm').removeClass('view-tiles-md').addClass('view-tiles-lg').removeClass('view-tiles-details');
 });
 
 $('#btn-view-option-details').on('click', function() {
   $(this).removeClass('disabled');
   $(this).siblings().addClass('disabled');
-  $(this).parentsUntil('.page-content').removeClass('view-tiles-sm').removeClass('view-tiles-md').removeClass('view-tiles-lg').addClass('view-tiles-details');
+  $('.files-row').removeClass('view-tiles-sm').removeClass('view-tiles-md').removeClass('view-tiles-lg').addClass('view-tiles-details');
 });
 
 

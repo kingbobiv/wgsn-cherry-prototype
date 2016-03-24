@@ -5,26 +5,33 @@
 @import "common-styles"
 @import "typography" 
 @import "grid"
+
+// elements
 @import "inputs"
 @import "buttons"
 @import "tooltip"
 
-// demo
+// components
 @import "header"
 @import "title-row"
-@import "share-block"
 @import "page-content"
+
 @import "left-side-panel"
 @import "right-side-panel"
+@import "comments-panel"
+
 @import "utility-row"
 @import "filter-row"
-@import "comments-panel"
-@import "view-tiles-options"
+@import "files-row"
+@import "messages-row"
+
+@import "modal"
 @import "item-detail-modal"
 @import "file"
-@import "modal"
+
 @import "context-menus"
 @import "filter"
+@import "share-block"
 @import "saved-searches"
 
 // ==================================================
@@ -63,6 +70,7 @@ body
   box-sizing: border-box
   +transition(all 400ms)
 
+// home page styles
 .index
   .block-xl
     width: 50%

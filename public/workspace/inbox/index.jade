@@ -1,4 +1,4 @@
-extends ../layout
+extends ../../layout
 
 block append vars
   - bodyclass = 'workspace-inbox-view'
@@ -7,7 +7,7 @@ block prepend title
   | Inbox | 
 
 block content
-  include ../partials/header
+  include ../../partials/header
 
   .row.title-row.border-bottom
     .title-block.block-sm.pull-left
@@ -16,4 +16,5 @@ block content
         .block-xxs.inline-block.board-name.hoverable: span Inbox
 
   .row.page-content.show-left-side-panel
-    include ../partials/workspace/left-side-panel
+    include ../../partials/workspace/left-side-panel
+    include ../../partials/right-side-panel
