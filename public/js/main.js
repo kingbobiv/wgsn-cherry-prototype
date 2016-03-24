@@ -439,3 +439,12 @@ $('.btn-filter-row-fixed').on('click', function() {
     $(this).css({transform: 'translate3d(0, 0, 0)'});
   }
 });
+
+
+//- ============================================================
+//- MESSAGES
+//- ============================================================
+
+$('.message').on('click', function() {
+  $(this).toggleClass('message-closed message-open');
+});

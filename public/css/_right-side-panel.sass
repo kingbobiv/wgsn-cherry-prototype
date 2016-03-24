@@ -1,5 +1,4 @@
 .right-side-panel
-  height: calc(100vh - (#{$global-product-row-height} + #{$title-row-height}))
   position: absolute
   top: 0
 
@@ -20,3 +19,12 @@
       display: block
       +transform(translate3d(0, 0, 0) rotate(180deg))
       @extend .no-transition
+
+body.image-library-view
+  .right-side-panel
+    height: calc(100vh - (#{$header-height} + #{$title-row-height}))
+
+body.workspace-view,
+body.workspace-inbox-view
+  .right-side-panel
+    height: calc(100vh - (#{$global-product-row-height} + #{$title-row-height}))

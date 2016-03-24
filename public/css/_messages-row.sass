@@ -1,2 +1,56 @@
 .messages-row
-  attr: none
+  overflow: auto
+  width: 100%
+  height: calc(100% - #{$utility-row-height})
+  
+  .header-row
+    width: 100%
+    @extend .bg-grey
+    @extend .border-bottom
+    @extend .font-wgsn
+
+  .message
+    attr: none
+
+    .unread-dot
+      width: 10px
+      height: 10px
+      background: $yellow
+      +border-radius(50%)
+      margin: 11px 11px 11px 0
+
+    .avatar
+      width: 32px
+      height: 32px
+      background: $md-grey no-repeat center / cover
+      @extend .border
+      color: white
+      +border-radius(50%)
+      @extend .flex-center
+      @extend .font-wgsn
+      font-size: 10px
+
+    .message-time
+      font-size: 10px
+
+    .icon-trash
+      color: $md-grey
+      opacity: 0
+
+      &:hover
+        color: $dk-grey
+
+    .message-content
+      border-color: rgba($lt-grey, 0.25)
+
+    &:hover
+      .icon-trash
+        opacity: 1
+
+    &.message-closed
+      .message-content
+        display: none
+
+    &.message-open
+      .message-content
+        display: block
