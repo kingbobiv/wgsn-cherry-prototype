@@ -1,0 +1,36 @@
+ul.tagit
+  @extend .border
+  background: $xlt-grey
+  padding: 5px
+  color: $dk-grey
+  font-size: 12px
+  +border-radius(3px)
+  margin: 0
+  min-height: 44px
+
+  &:hover
+    cursor: text
+
+  li.tagit-choice
+    background: white
+    color: black
+    @extend .font-normal
+    padding: 6px 24px 6px 10px
+
+    a.tagit-close
+      right: 5px
+      background: black
+      width: 10px
+      height: 10px
+
+  li.tagit-new
+    input
+      height: auto
+      padding: 3px 5px
+
+ul.tagit-autocomplete
+  position: absolute
+  top: 0
+  left: 0
+  z-index: 10000
+  @extend .no-transition

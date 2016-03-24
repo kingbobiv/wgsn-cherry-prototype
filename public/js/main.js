@@ -309,10 +309,26 @@ $('.btn-add-to-board').on('click', function() {
   $('#add-modal').addClass('show');
 });
 
-//- add
+//- send
 $('.btn-send').on('click', function() {
   $('.overlay').addClass('show');
   $('#send-modal').addClass('show');
+});
+
+$(document).ready(function() {
+  $("#myTags").tagit({
+    availableTags: [
+      "Amelia Lewis",
+      "Julian Ramirez",
+      "Sansan Chen",
+      "Nicky Ashwell",
+      "Hema Sivaram",
+      "Sarah Freiser",
+      "Andrew Harris"
+    ],
+    autocomplete: {delay: 0, minLength: 2},
+    showAutocompleteOnFocus: true
+  });
 });
 
 //- create new board
@@ -343,16 +359,13 @@ $('.btn-save-search').on('click', function() {
 $('.modal .close-modal').on('click', function() {
   $(this).parentsUntil('body').removeClass('show');
   $('.overlay').removeClass('show');
-
-  //- keep overlay if it was a second level modal
-  //- if ($('#item-detail-modal').hasClass('show')) {
-  //-   return;
-  //- } else {
-  //-   $('.overlay').removeClass('show');
-  //- }
 });
 
-//- item detail modal
+
+//- ============================================================
+//- ITEM DETAIL MODAL
+//- ============================================================
+
 $('.file').on('dblclick', function() {
   $('.overlay').addClass('show');
   $('#item-detail-modal').addClass('show');

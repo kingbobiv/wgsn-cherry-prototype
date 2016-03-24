@@ -22,7 +22,6 @@
   min-height: 100px
   z-index: 400
   background: white
-  // @extend .border
   @extend .box-shadow
   opacity: 0
   pointer-events: none
@@ -32,6 +31,10 @@
     color: white
     @extend .block-sm
     overflow: auto
+    vertical-align: bottom
+
+    p
+      margin: 4px 0 0 6px
 
     .icon-cross
       font-size: 18px
@@ -121,8 +124,8 @@
 // ==================================================
 
 #send-modal
-  input[type="text"]
-    width: 100%
+  // input[type="text"]
+  //   width: 100%
 
   .image-preview
     width: 220px
