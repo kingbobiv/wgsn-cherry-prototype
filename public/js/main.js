@@ -445,15 +445,15 @@ $('.btn-filter-row-fixed').on('click', function() {
 //- MESSAGES
 //- ============================================================
 
-$('.message').on('click', function() {
-  $(this).toggleClass('message-closed message-open');
+$('.message-preview').on('click', function() {
+  $(this).parentsUntil('.messages-row').toggleClass('message-closed message-open');
 
-  var height = $(this).find('.message-content').height() + 30;
+  var height = $(this).siblings('.message-content-container').find('.message-content').height();
 
-  if ($(this).hasClass('message-open')) {
-    $(this).children('.message-content-container').css({height: height + "px"})
+  if ($(this).parentsUntil('.messages-row').hasClass('message-open')) {
+    $(this).siblings('.message-content-container').css({height: height + "px"})
   } else {
-    $(this).children('.message-content-container').css({height: "0px"})
+    $(this).siblings('.message-content-container').css({height: "0px"})
   }
 });
 
