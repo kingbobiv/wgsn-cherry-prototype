@@ -445,7 +445,12 @@ $('.btn-filter-row-fixed').on('click', function() {
 //- MESSAGES
 //- ============================================================
 
-$('.message').on('click', function() {
+$('.message').click(function(e, evt) {
+  if($(e.target).is('.file, .select-all')) {
+    e.preventDefault();
+    return;
+  }
+
   $(this).toggleClass('message-closed message-open');
 
   var height = $('.message-content').height() + 30;

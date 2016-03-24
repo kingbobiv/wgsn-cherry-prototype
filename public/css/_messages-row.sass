@@ -41,11 +41,67 @@
     .message-content-container
       overflow: hidden
       height: 0
-      border-color: rgba($lt-grey, 0.25)
 
-    .message-content
-      height: auto
-      opacity: 1
+      .message-content
+        height: auto
+        opacity: 1
+
+        .message-message
+          max-width: 800px
+          display: inline-block
+
+        > .block-sm
+          border-top: 1px solid rgba($lt-grey, 0.25)
+
+        .message-utility-row
+          .multi-utility-icon
+            color: $lt-grey
+            pointer-events: none
+            margin: 0 6px
+
+            .tooltip
+              top: 28px
+
+            &:hover
+              .tooltip
+                opacity: 1
+                +transition-delay(200ms)
+
+          .icon-paper-plane
+            margin: 0 0 0 6px
+
+        .message-files-row
+          .files-container[min-width~="0px"]
+            .file-outer
+              width: calc(100% / 2)
+
+          .files-container[min-width~="1000px"]
+            .file-outer
+              width: calc(100% / 3)
+
+          .files-container[min-width~="1200px"]
+            .file-outer
+              width: calc(100% / 4)
+
+          .files-container[min-width~="1400px"]
+            .file-outer
+              width: calc(100% / 5)
+
+          .files-container[min-width~="1600px"]
+            .file-outer
+              width: calc(100% / 6)
+
+          .files-container[min-width~="1800px"]
+            .file-outer
+              width: calc(100% / 7)
+
+          .files-container[min-width~="2000px"]
+            .file-outer
+              width: calc(100% / 8)
+
+          .thumb-inner,
+          .file-utilities
+            height: 250px
 
     &:hover
       .icon-trash
@@ -54,6 +110,14 @@
     &.message-closed
       .message-content-container
         border-color: transparent
-      
-      .message-content
-        opacity: 0
+        
+        .message-content
+          opacity: 0
+
+    &.has-file-selected
+      .multi-utility-icon
+        color: $md-grey
+        pointer-events: all
+
+        &:hover
+          color: $dk-grey

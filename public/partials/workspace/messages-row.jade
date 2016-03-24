@@ -19,9 +19,32 @@ mixin message(unread, img, initials, name, time, attachments, subject, message)
 
       .block-top-xs.pull-right: i.icon.icon-trash
 
-    .row.message-content-container.border-top
-      .message-content.block-sm
-        p= message
+    .row.message-content-container
+      .message-content
+        .block-hor-sm.block-bot-sm
+          .block-xxs: p.message-message.block-sm.bg-grey= message
+        
+        .block-sm
+          .row.message-utility-row
+            .col-xs-6
+              .block-left-xxs: p.text-grey Also sent to Andrew H. and Julian R.
+            
+            .col-xs-6.text-right
+              .block-hor-xs.inline-block
+                input.select-all(type="checkbox")
+                span Select all (1000)
+              
+              .block-hor-xs.inline-block
+                i.icon.icon-plus-circle.multi-utility-icon.hoverable.btn-add-to-board: span.tooltip.nowrap Add to Board
+                i.icon.icon-download.multi-utility-icon.hoverable: span.tooltip.nowrap Download
+                i.icon.icon-print.multi-utility-icon.hoverable: span.tooltip.nowrap Print
+                i.icon.icon-paper-plane.multi-utility-icon.hoverable.btn-send: span.tooltip.nowrap Send
+
+          .row.message-files-row
+            .files-container
+              .file-outer: +file("image", "http://www.wgsn.com/storage/vol20/ss_image_store/16/53/61/42/media_yzy_aw16_001.jpg", "no", "media_yzy_aw16_001.jpg", "Yeezy", "Autumn/Winter 2016", "New York")
+              .file-outer: +file("image", "http://www.wgsn.com/storage/vol20/ss_image_store/16/53/61/42/media_yzy_aw16_001.jpg", "no", "media_yzy_aw16_001.jpg", "Yeezy", "Autumn/Winter 2016", "New York")
+
 
 .messages-row.bg-white.hidden-workspace.hidden-image-library
   .header-row.block-xs Today
