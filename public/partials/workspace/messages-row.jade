@@ -19,8 +19,9 @@ mixin message(unread, img, initials, name, time, attachments, subject, message)
 
       .block-top-xs.pull-right: i.icon.icon-trash
 
-    .row.message-content.block-sm.border-top
-      p= message
+    .row.message-content-container.border-top
+      .message-content.block-sm
+        p= message
 
 .messages-row.bg-white.hidden-workspace.hidden-image-library
   .header-row.block-xs Today

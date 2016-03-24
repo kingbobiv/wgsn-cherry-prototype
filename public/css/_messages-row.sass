@@ -10,8 +10,6 @@
     @extend .font-wgsn
 
   .message
-    attr: none
-
     .unread-dot
       width: 10px
       height: 10px
@@ -40,17 +38,22 @@
       &:hover
         color: $dk-grey
 
-    .message-content
+    .message-content-container
+      overflow: hidden
+      height: 0
       border-color: rgba($lt-grey, 0.25)
+
+    .message-content
+      height: auto
+      opacity: 1
 
     &:hover
       .icon-trash
         opacity: 1
 
     &.message-closed
+      .message-content-container
+        border-color: transparent
+      
       .message-content
-        display: none
-
-    &.message-open
-      .message-content
-        display: block
+        opacity: 0

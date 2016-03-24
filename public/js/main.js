@@ -447,4 +447,16 @@ $('.btn-filter-row-fixed').on('click', function() {
 
 $('.message').on('click', function() {
   $(this).toggleClass('message-closed message-open');
+
+  var height = $('.message-content').height() + 30;
+
+  if ($(this).hasClass('message-open')) {
+    $(this).children('.message-content-container').css({height: height + "px"})
+  } else {
+    $(this).children('.message-content-container').css({height: "0px"})
+  }
 });
+
+
+
+
