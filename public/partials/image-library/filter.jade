@@ -1,5 +1,5 @@
 mixin filter(id, search, anchors, ...items)
-  .filter.bg-grey.border-right(id="filter-" +id)
+  .filter.bg-grey.border-right(id="filter-" +id class!=attributes.class)
     .filter-overlay
     
     if search
@@ -17,8 +17,8 @@ mixin filter(id, search, anchors, ...items)
       ul.clean
         each item in items
           li.hoverable
-            input(type="checkbox")
-            span= item
+            input.pull-left(type="checkbox")
+            label.pull-left= item
 
     .filter-bottom-row.text-right.block-xs.border-top
       .btn.btn-white.pull-right
@@ -38,7 +38,7 @@ mixin filter(id, search, anchors, ...items)
   "Street Style (1.79 mil.)", 
   "Trade Shows & Exhibits (2.66 mil.)", 
   "Vintage (122,285)", 
-  "Celebrity Fashion (135,456)")
+  "Celebrity Fashion (135,456)")(class="filter-narrow")
 
 +filter(
   "market",
@@ -48,7 +48,7 @@ mixin filter(id, search, anchors, ...items)
   "Men (1.07 mil.)",
   "Kids (110,973)",
   "Girls (68,496)",
-  "Boys (21,562)")
+  "Boys (21,562)")(class="filter-narrow")
 
 +filter(
   "products",
@@ -57,7 +57,7 @@ mixin filter(id, search, anchors, ...items)
   "Apparel (4.54 mil.)",
   "Accessories (1.07 mil.)",
   "Beauty (110,973)",
-  "Footwear (68,496)")
+  "Footwear (68,496)")(class="filter-narrow")
 
 +filter(
   "designer",
@@ -850,7 +850,7 @@ mixin filter(id, search, anchors, ...items)
   "AZ Araujo (498)",
   "Azzaro (1648)",
   "Azzedine Alaia (326)",
-  "Azzurra Gronchi (10)")
+  "Azzurra Gronchi (10)")(class="filter-wide")
 
 +filter(
   "city",
@@ -955,13 +955,12 @@ mixin filter(id, search, anchors, ...items)
   "Toronto (2866)",
   "Vienna (635)",
   "Warsaw (8)",
-  "Yokohama (77)")
+  "Yokohama (77)")(class="filter-wide")
 
 +filter(
   "season",
   true,
   true,
-  "2016",
   "Autumn/Winter 2016 (284225)",
   "Bridal Autumn/Winter 2016 (9125)",
   "Bridal Spring/Summer 2016 (17780)",
@@ -969,7 +968,6 @@ mixin filter(id, search, anchors, ...items)
   "Pre-Fall 2016 (19740)",
   "Pre-Summer 2016 (25117)",
   "Spring/Summer 2016 (272598)",
-  "2015",
   "Autumn/Winter 2015 (248242)",
   "Bridal Autumn/Winter 2015 (6381)",
   "Bridal Spring/Summer 2015 (10421)",
@@ -978,7 +976,6 @@ mixin filter(id, search, anchors, ...items)
   "Pre-Fall 2015 (20923)",
   "Pre-Summer 2015 (25640)",
   "Spring/Summer 2015 (230495)",
-  "2014",
   "Autumn/Winter 2014 (211896)",
   "Bridal Autumn/Winter 2014 (7205)",
   "Bridal Spring/Summer 2014 (12974)",
@@ -987,7 +984,6 @@ mixin filter(id, search, anchors, ...items)
   "Pre-Fall 2014 (19498)",
   "Pre-Summer 2014 (24168)",
   "Spring/Summer 2014 (265271)",
-  "2013",
   "Autumn/Winter 2013 (332657)",
   "Bridal Autumn/Winter 2013 (6407)",
   "Bridal Spring/Summer 2013 (4985)",
@@ -996,7 +992,6 @@ mixin filter(id, search, anchors, ...items)
   "Pre-Fall 2013 (18933)",
   "Pre-Summer 2013 (18337)",
   "Spring/Summer 2013 (278729)",
-  "2012",
   "Autumn/Winter 2012 (218643)",
   "Bridal Autumn/Winter 2012 (8782)",
   "Bridal Spring/Summer 2012 (5459)",
@@ -1005,7 +1000,6 @@ mixin filter(id, search, anchors, ...items)
   "Pre-Fall 2012 (12619)",
   "Pre-Summer 2012 (19317)",
   "Spring/Summer 2012 (249011)",
-  "2011",
   "Autumn/Winter 2011 (211837)",
   "Bridal Autumn/Winter 2011 (7920)",
   "Bridal Spring/Summer 2011 (1434)",
@@ -1015,7 +1009,6 @@ mixin filter(id, search, anchors, ...items)
   "Haute Couture Spring/Summer 2011 (3338)",
   "Pre Fall 2011 (8202)",
   "Spring/Summer 2011 (246486)",
-  "2010",
   "Autumn/Winter 2010 (235159)",
   "Bridal Autumn/Winter 2010 (2339)",
   "Bridal Spring/Summer 2010 (5218)",
@@ -1024,7 +1017,6 @@ mixin filter(id, search, anchors, ...items)
   "Haute Couture Spring/Summer 2010 (2145)",
   "Pre Fall 2010 (6210)",
   "Spring/Summer 2010 (239658)",
-  "2009",
   "Autumn/Winter 2009 (184845)",
   "Bridal Autumn/Winter 2009 (3043)",
   "Bridal Spring/Summer 2009 (1403)",
@@ -1034,7 +1026,6 @@ mixin filter(id, search, anchors, ...items)
   "Haute Couture Spring/Summer 2009 (8243)",
   "Pre Fall 2009 (3479)",
   "Spring/Summer 2009 (211572)",
-  "2008",
   "Autumn/Winter 2008 (177937)",
   "Bridal Autumn/Winter 2008 (2172)",
   "Bridal Spring/Summer 2008 (2537)",
@@ -1043,7 +1034,6 @@ mixin filter(id, search, anchors, ...items)
   "Haute Couture Spring/Summer 2008 (9862)",
   "Pre Fall 2008 (2073)",
   "Spring/Summer 2008 (223468)",
-  "2007",
   "Autumn/Winter 2007 (179879)",
   "Bridal Autumn/Winter 2007 (2473)",
   "Bridal Spring/Summer 2007 (2111)",
@@ -1051,7 +1041,6 @@ mixin filter(id, search, anchors, ...items)
   "Haute Couture Autumn/Winter 2007 (12171)",
   "Haute Couture Spring/Summer 2007 (9569)",
   "Spring/Summer 2007 (170755)",
-  "2006",
   "Autumn/Winter 2006 (176235)",
   "Bridal Autumn/Winter 2006 (1602)",
   "Bridal Spring/Summer 2006 (2114)",
@@ -1059,14 +1048,10 @@ mixin filter(id, search, anchors, ...items)
   "Haute Couture Autumn/Winter 2006 (7285)",
   "Haute Couture Spring/Summer 2006 (7952)",
   "Spring/Summer 2006 (166435)",
-  "2005",
   "Autumn/Winter 2005 (130978)",
   "Haute Couture Autumn/Winter 2005 (4612)",
   "Haute Couture Spring/Summer 2005 (4087)",
   "Spring/Summer 2005 (129721)",
-  "2004",
   "Autumn/Winter 2004 (70186)",
   "Haute Couture AutumnWinter 2004 (6373)",
-  "2003",
-  "Autumn/Winter 2003 (161)"
-)
+  "Autumn/Winter 2003 (161)")(class="filter-wide")
