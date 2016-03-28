@@ -1,3 +1,7 @@
+//- ============================================================
+//- MISC
+//- ============================================================
+
 //- heart icons
 $('.file-heart').on('click', function() {
   $(this).toggleClass('icon-heart-o icon-heart');
@@ -8,8 +12,7 @@ $('.file-details-view .file-checkbox').on('click', function() {
   $(this).toggleClass('icon-tick-circle icon-tick-circle-filled');
 });
 
-
-//- toggle icons
+// show/hide captions
 showCaptions = function() {
   if ($('#toggle-show-caption').hasClass('toggle-on')) {
     $('.file').addClass('show-caption');
@@ -18,6 +21,7 @@ showCaptions = function() {
   }
 };
 
+//- show/hide filenames
 showFilenames = function() {
   if ($('#toggle-show-filename').hasClass('toggle-on')) {
     $('.file').addClass('show-filename');
@@ -26,6 +30,7 @@ showFilenames = function() {
   }
 };
 
+// toggle icons
 $('.toggle').on('click', function() {
   $(this).toggleClass('toggle-on toggle-off');
   showCaptions();
@@ -74,12 +79,12 @@ $('.btn-saved-searches').on('click', function() {
 
 //- close context menu
 $('.context-menu').click(function(e, evt) {
-  if($(e.target).is('.toggle')) {
-    e.preventDefault();
+  if($(e.target).is('.toggle, form input')) {
+    // e.preventDefault();
     return;
+  } else {
+    $('.context-menu').removeClass('show');
   }
-  
-  $('.context-menu').removeClass('show');
 });
 
 

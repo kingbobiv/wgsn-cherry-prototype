@@ -164,7 +164,7 @@ input[type="checkbox"]
 input[type="radio"]
   width: 14px
   height: 14px
-  margin-right: 8px
+  margin: 0 8px 8px 0
   position: relative
   @extend .hoverable
 
@@ -188,6 +188,9 @@ input[type="radio"]
 
   &:focus
     outline: none
+
+  &:last-of-type
+    margin: 0 8px 0 0
 
 
 // ============================================================

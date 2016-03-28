@@ -1,30 +1,32 @@
 ul.context-menu#utility-row-settings-context-menu
   .block-ver-xxs.border-bottom
-    li: h4.tight Display
     li
-      span Captions
-      .toggle.toggle-on.pull-right#toggle-show-caption
-    li
-      span Filenames
-      .toggle.toggle-off.pull-right#toggle-show-filename
+      h4 Display
+      .row
+        p.pull-left Captions
+        .toggle.toggle-on.pull-right#toggle-show-caption
+      .row
+        p.pull-left.tight Filenames
+        .toggle.toggle-off.pull-right#toggle-show-filename
   .block-ver-xxs.border-bottom
-    li: h4.tight Download Preferences
-    li: span Images:
     li
-      form
-        input(type="radio" checked)
-        label Standard quality
-        br
-        input(type="radio")
-        label Best quality
-    li: span Design Assets:
-    li
-      form
-        input(type="radio")
-        label Flat image
-        br
-        input(type="radio" checked)
-        label Design file
+      h4 Download Preferences
+      .block-bot-xs
+        p Images:
+        form
+          input(type="radio" name="image-quality" value="best-quality" checked)
+          | Best quality
+          br
+          input(type="radio" name="image-quality" value="standard-quality")
+          | Standard quality
+      .block
+        p Design Assets:
+        form
+          input(type="radio" name="design-quality" value="design-file" checked)
+          | Design file
+          br
+          input(type="radio" name="design-quality" value="flat-image")
+          | Flat image
   .block-ver-xxs.text-center
     li
       span.text-underline More Settings
