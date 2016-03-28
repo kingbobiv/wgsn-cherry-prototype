@@ -4,7 +4,7 @@
       span.font-wgsn Messages
       i.icon.icon-angle-up.pull-right
 
-    .block-xs
+    .block-xs.border-bottom
       a.misc-row.btn-inbox(href="/workspace/inbox")
         i.icon.icon-envelope
         span Inbox
@@ -14,8 +14,15 @@
         i.icon.icon-envelope
         span Sent Messages
     
-    .header-row.border-top.border-bottom.hoverable
+    .header-row.border-bottom.hoverable
       i.icon.icon-heart-o
       span.font-wgsn Favourites
+      i.icon.icon-angle-up.pull-right
+
+    .block-xs.border-bottom
+      .misc-row: span Images
+      .misc-row: span Reports
+      .misc-row: span Videos
+      .misc-row: span Instock Products
     
     include folder-structure

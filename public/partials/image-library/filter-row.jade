@@ -34,7 +34,7 @@ mixin filter-tag(search, name)
     i.icon.icon-reset
     span.text-underline Clear all
 
-.filter-row-fixed-container
+.filter-row-fixed-container.hidden-workspace
   .row.filter-row.filter-row-fixed.block-sm.border-bottom.hidden-workspace
     //- h4.pull-left.block-ver-xs.tight.block-right-xs.block-left-xxs Filter by:
     +filter-tag("pea coats", "")
@@ -59,6 +59,6 @@ mixin filter-tag(search, name)
       i.icon.icon-reset
       span.text-underline Clear all
 
-.btn-filter-row-fixed.border-right.border-left.border-bottom.hoverable
+.btn-filter-row-fixed.border-right.border-left.border-bottom.hoverable.hidden-workspace
   i.icon.icon-double-angle-down.no-transition.inline-block
   span Show Filters
