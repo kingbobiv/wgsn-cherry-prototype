@@ -12,6 +12,7 @@ mixin message(unread, img, initials, name, time, attachments, subject, message)
 
       .pull-left
         p.tight
+          span.hidden-workspace-inbox.text-bold TO: 
           span.message-name.text-bold= name
           span.message-time.text-grey.block-left-xxs= time
         p.tight
@@ -23,7 +24,8 @@ mixin message(unread, img, initials, name, time, attachments, subject, message)
           span &nbsp; &middot; &nbsp;
           span= subject
 
-      .block-top-xs.pull-right: i.icon.icon-trash
+      .block-top-xs.pull-right.hidden-workspace-sent-messages.btn-delete-message: i.icon.icon-trash
+      .block-top-xs.pull-right.hidden-workspace-inbox.btn-send: i.icon.icon-share-right
 
     .row.message-content-container
       .message-content

@@ -464,18 +464,23 @@ $('.btn-filter-row-fixed').on('click', function() {
 //- MESSAGES
 //- ============================================================
 
-$('.message-preview').on('click', function() {
-  $(this).parentsUntil('.messages-row').toggleClass('message-closed message-open');
-
-  var height = $(this).siblings('.message-content-container').find('.message-content').height();
-
-  if ($(this).parentsUntil('.messages-row').hasClass('message-open')) {
-    $(this).siblings('.message-content-container').css({height: height + "px"})
+$('.message-preview').click(function(e, evt) {
+  if($(e.target).is('.btn-send, .btn-delete-message')) {
+    // e.preventDefault();
+    return;
   } else {
-    $(this).siblings('.message-content-container').css({height: "0px"})
+    $(this).parentsUntil('.messages-row').toggleClass('message-closed message-open');
+
+    var height = $(this).siblings('.message-content-container').find('.message-content').height();
+
+    if ($(this).parentsUntil('.messages-row').hasClass('message-open')) {
+      $(this).siblings('.message-content-container').css({height: height + "px"})
+    } else {
+      $(this).siblings('.message-content-container').css({height: "0px"})
+    }
   }
 });
 
-
-
-
+$('.btn-delete-message').on('click', function() {
+  $(this).parentsUntil('.messages-row').remove();
+});

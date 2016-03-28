@@ -1,21 +1,21 @@
 .row.utility-row.border-bottom.bg-white
   .col-xs-6.col-sm-4
     .block-xs
-      .input-container.hidden-image-library.hidden-workspace-inbox
+      .input-container.hidden-image-library.hidden-workspace-inbox.hidden-workspace-sent-messages
         input(type="text", placeholder="Search this board")
         span.icon-container.border: i.icon.icon-search
       .input-container.hidden-image-library.hidden-workspace
         input(type="text", placeholder="Search inbox")
         span.icon-container.border: i.icon.icon-search
 
-      .block-hor-xs.hidden-workspace.hidden-workspace-inbox
+      .block-hor-xs.hidden-workspace.hidden-workspace-inbox.hidden-workspace-sent-messages
         .block-ver-xs.block-right-xs.inline-block Sort by:
         .inline-block.border.sort-input.hoverable
           span Best match
           i.icon.icon-caret-down
         include context-menus/sort-by-context-menu
 
-  .col-xs-6.col-sm-8.text-right.hidden-workspace-inbox
+  .col-xs-6.col-sm-8.text-right.hidden-workspace-inbox.hidden-workspace-sent-messages
     .block-xs
       .block-hor-xs.inline-block.displaying-results
         span Displaying 15 of 1000 items
