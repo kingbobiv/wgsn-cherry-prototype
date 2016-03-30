@@ -47,6 +47,17 @@
   &:after
     display: none
 
+#floating-item-context-menu
+  @extend .no-transition
+  
+  &:after
+    display: none
+
+  .block-ver-xxs:first-of-type
+    li:hover
+      background: none
+      cursor: default
+
 #board-context-menu
   top: 18px
   right: 10px

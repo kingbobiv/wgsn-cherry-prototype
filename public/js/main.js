@@ -39,6 +39,73 @@ $('.toggle').on('click', function() {
 
 
 //- ============================================================
+//- SELECT FILES
+//- ============================================================
+
+checkforhover = function(){
+  if ($(".file").hasClass("selected")){
+    $(".file .file-heart").hide(); 
+    $(".file .btn-add-to-board").hide(); 
+    $(".file .btn-item-menu").hide();
+    
+    // Count number of items selected
+    var myaccount = $('.file.selected').length;
+    console.log(myaccount);
+    
+    // if only one file is selected
+    if (myaccount == 1) {
+      $(".file.selected .file-heart").show();  
+      $(".file.selected .btn-add-to-board").show();
+      $(".file.selected .btn-item-menu").show();
+      $('.right-side-panel').addClass('has-file-selected');
+    };
+    
+    // if more than one file is selected
+    if (myaccount > 1) { 
+      $('.right-side-panel').addClass('has-file-selected');
+    };
+  } else {
+    $(".file .file-heart").show(); 
+    $(".file .btn-add-to-board").show(); 
+    $(".file .btn-item-menu").show();
+    $(".floating.context-menu .count").hide();
+  }
+};
+
+// select file
+$('.file').click(function(e, evt) {
+  if($(e.target).is('.file-heart, .btn, ul.context-menu, ul.context-menu li, ul.context-menu li span, ul.context-menu li .icon')) {
+    e.preventDefault();
+    return;
+  }
+  
+  $(this).toggleClass('selected');
+  $(this).children('.file-checkbox').toggleClass('icon-tick-circle icon-tick-circle-filled');
+  $('.context-menu').removeClass('show');
+
+  checkforhover();
+});
+
+// select file from details view
+$('.file-details-view .thumb-container').click(function(e, evt) {
+  if($(e.target).is('.file-utilites, .file-heart')) {
+    e.preventDefault();
+    return;
+  }
+  
+  $(this).parentsUntil('.file-outer-details-view').toggleClass('selected');
+  $(this).find('.file-checkbox').toggleClass('icon-tick-circle icon-tick-circle-filled');
+});
+
+// select all files
+$('.select-all').click(function() {
+  $('.file').toggleClass('selected');
+  $('.file-checkbox').toggleClass('icon-tick-circle icon-tick-circle-filled');
+});
+
+
+
+//- ============================================================
 //- CONTEXT MENUS
 //- ============================================================
 
@@ -87,6 +154,30 @@ $('.context-menu').click(function(e, evt) {
   }
 });
 
+// floating context menu
+$(".file").contextmenu(function(e){
+  $(this).addClass("selected");
+  $(this).children('.file-checkbox').removeClass('icon-tick-circle').addClass('icon-tick-circle-filled');
+  checkforhover();
+  event.preventDefault();
+  $(".context-menu").removeClass("open"); 
+  
+  var posX = $(this).offset().left, posY = $(this).offset().top;
+    $("#floating-item-context-menu").addClass('show');
+    $("#floating-item-context-menu").css({"left": (e.pageX), "top":(e.pageY)});
+
+  // Count number of items selected
+  var myaccount = $('.file.selected').length;
+    
+  // if more than one file is selected, hide 'open'
+  if($('.file.selected').length > 1) {
+    $("#floating-item-context-menu .block-ver-xxs:nth-of-type(1) span").text(myaccount + " items selected");
+    $("#floating-item-context-menu .block-ver-xxs:nth-of-type(2)").hide();
+  } else {
+    $("#floating-item-context-menu .block-ver-xxs:first-of-type").hide();
+  }
+});
+
 
 //- ============================================================
 //- BOARD COLOR LABELS
@@ -132,43 +223,6 @@ $('.label-circle.label-circle-grey').on('click', function() {
   $(this).addClass('selected');
   $(this).siblings().removeClass('selected');
   $(this).parentsUntil('.board-container').removeClass('label-red').removeClass('label-orange').removeClass('label-yellow').removeClass('label-green').removeClass('label-blue').removeClass('label-purple').addClass('label-pink');
-});
-
-
-//- ============================================================
-//- SELECT FILES
-//- ============================================================
-
-$('.file').click(function(e, evt) {
-  if($(e.target).is('.file-heart, .btn, ul.context-menu, ul.context-menu li, ul.context-menu li span, ul.context-menu li .icon')) {
-    e.preventDefault();
-    return;
-  }
-  
-  $(this).toggleClass('selected');
-  $(this).children('.file-checkbox').toggleClass('icon-tick-circle icon-tick-circle-filled');
-  $('.context-menu').removeClass('show');
-
-  if ($('.file').hasClass('selected')) {
-    $('.right-side-panel').addClass('has-file-selected');
-  } else {
-    $('.right-side-panel').removeClass('has-file-selected');
-  }
-});
-
-$('.file-details-view .thumb-container').click(function(e, evt) {
-  if($(e.target).is('.file-utilites, .file-heart')) {
-    e.preventDefault();
-    return;
-  }
-  
-  $(this).parentsUntil('.file-outer-details-view').toggleClass('selected');
-  $(this).find('.file-checkbox').toggleClass('icon-tick-circle icon-tick-circle-filled');
-});
-
-$('.select-all').click(function() {
-  $('.file').toggleClass('selected');
-  $('.file-checkbox').toggleClass('icon-tick-circle icon-tick-circle-filled');
 });
 
 
@@ -313,11 +367,11 @@ $('.btn-add-to-board').on('click', function() {
   $('.overlay').addClass('show');
   $('#add-modal').addClass('show').removeClass('add-multiple-files');
 
-  var numFilesSelected = $('.file.selected').length;
+  var myAccount = $('.file.selected').length;
 
-  if (numFilesSelected > 1) {
+  if (myAccount > 1) {
     $('#add-modal').addClass('add-multiple-files');
-    $('.num-of-files').text(numFilesSelected + ' images');
+    $('.num-of-files').text(myAccount + ' images');
   } else {
     return;
   }
@@ -328,11 +382,11 @@ $('.btn-send').on('click', function() {
   $('.overlay').addClass('show');
   $('#send-modal').addClass('show');
 
-  var numFilesSelected = $('.file.selected').length;
+  var myAccount = $('.file.selected').length;
 
-  if (numFilesSelected > 1) {
+  if (myAccount > 1) {
     $('#send-modal').addClass('add-multiple-files');
-    $('.num-of-files').text(numFilesSelected + ' images');
+    $('.num-of-files').text(myAccount + ' images');
   } else {
     return;
   }
