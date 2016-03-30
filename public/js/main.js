@@ -62,13 +62,14 @@ checkforhover = function(){
     
     // if more than one file is selected
     if (myaccount > 1) { 
-      $('.right-side-panel').addClass('has-file-selected');
+      $('.right-side-panel').addClass('has-multiple-files-selected');
     };
   } else {
     $(".file .file-heart").show(); 
     $(".file .btn-add-to-board").show(); 
     $(".file .btn-item-menu").show();
     $(".floating.context-menu .count").hide();
+    $('.right-side-panel').removeClass('has-file-selected').removeClass('has-multiple-files-selected');
   }
 };
 
@@ -99,8 +100,13 @@ $('.file-details-view .thumb-container').click(function(e, evt) {
 
 // select all files
 $('.select-all').click(function() {
-  $('.file').toggleClass('selected');
-  $('.file-checkbox').toggleClass('icon-tick-circle icon-tick-circle-filled');
+  if ($('.file').length == $('.file.selected').length) {
+    $('.file').removeClass('selected');
+    $('.file-checkbox').removeClass('icon-tick-circle-filled').addClass('icon-tick-circle');
+  } else {
+    $('.file').addClass('selected');
+    $('.file-checkbox').removeClass('icon-tick-circle').addClass('icon-tick-circle-filled');
+  }
 });
 
 
@@ -163,8 +169,9 @@ $(".file").contextmenu(function(e){
   $(".context-menu").removeClass("open"); 
   
   var posX = $(this).offset().left, posY = $(this).offset().top;
-    $("#floating-item-context-menu").addClass('show');
-    $("#floating-item-context-menu").css({"left": (e.pageX), "top":(e.pageY)});
+  $("#floating-item-context-menu").addClass('show');
+  $("#floating-item-context-menu").css({"left": (e.pageX), "top":(e.pageY)});
+  console.log("yello");
 
   // Count number of items selected
   var myaccount = $('.file.selected').length;
@@ -176,6 +183,25 @@ $(".file").contextmenu(function(e){
   } else {
     $("#floating-item-context-menu .block-ver-xxs:first-of-type").hide();
   }
+});
+
+// click anywhere on the screen to close the context menus and deselect all items
+$('.files-row').click(function(e, evt) {
+  // if($(e.target).is('.file')) {
+  //   return;
+  // }
+  
+  $(".file").removeClass("selected");
+  $('.file .file-checkbox').removeClass('icon-tick-circle-filled').addClass('icon-tick-circle');
+  $(".context-menu").removeClass("show");
+  $('.select-all').prop('checked', false);
+  $("#floating-item-context-menu").removeClass("show");
+  checkforhover();
+});
+
+$(".file").click(function(e) {
+  e.stopPropagation();
+  return false;
 });
 
 
