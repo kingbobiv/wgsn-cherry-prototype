@@ -164,6 +164,8 @@ $('.context-menu').click(function(e, evt) {
 $(".file").contextmenu(function(e){
   $(this).addClass("selected");
   $(this).children('.file-checkbox').removeClass('icon-tick-circle').addClass('icon-tick-circle-filled');
+  $("#floating-item-context-menu .block-ver-xxs:nth-of-type(1)").show();
+  $("#floating-item-context-menu .block-ver-xxs:nth-of-type(2)").show();
   checkforhover();
   event.preventDefault();
   $(".context-menu").removeClass("open"); 
@@ -177,20 +179,16 @@ $(".file").contextmenu(function(e){
   var myaccount = $('.file.selected').length;
     
   // if more than one file is selected, hide 'open'
-  if($('.file.selected').length > 1) {
+  if(myaccount > 1) {
     $("#floating-item-context-menu .block-ver-xxs:nth-of-type(1) span").text(myaccount + " items selected");
     $("#floating-item-context-menu .block-ver-xxs:nth-of-type(2)").hide();
   } else {
-    $("#floating-item-context-menu .block-ver-xxs:first-of-type").hide();
+    $("#floating-item-context-menu .block-ver-xxs:nth-of-type(1)").hide();
   }
 });
 
 // click anywhere on the screen to close the context menus and deselect all items
 $('.files-row').click(function(e, evt) {
-  // if($(e.target).is('.file')) {
-  //   return;
-  // }
-  
   $(".file").removeClass("selected");
   $('.file .file-checkbox').removeClass('icon-tick-circle-filled').addClass('icon-tick-circle');
   $(".context-menu").removeClass("show");
