@@ -1,6 +1,7 @@
 .modal#add-modal
   .modal-header
     h2.pull-left.tight Add to Board
+    p.pull-left.right.num-of-files 1 image
     i.icon.icon-cross.pull-right.hoverable.close-modal
 
   .modal-content
@@ -18,7 +19,7 @@
 
     .row
       .image-preview.border.pull-left(style="background-image: url('http://www.wgsn.com/storage/vol20/ss_image_store/96/53/61/42/media_yzy_aw16_009.jpg');")
-      .block-left-sm.pull-left: textarea(placeholder="Add a comment (optional)")
+      .text-container.pull-left: textarea(placeholder="Add a comment (optional)")
 
   .modal-footer
     p.tight.block-top-xs.hoverable.pull-left.close-modal Cancel

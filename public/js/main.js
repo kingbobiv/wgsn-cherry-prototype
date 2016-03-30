@@ -311,13 +311,31 @@ $('.btn-share').on('click', function() {
 //- add
 $('.btn-add-to-board').on('click', function() {
   $('.overlay').addClass('show');
-  $('#add-modal').addClass('show');
+  $('#add-modal').addClass('show').removeClass('add-multiple-files');
+
+  var numFilesSelected = $('.file.selected').length;
+
+  if (numFilesSelected > 1) {
+    $('#add-modal').addClass('add-multiple-files');
+    $('.num-of-files').text(numFilesSelected + ' images');
+  } else {
+    return;
+  }
 });
 
 //- send
 $('.btn-send').on('click', function() {
   $('.overlay').addClass('show');
   $('#send-modal').addClass('show');
+
+  var numFilesSelected = $('.file.selected').length;
+
+  if (numFilesSelected > 1) {
+    $('#send-modal').addClass('add-multiple-files');
+    $('.num-of-files').text(numFilesSelected + ' images');
+  } else {
+    return;
+  }
 });
 
 $(document).ready(function() {
@@ -329,11 +347,34 @@ $(document).ready(function() {
       "Nicky Ashwell",
       "Hema Sivaram",
       "Sarah Freiser",
-      "Andrew Harris"
+      "Andrew Harris",
+      "Oleg Zolotnisky",
+      "Peter Morrison",
+      "Pathik Tanna",
+      "Pedro Santos",
+      "Hans Zhou",
+      "Eugene Grabov",
+      "Can Citak",
+      "Vincent Pantano",
+      "Hai Zheng",
+      "Ahmed Radwan",
+      "Parisa Vahdatinia",
+      "Manu Paka",
+      "Malaya Mallick",
+      "Dani Miga",
+      "Steve Weiss",
+      "Igor Pokryshevskiy",
+      "Alex Shishkevich",
+      "Deepa Kini",
+      "Robert Conn",
+      "Deepa Bhat",
+      "Aleksey Mezhva",
+      "Samuel Elliott"
     ],
-    autocomplete: {delay: 0, minLength: 2},
-    showAutocompleteOnFocus: true,
-    removeConfirmation: true
+    autocomplete: {delay: 0, minLength: 0},
+    // showAutocompleteOnFocus: true,
+    removeConfirmation: true,
+    placeholderText: "Users"
   });
 });
 
