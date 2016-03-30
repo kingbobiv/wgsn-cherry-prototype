@@ -37,6 +37,7 @@
     width: 60px
     font-size: 18px
     position: relative
+    @extend .no-transition
 
     &:after
       content: ""
@@ -50,6 +51,8 @@
       opacity: 0
 
     &.active
+      @extend .bg-grey
+      
       &:after
         opacity: 1
 
