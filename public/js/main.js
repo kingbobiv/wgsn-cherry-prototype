@@ -122,10 +122,19 @@ $('.file .btn-item-menu').on('click', function() {
   $(this).siblings('#item-context-menu').toggleClass('show');
 });
 
-//- board context menu
-$('.board-row .icon-ellipsis').on('click', function() {
-  $(this).siblings('#board-context-menu').toggleClass('show');
+// - board context menu
+$(".board-row .icon-ellipsis").click(function(e){
+  // event.preventDefault();
+  $(".context-menu").removeClass("open"); 
+  
+  var posX = $(this).offset().left, posY = $(this).offset().top;
+  $("#floating-board-context-menu").addClass('show');
+  $("#floating-board-context-menu").css({"left": (e.pageX), "top":(e.pageY)});
+  console.log("yello board style");
 });
+// $('.board-row .icon-ellipsis').on('click', function() {
+//   $(this).siblings('#board-context-menu').toggleClass('show');
+// });
 
 // prevent link from loading when clicking the ellipsis/context menu on the link row
 $('a.board-row').click(function(e, evt) {
@@ -170,7 +179,7 @@ $('.context-menu').click(function(e, evt) {
   }
 });
 
-// floating context menu
+// floating item context menu
 $(".file").contextmenu(function(e){
   $(this).addClass("selected");
   $(this).children('.file-checkbox').removeClass('icon-tick-circle').addClass('icon-tick-circle-filled');
@@ -195,6 +204,17 @@ $(".file").contextmenu(function(e){
   } else {
     $("#floating-item-context-menu .block-ver-xxs:nth-of-type(1)").hide();
   }
+});
+
+// floating board context menu
+$(".board-row").contextmenu(function(e){
+  event.preventDefault();
+  $(".context-menu").removeClass("open"); 
+  
+  var posX = $(this).offset().left, posY = $(this).offset().top;
+  $("#floating-board-context-menu").addClass('show');
+  $("#floating-board-context-menu").css({"left": (e.pageX), "top":(e.pageY)});
+  console.log("yello board style");
 });
 
 // click anywhere on the screen to close the context menus and deselect all items
