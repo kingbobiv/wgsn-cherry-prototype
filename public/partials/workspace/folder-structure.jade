@@ -1,20 +1,36 @@
-mixin board-row(name, number, level, caret, shared)
-  .board-row.hoverable(class="level-" + level)
-    if caret == "open"
-      i.icon.icon-caret-down
-    else if caret == "closed"
-      i.icon.icon-caret-right
-    else
-      i.spacer
-    if shared == "yes"
-      i.icon.icon-folder-shared
-    if shared == "no"
-      i.icon.icon-folder
-    span.board-name= name 
-    span.board-number= number
-    i.icon.icon-ellipsis
-
-    include ../context-menus/board-context-menu
+mixin board-row(link, name, number, level, caret, shared)
+  if link
+    a.board-row(class="level-" + level href=link)
+      if caret == "open"
+        i.icon.icon-caret-down
+      else if caret == "closed"
+        i.icon.icon-caret-right
+      else
+        i.spacer
+      if shared == "yes"
+        i.icon.icon-folder-shared
+      if shared == "no"
+        i.icon.icon-folder
+      span.board-name= name 
+      span.board-number= number
+      i.icon.icon-ellipsis
+      include ../context-menus/board-context-menu
+  else
+    .board-row(class="level-" + level)
+      if caret == "open"
+        i.icon.icon-caret-down
+      else if caret == "closed"
+        i.icon.icon-caret-right
+      else
+        i.spacer
+      if shared == "yes"
+        i.icon.icon-folder-shared
+      if shared == "no"
+        i.icon.icon-folder
+      span.board-name= name 
+      span.board-number= number
+      i.icon.icon-ellipsis
+      include ../context-menus/board-context-menu
 
 mixin person-row(name, level, caret)
   .person-row.hoverable(class="level-" + level)
@@ -55,15 +71,15 @@ mixin team-row(name, level, caret)
     i.icon.icon-folder
     span Mobile Uploads
 
-  +board-row("Autumn/Winter 2016", "200", "1", "closed", "yes")
-  +board-row("Inspiration Images", "200", "1", "closed", "no")
-  +board-row("Reports to Read", "200", "1", "closed", "yes")
-  +board-row("Fashion Shows", "200", "1", "open", "no")
-  +board-row("Yeezy", "200", "2", "closed", "yes")
-  +board-row("Celine", "200", "2", "", "no")
-  +board-row("Alexander Wang", "200", "2", "", "yes")
-  +board-row("Opening Ceremony", "200", "2", "closed", "yes")
-  +board-row("Lookbooks", "200", "1", "closed", "no")
+  +board-row(false, "Autumn/Winter 2016", "200", "1", "closed", "yes")
+  +board-row(false, "Inspiration Images", "200", "1", "closed", "no")
+  +board-row(false, "Reports to Read", "200", "1", "closed", "yes")
+  +board-row(false, "Fashion Shows", "200", "1", "open", "no")
+  +board-row("/workspace", "Yeezy", "200", "2", "closed", "yes")
+  +board-row(false, "Celine", "200", "2", "", "no")
+  +board-row(false, "Alexander Wang", "200", "2", "", "yes")
+  +board-row(false, "Opening Ceremony", "200", "2", "closed", "yes")
+  +board-row(false, "Lookbooks", "200", "1", "closed", "no")
 
 .header-row.border-top.border-bottom.hoverable
   span.font-wgsn Shared With Me
@@ -72,11 +88,10 @@ mixin team-row(name, level, caret)
 .block-xs
   +team-row("Product", "1", "open", "yes")
   +person-row("Julian Ramirez", "2", "open")
-  +board-row("Board name", "200", "3", "closed", "yes")
-  +board-row("Board name", "200", "3", "closed", "yes")
-  +board-row("Board name", "200", "3", "closed", "yes")
-  +board-row("Board name", "200", "3", "open", "yes")
-  +board-row("Board name", "200", "4", "", "yes")
+  +board-row(false, "Board name", "200", "3", "closed", "yes")
+  +board-row(false, "Board name", "200", "3", "closed", "yes")
+  +board-row(false, "Board name", "200", "3", "closed", "yes")
+  +board-row(false, "Board name", "200", "4", "", "yes")
   +person-row("Sansan Chen", "2", "closed")
   +person-row("Andrew Harris", "2", "closed")
   +person-row("Nicky Ashwell", "2", "closed")

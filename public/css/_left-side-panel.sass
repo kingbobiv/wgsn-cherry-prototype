@@ -237,8 +237,8 @@ body.workspace-view
   .left-side-panel
     height: calc(100vh - #{$header-height} - #{$title-row-height} + #{$product-row-height})
 
-    .board-container .board-row:first-of-type
-      @extend .active
+  a.board-row
+    @extend .active
 
 body.workspace-inbox-view
   .left-side-panel
