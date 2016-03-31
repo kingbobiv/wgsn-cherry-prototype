@@ -13,7 +13,11 @@
     overflow-y: auto
   
   .icon
-    margin: 0 6px 0 0
+    margin: 0 10px 0 0
+
+  .icon-caret-right,
+  .icon-caret-down
+    margin: 0 4px 0 0
 
   .tabs
     position: relative
@@ -66,6 +70,13 @@
     .icon-angle-up
       margin: 0
 
+  .btn-sent-messages
+    .icon-arrow-right
+      font-size: 0.5em
+      position: absolute
+      top: 10px
+      left: 24px
+
   .misc-row,
   .board-row,
   .person-row,
@@ -73,25 +84,7 @@
     display: block
     position: relative
     padding: 6px 12px
-
-    &:hover
-      background: rgba($lt-grey, 0.15)
-
-    &.active
-      background: rgba($lt-grey, 0.3)
-
-      &:hover
-        background: rgba($lt-grey, 0.4)
-
-      .board-name
-        color: $dk-grey
-
-      .icon-ellipsis
-        color: $dk-grey
-
-    &:first-of-type,
-    &:last-of-type
-      border: none
+    color: $md-grey
 
     .board-name
       display: inline-block
@@ -105,6 +98,27 @@
       display: inline-block
       color: rgba($md-grey, 0.4)
       margin: 0 0 0 6px
+
+    &:hover
+      background: rgba($lt-grey, 0.15)
+      
+      .board-name,
+      .icon
+        color: $dk-grey
+
+    &.active
+      background: rgba($lt-grey, 0.3)
+
+      .board-name,
+      .icon
+        color: $dk-grey
+
+      &:hover
+        background: rgba($lt-grey, 0.4)
+
+    &:first-of-type,
+    &:last-of-type
+      border: none
 
     &.label-red
       .icon-folder,
@@ -160,12 +174,31 @@
     height: calc(100% - 56px)
     position: relative
 
-    .static-bottom-row
+    .board-preview
       position: fixed
       bottom: 0
+      left: 0
       width: calc(#{$left-side-panel-width} - 1px)
-      @extend .border-top
-      @extend .bg-white
+      height: 330px
+
+      .icon-double-angle-down
+        margin: 0
+
+      &.closed
+        +transform(translate3d(0, 294px, 0))
+
+      &.open
+        +transform(translate3d(0, 0, 0))
+
+      .scroll-container
+        height: 294px
+        overflow: auto
+
+        .img
+          width: 68px
+          height: 68px
+          background: white no-repeat center / contain
+          margin: 2px
 
   .panel-filters
     .scroll-container

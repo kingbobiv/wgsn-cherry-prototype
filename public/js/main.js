@@ -43,10 +43,10 @@ $('.toggle').on('click', function() {
 //- ============================================================
 
 checkforhover = function(){
-  if ($(".file").hasClass("selected")){
-    $(".file .file-heart").hide(); 
-    $(".file .btn-add-to-board").hide(); 
-    $(".file .btn-item-menu").hide();
+  if ($('.file').hasClass('selected')){
+    $('.file .file-heart').hide(); 
+    $('.file .btn-add-to-board').hide(); 
+    $('.file .btn-item-menu').hide();
     
     // Count number of items selected
     var myaccount = $('.file.selected').length;
@@ -54,22 +54,25 @@ checkforhover = function(){
     
     // if only one file is selected
     if (myaccount == 1) {
-      $(".file.selected .file-heart").show();  
-      $(".file.selected .btn-add-to-board").show();
-      $(".file.selected .btn-item-menu").show();
+      $('.file.selected .file-heart').show();  
+      $('.file.selected .btn-add-to-board').show();
+      $('.file.selected .btn-item-menu').show();
       $('.right-side-panel').addClass('has-file-selected');
+      $('.utility-row .displaying-results span').text(myaccount + ' item selected');
     };
     
     // if more than one file is selected
     if (myaccount > 1) { 
       $('.right-side-panel').addClass('has-multiple-files-selected');
+      $('.utility-row .displaying-results span').text(myaccount + ' items selected');
     };
   } else {
-    $(".file .file-heart").show(); 
-    $(".file .btn-add-to-board").show(); 
-    $(".file .btn-item-menu").show();
-    $(".floating.context-menu .count").hide();
+    $('.file .file-heart').show(); 
+    $('.file .btn-add-to-board').show(); 
+    $('.file .btn-item-menu').show();
+    $('.floating.context-menu .count').hide();
     $('.right-side-panel').removeClass('has-file-selected').removeClass('has-multiple-files-selected');
+    $('.utility-row .displaying-results span').text('Displaying 15 of 1000 results');
   }
 };
 
@@ -372,6 +375,11 @@ $('#tab-item-comments').on('click', function() {
   $('#tab-board-comments').removeClass('active');
   $('.comments-panel').addClass('comments-item-active').removeClass('comments-board-active');
 });
+
+// board preview
+$('.board-preview').on('click', function() {
+  $(this).toggleClass('closed open');
+})
 
 
 //- ============================================================

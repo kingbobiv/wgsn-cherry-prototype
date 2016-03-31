@@ -35,8 +35,39 @@
     .scroll-container
       include ../workspace/folder-structure
 
-    .static-bottom-row.block-xs.hoverable.board-preview.closed
-      span.font-wgsn Board preview
-      i.icon.icon-double-angle-down.pull-right
+    .board-preview.closed.hoverable.border-top.bg-grey
+      .block-xs.border-bottom
+        span.font-wgsn Board preview
+        i.icon.icon-double-angle-down.pull-right
+    
+      mixin board-preview-image(img)
+        .img.pull-left.border.hoverable(style="background-image: url('" + img + "')")
+
+      .scroll-container.block-xxs
+        +board-preview-image("http://www.wgsn.com/storage/vol20/ss_image_store/07/53/61/42/media_yzy_aw16_010.jpg")
+        +board-preview-image("http://www.wgsn.com/storage/vol20/ss_image_store/17/53/61/42/media_yzy_aw16_011.jpg")
+        +board-preview-image("http://www.wgsn.com/storage/vol20/ss_image_store/27/53/61/42/media_yzy_aw16_012.jpg")
+        +board-preview-image("http://www.wgsn.com/storage/vol20/ss_image_store/37/53/61/42/media_yzy_aw16_013.jpg")
+        +board-preview-image("http://www.wgsn.com/storage/vol20/ss_image_store/47/53/61/42/media_yzy_aw16_014.jpg")
+        +board-preview-image("http://www.wgsn.com/storage/vol20/ss_image_store/57/53/61/42/media_yzy_aw16_015.jpg")
+        +board-preview-image("http://www.wgsn.com/storage/vol20/ss_image_store/67/53/61/42/media_yzy_aw16_016.jpg")
+        +board-preview-image("http://www.wgsn.com/storage/vol20/ss_image_store/77/53/61/42/media_yzy_aw16_017.jpg")
+        +board-preview-image("http://www.wgsn.com/storage/vol20/ss_image_store/87/53/61/42/media_yzy_aw16_018.jpg")
+        +board-preview-image("http://www.wgsn.com/storage/vol20/ss_image_store/97/53/61/42/media_yzy_aw16_019.jpg")
+        +board-preview-image("http://www.wgsn.com/storage/vol20/ss_image_store/08/53/61/42/media_yzy_aw16_020.jpg")
+        +board-preview-image("http://www.wgsn.com/storage/vol20/ss_image_store/18/53/61/42/media_yzy_aw16_021.jpg")
+        +board-preview-image("http://www.wgsn.com/storage/vol20/ss_image_store/28/53/61/42/media_yzy_aw16_022.jpg")
+        +board-preview-image("http://www.wgsn.com/storage/vol20/ss_image_store/38/53/61/42/media_yzy_aw16_023.jpg")
+        +board-preview-image("http://www.wgsn.com/storage/vol20/ss_image_store/48/53/61/42/media_yzy_aw16_024.jpg")
+        +board-preview-image("http://www.wgsn.com/storage/vol20/ss_image_store/58/53/61/42/media_yzy_aw16_025.jpg")
+        +board-preview-image("http://www.wgsn.com/storage/vol20/ss_image_store/68/53/61/42/media_yzy_aw16_026.jpg")
+        +board-preview-image("http://www.wgsn.com/storage/vol20/ss_image_store/08/53/61/42/media_yzy_aw16_020.jpg")
+        +board-preview-image("http://www.wgsn.com/storage/vol20/ss_image_store/18/53/61/42/media_yzy_aw16_021.jpg")
+        +board-preview-image("http://www.wgsn.com/storage/vol20/ss_image_store/28/53/61/42/media_yzy_aw16_022.jpg")
+        +board-preview-image("http://www.wgsn.com/storage/vol20/ss_image_store/38/53/61/42/media_yzy_aw16_023.jpg")
+        +board-preview-image("http://www.wgsn.com/storage/vol20/ss_image_store/48/53/61/42/media_yzy_aw16_024.jpg")
+        +board-preview-image("http://www.wgsn.com/storage/vol20/ss_image_store/58/53/61/42/media_yzy_aw16_025.jpg")
+        +board-preview-image("http://www.wgsn.com/storage/vol20/ss_image_store/68/53/61/42/media_yzy_aw16_026.jpg")
+
 
 include filter
