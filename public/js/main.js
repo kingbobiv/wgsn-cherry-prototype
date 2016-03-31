@@ -127,6 +127,14 @@ $('.board-row .icon-ellipsis').on('click', function() {
   $(this).siblings('#board-context-menu').toggleClass('show');
 });
 
+// prevent link from loading when clicking the ellipsis/context menu on the link row
+$('a.board-row').click(function(e, evt) {
+  if($(e.target).is('.icon-ellipsis, .context-menu, .context-menu li')) {
+    e.preventDefault();
+    return;
+  }
+});
+
 //- board context menu
 $('.btn-top-board-context-menu').on('click', function() {
   $('#top-board-context-menu').toggleClass('show');
