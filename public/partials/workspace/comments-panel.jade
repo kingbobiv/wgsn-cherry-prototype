@@ -1,4 +1,4 @@
-.comments-panel.border-left.bg-grey.comments-board-active
+.comments-panel.border-left.comments-board-active
   .row.tabs
     .col-xs-6.text-center: .tab.active.hoverable#tab-board-comments: span.font-wgsn Board
     .col-xs-6.text-center: .tab.hoverable#tab-item-comments: span.font-wgsn Items
@@ -22,11 +22,11 @@
       +comment("Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac ante mauris. Vestibulum aliquam venenatis nisl, nec venenatis libero pretium at.", "Amelia Lewis", "4 hours ago")
       +comment("Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac ante mauris.", "Amelia Lewis", "10 minutes ago")
       +comment("Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac ante mauris. Vestibulum aliquam venenatis nisl, nec venenatis libero pretium at. In pretium.", "Amelia Lewis", "A moment ago")
-    .comment-input.block-xs.border-top.bg-grey: textarea(placeholder="Add a comment")
+    .comment-input.block-xs.border-top: textarea(placeholder="Add a comment")
 
   .panel-item-comments
-    .comments-scroll-container.block-top-sm
-      .block-hor-sm.block-bot-sm.border-bottom.text-center
+    .comments-scroll-container
+      .block-xs.border-bottom.text-center.comments-alert
         span.font-wgsn.text-yellow 4 items have comments
 
       mixin item-comments(img)

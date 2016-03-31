@@ -2,11 +2,17 @@
   z-index: 110
   height: $utility-row-height
 
-  .inline-block
+  .utility-block
     position: relative
+    @extend .inline-block
+    margin: 4px 10px
 
-  .col-sm-8
-    padding-top: 4px
+    &.divider
+      width: 1px
+      height: 30px
+      background: $lt-grey
+      padding: 0
+      margin: -10px 10px
 
   .icon-plus-circle,
   .icon-download,
@@ -44,7 +50,7 @@
 
   .input-container
     input
-      width: calc(100% - 60px)
+      width: 300px
       min-width: 100px
       max-width: 300px
 
