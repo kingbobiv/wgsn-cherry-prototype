@@ -101,9 +101,11 @@ $('.file-details-view .thumb-container').click(function(e, evt) {
 // select all files
 $('.select-all').click(function() {
   if ($('.file').length == $('.file.selected').length) {
+    $('.select-all').prop('checked', false);
     $('.file').removeClass('selected');
     $('.file-checkbox').removeClass('icon-tick-circle-filled').addClass('icon-tick-circle');
   } else {
+    $('.select-all').prop('checked', true);
     $('.file').addClass('selected');
     $('.file-checkbox').removeClass('icon-tick-circle').addClass('icon-tick-circle-filled');
   }
