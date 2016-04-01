@@ -58,7 +58,7 @@
     bottom: 0
 
   $modal-info-panel-width: 480px
-  $tool-info-panel-width: 50px
+  $modal-tool-panel-width: 50px
   $modal-info-caption-height: 222px
 
   
@@ -191,7 +191,7 @@
   .modal-image-panel
     background: $dk-grey
     left: 0
-    right: $tool-info-panel-width
+    right: $modal-tool-panel-width
 
     .img
       width: 100%
@@ -261,7 +261,7 @@
 
   .modal-tool-panel
     right: 0
-    width: $tool-info-panel-width
+    width: $modal-tool-panel-width
 
     .btn-modal-tool
       font-size: 16px
@@ -272,6 +272,12 @@
       &:hover
         .icon
           color: $dk-grey
+
+      &.active
+        background: $dk-grey
+
+        .icon
+          color: white
 
     .item-count
       position: absolute
@@ -321,3 +327,18 @@
     .file-heart
       opacity: 0 !important
       pointer-events: none
+
+  .modal-overlay
+    position: absolute
+    top: 0
+    right: $modal-tool-panel-width
+    left: 0
+    bottom: 0
+    background: rgba(black, 0.7)
+    pointer-events: none
+    z-index: 390
+    opacity: 0
+
+    &.show
+      opacity: 1
+      pointer-events: all

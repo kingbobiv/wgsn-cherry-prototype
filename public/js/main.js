@@ -493,6 +493,26 @@ $(document).ready(function() {
   });
 });
 
+//- print
+$('.btn-print').on('click', function() {
+  $('.overlay').addClass('show');
+  $('#print-modal').addClass('show');
+
+  var myAccount = $('.file.selected').length;
+
+  if (myAccount > 1) {
+    $('#print-modal').addClass('add-multiple-files');
+    $('.num-of-files').text(myAccount + ' images');
+  } else {
+    return;
+  }
+});
+
+$('.print-layout-tile').on('click', function() {
+  $(this).addClass('active');
+  $(this).siblings().removeClass('active');
+})
+
 //- create new board
 $('.btn-create-new-board').on('click', function() {
   $('.overlay').addClass('show');
@@ -519,17 +539,21 @@ $('.btn-save-search').on('click', function() {
 
 //- close modal
 $('.modal .close-modal').on('click', function() {
-  $(this).parentsUntil('body').removeClass('show');
-  $('.overlay').removeClass('show');
+  if($('#item-detail-modal').hasClass('show')) {
+    $(this).parentsUntil('body').removeClass('show');  
+    $('.modal-overlay').removeClass('show');
+    $('.btn-modal-tool').removeClass('active');
+  } else {
+    $(this).parentsUntil('body').removeClass('show');
+    $('.overlay').removeClass('show');
+  }
 });
 
 // close modal with escape key
 $(document).keyup(function(e) { 
   if (e.keyCode == 27) { 
-    console.log("hello1");
     $('.modal').removeClass('show');
     $('.overlay').removeClass('show');
-    console.log("hello2");
   } 
 });
 
@@ -546,6 +570,11 @@ $('.file').on('dblclick', function() {
 $('.btn-open').on('click', function() {
   $('.overlay').addClass('show');
   $('#item-detail-modal').addClass('show');
+});
+
+$('#item-detail-modal .close-modal').on('click', function() {
+  $(this).parentsUntil('body').removeClass('show');
+  $('.overlay').removeClass('show');
 });
 
 //- tabs
@@ -569,6 +598,24 @@ $('.btn-modal-left-side-panel').on('click', function() {
 // fullscreen
 $('.btn-fullscreen').on('click', function() {
   $('#item-detail-modal').toggleClass('fullscreen');
+});
+
+// add to board
+$('#item-detail-modal .btn-add-to-board').on('click', function() {
+  $(this).addClass('active');
+  $('.modal-overlay').addClass('show');
+});
+
+// send
+$('#item-detail-modal .btn-send').on('click', function() {
+  $(this).addClass('active');
+  $('.modal-overlay').addClass('show');
+});
+
+// print
+$('#item-detail-modal .btn-print').on('click', function() {
+  $(this).addClass('active');
+  $('.modal-overlay').addClass('show');
 });
 
 

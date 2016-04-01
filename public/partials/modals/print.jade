@@ -1,0 +1,96 @@
+.modal#print-modal
+  .modal-header
+    h2.pull-left.tight Print
+    p.pull-left.right.num-of-files 1 image
+    i.icon.icon-cross.pull-right.hoverable.close-modal
+
+  .modal-content
+    .block-bot-sm
+      h3 Layout
+
+      .block-right-xs.inline-block.hoverable
+        .print-layout-tile.pp-1.active
+          .layout-tile-container
+            .block
+          p 1 per page
+
+      .block-right-xs.inline-block.hoverable
+        .print-layout-tile.pp-2
+          .layout-tile-container
+            .block
+            .block
+          p 2 per page
+
+      .block-right-xs.inline-block.hoverable
+        .print-layout-tile.pp-3
+          .layout-tile-container
+            .block
+            .block
+            .block
+          p 3 per page
+
+      .block-right-xs.inline-block.hoverable
+        .print-layout-tile.pp-4
+          .layout-tile-container
+            .block
+            .block
+            .block
+            .block
+          p 4 per page
+
+      .block.inline-block.hoverable
+        .print-layout-tile.pp-thumbnails
+          .layout-tile-container
+            .block
+            .block
+            .block
+            .block
+            .block
+            .block
+            .block
+            .block
+            .block
+          p Thumbnails
+
+    h3 Page Options
+    .block-bot-sm
+      .block-bot-xs
+        .block-ver-xs.block-right-xs.inline-block Paper size:
+        select.inline-block
+          option Letter (8.5' x 11')
+          option A4
+      
+      .block-bot-xs
+        .block-ver-xs.block-right-xs.inline-block Orientation
+        select.inline-block
+          option Landscape
+          option Portrait
+
+    .block-bot-sm
+      .block-right-md.block-bot-sm.inline-block
+        input(type='checkbox' id='print-page-count')
+        label(for='print-page-count') Page count
+
+      .block-right-md.block-bot-sm.inline-block
+        input(type='checkbox' id='print-filename')
+        label(for='print-filename') Filename
+
+      .block-right-md.block-bot-sm.inline-block
+        input(type='checkbox' id='print-details')
+        label(for='print-details') Details
+
+      .block-right-md.block-bot-sm.inline-block
+        input(type='checkbox' id='print-comments')
+        label(for='print-comments') Comments
+
+      br
+
+      .block
+        .block-ver-xs.block-right-sm.inline-block
+          input(type='checkbox' id='print-page-title')
+          label(for='print-page-title') Page title
+        input.inline-block(type='text')
+
+  .modal-footer
+    p.tight.block-top-xs.hoverable.pull-left.close-modal Cancel
+    .btn.btn-white.pull-right.close-modal Done
