@@ -566,6 +566,11 @@ $('.btn-modal-left-side-panel').on('click', function() {
   $('#item-detail-modal').toggleClass('show-left-side-panel');
 });
 
+// fullscreen
+$('.btn-fullscreen').on('click', function() {
+  $('#item-detail-modal').toggleClass('fullscreen');
+});
+
 
 //- ============================================================
 //- BACK TO TOP

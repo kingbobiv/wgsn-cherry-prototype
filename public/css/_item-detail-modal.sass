@@ -17,6 +17,11 @@
     +transform(translate3d(-50%, -50%, 0))
     pointer-events: all
 
+  
+  //- ============================================================
+  //- MODAL CONTROLS
+  //- ============================================================
+
   .modal-controls
     .icon-cross,
     .icon-angle-left,
@@ -40,6 +45,11 @@
       top: 50%
       right: -24px
 
+  
+  //- ============================================================
+  //- PANELS
+  //- ============================================================
+
   .modal-info-panel,
   .modal-image-panel,
   .modal-tool-panel
@@ -51,11 +61,17 @@
   $tool-info-panel-width: 50px
   $modal-info-caption-height: 222px
 
+  
+  //- ============================================================
+  //- INFO PANEL
+  //- ============================================================
+
   .modal-info-panel
     left: 0
     width: $modal-info-panel-width
     display: none
 
+    // top section
     .modal-section-caption
       height: $modal-info-caption-height
       
@@ -63,6 +79,7 @@
         .modal-file-name
           font-size: 20px
 
+    // bottom section
     .modal-section-other
       .modal-tabs
         .tab
@@ -166,6 +183,11 @@
         .modal-related-images
           display: none
 
+  
+  //- ============================================================
+  //- IMAGE PANEL
+  //- ============================================================
+
   .modal-image-panel
     background: $dk-grey
     left: 0
@@ -194,7 +216,8 @@
         +transform(translate3d(0, 0, 0) rotate(180deg))
         @extend .no-transition
 
-    .file-heart
+    .file-heart,
+    .icon-cross.btn-fullscreen
       position: absolute
       top: 15px
       right: 15px
@@ -205,6 +228,11 @@
     .icon-heart
       opacity: 1 !important
       color: $label-red !important
+
+    .icon-cross.btn-fullscreen
+      font-size: 20px
+      opacity: 0
+      pointer-events: none
 
     .modal-arrow-left,
     .modal-arrow-right
@@ -225,6 +253,11 @@
 
     .modal-arrow-right
       right: 0
+
+  
+  //- ============================================================
+  //- TOOL PANEL
+  //- ============================================================
 
   .modal-tool-panel
     right: 0
@@ -247,6 +280,11 @@
       width: 100%
       font-size: 12px
 
+  
+  //- ============================================================
+  //- TOGGLE INFO PANEL
+  //- ============================================================
+
   &.show-left-side-panel
     .modal-info-panel
       display: block
@@ -257,3 +295,29 @@
     .btn-modal-left-side-panel
       .icon
         +transform(translate3d(0, 0, 0) rotate(0deg))
+
+
+  //- ============================================================
+  //- FULLSCREEN
+  //- ============================================================
+
+  &.fullscreen
+    width: 100vw
+    height: 100vh
+
+    .modal-info-panel,
+    .btn-modal-left-side-panel,
+    .modal-tool-panel
+      display: none
+
+    .modal-image-panel
+      left: 0
+      right: 0
+
+    .icon-cross.btn-fullscreen
+      opacity: 1
+      pointer-events: all
+
+    .file-heart
+      opacity: 0
+      pointer-events: none
