@@ -509,8 +509,8 @@ $('.btn-print').on('click', function() {
 });
 
 $('.print-layout-tile').on('click', function() {
+  $('.print-layout-tile').removeClass('active');
   $(this).addClass('active');
-  $(this).siblings().removeClass('active');
 })
 
 //- create new board
