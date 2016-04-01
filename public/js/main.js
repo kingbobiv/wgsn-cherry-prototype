@@ -523,6 +523,16 @@ $('.modal .close-modal').on('click', function() {
   $('.overlay').removeClass('show');
 });
 
+// close modal with escape key
+$(document).keyup(function(e) { 
+  if (e.keyCode == 27) { 
+    console.log("hello1");
+    $('.modal').removeClass('show');
+    $('.overlay').removeClass('show');
+    console.log("hello2");
+  } 
+});
+
 
 //- ============================================================
 //- ITEM DETAIL MODAL
