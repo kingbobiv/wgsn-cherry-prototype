@@ -68,9 +68,22 @@ header
       margin: 0 15px
       opacity: 0.5
 
-    .fa,
     .icon
       margin: 0 6px
+
+    .icon-bell:after,
+    .icon-envelope:after
+      content: "2"
+      position: absolute
+      top: -8px
+      left: 50%
+      width: 100%
+      background: $label-red
+      color: white
+      font-size: 9px
+      @extend .text-center
+      +border-radius(2px)
+      +transform(translate3d(-50%, 0, 0))
 
   .product-row-bg
     background: rgba(white, 0.96)

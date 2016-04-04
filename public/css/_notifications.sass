@@ -1,0 +1,52 @@
+#notifications-context-menu
+  &:after
+    @extend .bg-grey
+
+  .icon-bookmark
+    color: $fashion
+
+  .header-row
+    @extend .block-sm
+    
+    &:hover
+      @extend .bg-grey
+      cursor: default
+
+  .scroll-container
+    max-height: 400px
+    overflow: auto
+
+    li
+      @extend .block-sm
+      overflow: auto
+
+      &:last-of-type
+        border: none
+
+      .unread-dot
+        width: 10px
+        height: 10px
+        background: $yellow
+        +border-radius(50%)
+        margin: 11px 11px 11px 0
+      
+      .avatar
+        float: left
+        width: 32px
+        height: 32px
+        background: $md-grey no-repeat center / cover
+        color: white
+        border-radius: 50%
+        @extend .flex-center
+        @extend .font-wgsn
+        font-size: 10px
+
+      .text
+        width: calc(100% - 42px)      
+
+        .comment-time
+          font-size: 11px
+          color: $md-grey
+
+      .unread-dot ~ .text
+        width: calc(100% - 63px)    

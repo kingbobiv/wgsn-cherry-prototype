@@ -3,19 +3,25 @@
     .input-container.hidden-image-library.hidden-workspace-inbox.hidden-workspace-sent-messages
       input(type="text", placeholder="Search this board")
       span.icon-container.border: i.icon.icon-search
+    
     .input-container.hidden-image-library.hidden-workspace.hidden-workspace-sent-messages
       input(type="text", placeholder="Search inbox")
       span.icon-container.border: i.icon.icon-search
+    
     .input-container.hidden-image-library.hidden-workspace.hidden-workspace-inbox
       input(type="text", placeholder="Search sent messages")
       span.icon-container.border: i.icon.icon-search
 
     .block-hor-xs.hidden-workspace.hidden-workspace-inbox.hidden-workspace-sent-messages
       .block-ver-xs.block-right-xs.inline-block Sort by:
-      .inline-block.border.sort-input.hoverable
-        span Best match
-        i.icon.icon-caret-down
-      include context-menus/sort-by-context-menu
+      //- .inline-block.border.sort-input.hoverable
+      //-   span Best match
+      //-   i.icon.icon-caret-down
+      //- include context-menus/sort-by-context-menu
+      select
+        option Best match
+        option Date: newest first
+        option Date: newest last
 
   .pull-right.block-xs.text-right.hidden-workspace-inbox.hidden-workspace-sent-messages
     .utility-block.displaying-results

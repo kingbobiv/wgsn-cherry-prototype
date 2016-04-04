@@ -171,6 +171,16 @@ $('.btn-saved-searches').on('click', function() {
   $('#saved-searches-context-menu').toggleClass('show');
 });
 
+//- notifications context menu
+$('.btn-notifications').on('click', function() {
+  $('#notifications-context-menu').toggleClass('show');
+});
+
+//- messages context menu
+$('.btn-message-notifications').on('click', function() {
+  $('#message-notifications-context-menu').toggleClass('show');
+});
+
 //- close context menu
 $('.context-menu').click(function(e, evt) {
   if($(e.target).is('.toggle, form input')) {
@@ -489,7 +499,7 @@ $(document).ready(function() {
     autocomplete: {delay: 0, minLength: 0},
     // showAutocompleteOnFocus: true,
     removeConfirmation: true,
-    placeholderText: "Users"
+    placeholderText: "Recipients"
   });
 });
 

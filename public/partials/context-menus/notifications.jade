@@ -1,0 +1,26 @@
+mixin notification(unread, img, initials, notification, time)
+  li.notification.border-bottom
+    if unread
+      .unread-dot.pull-left
+    if img
+      .block-right-xs.pull-left: .avatar(style="background-image: url('" + img + "')")
+    else
+      .block-right-xs.pull-left: .avatar= initials
+    .text.pull-left
+      p= notification
+      p.comment-time.tight.text-grey= time
+
+ul.context-menu.text-left#notifications-context-menu
+  li.header-row.border-bottom.bg-grey
+    h3.tight Notifications
+
+  .scroll-container
+    +notification(true, "", "TM", "Theba Marando and Sansan Chen edit S/S16 Dresses", "10 minutes ago")
+    +notification(true, "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/1/005/06d/1ea/349ef69.jpg", "AH", "Andrew Harris, Julian Ramirez and 3 others added comment(s) to S/S16 Dresses", "2 hours ago")
+    +notification(false, "", "SC", "Sansan Chen deleted Coats", "Today at 9:14am")
+    +notification(false, "", "SC", "Sansan Chen shared Balmain 2016 with you.", "Yesterday at 11:00am")
+    +notification(false, "", "NA", "Nicky Ashwell shared S/S16 Dresses with Julian Ramirez", "Yesterday at 9:11am")
+    +notification(false, "", "NA", "Nicky Ashwell Shared S/S16 with 2 people", "04/04/2016 at 11:52am")
+    +notification(false, "", "NA", "Nicky Ashwell edited S/S16.", "04/04/2016 at 11:15am")
+    +notification(false, "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/1/005/06d/1ea/349ef69.jpg", "AH", "Andrew Harris read 'Images of Summer Jackets'", "04/04/2016 at 9:00am")
+    +notification(false, "", "AG", "Anna Glassman read your messages.", "04/04/2016 at 8:52am")

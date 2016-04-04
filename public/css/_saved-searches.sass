@@ -6,14 +6,17 @@
       top: -1px
 
 #saved-searches-context-menu
+  &:after
+    @extend .bg-grey
+
   .icon-bookmark
     color: $fashion
 
   .header-row
-    padding: 15px
+    @extend .block-sm
     
     &:hover
-      background: none
+      @extend .bg-grey
       cursor: default
 
   .scroll-container
@@ -21,7 +24,7 @@
     overflow: auto
 
     li
-      padding: 15px
+      @extend .block-sm
       position: relative
 
       &:last-of-type
