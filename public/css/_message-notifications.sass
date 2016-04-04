@@ -12,7 +12,7 @@
       @extend .bg-grey
       cursor: default
 
-  .footer-row    
+  .footer-row
     &:hover
       @extend .bg-grey
       cursor: default
@@ -24,9 +24,6 @@
     li
       @extend .block-sm
       overflow: auto
-
-      &:last-of-type
-        border: none
 
       .unread-dot
         width: 10px
@@ -47,11 +44,20 @@
         font-size: 10px
 
       .text
-        width: calc(100% - 42px)      
+        width: calc(100% - 42px)     
 
-        .comment-time
+        p
+          width: 100%
+          overflow: hidden
+          text-overflow: ellipsis
+          white-space: nowrap
+
+        .message-time
           font-size: 11px
-          color: $md-grey
 
       .unread-dot ~ .text
-        width: calc(100% - 63px)    
+        width: calc(100% - 63px)
+
+    a:last-of-type
+      li
+        border: none

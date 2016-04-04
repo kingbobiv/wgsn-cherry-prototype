@@ -20,9 +20,6 @@
       @extend .block-sm
       overflow: auto
 
-      &:last-of-type
-        border: none
-
       .unread-dot
         width: 10px
         height: 10px
@@ -46,7 +43,10 @@
 
         .comment-time
           font-size: 11px
-          color: $md-grey
 
       .unread-dot ~ .text
         width: calc(100% - 63px)    
+
+    a:last-of-type
+      li
+        border: none

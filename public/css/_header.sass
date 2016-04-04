@@ -73,7 +73,7 @@ header
 
     .icon-bell:after,
     .icon-envelope:after
-      content: "2"
+      content: ""
       position: absolute
       top: -8px
       left: 50%
@@ -84,6 +84,12 @@ header
       @extend .text-center
       +border-radius(2px)
       +transform(translate3d(-50%, 0, 0))
+
+    .icon-bell:after
+      content: "2"
+    
+    .icon-envelope:after
+      content: "1"
 
   .product-row-bg
     background: rgba(white, 0.96)

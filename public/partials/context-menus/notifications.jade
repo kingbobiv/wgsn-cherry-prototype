@@ -1,14 +1,15 @@
 mixin notification(unread, img, initials, notification, time)
-  li.notification.border-bottom
-    if unread
-      .unread-dot.pull-left
-    if img
-      .block-right-xs.pull-left: .avatar(style="background-image: url('" + img + "')")
-    else
-      .block-right-xs.pull-left: .avatar= initials
-    .text.pull-left
-      p= notification
-      p.comment-time.tight.text-grey= time
+  a(href="/workspace")
+    li.notification.border-bottom
+      if unread
+        .unread-dot.pull-left
+      if img
+        .block-right-xs.pull-left: .avatar(style="background-image: url('" + img + "')")
+      else
+        .block-right-xs.pull-left: .avatar= initials
+      .text.pull-left
+        p= notification
+        p.comment-time.tight.text-grey= time
 
 ul.context-menu.text-left#notifications-context-menu
   li.header-row.border-bottom.bg-grey
