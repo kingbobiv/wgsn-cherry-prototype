@@ -42,6 +42,7 @@ $('.toggle').on('click', function() {
 //- SELECT FILES
 //- ============================================================
 
+// remove file utility buttons once in "select mode"
 checkforhover = function(){
   if ($('.file').hasClass('selected')){
     $('.file .file-heart').hide(); 
@@ -76,29 +77,66 @@ checkforhover = function(){
   }
 };
 
-// select file
-$('.file').click(function(e, evt) {
-  if($(e.target).is('.file-heart, .btn, ul.context-menu, ul.context-menu li, ul.context-menu li span, ul.context-menu li .icon')) {
-    e.preventDefault();
-    return;
-  }
-  
-  $(this).toggleClass('selected');
-  $(this).children('.file-checkbox').toggleClass('icon-tick-circle icon-tick-circle-filled');
-  $('.context-menu').removeClass('show');
+// select file on single click, open file on double click
+var DELAY = 160, clicks = 0, timer = null;
 
-  checkforhover();
+$(function(){
+  $('.file').click(function(e, evt) {
+      clicks++;  //count clicks
+
+      if(clicks === 1) {
+        timer = setTimeout(function() {
+          if($(e.target).is('.file-heart, .btn, ul.context-menu, ul.context-menu li, ul.context-menu li span, ul.context-menu li .icon')) {
+            e.preventDefault();
+            return;
+          }
+          
+          $(e.target).parentsUntil('.files-container').toggleClass('selected');
+          $(e.target).siblings('.file-checkbox').toggleClass('icon-tick-circle icon-tick-circle-filled');
+          $('.context-menu').removeClass('show');
+          checkforhover();
+          clicks = 0; // after action performed, reset counter
+        }, DELAY);
+      } else {
+        clearTimeout(timer); // prevent single-click action
+        $('.overlay').addClass('show');
+        $('#item-detail-modal').addClass('show');
+        clicks = 0; // after action performed, reset counter
+      }
+  })
+
+  .on("dblclick", function(e){
+    e.preventDefault(); // cancel system double-click event
+  });
 });
 
-// select file from details view
-$('.file-details-view .thumb-container').click(function(e, evt) {
-  if($(e.target).is('.file-utilites, .file-heart')) {
-    e.preventDefault();
-    return;
-  }
-  
-  $(this).parentsUntil('.file-outer-details-view').toggleClass('selected');
-  $(this).find('.file-checkbox').toggleClass('icon-tick-circle icon-tick-circle-filled');
+// select file from details view, open file on double click
+$(function(){
+  $('.file-details-view .thumb-container').click(function(e, evt) {
+      clicks++;  //count clicks
+
+      if(clicks === 1) {
+        timer = setTimeout(function() {
+          if($(e.target).is('.file-utilites, .file-heart')) {
+            e.preventDefault();
+            return;
+          }
+          
+          $(e.target).parentsUntil('.file-outer-details-view').toggleClass('selected');
+          $(e.target).parentsUntil('.file-outer-details-view').find('.file-checkbox').toggleClass('icon-tick-circle icon-tick-circle-filled');
+          clicks = 0; // after action performed, reset counter
+        }, DELAY);
+      } else {
+        clearTimeout(timer); // prevent single-click action
+        $('.overlay').addClass('show');
+        $('#item-detail-modal').addClass('show');
+        clicks = 0; // after action performed, reset counter
+      }
+  })
+
+  .on("dblclick", function(e){
+    e.preventDefault(); // cancel system double-click event
+  });
 });
 
 // select all files
@@ -578,10 +616,10 @@ $(document).keyup(function(e) {
 //- ITEM DETAIL MODAL
 //- ============================================================
 
-$('.file').on('dblclick', function() {
-  $('.overlay').addClass('show');
-  $('#item-detail-modal').addClass('show');
-});
+// $('.file').on('dblclick', function() {
+//   $('.overlay').addClass('show');
+//   $('#item-detail-modal').addClass('show');
+// });
 
 $('.btn-open').on('click', function() {
   $('.overlay').addClass('show');
