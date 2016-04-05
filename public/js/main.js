@@ -568,6 +568,7 @@ $('.modal .close-modal').on('click', function() {
 $(document).keyup(function(e) { 
   if (e.keyCode == 27) { 
     $('.modal').removeClass('show');
+    $('#item-detail-modal').removeClass('fullscreen');
     $('.overlay').removeClass('show');
   } 
 });
