@@ -173,11 +173,13 @@ $('.btn-saved-searches').on('click', function() {
 
 //- notifications context menu
 $('.btn-notifications').on('click', function() {
+  $('#message-notifications-context-menu').removeClass('show');
   $('#notifications-context-menu').toggleClass('show');
 });
 
 //- messages context menu
 $('.btn-message-notifications').on('click', function() {
+  $('#notifications-context-menu').removeClass('show');
   $('#message-notifications-context-menu').toggleClass('show');
 });
 
