@@ -66,6 +66,10 @@
 
   .header-row
     padding: 10px 12px
+    display: block
+
+    &.active
+      background: rgba($lt-grey, 0.3)
 
     .icon-angle-up
       margin: 0
@@ -280,4 +284,9 @@ body.workspace-inbox-view
 body.workspace-sent-messages-view
   .left-side-panel
     .btn-sent-messages
+      @extend .active
+
+body.workspace-favourites-view
+  .left-side-panel
+    .btn-favourites
       @extend .active

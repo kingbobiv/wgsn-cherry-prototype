@@ -10,7 +10,7 @@ mixin filter-tag(search, name)
       span= name
       i.icon.icon-cross
 
-.row.filter-row.block-hor-sm.block-top-sm.hidden-workspace
+.row.filter-row.block-hor-sm.block-top-sm.hidden-workspace.hidden-workspace-favourites
   //- h4.pull-left.block-ver-xs.tight.block-right-xs.block-left-xxs Filter by:
   +filter-tag("pea coats", "")
   +filter-tag("", "Yeezy")
@@ -34,7 +34,7 @@ mixin filter-tag(search, name)
     i.icon.icon-reset
     span.text-underline Clear all
 
-.filter-row-fixed-container.hidden-workspace
+.filter-row-fixed-container.hidden-workspace.hidden-workspace-favourites
   .row.filter-row.filter-row-fixed.block-sm.border-bottom.hidden-workspace
     //- h4.pull-left.block-ver-xs.tight.block-right-xs.block-left-xxs Filter by:
     +filter-tag("pea coats", "")

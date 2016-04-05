@@ -7,6 +7,12 @@ $('.file-heart').on('click', function() {
   $(this).toggleClass('icon-heart-o icon-heart');
 });
 
+$(document).ready(function() {
+  if($('body').hasClass('workspace-favourites-view')) {
+    $('.file-heart').removeClass('icon-heart-o').addClass('icon-heart');
+  };
+});
+
 //- checkbox icons (for detail view file)
 $('.file-details-view .file-checkbox').on('click', function() {
   $(this).toggleClass('icon-tick-circle icon-tick-circle-filled');
@@ -45,7 +51,7 @@ $('.toggle').on('click', function() {
 // remove file utility buttons once in "select mode"
 checkforhover = function(){
   if ($('.file').hasClass('selected')){
-    $('.file .file-heart').hide(); 
+    // $('.file .file-heart').hide(); 
     $('.file .btn-add-to-board').hide(); 
     $('.file .btn-item-menu').hide();
     
@@ -55,7 +61,7 @@ checkforhover = function(){
     
     // if only one file is selected
     if (myaccount == 1) {
-      $('.file.selected .file-heart').show();  
+      // $('.file.selected .file-heart').show();  
       $('.file.selected .btn-add-to-board').show();
       $('.file.selected .btn-item-menu').show();
       $('.right-side-panel').addClass('has-file-selected');
@@ -68,7 +74,7 @@ checkforhover = function(){
       $('.utility-row .displaying-results span').text(myaccount + ' items selected');
     };
   } else {
-    $('.file .file-heart').show(); 
+    // $('.file .file-heart').show(); 
     $('.file .btn-add-to-board').show(); 
     $('.file .btn-item-menu').show();
     $('.floating.context-menu .count').hide();
