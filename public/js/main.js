@@ -357,6 +357,8 @@ $('#tab-filters').on('click', function() {
 $('#tab-folders').on('click', function() {
   $(this).addClass('active');
   $('#tab-filters').removeClass('active');
+  $('.filter').removeClass('show');
+  $('.filter-btn').removeClass('active');
   $('.image-library-view .left-side-panel').addClass('image-library-folders-active').removeClass('image-library-filters-active');
 });
 
