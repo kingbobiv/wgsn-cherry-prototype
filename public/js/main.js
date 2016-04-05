@@ -609,7 +609,13 @@ $('.btn-modal-left-side-panel').on('click', function() {
 
 // fullscreen
 $('.btn-fullscreen').on('click', function() {
-  $('#item-detail-modal').toggleClass('fullscreen');
+  $('#item-detail-modal').addClass('fullscreen');
+  $('#item-detail-modal').fullScreen(true);
+});
+
+$('.btn-close-fullscreen').on('click', function() {
+  $('#item-detail-modal').removeClass('fullscreen');
+  $('#item-detail-modal').fullScreen(false);
 });
 
 // add to board
