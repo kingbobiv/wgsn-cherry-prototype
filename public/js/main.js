@@ -45,7 +45,7 @@ $('.toggle').on('click', function() {
 
 
 //- ============================================================
-//- SELECT FILES
+//- SELECT & OPEN FILES
 //- ============================================================
 
 // remove file utility buttons once in "select mode"
@@ -90,6 +90,8 @@ $(function(){
   $('.file').click(function(e, evt) {
       clicks++;  //count clicks
 
+      var selectedImg = $(this).find('.thumb-inner').css('background-image');
+
       if(clicks === 1) {
         timer = setTimeout(function() {
           if($(e.target).is('.file-heart, .btn, ul.context-menu, ul.context-menu li, ul.context-menu li span, ul.context-menu li .icon')) {
@@ -105,8 +107,10 @@ $(function(){
         }, DELAY);
       } else {
         clearTimeout(timer); // prevent single-click action
+        console.log(selectedImg);
         $('.overlay').addClass('show');
         $('#item-detail-modal').addClass('show');
+        $('#item-detail-modal .modal-image-panel .img').css({"background-image": selectedImg});
         clicks = 0; // after action performed, reset counter
       }
   })
@@ -630,11 +634,15 @@ $(document).keyup(function(e) {
 $('.btn-open').on('click', function() {
   $('.overlay').addClass('show');
   $('#item-detail-modal').addClass('show');
+  var selectedImg = $(this).parentsUntil('file').find('.thumb-inner').css('background-image');
+  console.log(selectedImg);
+  $('#item-detail-modal .modal-image-panel .img').css({"background-image": selectedImg});
 });
 
 $('#item-detail-modal .close-modal').on('click', function() {
   $(this).parentsUntil('body').removeClass('show');
   $('.overlay').removeClass('show');
+  $('#item-detail-modal .modal-image-panel .img').css({"background-image": "none"});
 });
 
 //- tabs
