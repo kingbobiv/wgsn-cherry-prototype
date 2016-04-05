@@ -390,6 +390,7 @@ $('#tab-item-comments').on('click', function() {
 // board preview
 $('.board-preview').on('click', function() {
   $(this).toggleClass('closed open');
+  $('.panel-folders').toggleClass('board-preview-open');
 })
 
 
