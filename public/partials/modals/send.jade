@@ -15,9 +15,13 @@
       input(type="text", placeholder="Subject (optional)")
       .block-top-sm: textarea(placeholder="Message (optional)")
 
-    .row
+    .row.block-bot-sm
       input(type="checkbox")
       span Notify me when message is received.
+
+    .row
+      input(type="checkbox")
+      span Send comments with items
 
   .modal-footer
     p.tight.block-top-xs.hoverable.pull-left.close-modal Cancel

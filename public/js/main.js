@@ -66,12 +66,16 @@ checkforhover = function(){
       $('.file.selected .btn-item-menu').show();
       $('.right-side-panel').addClass('has-file-selected');
       $('.floating-utility-row .displaying-results').text(myaccount + ' item selected');
+      $('.page-content').removeClass('show-comments-panel');
+      $('.btn-comments-panel').removeClass('active');
     };
     
     // if more than one file is selected
     if (myaccount > 1) { 
       $('.right-side-panel').addClass('has-multiple-files-selected');
       $('.floating-utility-row .displaying-results').text(myaccount + ' items selected');
+      $('.page-content').removeClass('show-comments-panel');
+      $('.btn-comments-panel').removeClass('active');
     };
   } else {
     // $('.file .file-heart').show(); 

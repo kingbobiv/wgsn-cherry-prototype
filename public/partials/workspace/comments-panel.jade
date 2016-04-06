@@ -1,8 +1,4 @@
 .comments-panel.border-left.comments-board-active
-  .row.tabs
-    .col-xs-6.text-center: .tab.active.hoverable#tab-board-comments: span.font-wgsn Board
-    .col-xs-6.text-center: .tab.hoverable#tab-item-comments: span.font-wgsn Items
-
   mixin comment(comment, name, time)
     .comment.block-ver-sm.border-bottom
       p= comment
@@ -11,41 +7,14 @@
         span  &middot; 
         span= time
 
-  .panel-board-comments
-    .comments-scroll-container.block-top-sm.block-hor-sm
-      +comment("Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac ante mauris.", "Amelia Lewis", "02/03/2016 at 11:00am")
-      +comment("Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac ante mauris. Vestibulum aliquam venenatis nisl, nec venenatis libero pretium at. In pretium. Vestibulum aliquam venenatis nisl, nec venenatis libero pretium at. In pretium.", "Amelia Lewis", "02/03/2016 at 11:00am")
-      +comment("Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac ante mauris. Vestibulum aliquam venenatis nisl, nec venenatis libero pretium at. In pretium.", "Amelia Lewis", "02/03/2016 at 11:00am")
-      +comment("Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "Amelia Lewis", "02/03/2016 at 11:00am")
-      +comment("Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac ante mauris. Vestibulum aliquam venenatis nisl, nec venenatis libero pretium at.", "Amelia Lewis", "Yesterday at 11:14am")
-      +comment("Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac ante mauris. Vestibulum aliquam venenatis nisl, nec venenatis libero pretium at. In pretium.", "Amelia Lewis", "Yesterday at 11:52am")
-      +comment("Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac ante mauris. Vestibulum aliquam venenatis nisl, nec venenatis libero pretium at.", "Amelia Lewis", "4 hours ago")
-      +comment("Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac ante mauris.", "Amelia Lewis", "10 minutes ago")
-      +comment("Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac ante mauris. Vestibulum aliquam venenatis nisl, nec venenatis libero pretium at. In pretium.", "Amelia Lewis", "A moment ago")
-    .comment-input.block-xs.border-top: textarea(placeholder="Add a comment")
-
-  .panel-item-comments
-    .comments-scroll-container
-      .block-xs.border-bottom.text-center.comments-alert
-        span.font-wgsn.text-yellow 4 items have comments
-
-      mixin item-comments(img)
-        .item-comments
-          .block-hor-sm.block-top-sm
-            .item-description.block-bot-sm
-              .block-right-xs.pull-left: .img.border.hoverable(style="background-image: url('" + img + "')")
-              .block-right-xs.pull-left
-                p.tight.text-bold Yeezy
-                p.tight Autumn/Winter 2016
-                p.tight New York
-
-            .btn.btn-white Load earlier comments
-            +comment("Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac ante mauris.", "Amelia Lewis", "02/03/2016 at 11:00am")
-            +comment("Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac ante mauris. Vestibulum aliquam venenatis nisl, nec venenatis libero pretium at. In pretium. Vestibulum aliquam venenatis nisl, nec venenatis libero pretium at. In pretium.", "Amelia Lewis", "02/03/2016 at 11:00am")
-
-          .block-xs.border-top.border-bottom: textarea(placeholder="Add a comment")
-
-      +item-comments("http://www.wgsn.com/storage/vol20/ss_image_store/86/53/61/42/media_yzy_aw16_008.jpg")
-      +item-comments("http://www.wgsn.com/storage/vol20/ss_image_store/26/53/61/42/media_yzy_aw16_002.jpg")
-      +item-comments("http://www.wgsn.com/storage/vol20/ss_image_store/86/53/61/42/media_yzy_aw16_008.jpg")
-      +item-comments("http://www.wgsn.com/storage/vol20/ss_image_store/86/53/61/42/media_yzy_aw16_008.jpg")
+  .scroll-container.block-top-sm.block-hor-sm
+    +comment("Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac ante mauris.", "Amelia Lewis", "02/03/2016 at 11:00am")
+    +comment("Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac ante mauris. Vestibulum aliquam venenatis nisl, nec venenatis libero pretium at. In pretium. Vestibulum aliquam venenatis nisl, nec venenatis libero pretium at. In pretium.", "Amelia Lewis", "02/03/2016 at 11:00am")
+    +comment("Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac ante mauris. Vestibulum aliquam venenatis nisl, nec venenatis libero pretium at. In pretium.", "Amelia Lewis", "02/03/2016 at 11:00am")
+    +comment("Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "Amelia Lewis", "02/03/2016 at 11:00am")
+    +comment("Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac ante mauris. Vestibulum aliquam venenatis nisl, nec venenatis libero pretium at.", "Amelia Lewis", "Yesterday at 11:14am")
+    +comment("Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac ante mauris. Vestibulum aliquam venenatis nisl, nec venenatis libero pretium at. In pretium.", "Amelia Lewis", "Yesterday at 11:52am")
+    +comment("Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac ante mauris. Vestibulum aliquam venenatis nisl, nec venenatis libero pretium at.", "Amelia Lewis", "4 hours ago")
+    +comment("Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac ante mauris.", "Amelia Lewis", "10 minutes ago")
+    +comment("Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac ante mauris. Vestibulum aliquam venenatis nisl, nec venenatis libero pretium at. In pretium.", "Amelia Lewis", "A moment ago")
+  .comment-input.block-xs.border-top: textarea(placeholder="Add a comment")
