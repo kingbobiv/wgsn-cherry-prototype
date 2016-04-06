@@ -52,8 +52,7 @@ $('.toggle').on('click', function() {
 checkforhover = function(){
   if ($('.file').hasClass('selected')){
     // $('.file .file-heart').hide(); 
-    $('.file .btn-add-to-board').hide(); 
-    $('.file .btn-item-menu').hide();
+    $('.file .btn').hide(); 
     
     // Count number of items selected
     var myaccount = $('.file.selected').length;
@@ -62,8 +61,7 @@ checkforhover = function(){
     // if only one file is selected
     if (myaccount == 1) {
       // $('.file.selected .file-heart').show();  
-      $('.file.selected .btn-add-to-board').show();
-      $('.file.selected .btn-item-menu').show();
+      $('.file.selected .btn').show();
       $('.right-side-panel').addClass('has-file-selected');
       $('.floating-utility-row .displaying-results').text(myaccount + ' item selected');
       $('.page-content').removeClass('show-comments-panel');
@@ -79,8 +77,7 @@ checkforhover = function(){
     };
   } else {
     // $('.file .file-heart').show(); 
-    $('.file .btn-add-to-board').show(); 
-    $('.file .btn-item-menu').show();
+    $('.file .btn').show(); 
     $('.floating.context-menu .count').hide();
     $('.right-side-panel').removeClass('has-file-selected').removeClass('has-multiple-files-selected');
     $('.floating-utility-row .displaying-results').text('Displaying 15 of 1000 results');
@@ -94,7 +91,7 @@ $(function(){
   $('.file').click(function(e, evt) {
       clicks++;  //count clicks
 
-      var selectedImg = $(this).find('.thumb-inner').css('background-image');
+      var selectedImg = $(this).find('img').prop('src');
 
       if(clicks === 1) {
         timer = setTimeout(function() {
@@ -114,7 +111,7 @@ $(function(){
         console.log(selectedImg);
         $('.overlay').addClass('show');
         $('#item-detail-modal').addClass('show');
-        $('#item-detail-modal .modal-image-panel .img').css({"background-image": selectedImg});
+        $('#item-detail-modal .modal-image-panel .img').css({"background-image": "url('" + selectedImg + "');"});
         clicks = 0; // after action performed, reset counter
       }
   })
@@ -485,16 +482,11 @@ openFilter("season");
 //- MODALS
 //- ============================================================
 
-//- share
-$('.btn-share').on('click', function() {
-  $('.overlay').addClass('show');
-  $('#share-modal').addClass('show');
-});
-
-//- add
-$('.btn-add-to-board').on('click', function() {
-  $('.overlay').addClass('show');
-  $('#add-modal').addClass('show').removeClass('add-multiple-files');
+openModal = function(modalname) {
+  $('.btn-' + modalname).on('click', function() {
+    $('.overlay').addClass('show');
+    $('#' + modalname + '-modal').addClass('show');
+  });
 
   var myAccount = $('.file.selected').length;
 
@@ -504,106 +496,16 @@ $('.btn-add-to-board').on('click', function() {
   } else {
     return;
   }
-});
+}
 
-//- send
-$('.btn-send').on('click', function() {
-  $('.overlay').addClass('show');
-  $('#send-modal').addClass('show');
-
-  var myAccount = $('.file.selected').length;
-
-  if (myAccount > 1) {
-    $('#send-modal').addClass('add-multiple-files');
-    $('.num-of-files').text(myAccount + ' images');
-  } else {
-    return;
-  }
-});
-
-$(document).ready(function() {
-  $("#myTags").tagit({
-    availableTags: [
-      "Amelia Lewis",
-      "Julian Ramirez",
-      "Sansan Chen",
-      "Nicky Ashwell",
-      "Hema Sivaram",
-      "Sarah Freiser",
-      "Andrew Harris",
-      "Oleg Zolotnisky",
-      "Peter Morrison",
-      "Pathik Tanna",
-      "Pedro Santos",
-      "Hans Zhou",
-      "Eugene Grabov",
-      "Can Citak",
-      "Vincent Pantano",
-      "Hai Zheng",
-      "Ahmed Radwan",
-      "Parisa Vahdatinia",
-      "Manu Paka",
-      "Malaya Mallick",
-      "Dani Miga",
-      "Steve Weiss",
-      "Igor Pokryshevskiy",
-      "Alex Shishkevich",
-      "Deepa Kini",
-      "Robert Conn",
-      "Deepa Bhat",
-      "Aleksey Mezhva",
-      "Samuel Elliott"
-    ],
-    autocomplete: {delay: 0, minLength: 0},
-    // showAutocompleteOnFocus: true,
-    removeConfirmation: true,
-    placeholderText: "Recipients"
-  });
-});
-
-//- print
-$('.btn-print').on('click', function() {
-  $('.overlay').addClass('show');
-  $('#print-modal').addClass('show');
-
-  var myAccount = $('.file.selected').length;
-
-  if (myAccount > 1) {
-    $('#print-modal').addClass('add-multiple-files');
-    $('.num-of-files').text(myAccount + ' images');
-  } else {
-    return;
-  }
-});
-
-$('.print-layout-tile').on('click', function() {
-  $('.print-layout-tile').removeClass('active');
-  $(this).addClass('active');
-})
-
-//- create new board
-$('.btn-create-new-board').on('click', function() {
-  $('.overlay').addClass('show');
-  $('#create-new-board-modal').addClass('show');
-});
-
-//- duplicate board
-$('.btn-duplicate-board').on('click', function() {
-  $('.overlay').addClass('show');
-  $('#duplicate-board-modal').addClass('show');
-});
-
-//- rename board
-$('.btn-rename-board').on('click', function() {
-  $('.overlay').addClass('show');
-  $('#rename-board-modal').addClass('show');
-});
-
-//- save search
-$('.btn-save-search').on('click', function() {
-  $('.overlay').addClass('show');
-  $('#save-search-modal').addClass('show');
-});
+openModal('share');
+openModal('add-to-board');
+openModal('send');
+openModal('print');
+openModal('create-new-board');
+openModal('duplicate-board');
+openModal('rename-board');
+openModal('save-search');
 
 //- close modal
 $('.modal .close-modal').on('click', function() {
@@ -626,22 +528,23 @@ $(document).keyup(function(e) {
   } 
 });
 
+// print modal layout options
+$('.print-layout-tile').on('click', function() {
+  $('.print-layout-tile').removeClass('active');
+  $(this).addClass('active');
+})
+
 
 //- ============================================================
 //- ITEM DETAIL MODAL
 //- ============================================================
 
-// $('.file').on('dblclick', function() {
-//   $('.overlay').addClass('show');
-//   $('#item-detail-modal').addClass('show');
-// });
-
 $('.btn-open').on('click', function() {
   $('.overlay').addClass('show');
   $('#item-detail-modal').addClass('show');
-  var selectedImg = $(this).parentsUntil('file').find('.thumb-inner').css('background-image');
+  var selectedImg = $(this).parentsUntil('file').find('img').prop('src');
   console.log(selectedImg);
-  $('#item-detail-modal .modal-image-panel .img').css({"background-image": selectedImg});
+  $('#item-detail-modal .modal-image-panel .img').css({"background-image": "url('" + selectedImg + "');"});
 });
 
 $('#item-detail-modal .close-modal').on('click', function() {
@@ -699,6 +602,51 @@ $('#item-detail-modal .btn-print').on('click', function() {
 
 
 //- ============================================================
+//- TAG LIST
+//- ============================================================
+
+$(document).ready(function() {
+  $("#myTags").tagit({
+    availableTags: [
+      "Amelia Lewis",
+      "Julian Ramirez",
+      "Sansan Chen",
+      "Nicky Ashwell",
+      "Hema Sivaram",
+      "Sarah Freiser",
+      "Andrew Harris",
+      "Oleg Zolotnisky",
+      "Peter Morrison",
+      "Pathik Tanna",
+      "Pedro Santos",
+      "Hans Zhou",
+      "Eugene Grabov",
+      "Can Citak",
+      "Vincent Pantano",
+      "Hai Zheng",
+      "Ahmed Radwan",
+      "Parisa Vahdatinia",
+      "Manu Paka",
+      "Malaya Mallick",
+      "Dani Miga",
+      "Steve Weiss",
+      "Igor Pokryshevskiy",
+      "Alex Shishkevich",
+      "Deepa Kini",
+      "Robert Conn",
+      "Deepa Bhat",
+      "Aleksey Mezhva",
+      "Samuel Elliott"
+    ],
+    autocomplete: {delay: 0, minLength: 0},
+    // showAutocompleteOnFocus: true,
+    removeConfirmation: true,
+    placeholderText: "Recipients"
+  });
+});
+
+
+//- ============================================================
 //- BACK TO TOP
 //- ============================================================
 
@@ -728,9 +676,7 @@ jQuery(document).ready(function($){
       }, scroll_top_duration
     );
   });
-});
 
-$(document).ready(function() {
   if($('.right-side-panel').hasClass('has-file-selected')) {
     console.log("hello");
     $('.btn-back-to-top').css({transform: "translate3d(0, -30px, 0);"})
@@ -789,4 +735,28 @@ $('.message-preview').click(function(e, evt) {
 
 $('.btn-delete-message').on('click', function() {
   $(this).parentsUntil('.messages-row').remove();
+});
+
+
+//- ============================================================
+//- MESSAGES
+//- ============================================================
+
+function collage() {
+  $('.collage').collagePlus({
+    'allowPartialLastRow' : true,
+    'fadeSpeed'           : 2000
+  });
+};
+
+collage();
+
+var resizeTimer = null;
+$(window).bind('resize', function() {
+  // hide all the images until we resize them
+  // set the element you are scaling i.e. the first child nodes of ```.Collage``` to opacity 0
+  $('.collage .Image_Wrapper').css("opacity", 0);
+  // set a timer to re-apply the plugin
+  if (resizeTimer) clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(collage, 200);
 });

@@ -17,7 +17,7 @@
 
     &.btn-disabled
       color: $lt-grey
-      background: rgba(white, 0.75)
+      background: darken(white, 20)
 
   &.btn-black
     background: black
@@ -33,6 +33,15 @@
 
     &:hover
       background: rgba(black, 0.5)
+      +transition-delay(0ms !important)
+
+  &.btn-yellow
+    border-color: $yellow
+    background: $yellow
+    color: white
+
+    &:hover
+      background: lighten($yellow, 20)
       +transition-delay(0ms !important)
 
 .btn-back-to-top

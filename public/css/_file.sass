@@ -45,44 +45,10 @@
   width: 100%
   background: white
   position: relative
-
-  .thumb-container
-    position: relative
-    overflow: hidden
-    
-    .thumb-inner
-      background: white no-repeat center / contain
-      width: 100%
-      position: relative
-      margin: 0 auto
-
-      .fa
-        position: absolute
-        top: 50%
-        left: 50%
-        transform: translate3d(-50%, -50%, 0)
-        color: rgba(black, 0.05)
-
-    .original-artwork
-      @extend .font-wgsn
-      position: absolute
-      bottom: 0
-      left: 0
-      background: rgba(black, 0.8)
-      color: white
-      padding: 4px 4px 3px 6px
-      letter-spacing: 0.1em
-      font-size: 9px 
-
-      &:after
-        content: ""
-        position: absolute
-        top: 0
-        right: -10px
-        width: 0
-        height: 0
-        border-bottom: 19px solid rgba(black, 0.8)
-        border-right: 10px solid transparent
+  padding-bottom: 0
+  
+  img
+    vertical-align: bottom
 
   .caption-container
     display: none
@@ -116,11 +82,9 @@
     color: white
     @extend .flex-center
 
-    > .btn-add-to-board,
-    .btn-item-menu
+    .btn
       display: inline-block
       margin: 0 4px
-      +transform(translate3d(0, 10px, 0))
       opacity: 0
 
       .icon
@@ -130,19 +94,12 @@
     .file-checkbox,
     .file-heart
       opacity: 1
+    
     .file-utilities
       background: rgba(black, 0.4)
       
-      .btn-add-to-board,
-      .btn-item-menu
-        +transform(translate3d(0, 0, 0))
+      .btn
         opacity: 1
-
-      .btn-add-to-board
-        +transition-delay(200ms)
-      
-      .btn-item-menu
-        +transition-delay(300ms)
 
   &.selected
     border-color: $dk-grey
@@ -155,6 +112,8 @@
       color: $dk-grey
 
   &.show-caption
+    padding-bottom: 64px
+    
     .caption-container
       display: block
 
