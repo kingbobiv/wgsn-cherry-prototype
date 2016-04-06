@@ -167,8 +167,8 @@
   @extend .arrow-right
 
 #utility-row-settings-context-menu
-  top: 30px
-  right: -4px
+  top: 52px
+  right: 78px
   width: 220px
   @extend .arrow-right
 
@@ -176,6 +176,28 @@
     &:hover,
     &:active
       background: none
+
+  .btn-view-option
+    padding: 5px 10px
+    margin-left: -1px
+    @extend .inline-block
+    @extend .hoverable
+    @extend .border
+    
+    &:first-of-type
+      +border-radius(3px 0 0 3px)
+
+    &:last-of-type
+      +border-radius(0 3px 3px 0)
+
+    &:hover
+      background: $xlt-grey
+
+    &.disabled
+      opacity: 1
+
+      .icon
+        opacity: 0.3
 
 // #sort-by-context-menu
 //   top: 54px

@@ -65,13 +65,13 @@ checkforhover = function(){
       $('.file.selected .btn-add-to-board').show();
       $('.file.selected .btn-item-menu').show();
       $('.right-side-panel').addClass('has-file-selected');
-      $('.utility-row .displaying-results span').text(myaccount + ' item selected');
+      $('.floating-utility-row .displaying-results').text(myaccount + ' item selected');
     };
     
     // if more than one file is selected
     if (myaccount > 1) { 
       $('.right-side-panel').addClass('has-multiple-files-selected');
-      $('.utility-row .displaying-results span').text(myaccount + ' items selected');
+      $('.floating-utility-row .displaying-results').text(myaccount + ' items selected');
     };
   } else {
     // $('.file .file-heart').show(); 
@@ -79,7 +79,7 @@ checkforhover = function(){
     $('.file .btn-item-menu').show();
     $('.floating.context-menu .count').hide();
     $('.right-side-panel').removeClass('has-file-selected').removeClass('has-multiple-files-selected');
-    $('.utility-row .displaying-results span').text('Displaying 15 of 1000 results');
+    $('.floating-utility-row .displaying-results').text('Displaying 15 of 1000 results');
   }
 };
 
@@ -152,11 +152,12 @@ $(function(){
 // select all files
 $('.select-all').click(function() {
   if ($('.file').length == $('.file.selected').length) {
-    $('.select-all').prop('checked', false);
+    $('.select-all').text('Select all');
     $('.file').removeClass('selected');
     $('.file-checkbox').removeClass('icon-tick-circle-filled').addClass('icon-tick-circle');
+    $('.right-side-panel').removeClass('has-file-selected').removeClass('has-multiple-files-selected');
   } else {
-    $('.select-all').prop('checked', true);
+    $('.select-all').text('Deselect all');
     $('.file').addClass('selected');
     $('.file-checkbox').removeClass('icon-tick-circle').addClass('icon-tick-circle-filled');
   }
@@ -205,7 +206,7 @@ $('.utility-row .icon-ellipsis').on('click', function() {
 });
 
 //- utility row settings context menu
-$('.utility-row .icon-gear').on('click', function() {
+$('.btn-settings').on('click', function() {
   $('#utility-row-settings-context-menu').toggleClass('show');
 });
 
@@ -233,7 +234,7 @@ $('.btn-message-notifications').on('click', function() {
 
 //- close context menu
 $('.context-menu').click(function(e, evt) {
-  if($(e.target).is('.toggle, form input')) {
+  if($(e.target).is('.toggle, form input, .context-menu .btn-view-option, .context-menu .btn-view-option .icon')) {
     // e.preventDefault();
     return;
   } else {
@@ -723,6 +724,15 @@ jQuery(document).ready(function($){
       }, scroll_top_duration
     );
   });
+});
+
+$(document).ready(function() {
+  if($('.right-side-panel').hasClass('has-file-selected')) {
+    console.log("hello");
+    $('.btn-back-to-top').css({transform: "translate3d(0, -30px, 0);"})
+  } else {
+    $('.btn-back-to-top').css({transform: "translate3d(0, 0, 0);"})
+  };
 });
 
 

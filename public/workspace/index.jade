@@ -21,26 +21,22 @@ block content
           span Balmain 2016
           i.icon.icon-caret-down
           include ../partials/context-menus/top-board-context-menu
+        .inline-block.hoverable.btn-share: i.icon.icon-user
     
-    .block-xs.border-left.pull-right.flex-center.hoverable.btn-comments-panel: i.icon.icon-comment
-
-    .block-xs.text-right.pull-right.btn-share#share-block
-      .btn.btn-white.pull-right.hoverable Share Board
-      ul.clean.pull-right
-        li.hoverable.owner.online(style="background-image: url('https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/7/005/05b/332/0aa54b4.jpg')"): span.tooltip.nowrap Amelia Lewis is the owner
-        li.divider
-        li.hoverable.online(style="background-image: url('https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAT6AAAAJGZiMmIwM2E3LTMzNzMtNDEzNi1iN2JhLWJlZmYzM2MwNmI2Nw.jpg')"): span.tooltip.nowrap Julian Ramirez can edit
-        li.hoverable(style="background-image: url('https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAFZAAAAJDM1YTk4OTc5LTJjZGUtNGJkMS1iMTM4LTBmMjIzYTM3NGYzMQ.jpg')"): span.tooltip.nowrap Nicky Ashwell can edit
-        li.hoverable.online.active(style="background-image: url('https://media.licdn.com/media/AAEAAQAAAAAAAAZVAAAAJDBlZWUwZWE0LTk1OWYtNGMyYi1iYmU5LTA3NDNlNDYxZmYwMQ.jpg')"): span.tooltip.nowrap Sansan Chen can edit
-        li.hoverable(style="background-image: url('https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/1/005/06d/1ea/349ef69.jpg')"): span.tooltip.nowrap Andrew Harris can edit
-        li.hoverable.sharing-other +6
+    .utility-block.pull-right
+      .input-container.pull-left.hidden-image-library.hidden-workspace-inbox.hidden-workspace-sent-messages.hidden-workspace-favourites
+        input(type="text", placeholder="Search this board")
+        span.icon-container.border: i.icon.icon-search
+      .block-xs.pull-left.flex-center.hoverable.btn-settings: i.icon.icon-gear
+      include ../partials/context-menus/utility-row-settings-context-menu
+      .block-xs.pull-left.border-left.flex-center.hoverable.btn-comments-panel: i.icon.icon-comment
 
   .row.page-content.show-left-side-panel
     include ../partials/workspace/left-side-panel
     
     .right-side-panel.bg-grey
       .btn-left-side-panel.border.hoverable: i.icon.icon-angle-left
-      include ../partials/utility-row
       include ../partials/files-row
+      include ../partials/floating-utility-row
     
     include ../partials/workspace/comments-panel

@@ -8,11 +8,8 @@ mixin board-row(link, name, number, level, caret, shared)
       else
         i.spacer
       if shared == "yes"
-        i.icon.icon-folder-shared
-      if shared == "no"
-        i.icon.icon-folder
+        i.icon.icon-user
       span.board-name= name 
-      span.board-number= number
       i.icon.icon-ellipsis
       include ../context-menus/board-context-menu
   else
@@ -24,11 +21,8 @@ mixin board-row(link, name, number, level, caret, shared)
       else
         i.spacer
       if shared == "yes"
-        i.icon.icon-folder-shared
-      if shared == "no"
-        i.icon.icon-folder
+        i.icon.icon-user
       span.board-name= name 
-      span.board-number= number
       i.icon.icon-ellipsis
       include ../context-menus/board-context-menu
 
@@ -82,16 +76,17 @@ mixin team-row(name, level, caret)
   +board-row(false, "Lookbooks", "200", "1", "closed", "no")
 
 .header-row.border-top.border-bottom.hoverable
+  i.icon.icon-user
   span.font-wgsn Shared With Me
   i.icon.icon-angle-up.pull-right
 
 .block-ver-xxs
   +team-row("Product", "1", "open", "yes")
   +person-row("Julian Ramirez", "2", "open")
-  +board-row(false, "Board name", "200", "3", "closed", "yes")
-  +board-row(false, "Board name", "200", "3", "closed", "yes")
-  +board-row(false, "Board name", "200", "3", "closed", "yes")
-  +board-row(false, "Board name", "200", "4", "", "yes")
+  +board-row(false, "Board name", "200", "3", "closed", "no")
+  +board-row(false, "Really long board name", "200", "3", "closed", "no")
+  +board-row(false, "Board name", "200", "3", "closed", "no")
+  +board-row(false, "Board name", "200", "4", "", "no")
   +person-row("Sansan Chen", "2", "closed")
   +person-row("Andrew Harris", "2", "closed")
   +person-row("Nicky Ashwell", "2", "closed")

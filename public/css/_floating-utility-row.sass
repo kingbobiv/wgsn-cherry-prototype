@@ -1,0 +1,32 @@
+.floating-utility-row
+  position: fixed
+  bottom: 0
+  right: 0
+  left: 0
+  background: rgba($dk-grey, 0.9)
+  z-index: 250
+  color: white
+  opacity: 0
+  pointer-events: none
+
+  .displaying-results
+    padding-top: 4px
+
+  .multi-utility-icons
+    position: absolute
+    left: 50%
+    +transform(translate3d(-50%, 0, 0))
+
+    .icon
+      color: rgba(white, 0.75)
+      margin: 0 10px
+      font-size: 16px
+
+      &:hover
+        color: white
+
+.right-side-panel.has-file-selected,
+.right-side-panel.has-mutliple-files-selected
+  .floating-utility-row
+    opacity: 1
+    pointer-events: all

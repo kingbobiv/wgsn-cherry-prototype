@@ -30,14 +30,38 @@
       font-size: 10px
       color: $md-grey
 
+    .btn-share
+      background: $xlt-grey
+      +border-radius(50%)
+      width: 30px
+      height: 30px
+      padding: 7px 9px
+      margin-left: 10px
+
+      &:hover
+        background: darken($xlt-grey, 2)
+
   .search-block
     margin-top: 3px
 
+  .utility-block
+    height: 100%
+
+    .input-container
+      padding: 12px 0 0 0
+    
+    .block-xs
+      &:not(:first-of-type)
+        width: 60px
+        height: 100%
+        font-size: 18px
+        position: relative
+
   .btn-comments-panel
-    width: 60px
-    font-size: 18px
-    position: relative
-    @extend .no-transition
+    // width: 60px
+    // font-size: 18px
+    // position: relative
+    // @extend .no-transition
 
     &:after
       content: ""
