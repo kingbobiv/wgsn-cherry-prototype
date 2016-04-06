@@ -16,6 +16,10 @@ header
     height: $global-product-row-height
     z-index: 120
 
+    .wgsn-logo
+      width: 70px
+      margin: -3px 15px
+
     .product-link
       font-size: 12px
       opacity: 0.5
@@ -23,6 +27,7 @@ header
       @extend .text-uppercase
       @extend .hoverable
       @extend .inline-block
+      @extend .font-wgsn
       position: relative
 
       &:after
@@ -70,6 +75,9 @@ header
 
     .icon
       margin: 0 6px
+
+    .icon-bars
+      margin: 0
 
     .icon-bell:after,
     .icon-envelope:after

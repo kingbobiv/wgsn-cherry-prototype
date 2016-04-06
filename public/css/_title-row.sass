@@ -18,6 +18,8 @@
       border: 1px solid transparent
       border-radius: 2px
       position: relative
+      @extend .font-wgsn
+      @extend .text-grey
 
       .icon-caret-down
         margin-left: 6px
@@ -81,10 +83,7 @@
   .btn-save-search
     padding: 10px 12px 9px
 
-body.image-library-view
-  .title-row
-    top: $header-height
-
+body.image-library-view,
 body.workspace-view,
 body.workspace-inbox-view,
 body.workspace-sent-messages-view,

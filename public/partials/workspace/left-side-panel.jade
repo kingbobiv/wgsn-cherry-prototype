@@ -1,10 +1,10 @@
-.left-side-panel.border-right.bg-white
+.left-side-panel
   .scroll-container
-    .header-row.border-bottom.hoverable
+    .header-row.hoverable
       span.font-wgsn Messages
       i.icon.icon-angle-up.pull-right
 
-    .block-ver-xxs.border-bottom
+    .block-ver-xxs
       a.misc-row.btn-inbox(href="/workspace/inbox")
         i.icon.icon-envelope
         span Inbox
@@ -15,15 +15,14 @@
         i.icon.icon-arrow-right
         span Sent Messages
     
-    a.header-row.border-bottom.hoverable.btn-favourites(href="/workspace/favourites")
+    .header-row.hoverable
       i.icon.icon-heart-o
       span.font-wgsn Favourites
-      //- i.icon.icon-angle-up.pull-right
+      i.icon.icon-angle-up.pull-right
 
-    //- .block-xs.border-bottom
-    //-   .misc-row: span Images
-    //-   .misc-row: span Reports
-    //-   .misc-row: span Videos
-    //-   .misc-row: span Instock Products
+    .block-ver-xs
+      a.misc-row.btn-favourites(href="/workspace/favourites"): span Images
+      .misc-row: span Reports
+      .misc-row: span Videos
     
     include folder-structure

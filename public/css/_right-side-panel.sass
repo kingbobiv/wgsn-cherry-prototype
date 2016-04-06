@@ -8,22 +8,19 @@
     top: 50%
     width: 12px
     height: 40px
-    padding: 12px 0
-    color: $dk-grey
+    padding: 14px 0
+    background: $dk-grey
     font-size: 10px
-    border-radius: 0 2px 2px 0
+    +border-radius(0 3px 3px 0)
     z-index: 130
-    background: white
+    color: white
 
     .icon
       display: block
       +transform(translate3d(0, 0, 0) rotate(180deg))
       @extend .no-transition
 
-body.image-library-view
-  .right-side-panel
-    height: calc(100vh - (#{$header-height} + #{$title-row-height}))
-
+body.image-library-view,
 body.workspace-view,
 body.workspace-inbox-view,
 body.workspace-sent-messages-view,

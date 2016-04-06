@@ -1,4 +1,4 @@
-.left-side-panel.border-right.bg-white.image-library-filters-active
+.left-side-panel.image-library-filters-active
   .row.tabs
     .col-xs-6.text-center: .tab.active.hoverable#tab-filters: span.font-wgsn Filters
     .col-xs-6.text-center: .tab.hoverable#tab-folders: span.font-wgsn Workspace
@@ -6,7 +6,7 @@
   .panel-filters
     .scroll-container
       mixin filter-btn(name)
-        .filter-btn.block-ver-xs.block-left-sm.block-right-xs.border-bottom.hoverable(id!=attributes.id)
+        .filter-btn.block-ver-xs.block-left-sm.block-right-xs.hoverable(id!=attributes.id)
           span= name
           i.icon.icon-angle-right.pull-right.tight
 
@@ -19,7 +19,7 @@
 
       .item.block-xs
 
-      .header-row.border-top.border-bottom
+      .header-row
         span.font-wgsn Advanced filter options
 
       +filter-btn("Colour")(id="filter-btn-colour")
@@ -35,13 +35,13 @@
     .scroll-container
       include ../workspace/folder-structure
 
-    .board-preview.closed.hoverable.border-top.bg-grey
-      .block-xs.border-bottom
+    .board-preview.closed.hoverable
+      .block-xs
         span.font-wgsn Board preview
         i.icon.icon-double-angle-down.pull-right
     
       mixin board-preview-image(img)
-        .img.pull-left.border.hoverable(style="background-image: url('" + img + "')")
+        .img.pull-left.hoverable(style="background-image: url('" + img + "')")
 
       .scroll-container.block-xxs
         +board-preview-image("https://www.wgsn.com/storage/vol20/ss_image_store/25/39/44/42/media_blm_aw16_001.jpg")

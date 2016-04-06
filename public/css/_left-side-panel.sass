@@ -1,12 +1,14 @@
 .left-side-panel
   width: $left-side-panel-width
+  height: calc(100vh - #{$header-height} - #{$title-row-height} + #{$product-row-height})
   position: absolute
   top: 0
   left: 0
   overflow: hidden
   display: none
   z-index: 300
-  color: darken($md-grey, 25)
+  background: $dk-grey
+  color: rgba(white, 0.75)
 
   .scroll-container
     height: 100%
@@ -22,7 +24,7 @@
   .tabs
     position: relative
     height: 56px
-    @extend .border-bottom
+    border-bottom: 1px solid rgba(white, 0.1)
 
     .col-xs-6:first-of-type
       .tab
@@ -55,21 +57,19 @@
         color: $fashion
 
   .inbox-number
-    background: $label-red
-    color: white
+    background: $yellow
+    color: $dk-grey
+    @extend .font-wgsn
     border-radius: 50%
     width: 16px
     height: 16px
-    font-size: 10px
     margin: 1px
     @extend .flex-center
 
   .header-row
     padding: 10px 12px
     display: block
-
-    &.active
-      background: rgba($lt-grey, 0.3)
+    background: rgba(white, 0.1)
 
     .icon-angle-up
       margin: 0
@@ -88,7 +88,7 @@
     display: block
     position: relative
     padding: 6px 12px
-    color: $md-grey
+    border-left: 4px solid transparent
 
     .board-name
       display: inline-block
@@ -104,25 +104,23 @@
       margin: 0 0 0 6px
 
     &:hover
-      background: rgba($lt-grey, 0.15)
+      background: rgba(white, 0.05)
+      border-color: rgba(white, 0.5)
       
       .board-name,
       .icon
-        color: $dk-grey
+        color: white
 
     &.active
-      background: rgba($lt-grey, 0.3)
+      background: rgba(white, 0.05)
+      border-color: $yellow
 
       .board-name,
       .icon
-        color: $dk-grey
+        color: white
 
       &:hover
-        background: rgba($lt-grey, 0.4)
-
-    &:first-of-type,
-    &:last-of-type
-      border: none
+        background: rgba($lt-grey, 0.1)
 
     &.label-red
       .icon-folder,
@@ -156,10 +154,10 @@
 
     @for $i from 1 through 6
       &.level-#{$i}
-        padding-left: 12px + (20px * ($i - 1))
+        padding-left: 12px + (15px * ($i - 1))
 
         .board-name
-          max-width: calc(100% - (30px + (#{$i} * 5px)))
+          max-width: calc(100% - (50px + (#{$i} * 5px)))
 
     .icon-ellipsis
       opacity: 0
@@ -184,6 +182,9 @@
       left: 0
       width: calc(#{$left-side-panel-width} - 1px)
       height: 330px
+      background: $dk-grey
+      color: white
+      border-top: 1px solid rgba(white, 0.1)
 
       .icon-double-angle-down
         margin: 0
@@ -208,7 +209,7 @@
         .img
           width: 68px
           height: 68px
-          background: white no-repeat center / contain
+          background: no-repeat center / contain
           margin: 2px
 
   .panel-filters
@@ -265,14 +266,7 @@
     .panel-folders
       display: block
 
-body.image-library-view
-  .left-side-panel
-    height: calc(100vh - #{$header-height} - #{$title-row-height})
-
 body.workspace-view
-  .left-side-panel
-    height: calc(100vh - #{$header-height} - #{$title-row-height} + #{$product-row-height})
-
   a.board-row
     @extend .active
 

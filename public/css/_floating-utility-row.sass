@@ -3,10 +3,11 @@
   bottom: 0
   right: 0
   left: 0
-  background: rgba($yellow, 0.96)
+  background: rgba($dk-grey, 0.96)
   z-index: 250
   color: white
   opacity: 0
+  +transform(translate3d(0, 100%, 0))
   pointer-events: none
 
   .displaying-results
@@ -31,4 +32,5 @@
 .right-side-panel.has-mutliple-files-selected
   .floating-utility-row
     opacity: 1
+    +transform(translate3d(0, 0, 0))
     pointer-events: all
