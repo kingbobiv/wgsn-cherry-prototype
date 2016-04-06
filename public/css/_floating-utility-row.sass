@@ -14,16 +14,18 @@
 
   .multi-utility-icons
     position: absolute
+    top: 16px
     left: 50%
     +transform(translate3d(-50%, 0, 0))
 
     .icon
-      color: rgba(white, 0.75)
-      margin: 0 10px
+      color: white
       font-size: 16px
+      border: 1px solid transparent
+      +border-radius(3px)
 
       &:hover
-        color: white
+        border-color: white
 
 .right-side-panel.has-file-selected,
 .right-side-panel.has-mutliple-files-selected

@@ -58,7 +58,10 @@
       min-height: 54px
 
       li:first-of-type
-        @extend .text-bold
+        @extend .font-wgsn
+
+      li:not(:first-of-type)
+        @extend .text-grey
 
       .filename
         color: $md-grey

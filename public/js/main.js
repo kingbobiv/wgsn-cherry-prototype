@@ -374,15 +374,6 @@ $('#btn-view-option-details').on('click', function() {
 
 
 //- ============================================================
-//- DELETE ITEM
-//- ============================================================
-
-$('.utility-row .icon-trash').on('click', function() {
-  $('.file.selected').parentsUntil('.files-container').remove();
-});
-
-
-//- ============================================================
 //- PAGE STRUCTURE
 //- ============================================================
 
@@ -488,11 +479,12 @@ openModal = function(modalname) {
     $('#' + modalname + '-modal').addClass('show');
   });
 
-  var myAccount = $('.file.selected').length;
+  var myaccount = $('.file.selected').length;
 
-  if (myAccount > 1) {
+  if (myaccount > 1) {
     $('#add-modal').addClass('add-multiple-files');
-    $('.num-of-files').text(myAccount + ' images');
+    $('.num-of-files').text(myaccount + ' images');
+    console.log(myaccount);
   } else {
     return;
   }
@@ -500,6 +492,8 @@ openModal = function(modalname) {
 
 openModal('share');
 openModal('add-to-board');
+openModal('copy');
+openModal('move');
 openModal('send');
 openModal('print');
 openModal('create-new-board');
