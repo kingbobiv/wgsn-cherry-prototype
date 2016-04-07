@@ -18,44 +18,43 @@ mixin file(type, img, original, filename, ...caption)
     i.file-heart.icon.icon-heart-o
 
 
-//- mixin file-details-view(type, img, original, filename, ...caption)
-//-   .file-container.block-xs
-//-     .file-details-view(class!=attributes.class)
-//-       .thumb-container.hoverable
-//-         img(src=img)
+mixin file-details-view(type, img, original, filename, ...caption)
+  .file-details-view(class!=attributes.class)
+    .thumb-container.hoverable
+      img(src=img)
 
-//-         .file-utilities-1
-//-           i.file-checkbox.icon.icon-tick-circle
-//-           i.file-heart.icon.icon-heart-o
+      .file-utilities-1
+        i.file-checkbox.icon.icon-tick-circle
+        i.file-heart.icon.icon-heart-o
+    
+    .caption-container.block-hor-md.block-ver-sm
+      .block-bot-sm
+        ul.clean
+          li.font-wgsn= type
+          each item in caption
+            li.caption.text-bold= item
+
+      .block-right-sm.block-bot-sm.inline-block
+        ul.clean
+          li.tight Image name:
+          li.tight Format:
+          li.tight Market:
+          li.tight View:
+          li.tight Category:
+      .block-right-sm.block-bot-sm.inline-block
+        ul.clean
+          li.tight yzy_aw16_003.jpg
+          li.tight JPG
+          li.tight Menswear
+          li.tight Complete look
+          li.tight Showroom
       
-//-       .caption-container.block-hor-md.block-ver-sm
-//-         .block-bot-sm
-//-           ul.clean
-//-             li.font-wgsn= type
-//-             each item in caption
-//-               li.caption.text-bold= item
-
-//-         .block-right-sm.block-bot-sm.inline-block
-//-           ul.clean
-//-             li.tight Image name:
-//-             li.tight Format:
-//-             li.tight Market:
-//-             li.tight View:
-//-             li.tight Category:
-//-         .block-right-sm.block-bot-sm.inline-block
-//-           ul.clean
-//-             li.tight yzy_aw16_003.jpg
-//-             li.tight JPG
-//-             li.tight Menswear
-//-             li.tight Complete look
-//-             li.tight Showroom
-        
-//-         .block-top-xxs.block-bot-sm.border-top
-//-           ul.clean.file-utilities-2
-//-             li.block-xs.tight.inline-block.hoverable.btn-open: i.icon.icon-export
-//-             li.block-xs.tight.inline-block.hoverable.btn-add-to-board: i.icon.icon-plus-circle
-//-             li.block-xs.tight.inline-block.hoverable: i.icon.icon-download
-//-             li.block-xs.tight.inline-block.hoverable: i.icon.icon-print
-//-             li.block-xs.tight.inline-block.hoverable: i.icon.icon-crop
-//-             li.block-xs.tight.inline-block.hoverable.btn-send: i.icon.icon-paper-plane
-//-             li.block-xs.tight.inline-block.hoverable.hidden-image-library: i.icon.icon-trash
+      .block-top-xxs.block-bot-sm.border-top
+        ul.clean.file-utilities-2
+          li.block-xs.tight.inline-block.hoverable.btn-open: i.icon.icon-export
+          li.block-xs.tight.inline-block.hoverable.btn-add-to-board: i.icon.icon-plus-circle
+          li.block-xs.tight.inline-block.hoverable: i.icon.icon-download
+          li.block-xs.tight.inline-block.hoverable: i.icon.icon-print
+          li.block-xs.tight.inline-block.hoverable: i.icon.icon-crop
+          li.block-xs.tight.inline-block.hoverable.btn-send: i.icon.icon-paper-plane
+          li.block-xs.tight.inline-block.hoverable.hidden-image-library: i.icon.icon-trash
