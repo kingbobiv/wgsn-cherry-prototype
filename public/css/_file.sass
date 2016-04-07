@@ -76,7 +76,7 @@
 
   .file-utilities
     position: absolute
-    bottom: 64px
+    bottom: 0
     width: 100%
     height: 60px
     color: white
@@ -100,7 +100,7 @@
     top: 0
     left: 0
     width: 100%
-    height: calc(100% - 64px)
+    height: 100%
     background: rgba(black, 0.5)
     opacity: 0
 
@@ -127,14 +127,21 @@
       color: $dk-grey
 
   &.show-caption
-    padding-bottom: 64px
-    
-    .caption-container
-      display: block
+    .file-utilities
+      bottom: 64px
+
+    .file-select-state
+      height: calc(100% - 64px)
 
   &.show-filename
-    .caption-container .filename
-      display: block
+    .file-utilities
+      bottom: 84px
+
+    .file-select-state
+      height: calc(100% - 84px)
+
+  &:not(.show-caption)
+    padding-bottom: 0px !important
 
 
 // ============================================================

@@ -22,8 +22,14 @@ $('.file-details-view .file-checkbox').on('click', function() {
 showCaptions = function() {
   if ($('#toggle-show-caption').hasClass('toggle-on')) {
     $('.file').addClass('show-caption');
+    $('.file .caption-container').show();
+    $('.file').css({'padding-bottom': '64px'});
   } else if ($('#toggle-show-caption').hasClass('toggle-off')) {
     $('.file').removeClass('show-caption');
+    $('.file').removeClass('show-filename');
+    $('.file .caption-container').hide();
+    $('.file').css({'padding-bottom': '0'});
+    $('#toggle-show-filename').removeClass('toggle-on').addClass('toggle-off');
   }
 };
 
@@ -31,8 +37,12 @@ showCaptions = function() {
 showFilenames = function() {
   if ($('#toggle-show-filename').hasClass('toggle-on')) {
     $('.file').addClass('show-filename');
+    $('.file .caption-container .filename').show();
+    $('.file').css({'padding-bottom': '84px'});
   } else if ($('#toggle-show-filename').hasClass('toggle-off')) {
     $('.file').removeClass('show-filename');
+    $('.file .caption-container .filename').hide();
+    $('.file').css({'padding-bottom': '64px'});
   }
 };
 
@@ -351,7 +361,7 @@ $('.label-circle.label-circle-grey').on('click', function() {
 function collage(height) {
   $('.collage').collagePlus({
     'allowPartialLastRow' : true,
-    'fadeSpeed'           : 2000,
+    'fadeSpeed'           : 1000,
     'targetHeight'        : height
   });
 };
