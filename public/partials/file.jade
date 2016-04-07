@@ -9,10 +9,12 @@ mixin file(type, img, original, filename, ...caption)
         li.filename.tight.block-top-xs= filename
 
     .file-select-state
+    
     .file-utilities
-      .btn.btn-yellow.btn-open Open
-      .btn.btn-clear.btn-item-menu: i.icon.icon-ellipsis
-      include context-menus/item-context-menu
+      .btn-container.text-center.block-ver-sm
+        .btn.btn-yellow.btn-open Open
+        .btn.btn-clear.btn-item-menu: i.icon.icon-ellipsis
+        include context-menus/item-context-menu
 
     i.file-checkbox.icon.icon-tick-circle
     i.file-heart.icon.icon-heart-o

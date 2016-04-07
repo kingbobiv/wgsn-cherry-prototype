@@ -1,3 +1,4 @@
+// standard button, must be used with one of the color classes below
 .btn
   @extend .border
   @extend .text-center
@@ -9,6 +10,7 @@
   color: $dk-grey
   @extend .hoverable
 
+  // white button
   &.btn-white
     background: white
 
@@ -19,6 +21,7 @@
       color: $lt-grey
       background: darken(white, 20)
 
+  // black button
   &.btn-black
     background: black
     border-color: black
@@ -27,6 +30,7 @@
     &:hover
       background: lighten(black, 20)
 
+  // clear button
   &.btn-clear
     border-color: white
     color: white
@@ -35,6 +39,7 @@
       background: rgba(black, 0.5)
       +transition-delay(0ms !important)
 
+  // yellow button
   &.btn-yellow
     border-color: $yellow
     background: $yellow
@@ -44,6 +49,7 @@
       background: lighten($yellow, 10)
       +transition-delay(0ms !important)
 
+// back to top
 .btn-back-to-top
   position: fixed
   bottom: 20px

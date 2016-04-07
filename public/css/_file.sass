@@ -77,21 +77,23 @@
 
   .file-utilities
     position: absolute
-    bottom: 0
+    top: 0
     width: 100%
-    height: 60px
+    height: 100%
     color: white
-    @extend .flex-center
-    background: -webkit-linear-gradient(bottom, rgba(black, 0) 0%, rgba(black, 0) 100%)
+    background: -webkit-linear-gradient(top, rgba(black, 0.3) 0%, rgba(black, 0) 20%, rgba(black, 0) 80%, rgba(black, 0.3) 100%)
+    opacity: 0
+
+    .btn-container
+      position: absolute
+      bottom: 0
+      width: 100%
 
     .btn
       display: inline-block
       margin: 0 4px
       opacity: 0
-      position: relative
-      bottom: 10px
       +transform(translate3d(0, 5px, 0))
-      opacity: 0
 
       .icon
         pointer-events: none
@@ -111,7 +113,7 @@
       opacity: 1
     
     .file-utilities
-      background: -webkit-linear-gradient(bottom, rgba(black, 0.6) 0%, rgba(black, 0) 100%)
+      opacity: 1
       
       .btn
         +transform(translate3d(0, 0, 0))
@@ -128,21 +130,29 @@
       color: $dk-grey
 
   &.show-caption
-    .file-utilities
-      bottom: 64px
-
+    .file-utilities,
     .file-select-state
       height: calc(100% - 64px)
 
   &.show-filename
-    .file-utilities
-      bottom: 84px
-
+    .file-utilities,
     .file-select-state
       height: calc(100% - 84px)
 
   &:not(.show-caption)
     padding-bottom: 0px !important
+
+  &.file-type-video
+    &:after
+      content: ""
+      position: absolute
+      top: 50%
+      left: 50%
+      background: url('http://www.wgsn.com/assets/common/images/play_button.png') no-repeat center / 100%
+      display: block
+      width: 60px
+      height: 60px
+      +transform(translate3d(-50%, -50%, 0))
 
 
 // ============================================================
@@ -230,3 +240,6 @@
   &.selected
     .file-utilities-1:after
       opacity: 1
+
+  &:last-of-type
+    margin: 20px auto

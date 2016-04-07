@@ -1,0 +1,88 @@
+.left-side-panel
+  .icon-caret-right,
+  .icon-caret-down
+    margin: 0 4px 0 0
+
+  .misc-row,
+  .board-row,
+  .person-row,
+  .team-row
+    display: block
+    position: relative
+    padding: 8px 12px
+    @extend .hoverable
+    // border-left: 4px solid transparent
+
+    .board-name
+      display: inline-block
+      margin: 0 0 -3px 0
+
+    .board-number
+      display: inline-block
+      color: rgba(white, 0.3)
+      margin: 0 0 0 6px
+
+    .icon-ellipsis
+      opacity: 0
+      position: absolute
+      top: 8px
+      right: 6px
+
+    &:hover
+      background: rgba(white, 0.05)
+      // border-color: rgba(white, 0.5)
+      
+      .board-name,
+      .icon
+        color: rgba(white, 0.8)
+      
+      .icon-ellipsis
+        opacity: 1
+
+    &.active
+      background: rgba(white, 0.05)
+      // border-color: $yellow
+
+      .board-name,
+      .icon
+        color: rgba(white, 0.8)
+
+      &:hover
+        background: rgba($lt-grey, 0.1)
+
+    &.label-red
+      .icon-folder,
+      .icon-folder-shared
+        color: $label-red
+
+    &.label-orange
+      .icon-folder,
+      .icon-folder-shared
+        color: $label-orange
+
+    &.label-yellow
+      .icon-folder,
+      .icon-folder-shared
+        color: $label-yellow
+
+    &.label-green
+      .icon-folder,
+      .icon-folder-shared
+        color: $label-green
+
+    &.label-blue
+      .icon-folder,
+      .icon-folder-shared
+        color: $label-blue
+
+    &.label-purple
+      .icon-folder,
+      .icon-folder-shared
+        color: $label-purple
+
+    @for $i from 1 through 6
+      &.level-#{$i}
+        padding-left: 12px + (15px * ($i - 1))
+
+        .board-name
+          +text-truncate(calc(100% - (86px + (#{$i} * 5px))))

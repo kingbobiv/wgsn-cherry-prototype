@@ -146,6 +146,8 @@ $(function(){
   $('.file-details-view .thumb-container').click(function(e, evt) {
       clicks++;  //count clicks
 
+      var selectedImg = $(this).find('img').prop('src');
+
       if(clicks === 1) {
         timer = setTimeout(function() {
           if($(e.target).is('.file-utilites, .file-heart')) {
@@ -153,14 +155,15 @@ $(function(){
             return;
           }
           
-          $(e.target).parentsUntil('.file-outer-details-view').toggleClass('selected');
-          $(e.target).parentsUntil('.file-outer-details-view').find('.file-checkbox').toggleClass('icon-tick-circle icon-tick-circle-filled');
+          $(e.target).parentsUntil('.details-view').toggleClass('selected');
+          $(e.target).parentsUntil('.details-view').find('.file-checkbox').toggleClass('icon-tick-circle icon-tick-circle-filled');
           clicks = 0; // after action performed, reset counter
         }, DELAY);
       } else {
         clearTimeout(timer); // prevent single-click action
         $('.overlay').addClass('show');
         $('#item-detail-modal').addClass('show');
+        $('#item-detail-modal .modal-image-panel .img').css({"background-image": "url('" + selectedImg + "')"});
         clicks = 0; // after action performed, reset counter
       }
   })
