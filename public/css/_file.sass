@@ -34,12 +34,8 @@
 // STANDARD FILE
 // ============================================================
 
-.file-outer
-  float: left
-
-.file-container
-  padding: 6px
-  // overflow: auto
+.files-container
+  padding: 20px
 
 .file
   width: 100%
@@ -52,10 +48,14 @@
 
   .caption-container
     display: none
+    @extend .bg-white
+    @extend .block-xs
     
     ul
-      padding: 10px 0
       min-height: 54px
+
+      li
+        +text-truncate(100%)
 
       li:first-of-type
         @extend .font-wgsn

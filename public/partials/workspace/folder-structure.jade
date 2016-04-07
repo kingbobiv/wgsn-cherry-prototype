@@ -11,7 +11,8 @@ mixin board-row(link, name, number, level, caret, shared)
         i.icon.icon-folder
       if shared == "yes"
         i.icon.icon-folder-shared
-      span.board-name= name 
+      span.board-name= name
+      span.board-number= number
       i.icon.icon-ellipsis
       include ../context-menus/board-context-menu
   else
@@ -26,7 +27,8 @@ mixin board-row(link, name, number, level, caret, shared)
         i.icon.icon-folder
       if shared == "yes"
         i.icon.icon-folder-shared
-      span.board-name= name 
+      span.board-name= name
+      span.board-number= number
       i.icon.icon-ellipsis
       include ../context-menus/board-context-menu
 

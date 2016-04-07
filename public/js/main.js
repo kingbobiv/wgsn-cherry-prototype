@@ -345,6 +345,31 @@ $('.label-circle.label-circle-grey').on('click', function() {
 
 
 //- ============================================================
+//- COLLAGE LAYOUT
+//- ============================================================
+
+function collage(height) {
+  $('.collage').collagePlus({
+    'allowPartialLastRow' : true,
+    'fadeSpeed'           : 2000,
+    'targetHeight'        : height
+  });
+};
+
+collage(400);
+
+var resizeTimer = null;
+$(window).bind('resize', function() {
+  // hide all the images until we resize them
+  // set the element you are scaling i.e. the first child nodes of ```.Collage``` to opacity 0
+  $('.collage .Image_Wrapper').css("opacity", 0);
+  // set a timer to re-apply the plugin
+  if (resizeTimer) clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(collage, 200);
+});
+
+
+//- ============================================================
 //- VIEW TILE OPTIONS
 //- ============================================================
 
@@ -352,18 +377,21 @@ $('#btn-view-option-sm').on('click', function() {
   $(this).removeClass('disabled');
   $(this).siblings().addClass('disabled');
   $('.files-row').addClass('view-tiles-sm').removeClass('view-tiles-md').removeClass('view-tiles-lg').removeClass('view-tiles-details');
+  collage(240);
 });
 
 $('#btn-view-option-md').on('click', function() {
   $(this).removeClass('disabled');
   $(this).siblings().addClass('disabled');
   $('.files-row').removeClass('view-tiles-sm').addClass('view-tiles-md').removeClass('view-tiles-lg').removeClass('view-tiles-details');
+  collage(400);
 });
 
 $('#btn-view-option-lg').on('click', function() {
   $(this).removeClass('disabled');
   $(this).siblings().addClass('disabled');
   $('.files-row').removeClass('view-tiles-sm').removeClass('view-tiles-md').addClass('view-tiles-lg').removeClass('view-tiles-details');
+  collage(1000);
 });
 
 $('#btn-view-option-details').on('click', function() {
@@ -729,28 +757,4 @@ $('.message-preview').click(function(e, evt) {
 
 $('.btn-delete-message').on('click', function() {
   $(this).parentsUntil('.messages-row').remove();
-});
-
-
-//- ============================================================
-//- MESSAGES
-//- ============================================================
-
-function collage() {
-  $('.collage').collagePlus({
-    'allowPartialLastRow' : true,
-    'fadeSpeed'           : 2000
-  });
-};
-
-collage();
-
-var resizeTimer = null;
-$(window).bind('resize', function() {
-  // hide all the images until we resize them
-  // set the element you are scaling i.e. the first child nodes of ```.Collage``` to opacity 0
-  $('.collage .Image_Wrapper').css("opacity", 0);
-  // set a timer to re-apply the plugin
-  if (resizeTimer) clearTimeout(resizeTimer);
-  resizeTimer = setTimeout(collage, 200);
 });
