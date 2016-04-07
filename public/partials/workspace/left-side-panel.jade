@@ -1,26 +1,27 @@
 .left-side-panel
   .scroll-container
-    .header-row.hoverable
+    .header-row.hoverable.btn-messages
+      i.icon.icon-envelope
       span.font-wgsn Messages
       i.icon.icon-angle-up.pull-right
 
-    .block-ver-xxs
+    .block-ver-xxs.content-messages
       a.misc-row.btn-inbox(href="/workspace/inbox")
-        i.icon.icon-envelope
+        //- i.icon.icon-envelope
         span Inbox
         .inbox-number.pull-right.text-center.hidden-workspace-inbox 1
 
       a.misc-row.btn-sent-messages(href="/workspace/sent-messages")
-        i.icon.icon-envelope
-        i.icon.icon-arrow-right
+        //- i.icon.icon-envelope
+        //- i.icon.icon-arrow-right
         span Sent Messages
     
-    .header-row.hoverable
+    .header-row.hoverable.btn-favourites
       i.icon.icon-heart-o
       span.font-wgsn Favourites
       i.icon.icon-angle-up.pull-right
 
-    .block-ver-xs
+    .block-ver-xs.content-favourites
       a.misc-row.btn-favourites(href="/workspace/favourites"): span Images
       .misc-row: span Reports
       .misc-row: span Videos

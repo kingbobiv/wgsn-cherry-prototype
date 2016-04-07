@@ -437,11 +437,18 @@ $('.btn-left-side-panel').on('click', function() {
   $('.page-content').toggleClass('show-left-side-panel');
 });
 
-//- comments panel
-$('.btn-comments-panel').on('click', function() {
-  $('.page-content').toggleClass('show-comments-panel');
-  $('.btn-comments-panel').toggleClass('active');
-});
+// left side panel accordion
+accordion = function(name) {
+  $('.left-side-panel .btn-' + name).on('click', function() {
+    $(this).toggleClass('closed')
+    $('.content-' + name).toggle();
+  });
+}
+
+accordion('messages');
+accordion('favourites');
+accordion('my-boards');
+accordion('shared-boards');
 
 //- image library left-side tabs
 $('#tab-filters').on('click', function() {
@@ -458,19 +465,11 @@ $('#tab-folders').on('click', function() {
   $('.image-library-view .left-side-panel').addClass('image-library-folders-active').removeClass('image-library-filters-active');
 });
 
-//- filter row expand/condense
-$('.btn-filter-row-expand').on('click', function() {
-  $('.filter-row').toggleClass('condensed expanded');
+//- comments panel
+$('.btn-comments-panel').on('click', function() {
+  $('.page-content').toggleClass('show-comments-panel');
+  $('.btn-comments-panel').toggleClass('active');
 });
-
-$('.btn-filter-row-delete').on('click', function() {
-  $('.filter-row').remove();
-  $('.btn-filter-row-fixed').remove();
-});
-
-$('.filter-tag').on('click', function() {
-  $(this).remove();
-});  
 
 //- comments panel tabs
 $('#tab-board-comments').on('click', function() {
@@ -490,6 +489,20 @@ $('.board-preview').on('click', function() {
   $(this).toggleClass('closed open');
   $('.panel-folders').toggleClass('board-preview-open');
 })
+
+//- filter row expand/condense
+$('.btn-filter-row-expand').on('click', function() {
+  $('.filter-row').toggleClass('condensed expanded');
+});
+
+$('.btn-filter-row-delete').on('click', function() {
+  $('.filter-row').remove();
+  $('.btn-filter-row-fixed').remove();
+});
+
+$('.filter-tag').on('click', function() {
+  $(this).remove();
+}); 
 
 
 //- ============================================================
