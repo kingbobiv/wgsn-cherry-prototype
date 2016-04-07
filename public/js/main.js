@@ -121,7 +121,7 @@ $(function(){
         console.log(selectedImg);
         $('.overlay').addClass('show');
         $('#item-detail-modal').addClass('show');
-        $('#item-detail-modal .modal-image-panel .img').css({"background-image": "url('" + selectedImg + "');"});
+        $('#item-detail-modal .modal-image-panel .img').css({"background-image": "url('" + selectedImg + "')"});
         clicks = 0; // after action performed, reset counter
       }
   })
@@ -578,9 +578,9 @@ $('.print-layout-tile').on('click', function() {
 $('.btn-open').on('click', function() {
   $('.overlay').addClass('show');
   $('#item-detail-modal').addClass('show');
-  var selectedImg = $(this).parentsUntil('file').find('img').prop('src');
+  var selectedImg = $(this).parentsUntil('.collage').find('img').prop('src');
   console.log(selectedImg);
-  $('#item-detail-modal .modal-image-panel .img').css({"background-image": "url('" + selectedImg + "');"});
+  $('#item-detail-modal .modal-image-panel .img').css({"background-image": "url('" + selectedImg + "')"});
 });
 
 $('#item-detail-modal .close-modal').on('click', function() {
