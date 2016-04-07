@@ -161,7 +161,7 @@
 
 .file-details-view
   overflow: auto
-  margin: 20px auto 0
+  margin: 0 auto 20px
   max-width: 1200px
   
   .thumb-container
@@ -241,5 +241,14 @@
     .file-utilities-1:after
       opacity: 1
 
-  &:last-of-type
-    margin: 20px auto
+  &.file-type-video
+    .thumb-container:after
+      content: ""
+      position: absolute
+      top: 50%
+      left: 50%
+      background: url('http://www.wgsn.com/assets/common/images/play_button.png') no-repeat center / 100%
+      display: block
+      width: 60px
+      height: 60px
+      +transform(translate3d(-50%, -50%, 0))
