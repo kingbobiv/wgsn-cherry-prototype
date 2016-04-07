@@ -2,7 +2,7 @@
   position: absolute
   top: 50%
   left: 50%
-  width: calc(100vw - 40px)
+  width: calc(100vw - 80px)
   height: calc(100vh - 40px)
   background: white
   @extend .box-shadow
@@ -23,26 +23,18 @@
   //- ============================================================
 
   .modal-controls
-    .icon-cross,
     .icon-angle-left,
     .icon-angle-right
       position: absolute
       color: white
       font-size: 16px
-
-      &:hover
-        cursor: pointer
-
-    .icon-cross
-      top: -24px
-      right: 0
+      top: 50%
+      +transform(translate3d(0, -50%, 0))
 
     .icon-angle-left
-      top: 50%
       left: -24px
 
     .icon-angle-right
-      top: 50%
       right: -24px
 
   
@@ -235,25 +227,31 @@
       opacity: 0
       pointer-events: none
 
-    .modal-arrow-left,
-    .modal-arrow-right
+    .modal-inner-arrow-left,
+    .modal-inner-arrow-right
       position: absolute
-      top: calc(50% - 20px)
+      bottom: 0
       color: white
       font-size: 16px
       background: rgba(black, 0.2)
       @extend .flex-center
       width: 40px
       height: 40px
+      opacity: 0
 
       &:hover
         background: rgba(black, 0.4)
 
-    .modal-arrow-left
-      left: 0
+    .modal-inner-arrow-left
+      left: calc(50% - 40px)
 
-    .modal-arrow-right
-      right: 0
+    .modal-inner-arrow-right
+      right: calc(50% - 40px)
+
+    &:hover
+      .modal-inner-arrow-left,
+      .modal-inner-arrow-right
+        opacity: 1
 
   
   //- ============================================================
