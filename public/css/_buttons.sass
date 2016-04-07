@@ -39,14 +39,28 @@
       background: rgba(black, 0.5)
       +transition-delay(0ms !important)
 
-  // yellow button
-  &.btn-yellow
+// colored button
+body.workspace-view,
+body.workspace-inbox-view,
+body.workspace-sent-messages-view,
+body.workspace-favourites-view
+  .btn-colored
     border-color: $yellow
     background: $yellow
     color: white
 
     &:hover
       background: lighten($yellow, 10)
+      +transition-delay(0ms !important)
+
+body.image-library-view
+  .btn-colored
+    border-color: $fashion
+    background: $fashion
+    color: white
+
+    &:hover
+      background: lighten($fashion, 10)
       +transition-delay(0ms !important)
 
 // back to top

@@ -51,7 +51,6 @@
 
   $modal-info-panel-width: 480px
   $modal-tool-panel-width: 50px
-  $modal-info-caption-height: 222px
 
   
   //- ============================================================
@@ -65,8 +64,6 @@
 
     // top section
     .modal-section-caption
-      height: $modal-info-caption-height
-      
       ul
         .modal-file-name
           font-size: 20px
@@ -83,14 +80,7 @@
             background: white
             border-bottom-color: transparent
       
-      .modal-scroll-container
-        overflow-y: auto
-        height: calc((100vh - 60px) - #{$modal-info-caption-height} - 20px - 15px) // height of modal - caption - tabs - comment input - borders
-      
-      .modal-comments
-        .modal-scroll-container
-          height: calc((100vh - 60px) - #{$modal-info-caption-height} - 40px - 84px - 15px) // height of modal - caption - tabs - comment input - borders
-        
+      .modal-comments        
         .comment
           overflow: auto
 
@@ -354,11 +344,37 @@
     .modal-info-panel-color-card
       display: none
 
+    $modal-info-caption-height: 222px
+
+    .modal-section-caption
+      height: $modal-info-caption-height
+
+    .modal-scroll-container
+      overflow-y: auto
+      height: calc((100vh - 60px) - #{$modal-info-caption-height} - 20px - 15px) // height of modal - caption - tabs - comment input - borders
+    
+    .modal-comments
+      .modal-scroll-container
+        height: calc((100vh - 60px) - #{$modal-info-caption-height} - 40px - 84px - 15px) // height of modal - caption - tabs - comment input - borders
+
   &.file-type-report
     .modal-info-panel-image,
     .modal-info-panel-video,
     .modal-info-panel-color-card
       display: none
+
+    $modal-info-caption-height: 166px
+
+    .modal-section-caption
+      height: $modal-info-caption-height
+
+    .modal-scroll-container
+      overflow-y: auto
+      height: calc((100vh - 60px) - #{$modal-info-caption-height} - 20px - 15px) // height of modal - caption - tabs - comment input - borders
+    
+    .modal-comments
+      .modal-scroll-container
+        height: calc((100vh - 60px) - #{$modal-info-caption-height} - 40px - 84px - 15px) // height of modal - caption - tabs - comment input - borders
     
     .modal-inner-arrow-left,
     .modal-inner-arrow-right
@@ -369,3 +385,29 @@
     .modal-info-panel-report,
     .modal-info-panel-color-card
       display: none
+
+    $modal-info-caption-height: 142px
+
+    .modal-section-caption
+      height: $modal-info-caption-height
+
+    .modal-scroll-container
+      overflow-y: auto
+      height: calc((100vh - 60px) - #{$modal-info-caption-height} - 20px - 15px) // height of modal - caption - tabs - comment input - borders
+    
+    .modal-comments
+      .modal-scroll-container
+        height: calc((100vh - 60px) - #{$modal-info-caption-height} - 84px - 15px) // height of modal - caption - tabs - comment input - borders
+
+    .modal-image-panel
+      &:after
+        content: ""
+        position: absolute
+        top: 50%
+        left: 50%
+        background: url('http://www.wgsn.com/assets/common/images/play_button.png') no-repeat center / 100%
+        display: block
+        width: 80px
+        height: 80px
+        +transform(translate3d(-50%, -50%, 0))
+        @extend .hoverable
