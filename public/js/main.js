@@ -118,11 +118,21 @@ $(function(){
         }, DELAY);
       } else {
         clearTimeout(timer); // prevent single-click action
-        console.log(selectedImg);
         $('.overlay').addClass('show');
         $('#item-detail-modal').addClass('show');
         $('#item-detail-modal .modal-image-panel .img').css({"background-image": "url('" + selectedImg + "')"});
         clicks = 0; // after action performed, reset counter
+
+        // file type
+        if ($(this).hasClass('file-type-image')) {
+          $('#item-detail-modal').addClass('file-type-image');
+        } else if ($(this).hasClass('file-type-report')) {
+          $('#item-detail-modal').addClass('file-type-report');
+        } else if ($(this).hasClass('file-type-video')) {
+          $('#item-detail-modal').addClass('file-type-video');
+        } else if ($(this).hasClass('file-type-color-card')) {
+          $('#item-detail-modal').addClass('file-type-color-card');
+        }
       }
   })
 
@@ -578,15 +588,29 @@ $('.print-layout-tile').on('click', function() {
 $('.btn-open').on('click', function() {
   $('.overlay').addClass('show');
   $('#item-detail-modal').addClass('show');
+  
+  // show actual selected image in the modal
   var selectedImg = $(this).parentsUntil('.collage').find('img').prop('src');
-  console.log(selectedImg);
   $('#item-detail-modal .modal-image-panel .img').css({"background-image": "url('" + selectedImg + "')"});
+
+  // file type
+  if ($(this).parentsUntil('.collage').hasClass('file-type-image')) {
+    $('#item-detail-modal').addClass('file-type-image');
+  } else if ($(this).parentsUntil('.collage').hasClass('file-type-report')) {
+    $('#item-detail-modal').addClass('file-type-report');
+  } else if ($(this).parentsUntil('.collage').hasClass('file-type-video')) {
+    $('#item-detail-modal').addClass('file-type-video');
+  } else if ($(this).parentsUntil('.collage').hasClass('file-type-color-card')) {
+    $('#item-detail-modal').addClass('file-type-color-card');
+  }
 });
 
+// close item detail modal
 $('#item-detail-modal .close-modal').on('click', function() {
   $(this).parentsUntil('body').removeClass('show');
   $('.overlay').removeClass('show');
   $('#item-detail-modal .modal-image-panel .img').css({"background-image": "none"});
+  $('#item-detail-modal').removeClass('file-type-image').removeClass('file-type-report').removeClass('file-type-video').removeClass('file-type-color-card');
 });
 
 //- tabs

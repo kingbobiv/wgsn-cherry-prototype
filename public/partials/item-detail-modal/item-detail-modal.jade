@@ -1,0 +1,27 @@
+.modal.show-left-side-panel#item-detail-modal
+  .modal-controls
+    i.icon.icon-angle-left.hoverable
+    i.icon.icon-angle-right.hoverable
+  
+  include image-info-panel
+  include report-info-panel
+
+  .modal-image-panel
+    .img
+    .btn-modal-left-side-panel.border-top.border-right.border-bottom.hoverable: i.icon.icon-angle-left
+    i.file-heart.icon.icon-heart-o.hoverable
+    i.icon.icon-cross.btn-close-fullscreen.hoverable
+    .modal-inner-arrow-left.hoverable: i.icon.icon-angle-left
+    .modal-inner-arrow-right.hoverable: i.icon.icon-angle-right
+
+  .modal-tool-panel.bg-white.border-left
+    .btn-modal-tool.block-sm.hoverable.flex-center.border-bottom.close-modal: i.icon.icon-cross
+    .btn-modal-tool.block-sm.hoverable.flex-center.btn-fullscreen: i.icon.icon-fullscreen
+    .btn-modal-tool.block-sm.hoverable.flex-center: i.icon.icon-crop
+    .btn-modal-tool.block-sm.hoverable.flex-center.btn-add-to-board: i.icon.icon-plus-circle
+    .btn-modal-tool.block-sm.hoverable.flex-center.btn-print: i.icon.icon-print
+    .btn-modal-tool.block-sm.hoverable.flex-center: i.icon.icon-download
+    .btn-modal-tool.block-sm.hoverable.flex-center.btn-send: i.icon.icon-paper-plane
+    .item-count.text-center 3/43
+
+  .modal-overlay

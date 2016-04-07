@@ -1,0 +1,22 @@
+.modal-comments
+  .modal-scroll-container.block-hor-sm
+    mixin comment(img, initials, comment, time)
+      .comment.block-ver-sm.border-bottom
+        if img
+          .block-right-xs.pull-left: .avatar(style="background-image: url('" + img + "')")
+        else
+          .block-right-xs.pull-left: .avatar= initials
+        .text.pull-left
+          p= comment
+          p.comment-time.tight.text-grey= time
+    
+    +comment("https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/7/005/05b/332/0aa54b4.jpg", "AL", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac ante mauris.", "02/03/2016 at 11:00am")
+    +comment("https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/1/005/06d/1ea/349ef69.jpg", "AH", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac ante mauris. Vestibulum aliquam venenatis nisl, nec venenatis libero pretium at. In pretium. Vestibulum aliquam venenatis nisl, nec venenatis libero pretium at. In pretium.", "02/03/2016 at 11:00am")
+    +comment("", "SC", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac ante mauris. Vestibulum aliquam venenatis nisl, nec venenatis libero pretium at. In pretium.", "02/03/2016 at 11:00am")
+    +comment("", "SC", "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "02/03/2016 at 11:00am")
+    +comment("https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/7/005/05b/332/0aa54b4.jpg", "AL", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac ante mauris. Vestibulum aliquam venenatis nisl, nec venenatis libero pretium at.", "Yesterday at 11:14am")
+    +comment("", "NA", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac ante mauris. Vestibulum aliquam venenatis nisl, nec venenatis libero pretium at. In pretium.", "Yesterday at 11:52am")
+    +comment("", "NA", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac ante mauris. Vestibulum aliquam venenatis nisl, nec venenatis libero pretium at.", "4 hours ago")
+    +comment("https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/1/005/06d/1ea/349ef69.jpg", "AH", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac ante mauris.", "10 minutes ago")
+    +comment("https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/7/005/05b/332/0aa54b4.jpg", "AL", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac ante mauris. Vestibulum aliquam venenatis nisl, nec venenatis libero pretium at. In pretium.", "A moment ago")
+  .comment-input.block-xs.border-top: textarea(placeholder="Add a comment")

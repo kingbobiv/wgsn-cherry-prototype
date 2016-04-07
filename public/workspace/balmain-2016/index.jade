@@ -1,0 +1,42 @@
+extends ../../layout
+
+block append vars
+  - bodyclass = 'workspace-view workspace-view-balmain-2016'
+
+block prepend title
+  | Workspace | 
+
+block content
+  include ../../partials/header
+
+  .row.title-row.border-bottom
+    .title-block.block-sm.pull-left
+      h2.tight.inline-block Workspace
+      .block-left-xs.inline-block
+        .block-xxs.inline-block.board-name.hoverable: span My Boards
+        .block-xxs.inline-block: i.icon.icon-angle-right
+        .block-xxs.inline-block.board-name.hoverable: span Fashion Shows
+        .block-xxs.inline-block: i.icon.icon-angle-right
+        .block-xxs.inline-block.board-name.hoverable.btn-top-board-context-menu
+          span Balmain 2016
+          i.icon.icon-caret-down
+          include ../../partials/context-menus/top-board-context-menu
+        .inline-block.hoverable.btn-share: i.icon.icon-user
+    
+    .utility-block.pull-right
+      .input-container.pull-left.hidden-image-library.hidden-workspace-inbox.hidden-workspace-sent-messages.hidden-workspace-favourites
+        input(type="text", placeholder="Search this board")
+        span.icon-container.border: i.icon.icon-search
+      .block-xs.pull-left.flex-center.hoverable.btn-settings: i.icon.icon-gear
+      include ../../partials/context-menus/utility-row-settings-context-menu
+      .block-xs.pull-left.border-left.flex-center.hoverable.btn-comments-panel: i.icon.icon-comment
+
+  .row.page-content.show-left-side-panel
+    include ../../partials/workspace/left-side-panel
+    
+    .right-side-panel
+      .btn-left-side-panel.hoverable: i.icon.icon-angle-left
+      include ../../partials/images-row
+      include ../../partials/floating-utility-row
+    
+    include ../../partials/workspace/comments-panel

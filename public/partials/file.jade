@@ -1,5 +1,5 @@
 mixin file(type, img, original, filename, ...caption)
-  .file.hoverable(class!=attributes.class)
+  .file.hoverable(class="file-type-" + type)
     img(src=img)
     
     .caption-container.border-top
@@ -19,7 +19,7 @@ mixin file(type, img, original, filename, ...caption)
 
 
 mixin file-details-view(type, img, original, filename, ...caption)
-  .file-details-view(class!=attributes.class)
+  .file-details-view(class="file-type-" + type)
     .thumb-container.hoverable
       img(src=img)
 

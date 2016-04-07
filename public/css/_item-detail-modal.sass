@@ -234,10 +234,11 @@
       color: white
       font-size: 16px
       background: rgba(black, 0.2)
-      @extend .flex-center
       width: 40px
       height: 40px
+      padding: 11px 12px
       opacity: 0
+      display: none
 
       &:hover
         background: rgba(black, 0.4)
@@ -341,3 +342,24 @@
     &.show
       opacity: 1
       pointer-events: all
+
+
+  //- ============================================================
+  //- FILE TYPES
+  //- ============================================================
+
+  &.file-type-image
+    .modal-info-panel-video,
+    .modal-info-panel-report,
+    .modal-info-panel-color-card
+      display: none
+
+  &.file-type-report
+    .modal-info-panel-image,
+    .modal-info-panel-video,
+    .modal-info-panel-color-card
+      display: none
+    
+    .modal-inner-arrow-left,
+    .modal-inner-arrow-right
+      display: block
