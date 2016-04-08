@@ -43,6 +43,8 @@
   
   img
     vertical-align: bottom
+    border: 0px solid white
+    +transition(all 200ms)
 
   .caption-container
     display: none
@@ -116,7 +118,7 @@
   &:hover
     .file-checkbox,
     .file-heart
-      opacity: 1
+      opacity: 1 !important
     
     .file-utilities
       opacity: 1
@@ -127,6 +129,9 @@
 
   &.selected
     border-color: $dk-grey
+
+    img
+      border: 10px solid white
 
     .file-select-state
       opacity: 1
