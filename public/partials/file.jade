@@ -1,4 +1,4 @@
-mixin file(type, img, original, filename, ...caption)
+mixin file(type, img, original, comments, filename, ...caption)
   .file.hoverable(class="file-type-" + type)
     img(src=img)
     
@@ -18,12 +18,18 @@ mixin file(type, img, original, filename, ...caption)
 
     i.file-checkbox.icon.icon-tick-circle
     i.file-heart.icon.icon-heart-o
+    
+    if comments == true
+      i.file-comment.icon.icon-comment-filled
 
 
-mixin file-details-view(type, img, original, filename, ...caption)
+mixin file-details-view(type, img, original, comments, filename, ...caption)
   .file-details-view(class="file-type-" + type)
     .thumb-container.hoverable
       img(src=img)
+
+      if comments == true
+        i.file-comment.icon.icon-comment-filled
 
       .file-utilities-1
         i.file-checkbox.icon.icon-tick-circle

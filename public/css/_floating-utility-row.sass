@@ -3,7 +3,6 @@
   bottom: 0
   right: 0
   left: 0
-  background: rgba($yellow, 0.96)
   z-index: 250
   color: white
   opacity: 0
@@ -20,13 +19,12 @@
     +transform(translate3d(-50%, 0, 0))
 
     .icon
-      color: white
+      color: rgba(white, 0.75)
       font-size: 16px
-      border: 1px solid transparent
       +border-radius(3px)
 
       &:hover
-        border-color: white
+        color: white
 
 .right-side-panel.has-file-selected,
 .right-side-panel.has-mutliple-files-selected
@@ -34,3 +32,14 @@
     opacity: 1
     +transform(translate3d(0, 0, 0))
     pointer-events: all
+
+body.image-library-view
+  .floating-utility-row
+    background: rgba($fashion, 0.96)
+
+body.workspace-view,
+body.workspace-favourites-view,
+body.workspace-inbox-view,
+body.workspace-sent-messages-view
+  .floating-utility-row
+    background: rgba($yellow, 0.96)
