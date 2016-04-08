@@ -1,6 +1,7 @@
 .title-row
   position: fixed
-  width: calc(100% - #{$left-side-panel-width})
+  left: 0
+  right: 0
   height: $title-row-height
   z-index: 120
   background: white
@@ -79,6 +80,7 @@
       bottom: -1px
       left: 0
       opacity: 0
+      +transition-delay(200ms)
 
     &.active
       &:after
