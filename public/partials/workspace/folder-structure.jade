@@ -69,34 +69,33 @@ mixin team-row(name, level, caret)
   i.icon.icon-folder
   span.font-wgsn My Boards
   i.icon.icon-angle-up.pull-right
-
-.content-my-boards
-  .block-top-xs.block-hor-xs
+  
+.block-bot-xxs.content-my-boards
+  .block-hor-xs.block-bot-xs
     .btn.btn-clear.btn-create-new-board
       //- i.icon.icon-plus
       span Create New Board
-    
-  .block-ver-xxs.board-container
-    .misc-row.block-xs.level-1
-      //- i.icon.icon-folder
-      span Mobile Uploads
 
-    +board-row("/workspace/autumn-winter-2016", "Autumn/Winter 2016", "200", "1 autumn-winter-2016", false, "closed", false)
-    +board-row(false, "Inspiration Images", "200", "1", false, "closed", false)
-    +board-row(false, "Reports to Read", "200", "1 label-orange", true, "closed", true)
-    +board-row(false, "Fashion Shows", "200", "1 label-blue", true, "open", false)
-    +board-row("/workspace/balmain-2016", "Balmain 2016", "200", "2 balmain-2016", false, "closed", fatrue)
-    +board-row(false, "Celine", "200", "2", false, "", false)
-    +board-row(false, "Alexander Wang", "200", "2", false, "", false)
-    +board-row(false, "Opening Ceremony", "200", "2 label-red", true, "closed", true)
-    +board-row(false, "Lookbooks", "200", "1", false, "closed", fatrue)
+  .misc-row.block-xs.level-1
+    //- i.icon.icon-folder
+    span Mobile Uploads
+
+  +board-row("/workspace/autumn-winter-2016", "Autumn/Winter 2016", "200", "1 autumn-winter-2016", false, "closed", false)
+  +board-row(false, "Inspiration Images", "200", "1", false, "closed", false)
+  +board-row(false, "Reports to Read", "200", "1 label-orange", true, "closed", true)
+  +board-row(false, "Fashion Shows", "200", "1 label-blue", true, "open", false)
+  +board-row("/workspace/balmain-2016", "Balmain 2016", "200", "2 balmain-2016", false, "closed", fatrue)
+  +board-row(false, "Celine", "200", "2", false, "", false)
+  +board-row(false, "Alexander Wang", "200", "2", false, "", false)
+  +board-row(false, "Opening Ceremony", "200", "2 label-red", true, "closed", true)
+  +board-row(false, "Lookbooks", "200", "1", false, "closed", fatrue)
 
 .header-row.hoverable.btn-shared-boards
   i.icon.icon-user
   span.font-wgsn Shared With Me
   i.icon.icon-angle-up.pull-right
 
-.block-ver-xxs.content-shared-boards
+.block-bot-xxs.content-shared-boards
   +team-row("Product", "1", "open", "yes")
   +person-row("Julian Ramirez", "2", "open")
   +board-row(false, "Board name", "200", "3", "closed", "no")
