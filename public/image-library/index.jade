@@ -7,27 +7,25 @@ block prepend title
   | Image Library | 
 
 block content
-  include ../partials/header
-
-  .row.title-row.border-bottom
-    .title-block.block-sm.pull-left
-      h2.tight.inline-block Image &amp; Design Library
-      .block-left-xs.inline-block
-        .block-xxs.inline-block: span.font-wgsn.text-grey 9,435 results
-
-    .block-xs.search-block.pull-right
-      .block-ver-xs.block-hor-sm.pull-left
-        i.icon.icon-bookmark.hoverable.btn-saved-searches
-        include ../partials/image-library/saved-searches
-      .input-container.pull-left
-        input(type="text", placeholder="Search Image & Design Library")
-        span.icon-container.border: i.icon.icon-search
-      //- .block-left-xs.pull-left: .btn.btn-white.tight Save Search
-
   .row.page-content.show-left-side-panel
     include ../partials/image-library/left-side-panel
     
     .right-side-panel
+      .row.title-row.border-bottom
+        .title-block.block-sm.pull-left
+          h2.tight.inline-block Image &amp; Design Library
+          .block-left-xs.inline-block
+            .block-xxs.inline-block: span.font-wgsn.text-grey 9,435 results
+
+        .block-xs.search-block.pull-right
+          .block-ver-xs.block-hor-sm.pull-left
+            i.icon.icon-bookmark.hoverable.btn-saved-searches
+            include ../partials/image-library/saved-searches
+          .input-container.pull-left
+            input(type="text", placeholder="Search Image & Design Library")
+            span.icon-container.border: i.icon.icon-search
+          //- .block-left-xs.pull-left: .btn.btn-white.tight Save Search
+
       .btn-left-side-panel.hoverable: i.icon.icon-angle-left
       include ../partials/images-row
       include ../partials/floating-utility-row

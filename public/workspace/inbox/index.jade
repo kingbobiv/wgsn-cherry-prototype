@@ -7,18 +7,16 @@ block prepend title
   | Inbox | 
 
 block content
-  include ../../partials/header
-
-  .row.title-row.border-bottom
-    .title-block.block-sm.pull-left
-      h2.tight.inline-block WGSN Workspace
-      .block-left-xs.inline-block
-        .block-xxs.inline-block.board-name.hoverable: span Inbox
-
   .row.page-content.show-left-side-panel
     include ../../partials/workspace/left-side-panel
     
     .right-side-panel
+      .row.title-row.border-bottom
+        .title-block.block-sm.pull-left
+          h2.tight.inline-block WGSN Workspace
+          .block-left-xs.inline-block
+            .block-xxs.inline-block.board-name.hoverable: span Inbox
+
       .btn-left-side-panel.hoverable: i.icon.icon-angle-left
       //- include ../../partials/utility-row
       include ../../partials/workspace/messages-row

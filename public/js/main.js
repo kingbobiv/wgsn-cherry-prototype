@@ -108,136 +108,136 @@ checkforhover = function(){
 
 // ===== SELECT FILE ON SINGLE CLICK, OPEN FILE ON DOUBLE CLICK =====
 
-// // select file on single click, open file on double click
-// var DELAY = 160, clicks = 0, timer = null;
+// select file on single click, open file on double click
+var DELAY = 160, clicks = 0, timer = null;
 
-// $(function(){
-//   $('.file').click(function(e, evt) {
-//       clicks++;  //count clicks
+$(function(){
+  $('.file').click(function(e, evt) {
+      clicks++;  //count clicks
 
-//       var selectedImg = $(this).find('img').prop('src');
+      var selectedImg = $(this).find('img').prop('src');
 
-//       if(clicks === 1) {
-//         timer = setTimeout(function() {
-//           if($(e.target).is('.file-heart, .btn, ul.context-menu, ul.context-menu li, ul.context-menu li span, ul.context-menu li .icon')) {
-//             e.preventDefault();
-//             return;
-//           }
+      if(clicks === 1) {
+        timer = setTimeout(function() {
+          if($(e.target).is('.file-heart, .btn, ul.context-menu, ul.context-menu li, ul.context-menu li span, ul.context-menu li .icon')) {
+            e.preventDefault();
+            return;
+          }
           
-//           $(e.target).parentsUntil('.files-container').toggleClass('selected');
-//           $(e.target).siblings('.file-checkbox').toggleClass('icon-tick-circle icon-tick-circle-filled');
-//           $('.context-menu').removeClass('show');
-//           checkforhover();
-//           clicks = 0; // after action performed, reset counter
-//         }, DELAY);
-//       } else {
-//         clearTimeout(timer); // prevent single-click action
-//         $('.overlay').addClass('show');
-//         $('#item-detail-modal').addClass('show');
-//         $('#item-detail-modal .modal-image-panel .img').css({"background-image": "url('" + selectedImg + "')"});
-//         clicks = 0; // after action performed, reset counter
+          $(e.target).parentsUntil('.files-container').toggleClass('selected');
+          $(e.target).siblings('.file-checkbox').toggleClass('icon-tick-circle icon-tick-circle-filled');
+          $('.context-menu').removeClass('show');
+          checkforhover();
+          clicks = 0; // after action performed, reset counter
+        }, DELAY);
+      } else {
+        clearTimeout(timer); // prevent single-click action
+        $('.overlay').addClass('show');
+        $('#item-detail-modal').addClass('show');
+        $('#item-detail-modal .modal-image-panel .img').css({"background-image": "url('" + selectedImg + "')"});
+        clicks = 0; // after action performed, reset counter
 
-//         // file type
-//         if ($(this).hasClass('file-type-image')) {
-//           $('#item-detail-modal').addClass('file-type-image');
-//         } else if ($(this).hasClass('file-type-report')) {
-//           $('#item-detail-modal').addClass('file-type-report');
-//         } else if ($(this).hasClass('file-type-video')) {
-//           $('#item-detail-modal').addClass('file-type-video');
-//         } else if ($(this).hasClass('file-type-color-card')) {
-//           $('#item-detail-modal').addClass('file-type-color-card');
-//         }
-//       }
-//   })
+        // file type
+        if ($(this).hasClass('file-type-image')) {
+          $('#item-detail-modal').addClass('file-type-image');
+        } else if ($(this).hasClass('file-type-report')) {
+          $('#item-detail-modal').addClass('file-type-report');
+        } else if ($(this).hasClass('file-type-video')) {
+          $('#item-detail-modal').addClass('file-type-video');
+        } else if ($(this).hasClass('file-type-color-card')) {
+          $('#item-detail-modal').addClass('file-type-color-card');
+        }
+      }
+  })
 
-//   .on("dblclick", function(e){
-//     e.preventDefault(); // cancel system double-click event
-//   });
-// });
+  .on("dblclick", function(e){
+    e.preventDefault(); // cancel system double-click event
+  });
+});
 
-// // select file from details view, open file on double click
-// $(function(){
-//   $('.file-details-view .thumb-container').click(function(e, evt) {
-//       clicks++;  //count clicks
+// select file from details view, open file on double click
+$(function(){
+  $('.file-details-view .thumb-container').click(function(e, evt) {
+      clicks++;  //count clicks
 
-//       var selectedImg = $(this).find('img').prop('src');
+      var selectedImg = $(this).find('img').prop('src');
 
-//       if(clicks === 1) {
-//         timer = setTimeout(function() {
-//           if($(e.target).is('.file-utilites, .file-heart')) {
-//             e.preventDefault();
-//             return;
-//           }
+      if(clicks === 1) {
+        timer = setTimeout(function() {
+          if($(e.target).is('.file-utilites, .file-heart')) {
+            e.preventDefault();
+            return;
+          }
           
-//           $(e.target).parentsUntil('.details-view').toggleClass('selected');
-//           $(e.target).parentsUntil('.details-view').find('.file-checkbox').toggleClass('icon-tick-circle icon-tick-circle-filled');
-//           clicks = 0; // after action performed, reset counter
-//         }, DELAY);
-//       } else {
-//         clearTimeout(timer); // prevent single-click action
-//         $('.overlay').addClass('show');
-//         $('#item-detail-modal').addClass('show');
-//         $('#item-detail-modal .modal-image-panel .img').css({"background-image": "url('" + selectedImg + "')"});
-//         clicks = 0; // after action performed, reset counter
-//       }
-//   })
+          $(e.target).parentsUntil('.details-view').toggleClass('selected');
+          $(e.target).parentsUntil('.details-view').find('.file-checkbox').toggleClass('icon-tick-circle icon-tick-circle-filled');
+          clicks = 0; // after action performed, reset counter
+        }, DELAY);
+      } else {
+        clearTimeout(timer); // prevent single-click action
+        $('.overlay').addClass('show');
+        $('#item-detail-modal').addClass('show');
+        $('#item-detail-modal .modal-image-panel .img').css({"background-image": "url('" + selectedImg + "')"});
+        clicks = 0; // after action performed, reset counter
+      }
+  })
 
-//   .on("dblclick", function(e){
-//     e.preventDefault(); // cancel system double-click event
-//   });
-// });
+  .on("dblclick", function(e){
+    e.preventDefault(); // cancel system double-click event
+  });
+});
 
 // ===== end SELECT FILE ON SINGLE CLICK, OPEN FILE ON DOUBLE CLICK =====
 
 
-$('.file-checkbox').click(function() {
-  $(this).parentsUntil('.collage').toggleClass('selected');
-  $(this).toggleClass('icon-tick-circle icon-tick-circle-filled');
-});
+// $('.file-checkbox').click(function() {
+//   $(this).parentsUntil('.collage').toggleClass('selected');
+//   $(this).toggleClass('icon-tick-circle icon-tick-circle-filled');
+// });
 
-multiFileSelect = function(e) {
-  // Count number of items selected
-  var myaccount = $('.file.selected').length;
-  var selectedImg = $(e.target).siblings('img').prop('src');
+// multiFileSelect = function(e) {
+//   // Count number of items selected
+//   var myaccount = $('.file.selected').length;
+//   var selectedImg = $(e.target).siblings('img').prop('src');
 
-  // if no files are selected
-  if (myaccount == 0) {
-    console.log(myaccount);
-    if($(e.target).is('.file-checkbox, .file-heart')) {
-      return;
-    } else {
-      $('.overlay').addClass('show');
-      $('#item-detail-modal').addClass('show');
-      $('#item-detail-modal .modal-image-panel .img').css({"background-image": "url('" + selectedImg + "')"});
+//   // if no files are selected
+//   if (myaccount == 0) {
+//     console.log(myaccount);
+//     if($(e.target).is('.file-checkbox, .file-heart')) {
+//       return;
+//     } else {
+//       $('.overlay').addClass('show');
+//       $('#item-detail-modal').addClass('show');
+//       $('#item-detail-modal .modal-image-panel .img').css({"background-image": "url('" + selectedImg + "')"});
 
-      // file type
-      if ($(e.target).parent().hasClass('file-type-image')) {
-        $('#item-detail-modal').addClass('file-type-image');
-      } else if ($(e.target).parent().hasClass('file-type-report')) {
-        $('#item-detail-modal').addClass('file-type-report');
-      } else if ($(e.target).parent().hasClass('file-type-video')) {
-        $('#item-detail-modal').addClass('file-type-video');
-      } else if ($(e.target).parent().hasClass('file-type-color-card')) {
-        $('#item-detail-modal').addClass('file-type-color-card');
-      }
-    };
-  } else if (myaccount >= 1) {
-    console.log(myaccount);
-    if($(e.target).is('.file-heart')) {
-      return;
-    } else {
-      $('.right-side-panel').addClass('has-file-selected');
-      $('.floating-utility-row .displaying-results').text(myaccount + ' items selected');
-      $('.file-checkbox').css({'opacity': 1})
-      $(e.target).parent().addClass('selected');
-      $(e.target).siblings('.file-checkbox').removeClass('icon-tick-circle').addClass('icon-tick-circle-filled');
-    };
-  };
-};
+//       // file type
+//       if ($(e.target).parent().hasClass('file-type-image')) {
+//         $('#item-detail-modal').addClass('file-type-image');
+//       } else if ($(e.target).parent().hasClass('file-type-report')) {
+//         $('#item-detail-modal').addClass('file-type-report');
+//       } else if ($(e.target).parent().hasClass('file-type-video')) {
+//         $('#item-detail-modal').addClass('file-type-video');
+//       } else if ($(e.target).parent().hasClass('file-type-color-card')) {
+//         $('#item-detail-modal').addClass('file-type-color-card');
+//       }
+//     };
+//   } else if (myaccount >= 1) {
+//     console.log(myaccount);
+//     if($(e.target).is('.file-heart')) {
+//       return;
+//     } else {
+//       $('.right-side-panel').addClass('has-file-selected');
+//       $('.floating-utility-row .displaying-results').text(myaccount + ' items selected');
+//       $('.file-checkbox').css({'opacity': 1})
+//       $(e.target).parent().addClass('selected');
+//       $(e.target).siblings('.file-checkbox').removeClass('icon-tick-circle').addClass('icon-tick-circle-filled');
+//     };
+//   };
+// };
 
-$('.file').on('click', function(e) {
-  multiFileSelect(e);
-});
+// $('.file').on('click', function(e) {
+//   multiFileSelect(e);
+// });
 
 
 // select all files

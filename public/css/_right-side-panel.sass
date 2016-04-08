@@ -1,6 +1,7 @@
 .right-side-panel
   position: absolute
   top: 0
+  height: calc(100vh - #{$global-product-row-height})
   @extend .bg-grey
   // @extend .no-transition
 
@@ -22,10 +23,10 @@
       +transform(translate3d(0, 0, 0) rotate(180deg))
       @extend .no-transition
 
-body.image-library-view,
-body.workspace-view,
-body.workspace-inbox-view,
-body.workspace-sent-messages-view,
-body.workspace-favourites-view
-  .right-side-panel
-    height: calc(100vh - (#{$global-product-row-height} + #{$title-row-height}))
+// body.image-library-view,
+// body.workspace-view,
+// body.workspace-inbox-view,
+// body.workspace-sent-messages-view,
+// body.workspace-favourites-view
+//   .right-side-panel
+//     height: calc(100vh - (#{$global-product-row-height} + #{$title-row-height}))

@@ -1,6 +1,7 @@
 .page-content
   position: absolute
   width: 100%
+  top: $global-product-row-height
 
   .right-side-panel
     left: 0
@@ -28,10 +29,10 @@
     .comments-panel
       +transform(translate3d(0, 0, 0))
 
-body.workspace-view,
-body.image-library-view,
-body.workspace-inbox-view,
-body.workspace-sent-messages-view,
-body.workspace-favourites-view
-  .page-content
-    top: $header-height - $product-row-height + $title-row-height
+// body.workspace-view,
+// body.image-library-view,
+// body.workspace-inbox-view,
+// body.workspace-sent-messages-view,
+// body.workspace-favourites-view
+//   .page-content
+//     top: $header-height - $product-row-height + $title-row-height

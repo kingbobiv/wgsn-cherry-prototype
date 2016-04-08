@@ -16,6 +16,8 @@ html
     link(rel="shortcut icon", type="image/x-icon", href=locals.url + "/img/favicon.ico")  
   
   body(class=bodyclass)
+    include partials/header
+
     block content
 
     a.btn-back-to-top(href="#0"): i.icon.icon-angle-up

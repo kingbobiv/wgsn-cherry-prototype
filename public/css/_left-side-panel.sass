@@ -1,6 +1,6 @@
 .left-side-panel
   width: $left-side-panel-width
-  height: calc(100vh - #{$header-height} - #{$title-row-height} + #{$product-row-height})
+  height: calc(100vh - #{$global-product-row-height})
   position: absolute
   top: 0
   left: 0
@@ -65,7 +65,10 @@
   .header-row
     padding: 10px 12px
     display: block
-    background: rgba(white, 0.1)
+    border-top: 1px solid rgba(white, 0.1)
+
+    &:first-of-type
+      border: none
 
     .icon-angle-up
       margin: 0

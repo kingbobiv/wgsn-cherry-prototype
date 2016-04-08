@@ -28,7 +28,7 @@
       top: 8px
       right: 6px
 
-    .icon-user
+    .icon-user-filled
       font-size: 10px
 
     &:hover
@@ -54,33 +54,27 @@
         background: rgba($lt-grey, 0.1)
 
     &.label-red
-      .icon-folder,
-      .icon-folder-shared
+      .icon-circle
         color: $label-red
 
     &.label-orange
-      .icon-folder,
-      .icon-folder-shared
+      .icon-circle
         color: $label-orange
 
     &.label-yellow
-      .icon-folder,
-      .icon-folder-shared
+      .icon-circle
         color: $label-yellow
 
     &.label-green
-      .icon-folder,
-      .icon-folder-shared
+      .icon-circle
         color: $label-green
 
     &.label-blue
-      .icon-folder,
-      .icon-folder-shared
+      .icon-circle
         color: $label-blue
 
     &.label-purple
-      .icon-folder,
-      .icon-folder-shared
+      .icon-circle
         color: $label-purple
 
     @for $i from 1 through 6
@@ -91,5 +85,6 @@
           +text-truncate(calc(100% - (86px + (#{$i} * 5px))))
 
   .board-row
-    .icon-user
+    .icon-user-filled,
+    .icon-circle
       margin: 0 0 0 6px
