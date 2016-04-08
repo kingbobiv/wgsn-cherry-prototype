@@ -7,13 +7,13 @@
 
     .block-ver-xxs.content-messages
       a.misc-row.btn-inbox(href="/workspace/inbox")
-        //- i.icon.icon-envelope
+        i.icon.icon-envelope
         span Inbox
         .inbox-number.pull-right.text-center.hidden-workspace-inbox 1
 
       a.misc-row.btn-sent-messages(href="/workspace/sent-messages")
-        //- i.icon.icon-envelope
-        //- i.icon.icon-arrow-right
+        i.icon.icon-envelope
+        i.icon.icon-arrow-right
         span Sent Messages
     
     .header-row.hoverable.btn-favourites
@@ -22,8 +22,16 @@
       i.icon.icon-angle-up.pull-right
 
     .block-ver-xs.content-favourites
-      a.misc-row(href="/workspace/favourites"): span Images
-      .misc-row: span Reports
-      .misc-row: span Videos
+      a.misc-row(href="/workspace/favourites")
+        i.icon.icon-folder
+        span Images
+
+      .misc-row
+        i.icon.icon-folder
+        span Reports
+
+      .misc-row
+        i.icon.icon-folder
+        span Videos
     
     include folder-structure
