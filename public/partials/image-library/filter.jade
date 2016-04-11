@@ -1,9 +1,9 @@
 mixin filter(id, search, anchors, ...items)
-  .filter.bg-grey.border-right(id="filter-" +id class!=attributes.class)
+  .filter.border-right(id="filter-" +id class!=attributes.class)
     .filter-overlay
     
     if search
-      .filter-search.block-sm.border-bottom
+      .filter-search.block-sm
         .input-container
           input(type="text", placeholder="Search " + id)
           span.icon-container.border: i.icon.icon-search
@@ -16,12 +16,12 @@ mixin filter(id, search, anchors, ...items)
     .filter-list.block-sm
       ul.clean
         each item in items
-          li.hoverable
-            input.pull-left(type="checkbox")
-            label.pull-left= item
+          li.hoverable.block-bot-sm.tight
+            input.pull-left(type="checkbox" id=item)
+            label.pull-left(for=item)= item
 
-    .filter-bottom-row.text-right.block-xs.border-top
-      .btn.btn-white.pull-right
+    .filter-bottom-row.text-right.block-xs
+      .btn.btn-clear.pull-right
         i.icon.icon-reset
         span Reset filter
 

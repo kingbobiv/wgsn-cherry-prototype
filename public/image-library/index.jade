@@ -13,15 +13,16 @@ block content
     .right-side-panel
       .row.title-row.border-bottom
         .title-block.block-sm.pull-left
-          h2.tight.inline-block Image &amp; Design Library
-          //- .block-xxs.inline-block: span.font-wgsn.text-grey 9,435 results
+          h2.tight.inline-block Image Library
+          .block-xxs.inline-block.board-name.hoverable
+            span 9,435 results
 
         .utility-block.pull-right
           .flex-center.pull-left.block-hor-sm.hoverable.btn-saved-searches
             i.icon.icon-bookmark
             include ../partials/image-library/saved-searches
           
-          .flex-center.input-container.pull-left.block-hor-sm
+          .flex-center.input-container.pull-left.block-right-sm
             input(type="text", placeholder="Search Image & Design Library")
             span.icon-container.border: i.icon.icon-search
           
@@ -32,7 +33,7 @@ block content
             .btn-view-option.disabled#btn-view-option-details: i.icon.icon-grid-details
 
           .flex-center.pull-left.block-hor-sm
-            .block-hor-xs.pull-left.flex-center.hoverable.btn-settings
+            .pull-left.flex-center.hoverable.btn-settings
               i.icon.icon-gear
               include ../partials/context-menus/utility-row-settings-context-menu
 

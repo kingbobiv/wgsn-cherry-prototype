@@ -2,5 +2,47 @@
   "globals" : {
     "name" : "WGSN",
     "url"  : "http://wgsn-cherry-prototype.amelia-lewis.com"
-  }
+  },
+  "image-library-category" : [
+    {
+      "name"   : "Catwalk",
+      "number" : "(5.59 mil.)"
+    },
+    {
+      "name"   : "Denim Details",
+      "number" : "(425,589)"
+    },
+    {
+      "name"   : "Marketing Campaigns",
+      "number" : "(217,336)"
+    },
+    {
+      "name"   : "Mood",
+      "number" : "(123,456)"
+    },
+    {
+      "name"   : "Retail",
+      "number" : "(3.24 mil.)"
+    },
+    {
+      "name"   : "Showrooms",
+      "number" : "(109,454)"
+    },
+    {
+      "name"   : "Street Style",
+      "number" : "(1.79 mil.)"
+    },
+    {
+      "name"   : "Trade Shows & Exhibits",
+      "number" : "(2.66 mil.)"
+    },
+    {
+      "name"   : "Vintage",
+      "number" : "(122,285)"
+    },
+    {
+      "name"   : "Celebrity Fashion",
+      "number" : "(135,456)"
+    }
+  ]
 }

@@ -5,11 +5,12 @@
   bottom: 0
   min-width: 250px
   max-width: 800px
-  height: calc(100vh - (#{$header-height} + #{$title-row-height}))
+  height: calc(100vh - (#{$global-product-row-height}))
   z-index: 200
   +transform(translate3d(-100%, 0, 0))
   display: none
-  background: lighten($lt-grey, 7)
+  background: lighten($dk-grey, 4)
+  color: rgba(white, 0.5)
 
   .filter-overlay
     background: rgba(white, 0.8)
@@ -36,23 +37,24 @@
     width: 800px
 
   .filter-list
-    height: calc(100vh - (#{$header-height} + #{$title-row-height} + 65px + 45px + 45px))
+    height: calc(100% - 65px - 45px - 52px)
     overflow-x: auto
     overflow-y: hidden
 
     ul
-      column-gap: 15px
+      // column-gap: 15px
       column-width: 190px
       height: 100%
       
       li
-        margin: 0 0 10px
         +clearfix()
         
         label
           width: calc(100% - 22px)
 
   .filter-search
+    border-bottom: 1px solid rgba(white, 0.1)
+    
     input[type="text"]
       width: calc(100% - 40px)
 
@@ -80,6 +82,7 @@
     left: 0
     width: 100%
     color: $md-grey
+    border-top: 1px solid rgba(white, 0.1)
 
     .icon
       margin: 0 6px 0 0
