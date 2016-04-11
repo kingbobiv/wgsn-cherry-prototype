@@ -17,8 +17,10 @@
       border: 1px solid transparent
       border-radius: 2px
       position: relative
-      @extend .font-wgsn
-      @extend .text-grey
+
+      > span
+        @extend .font-wgsn
+        @extend .text-grey
 
       &:first-of-type
         margin-left: 10px
@@ -38,7 +40,7 @@
       font-size: 10px
       color: $md-grey
 
-    .btn-share
+    > .btn-share
       background: $xlt-grey
       @extend .border
       +border-radius(50%)
