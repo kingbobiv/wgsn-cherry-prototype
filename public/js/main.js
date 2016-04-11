@@ -616,14 +616,19 @@ $('.filter-tag').on('click', function() {
 openFilter = function(filtername) {
   $('#filter-btn-' + filtername).on('click', function() {
     if($(this).hasClass('active')) {
-      console.log("hello");
       $('.filter').removeClass('show');
       $('.filter-btn').removeClass('active');
+      $('.right-side-panel').removeClass('has-file-selected has-multiple-files-selected');
+      $('.file').removeClass('selected');
+      $('.file-checkbox').addClass('icon-tick-circle').removeClass('icon-tick-circle-filled');
     } else {
       $('.filter').removeClass('show');
       $('.filter-btn').removeClass('active');
       $(this).addClass('active');
       $('#filter-'+ filtername).addClass('show');
+      $('.right-side-panel').removeClass('has-file-selected has-multiple-files-selected');
+      $('.file').removeClass('selected');
+      $('.file-checkbox').addClass('icon-tick-circle').removeClass('icon-tick-circle-filled');
     }
   });
 };
