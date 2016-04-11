@@ -14,26 +14,18 @@ block content
       .row.title-row.border-bottom
         .title-block.block-sm.pull-left
           h2.tight.inline-block Workspace
-          .block-left-xs.inline-block
-            .block-xxs.inline-block.board-name.hoverable: span My Boards
-            .block-xxs.inline-block: i.icon.icon-angle-right
-            .block-xxs.inline-block.board-name.hoverable: span Fashion Shows
-            .block-xxs.inline-block: i.icon.icon-angle-right
-            .block-xxs.inline-block.board-name.hoverable.btn-top-board-context-menu
-              span Balmain 2016
-              span.board-number 200
-              i.icon.icon-caret-down
-              include ../../partials/context-menus/top-board-context-menu
-            .inline-block.hoverable.btn-share: i.icon.icon-user
+          //- .block-xxs.inline-block.board-name.hoverable: span My Boards
+          //- .block-xxs.inline-block: i.icon.icon-angle-right
+          //- .block-xxs.inline-block.board-name.hoverable: span Fashion Shows
+          //- .block-xxs.inline-block: i.icon.icon-angle-right
+          .block-xxs.inline-block.board-name.hoverable.btn-top-board-context-menu
+            span Balmain 2016
+            span.board-number 200
+            i.icon.icon-caret-down
+            include ../../partials/context-menus/top-board-context-menu
+          .inline-block.hoverable.btn-share: i.icon.icon-user
         
-        .utility-block.pull-right
-          .input-container.pull-left.hidden-image-library.hidden-workspace-inbox.hidden-workspace-sent-messages.hidden-workspace-favourites
-            input(type="text", placeholder="Search this board")
-            span.icon-container.border: i.icon.icon-search
-          .block-xs.pull-left.flex-center.hoverable.btn-settings: i.icon.icon-gear
-          include ../../partials/context-menus/utility-row-settings-context-menu
-          .block-xs.pull-left.border-left.flex-center.hoverable.btn-comments-panel: i.icon.icon-comment
-
+        include ../../partials/workspace/utility-block
 
       .btn-left-side-panel.hoverable: i.icon.icon-angle-left
       include ../../partials/images-row

@@ -1,8 +1,8 @@
 .comments-panel
   width: $comments-panel-width
-  height: calc(100vh - (#{$header-height} - #{$product-row-height} + #{$title-row-height}))
+  height: calc(100vh - #{$global-product-row-height} - #{$title-row-height})
   position: absolute
-  top: 0
+  top: $title-row-height
   right: 0
   overflow-y: hidden
   +transform(translate3d(100%, 0, 0))

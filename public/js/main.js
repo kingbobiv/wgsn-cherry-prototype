@@ -87,7 +87,7 @@ checkforhover = function(){
       $('.right-side-panel').addClass('has-file-selected');
       $('.floating-utility-row .displaying-results').text(myaccount + ' item selected');
       $('.page-content').removeClass('show-comments-panel');
-      $('.btn-comments-panel').removeClass('active');
+      $('.btn-comments').removeClass('active');
     };
     
     // if more than one file is selected
@@ -95,7 +95,7 @@ checkforhover = function(){
       $('.right-side-panel').addClass('has-multiple-files-selected');
       $('.floating-utility-row .displaying-results').text(myaccount + ' items selected');
       $('.page-content').removeClass('show-comments-panel');
-      $('.btn-comments-panel').removeClass('active');
+      $('.btn-comments').removeClass('active');
     };
   } else {
     // $('.file .file-heart').show(); 
@@ -565,9 +565,9 @@ $('#tab-folders').on('click', function() {
 });
 
 //- comments panel
-$('.btn-comments-panel').on('click', function() {
+$('.btn-comments').on('click', function() {
   $('.page-content').toggleClass('show-comments-panel');
-  $('.btn-comments-panel').toggleClass('active');
+  $('.btn-comments').toggleClass('active');
 });
 
 //- comments panel tabs

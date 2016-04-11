@@ -2,15 +2,13 @@
   position: fixed
   left: 0
   right: 0
+  top: $global-product-row-height
   height: $title-row-height
   z-index: 120
   background: white
 
   .pull-left
     position: relative
-
-  .block-xs
-    height: 100%
 
   .title-block
     padding-top: 18px
@@ -21,6 +19,9 @@
       position: relative
       @extend .font-wgsn
       @extend .text-grey
+
+      &:first-of-type
+        margin-left: 10px
 
       .board-number
         margin-left: 10px
@@ -48,51 +49,75 @@
       &:hover
         background: darken($xlt-grey, 2)
 
-  .search-block
-    margin-top: 3px
-
   .utility-block
     height: 100%
 
-    .input-container
-      padding: 12px 0 0 0
+    > .pull-left
+      height: 100%
     
-    .block-xs
-      &:not(:first-of-type)
-        width: 60px
-        height: 100%
-        font-size: 18px
-        position: relative
+    .btn-settings,
+    .btn-comments,
+    .btn-saved-searches
+      height: 100%
+      position: relative
 
-  .btn-comments-panel
-    // width: 60px
-    // font-size: 18px
-    // position: relative
-    // @extend .no-transition
+      > .icon
+        font-size: 16px
 
-    &:after
+    .input-container
+      input
+        width: 100%
+        max-width: 300px
+        min-width: 200px
+
+  .btn-view-option
+    padding: 8.5px 10px
+    margin-left: -1px
+    @extend .inline-block
+    @extend .hoverable
+    @extend .border
+    
+    &:first-of-type
+      +border-radius(3px 0 0 3px)
+
+    &:last-of-type
+      +border-radius(0 3px 3px 0)
+
+    &:hover
+      background: $xlt-grey
+
+    &.disabled
+      opacity: 1
+
+      .icon
+        opacity: 0.3
+
+  .btn-comments
+    // &:after
+    //   content: ""
+    //   display: block
+    //   position: absolute
+    //   background: white
+    //   width: 100%
+    //   height: 1px
+    //   bottom: -1px
+    //   left: 0
+    //   opacity: 0
+    //   +transition-delay(200ms)
+
+    &:before
       content: ""
-      display: block
       position: absolute
-      background: white
-      width: 100%
-      height: 1px
-      bottom: -1px
-      left: 0
-      opacity: 0
-      +transition-delay(200ms)
+      top: 18px
+      right: 6px
+      background: $yellow
+      display: block
+      width: 8px
+      height: 8px
+      +border-radius(50%)
+      z-index: 10
+      border: 2px solid white
 
-    &.active
-      &:after
-        opacity: 1
-
-  .btn-save-search
-    padding: 10px 12px 9px
-
-body.image-library-view,
-body.workspace-view,
-body.workspace-inbox-view,
-body.workspace-sent-messages-view,
-body.workspace-favourites-view
-  .title-row
-    top: $header-height - $product-row-height
+  //   &.active
+  //     &:after
+  //       opacity: 1
