@@ -31,7 +31,7 @@ mixin message(unread, img, initials, name, time, attachments, subject, message)
       .message-content
         if message
           .block-hor-sm.block-bot-sm
-            .block-xxs: p.message-message.block-sm.bg-grey.tight= message
+            p.message-message.block-sm.bg-grey.tight= message
         
         .block-sm
           .row.message-utility-row
@@ -50,9 +50,9 @@ mixin message(unread, img, initials, name, time, attachments, subject, message)
                 i.icon.icon-paper-plane.multi-utility-icon.hoverable.btn-send: span.tooltip.nowrap Send
 
           .row.message-files-row
-            .files-container
+            .files-container.collage.bg-grey
               - for (i = 0; i < attachments; i++)
-                .file-outer: +file("image", "https://www.wgsn.com/storage/vol20/ss_image_store/65/39/44/42/media_blm_aw16_007.jpg", "no", "media_blm_aw16_007.jpg", "Balmain", "Autumn/Winter 2016", "Paris")
+                +file("image", "https://www.wgsn.com/storage/vol20/ss_image_store/65/39/44/42/media_blm_aw16_007.jpg", "no", "media_blm_aw16_007.jpg", "Balmain", "Autumn/Winter 2016", "Paris")
 
 
 .messages-row.bg-white.hidden-workspace.hidden-image-library
