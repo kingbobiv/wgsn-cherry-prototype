@@ -4,5 +4,7 @@ block append vars
   - bodyclass = 'index'
 
 block content
-  .block-lg.border-right.flex-center.text-center: a.inline-block(href="/workspace/autumn-winter-2016"): h1 Workspace
-  .block-lg.flex-center.text-center: a.inline-block(href="/image-library"): h1 Image &amp; Design Library
+  .row
+    .col-xs-4.border-right: .flex-center: a.inline-block(href="/workspace/autumn-winter-2016"): h1 Workspace
+    .col-xs-4.border-right: .flex-center: a.inline-block(href="/image-library"): h1 Image Library
+    .col-xs-4: .flex-center: a.inline-block(href="/mood-library"): h1 Mood Library

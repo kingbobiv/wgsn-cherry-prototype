@@ -1,0 +1,35 @@
+extends ../layout
+
+block append vars
+  - bodyclass = 'mood-library-view'
+
+block prepend title
+  | Mood Library | 
+
+block content
+  .row.page-content
+    .right-side-panel
+      .row.title-row.border-bottom
+        .title-block.block-sm.pull-left
+          h2.tight.inline-block Mood Library
+          .block-xxs.inline-block.board-name.hoverable
+            span 9,435 results
+
+        .utility-block.pull-right
+          .flex-center.input-container.pull-left.block-right-sm
+            input(type="text", placeholder="Search Mood Library")
+            span.icon-container.border: i.icon.icon-search
+          
+          .flex-center.pull-left
+            .btn-view-option.disabled#btn-view-option-sm: i.icon.icon-grid-sm
+            .btn-view-option#btn-view-option-md: i.icon.icon-grid-md
+            .btn-view-option.disabled#btn-view-option-lg: i.icon.icon-grid-lg
+            .btn-view-option.disabled#btn-view-option-details: i.icon.icon-grid-details
+
+          .flex-center.pull-left.block-hor-xs
+            .block-hor-xs.pull-left.flex-center.hoverable.btn-settings
+              i.icon.icon-gear
+              include ../partials/context-menus/utility-row-settings-context-menu
+
+      include ../partials/images-row
+      include ../partials/floating-utility-row
