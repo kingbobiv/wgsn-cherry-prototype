@@ -641,7 +641,7 @@ $('header, .title-row, .filter-overlay').on('click', function() {
 openFilter("category");
 openFilter("market");
 openFilter("products");
-openFilter("designer");
+openFilter("brand");
 openFilter("city");
 openFilter("season");
 

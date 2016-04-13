@@ -76,6 +76,22 @@ header
         &:after
           opacity: 1
 
+      @media (max-width: $screen-md-max)
+        &:first-of-type
+          margin: 4px 0 0 0
+
+        &:not(:first-of-type)
+          display: none
+
+    > .pull-left
+      .icon-caret-down
+        display: none
+        font-size: 12px
+        margin: 3px 0 0 6px
+
+        @media (max-width: $screen-md-max)
+          display: block
+
     .user-block,
     .language-block
       .avatar
@@ -116,11 +132,13 @@ header
         background: rgba(white, 0.2)
         +border-radius(0)
         border: none
-        max-width: 200px
-        min-width: 100px
+        width: 100px
         height: 28px
         padding-left: 0
         color: rgba(white, 0.5)
+
+        &:focus
+          width: 200px
 
       .search-section
         background: rgba(white, 0.2)

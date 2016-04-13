@@ -177,6 +177,12 @@
     &:active
       background: none
 
+  .btn-view-option-container
+    display: none
+
+    @media (max-width: $screen-md-max)
+      display: block
+
   .btn-view-option
     padding: 5px 10px
     margin-left: -1px
@@ -212,13 +218,13 @@
   @extend .arrow-left
 
 #notifications-context-menu
-  top: 40px
-  right: 111px
+  top: 46px
+  right: 273px
   width: 400px
   @extend .arrow-right
 
 #message-notifications-context-menu
-  top: 40px
-  right: 87px
+  top: 46px
+  right: 247px
   width: 400px
   @extend .arrow-right
