@@ -58,6 +58,14 @@ $('.toggle').on('click', function() {
   showFilenames();
 });
 
+// default hide lhs for tablet
+$(document).ready(function() {
+  if($('html').hasClass('tablet')) {
+    $('.page-content').removeClass('show-left-side-panel');
+    collage(400);
+  };
+});
+
 
 // ====================================================================================================
 //   _____      _           _         __   ____                     ______ _ _           
