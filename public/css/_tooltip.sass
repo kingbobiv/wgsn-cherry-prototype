@@ -1,6 +1,6 @@
 .tooltip
   position: absolute
-  background: rgba(black, 0.8)
+  background: $dk-grey
   font-size: 12px
   width: auto
   top: 44px
@@ -8,7 +8,7 @@
   max-width: 300px
   color: white
   opacity: 0
-  border-radius: 2px
+  +border-radius(2px)
   padding: 8px 10px
   @extend .text-center
   +transform(translate3d(-50%, 0, 0))
@@ -24,7 +24,93 @@
     height: 0
     border-left: 7px solid transparent
     border-right: 7px solid transparent
-    border-bottom: 5px solid rgba(black, 0.8)
+    border-bottom: 5px solid $dk-grey
     top: -5px
     left: 50%
     transform: translate3d(-50%, 0, 0)
+
+.has-tooltip
+  position: relative
+  display: inline-block
+  cursor: pointer
+
+  &:before
+    content: ""
+    position: absolute
+    background: $dk-grey
+    width: 8px
+    height: 8px
+    opacity: 0
+    top: -9px
+    left: 50%
+    +transform(translate3d(-50%, 0, 0) rotate(45deg))
+    +border-radius(0 0 2px 0)
+    pointer-events: none
+
+  &:after
+    content: attr(data-tooltip)
+    position: absolute
+    background: $dk-grey
+    color: white
+    padding: 4px 10px
+    font-size: 12px
+    white-space: nowrap
+    opacity: 0
+    +border-radius(2px)
+    top: -32px
+    left: 50%
+    +transform(translate3d(-50%, 0, 0))
+    pointer-events: none
+
+  &.tooltip-down
+    &:before
+      top: auto
+      right: auto
+      bottom: -9px
+      left: 50%
+      +transform(translate3d(-50%, 0, 0) rotate(45deg))
+      +border-radius(2px 0 0 0)
+    
+    &:after
+      top: auto
+      right: auto
+      bottom: -32px
+      left: 50%
+      +transform(translate3d(-50%, 0, 0))
+
+  &.tooltip-right
+    &:before
+      top: 50%
+      right: -14px
+      bottom: auto
+      left: auto
+      +transform(translate3d(0, -50%, 0) rotate(45deg))
+      +border-radius(0 0 0 2px)
+    
+    &:after
+      top: 50%
+      left: calc(100% + 10px)
+      bottom: auto
+      right: auto
+      +transform(translate3d(0, -50%, 0))
+
+  &.tooltip-left
+    &:before
+      top: 50%
+      left: -14px
+      bottom: auto
+      right: auto
+      +transform(translate3d(0, -50%, 0) rotate(45deg))
+      +border-radius(0 2px 0 0)
+    
+    &:after
+      top: 50%
+      right: calc(100% + 10px)
+      bottom: auto
+      left: auto
+      +transform(translate3d(0, -50%, 0))
+
+  &:hover
+    &:before,
+    &:after
+      opacity: 1
