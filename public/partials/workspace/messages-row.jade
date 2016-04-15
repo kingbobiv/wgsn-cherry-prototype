@@ -1,7 +1,7 @@
 include ../file
 
 mixin message(unread, img, initials, name, time, attachments, subject, message)
-  .message.border-bottom.hoverable.message-closed
+  .message.border-bottom.hoverable.message-closed.border-left.border-right
     .row.message-preview.block-sm
       if unread
         .unread-dot.pull-left
@@ -55,7 +55,7 @@ mixin message(unread, img, initials, name, time, attachments, subject, message)
                 +file("image", "https://www.wgsn.com/storage/vol20/ss_image_store/65/39/44/42/media_blm_aw16_007.jpg", "no", "media_blm_aw16_007.jpg", "Balmain", "Autumn/Winter 2016", "Paris")
 
 
-.messages-row.bg-white.hidden-workspace.hidden-image-library
+.messages-row.hidden-workspace.hidden-image-library
   .header-row.block-xs Today
   +message(true, "https://media.licdn.com/media/AAEAAQAAAAAAAAZVAAAAJDBlZWUwZWE0LTk1OWYtNGMyYi1iYmU5LTA3NDNlNDYxZmYwMQ.jpg", "SC", "Sansan Chen", "10 minutes ago", 4, "Check out these images, they’ll be great for our new collection.", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
   +message(false, "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAT6AAAAJGZiMmIwM2E3LTMzNzMtNDEzNi1iN2JhLWJlZmYzM2MwNmI2Nw.jpg", "JR", "Julian Ramirez", "1 hour ago", 2, "What do you think of these?", "")

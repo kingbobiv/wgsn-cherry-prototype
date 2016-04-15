@@ -5,14 +5,24 @@
   top: $title-row-height
   overflow-y: auto
   overflow-x: hidden
+  @extend .bg-grey
   
   .header-row
     width: 100%
+    max-width: 1000px
+    margin: 0 auto
     @extend .bg-grey
     @extend .border-bottom
+    @extend .border-left
+    @extend .border-right
     @extend .font-wgsn
 
   .message
+    width: 100%
+    max-width: 1000px
+    margin: 0 auto
+    @extend .bg-white
+    
     .unread-dot
       width: 10px
       height: 10px

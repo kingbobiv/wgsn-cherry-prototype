@@ -19,9 +19,9 @@ $(document).ready(function() {
 });
 
 //- checkbox icons (for detail view file)
-$('.file-details-view .file-checkbox').on('click', function() {
-  $(this).toggleClass('icon-tick-circle icon-tick-circle-filled');
-});
+// $('.file-details-view .file-checkbox').on('click', function() {
+//   $(this).toggleClass('icon-tick-circle icon-tick-circle-filled');
+// });
 
 // show/hide captions
 showCaptions = function() {
@@ -144,7 +144,7 @@ $(function(){
           }
           
           $(e.target).parentsUntil('.files-container').toggleClass('selected');
-          $(e.target).siblings('.file-checkbox').toggleClass('icon-tick-circle icon-tick-circle-filled');
+          // $(e.target).siblings('.file-checkbox').toggleClass('icon-tick-circle icon-tick-circle-filled');
           $('.context-menu').removeClass('show');
           checkforhover();
           clicks = 0; // after action performed, reset counter
@@ -189,7 +189,7 @@ $(function(){
           }
           
           $(e.target).parentsUntil('.details-view').toggleClass('selected');
-          $(e.target).parentsUntil('.details-view').find('.file-checkbox').toggleClass('icon-tick-circle icon-tick-circle-filled');
+          // $(e.target).parentsUntil('.details-view').find('.file-checkbox').toggleClass('icon-tick-circle icon-tick-circle-filled');
           clicks = 0; // after action performed, reset counter
         }, DELAY);
       } else {
@@ -264,13 +264,13 @@ $('.select-all').click(function() {
   if ($('.file').length == $('.file.selected').length) {
     $('.select-all').text('Select all');
     $('.file').removeClass('selected');
-    $('.file-checkbox').removeClass('icon-tick-circle-filled').addClass('icon-tick-circle');
+    // $('.file-checkbox').removeClass('icon-tick-circle-filled').addClass('icon-tick-circle');
     $('.right-side-panel').removeClass('has-file-selected').removeClass('has-multiple-files-selected');
     $('.file-checkbox').css({'opacity': 0})
   } else {
     $('.select-all').text('Deselect all');
     $('.file').addClass('selected');
-    $('.file-checkbox').removeClass('icon-tick-circle').addClass('icon-tick-circle-filled');
+    // $('.file-checkbox').removeClass('icon-tick-circle').addClass('icon-tick-circle-filled');
   }
 });
 
@@ -361,7 +361,7 @@ $('.context-menu').click(function(e, evt) {
 // floating item context menu
 $(".file").contextmenu(function(e){
   $(this).addClass("selected");
-  $(this).children('.file-checkbox').removeClass('icon-tick-circle').addClass('icon-tick-circle-filled');
+  // $(this).children('.file-checkbox').removeClass('icon-tick-circle').addClass('icon-tick-circle-filled');
   $("#floating-item-context-menu .block-ver-xxs:nth-of-type(1)").show();
   $("#floating-item-context-menu .block-ver-xxs:nth-of-type(2)").show();
   checkforhover();
@@ -399,7 +399,7 @@ $(".board-row").contextmenu(function(e){
 // click anywhere on the screen to close the context menus and deselect all items
 $('.files-row').click(function(e, evt) {
   $(".file").removeClass("selected");
-  $('.file .file-checkbox').removeClass('icon-tick-circle-filled').addClass('icon-tick-circle');
+  // $('.file .file-checkbox').removeClass('icon-tick-circle-filled').addClass('icon-tick-circle');
   $(".context-menu").removeClass("show");
   $('.select-all').prop('checked', false);
   $("#floating-item-context-menu").removeClass("show");
@@ -639,7 +639,7 @@ openFilter = function(filtername) {
       $('.filter-btn').removeClass('active');
       $('.right-side-panel').removeClass('has-file-selected has-multiple-files-selected');
       $('.file').removeClass('selected');
-      $('.file-checkbox').addClass('icon-tick-circle').removeClass('icon-tick-circle-filled');
+      // $('.file-checkbox').addClass('icon-tick-circle').removeClass('icon-tick-circle-filled');
     } else {
       $('.filter').removeClass('show');
       $('.filter-btn').removeClass('active');
@@ -647,7 +647,7 @@ openFilter = function(filtername) {
       $('#filter-'+ filtername).addClass('show');
       $('.right-side-panel').removeClass('has-file-selected has-multiple-files-selected');
       $('.file').removeClass('selected');
-      $('.file-checkbox').addClass('icon-tick-circle').removeClass('icon-tick-circle-filled');
+      // $('.file-checkbox').addClass('icon-tick-circle').removeClass('icon-tick-circle-filled');
     }
   });
 };
