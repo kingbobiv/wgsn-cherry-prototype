@@ -10,48 +10,13 @@
   .pull-left
     position: relative
 
-  .title-block
-    padding-top: 18px
-    
-    .board-name
-      border: 1px solid transparent
-      border-radius: 2px
-      position: relative
-
-      > span
-        @extend .font-wgsn
-        @extend .text-grey
-
-      &:first-of-type
-        margin-left: 10px
-
-      .board-number
-        margin-left: 10px
-        opacity: 0.6
-
-      .icon-caret-down
-        margin-left: 6px
-        color: $md-grey
-
-      &:hover
-        border-color: $lt-grey
-
-    .icon-angle-right
+  h1
+    > span
+      @extend .text-grey
       font-size: 10px
-      color: $md-grey
-
-    > .btn-share
-      background: $xlt-grey
-      @extend .border
-      +border-radius(50%)
-      width: 30px
-      height: 30px
-      padding: 6px 8px
-      margin: -3px 0 0 10px
-
-      &:hover
-        background: darken($xlt-grey, 2)
-
+      display: block
+      margin: 2px 0 -2px
+  
   .utility-block
     height: 100%
 

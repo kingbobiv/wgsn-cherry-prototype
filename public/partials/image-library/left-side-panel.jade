@@ -3,7 +3,7 @@
     .col-xs-6.text-center: .tab.active.hoverable#tab-filters: span.font-wgsn Filters
     .col-xs-6.text-center: .tab.hoverable#tab-folders: span.font-wgsn Workspace
 
-  .panel-filters
+  .panel-filters.block-xxs
     .scroll-container
       mixin filter-btn(name)
         .filter-btn.block-ver-xs.block-left-sm.block-right-xs.hoverable(id!=attributes.id)
@@ -31,7 +31,7 @@
     //-     i.icon.icon-reset
     //-     span Reset all filters
 
-  .panel-folders
+  .panel-folders.block-xxs
     .scroll-container
       include ../workspace/folder-structure
 

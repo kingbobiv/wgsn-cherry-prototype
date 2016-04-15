@@ -76,6 +76,9 @@
       .icon-angle-up
         +transform(translate3d(0, 0, 0) rotate(-180deg))
 
+    &.btn-messages
+      border-top: none
+
   .btn-messages
     border-top: none
 
@@ -203,3 +206,8 @@ body.workspace-favourites-view
   .left-side-panel
     .content-favourites a.misc-row
       @extend .active
+
+body.image-library-view
+  .panel-folders
+    .btn-my-boards
+      border-top: none

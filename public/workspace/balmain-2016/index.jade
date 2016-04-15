@@ -11,20 +11,17 @@ block content
     include ../../partials/workspace/left-side-panel
     
     .right-side-panel
-      .row.title-row.border-bottom
-        .title-block.block-sm.pull-left
-          h1.tight.inline-block Workspace
-          //- .block-xxs.inline-block.board-name.hoverable: span My Boards
-          //- .block-xxs.inline-block: i.icon.icon-angle-right
-          //- .block-xxs.inline-block.board-name.hoverable: span Fashion Shows
-          //- .block-xxs.inline-block: i.icon.icon-angle-right
-          .block-xxs.inline-block.board-name.hoverable.btn-top-board-context-menu
-            span Balmain 2016
-            span.board-number 200
-            i.icon.icon-caret-down
-            include ../../partials/context-menus/top-board-context-menu
-          .inline-block.hoverable.btn-share: i.icon.icon-user
+      .row.title-row.border-bottom.block-hor-md
+        .block-ver-xs.block-right-xs.pull-left
+          h1.tight.inline-block
+            span Workspace
+            | Balmain 2016
         
+        .block-ver-md.block-right-sm.pull-left.hoverable.btn-top-board-context-menu
+          span.text-grey.font-wgsn 200
+          i.icon.icon-caret-down.text-grey
+          include ../../partials/context-menus/top-board-context-menu
+
         include ../../partials/workspace/utility-block
 
       .btn-left-side-panel.hoverable: i.icon.icon-angle-left
