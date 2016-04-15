@@ -1,12 +1,12 @@
 mixin file(type, img, original, comments, filename, ...caption)
-  .file.hoverable(class="file-type-" + type)
+  .file.hoverable.show-caption(class="file-type-" + type)
     img(src=img)
     
     .caption-container.border-top
       ul.clean
         each item in caption
-          li.tight= item
-        li.filename.tight.block-top-xs= filename
+          li= item
+        li.filename.block-top-xs= filename
 
     .file-select-state
     

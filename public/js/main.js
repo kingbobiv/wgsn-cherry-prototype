@@ -28,7 +28,7 @@ showCaptions = function() {
   if ($('#toggle-show-caption').hasClass('toggle-on')) {
     $('.file').addClass('show-caption');
     $('.file .caption-container').show();
-    $('.file').css({'padding-bottom': '64px'});
+    $('.file').css({'padding-bottom': '62px'});
   } else if ($('#toggle-show-caption').hasClass('toggle-off')) {
     $('.file').removeClass('show-caption');
     $('.file').removeClass('show-filename');
@@ -47,7 +47,7 @@ showFilenames = function() {
   } else if ($('#toggle-show-filename').hasClass('toggle-off')) {
     $('.file').removeClass('show-filename');
     $('.file .caption-container .filename').hide();
-    $('.file').css({'padding-bottom': '64px'});
+    $('.file').css({'padding-bottom': '62px'});
   }
 };
 
@@ -58,9 +58,16 @@ $('.toggle').on('click', function() {
   showFilenames();
 });
 
-// default hide lhs for tablet
+// default hide LHS for tablet
 $(document).ready(function() {
   if($('html').hasClass('tablet')) {
+    $('.page-content').removeClass('show-left-side-panel');
+    collage(400);
+  };
+});
+
+$(document).ready(function() {
+  if($('html').hasClass('mobile')) {
     $('.page-content').removeClass('show-left-side-panel');
     collage(400);
   };
@@ -93,6 +100,7 @@ checkforhover = function(){
       // $('.file.selected .file-heart').show();  
       $('.file.selected .btn').show();
       $('.right-side-panel').addClass('has-file-selected');
+      $('.btn-back-to-top').css({transform: "translate3d(0, -50px, 0)"})
       $('.floating-utility-row .displaying-results').text(myaccount + ' item selected');
       $('.page-content').removeClass('show-comments-panel');
       $('.btn-comments').removeClass('active');
@@ -110,6 +118,7 @@ checkforhover = function(){
     $('.file .btn').show(); 
     $('.floating.context-menu .count').hide();
     $('.right-side-panel').removeClass('has-file-selected').removeClass('has-multiple-files-selected');
+    $('.btn-back-to-top').css({transform: "translate3d(0, 0, 0)"})
     $('.floating-utility-row .displaying-results').text('Displaying 15 of 1000 results');
   }
 };
@@ -819,6 +828,7 @@ $(document).ready(function() {
   $("#myTags").tagit({
     availableTags: [
       "Amelia Lewis",
+      "Anna Glassman",
       "Julian Ramirez",
       "Sansan Chen",
       "Nicky Ashwell",
@@ -893,14 +903,18 @@ $(document).ready(function() {
       }, scroll_top_duration
     );
   });
-
-  if($('.right-side-panel').hasClass('has-file-selected')) {
-    console.log("hello");
-    $('.btn-back-to-top').css({transform: "translate3d(0, -30px, 0);"})
-  } else {
-    $('.btn-back-to-top').css({transform: "translate3d(0, 0, 0);"})
-  };
 });
+
+// moveBacktotop = function() {
+//   if($('.right-side-panel').hasClass('has-file-selected')) {
+//     console.log("hello");
+//     $('.btn-back-to-top').css({transform: "translate3d(0, -30px, 0);"})
+//   } else {
+//     $('.btn-back-to-top').css({transform: "translate3d(0, 0, 0);"})
+//   };
+// };
+
+// moveBacktotop();
 
 
 // ====================================================================================================

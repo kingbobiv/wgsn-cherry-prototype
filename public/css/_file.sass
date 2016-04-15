@@ -38,7 +38,7 @@
   width: 100%
   background: white
   position: relative
-  padding-bottom: 0
+  padding-bottom: 62px
   overflow: visible !important
   
   img
@@ -50,18 +50,23 @@
     display: none
     @extend .bg-white
     @extend .block-xs
-    
-    ul
-      min-height: 54px
+    height: 62px
 
+    ul
       li
         +text-truncate(100%)
+        font-size: 11px
+        margin-bottom: 2px
 
-      li:first-of-type
-        @extend .font-wgsn
+        &:first-of-type
+          @extend .text-bold
 
-      li:not(:first-of-type)
-        @extend .text-grey
+        &:not(:first-of-type)
+          @extend .text-grey
+
+        &:last-of-type
+          margin: 0
+          +text-truncate(calc(100% - 25px))
 
       .filename
         color: $md-grey
@@ -82,6 +87,8 @@
     bottom: 6px
     right: 10px
     font-size: 14px
+    color: $lt-grey
+    text-shadow: 0 0 2px rgba(black, 0.5)
 
   .file-utilities
     position: absolute
@@ -143,10 +150,13 @@
   &.show-caption
     .file-utilities,
     .file-select-state
-      height: calc(100% - 64px)
+      height: calc(100% - 62px)
 
     .file-comment
-      bottom: 0
+      text-shadow: none
+
+    .caption-container
+      display: block
 
   &.show-filename
     .file-utilities,
@@ -167,6 +177,20 @@
       width: 60px
       height: 60px
       +transform(translate3d(-50%, -50%, 0))
+
+html.tablet,
+html.mobile
+  .file
+    .file-checkbox,
+    .file-heart
+      opacity: 1 !important
+    
+    .file-utilities
+      opacity: 1
+      
+      .btn
+        +transform(translate3d(0, 0, 0))
+        opacity: 1
 
 
 // ============================================================
@@ -273,14 +297,7 @@
       height: 60px
       +transform(translate3d(-50%, -50%, 0))
 
-
 body.image-library-view
-  .file-comment
-    color: $fashion
-
-body.workspace-view,
-body.workspace-favourites-view,
-body.workspace-inbox-view,
-body.workspace-sent-messages-view
-  .file-comment
-    color: $yellow
+  .file
+    .file-comment
+      display: none

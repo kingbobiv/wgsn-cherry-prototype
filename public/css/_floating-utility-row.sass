@@ -4,10 +4,12 @@
   right: 0
   left: 0
   z-index: 250
+  background: $dk-grey
   color: white
   opacity: 0
   +transform(translate3d(0, 100%, 0))
   pointer-events: none
+  border-left: 1px solid rgba(white, 0.1)
 
   .displaying-results
     padding-top: 4px
@@ -33,13 +35,13 @@
     +transform(translate3d(0, 0, 0))
     pointer-events: all
 
-body.image-library-view
-  .floating-utility-row
-    background: rgba($fashion, 0.96)
+// body.image-library-view
+//   .floating-utility-row
+//     background: rgba($fashion, 0.96)
 
-body.workspace-view,
-body.workspace-favourites-view,
-body.workspace-inbox-view,
-body.workspace-sent-messages-view
-  .floating-utility-row
-    background: rgba($yellow, 0.96)
+// body.workspace-view,
+// body.workspace-favourites-view,
+// body.workspace-inbox-view,
+// body.workspace-sent-messages-view
+//   .floating-utility-row
+//     background: rgba($yellow, 0.96)
