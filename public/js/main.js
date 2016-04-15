@@ -101,6 +101,7 @@ checkforhover = function(){
       $('.file.selected .btn').show();
       $('.right-side-panel').addClass('has-file-selected');
       $('.btn-back-to-top').css({transform: "translate3d(0, -50px, 0)"})
+      $('.file-checkbox').css({opacity: "1"})
       $('.floating-utility-row .displaying-results').text(myaccount + ' item selected');
       $('.page-content').removeClass('show-comments-panel');
       $('.btn-comments').removeClass('active');
@@ -119,6 +120,7 @@ checkforhover = function(){
     $('.floating.context-menu .count').hide();
     $('.right-side-panel').removeClass('has-file-selected').removeClass('has-multiple-files-selected');
     $('.btn-back-to-top').css({transform: "translate3d(0, 0, 0)"})
+    $('.file-checkbox').css({opacity: "0"})
     $('.floating-utility-row .displaying-results').text('Displaying 15 of 1000 results');
   }
 };

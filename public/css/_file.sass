@@ -27,7 +27,7 @@
     height: 16px
     +border-radius(50%)
     opacity: 1 !important
-    color: $dk-grey
+    // color: $dk-grey
 
 
 // ============================================================
@@ -145,7 +145,7 @@
 
     .icon-tick-circle-filled
       opacity: 1 !important
-      color: $dk-grey
+      // color: $dk-grey
 
   &.show-caption
     .file-utilities,
@@ -301,3 +301,13 @@ body.image-library-view
   .file
     .file-comment
       display: none
+
+    .icon-tick-circle-filled
+      color: $fashion
+
+body.workspace-view,
+body.workspace-inbox-view,
+body.workspace-sent-messages-view,
+body.workspace-favourites-view
+  .icon-tick-circle-filled
+    color: $yellow
