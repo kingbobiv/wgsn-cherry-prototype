@@ -48,8 +48,8 @@ mixin person-row(name, level, caret)
       i.icon.icon-caret-right
     else
       i.spacer
-    i.icon.icon-user
-    span= name
+    //- i.icon.icon-user
+    span.text-bold= name
 
 mixin team-row(name, level, caret)
   .team-row.hoverable(class="level-" + level)
@@ -59,14 +59,14 @@ mixin team-row(name, level, caret)
       i.icon.icon-caret-right
     else
       i.spacer
-    span= name
+    span.text-bold= name
 
 
 //- ============================================================
 
 
 .header-row.hoverable.btn-my-boards
-  //- i.icon.icon-folder
+  i.icon.icon-folder
   span.font-wgsn My Boards
   i.icon.icon-angle-up.pull-right
   
@@ -91,7 +91,7 @@ mixin team-row(name, level, caret)
   +board-row(false, "Lookbooks", "200", "1", false, "closed", true)
 
 .header-row.hoverable.btn-shared-boards
-  //- i.icon.icon-user
+  i.icon.icon-user
   span.font-wgsn Shared With Me
   i.icon.icon-angle-up.pull-right
 

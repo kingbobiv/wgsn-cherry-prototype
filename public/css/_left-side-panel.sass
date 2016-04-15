@@ -70,12 +70,12 @@
 
     .icon-angle-up
       margin: 0
-      +transform(translate3d(0, 0, 0) rotate(0deg))
+      +transform(translate3d(0, 0, 0) rotate(180deg))
       @extend .no-transition
 
     &.closed
       .icon-angle-up
-        +transform(translate3d(0, 0, 0) rotate(-180deg))
+        +transform(translate3d(0, 0, 0) rotate(90deg))
 
     &.btn-messages
       border-top: none
