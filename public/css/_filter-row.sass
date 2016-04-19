@@ -2,8 +2,8 @@
   width: 100vw
   
   .filter-tag
-    background: lighten($lt-grey, 5)
-    border: 1px solid lighten($lt-grey, 5)
+    background: white
+    @extend .border
     float: left
     padding: 7px
     margin: 0 8px 8px 0
@@ -14,14 +14,14 @@
       color: $md-grey
 
     &:hover
-      background: $lt-grey
+      background: $xlt-grey
 
       .icon
         color: $dk-grey
 
   .filter-search-tag
     background: none
-    border: 1px solid $lt-grey
+    padding: 7px 10px
     
     &:hover
       background: none

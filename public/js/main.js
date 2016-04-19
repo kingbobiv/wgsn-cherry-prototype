@@ -618,8 +618,8 @@ $('.btn-filter-row-delete').on('click', function() {
   $('.btn-filter-row-fixed').remove();
 });
 
-$('.filter-tag').on('click', function() {
-  $(this).remove();
+$('.filter-tag .icon-cross').on('click', function() {
+  $(this).parent().remove();
 }); 
 
 

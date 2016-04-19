@@ -1,6 +1,6 @@
 mixin filter-tag(search, name)
   if search  
-    .filter-tag.filter-search-tag.inline-block.hoverable
+    .filter-tag.filter-search-tag.inline-block
       span Searched for: "
       span.text-bold= search
       span "
@@ -8,7 +8,7 @@ mixin filter-tag(search, name)
   if name
     .filter-tag.hoverable.inline-block
       span= name
-      i.icon.icon-cross
+      i.icon.icon-cross.hoverable
 
 .row.filter-row.block-hor-md.block-top-sm.hidden-workspace.hidden-workspace-favourites.hidden-mood-library
   //- h4.pull-left.block-ver-xs.tight.block-right-xs.block-left-xxs Filter by:
