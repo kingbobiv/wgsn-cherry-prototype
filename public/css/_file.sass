@@ -21,6 +21,9 @@
     opacity: 1 !important
     color: $label-red !important
 
+  .icon-tick
+    background: transparent
+
   .icon-tick-circle-filled
     background: white
     width: 16px
@@ -186,6 +189,10 @@
       height: 60px
       +transform(translate3d(-50%, -50%, 0))
 
+    &.show-caption
+      &:after
+        top: calc(50% - 31px)
+
 html.tablet,
 html.mobile
   .file
@@ -195,10 +202,10 @@ html.mobile
     
     .file-utilities
       opacity: 1
+      background: -webkit-linear-gradient(top, rgba(black, 0.2) 0%, rgba(black, 0) 20%, rgba(black, 0) 100%)
       
       .btn
-        +transform(translate3d(0, 0, 0))
-        opacity: 1
+        opacity: 0
 
 
 // ============================================================
