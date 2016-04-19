@@ -114,6 +114,8 @@ textarea
 // ============================================================
 
 select
+  appearance: none
+  -moz-appearance: none
   -webkit-appearance: none
   @extend .border
   @extend .hoverable
@@ -130,11 +132,23 @@ select
   &:focus
     outline: none
 
+
+// ============================================================
+// LABEL
+// ============================================================
+label
+  display: block
+  margin-bottom: 5px
+
+
 // ============================================================
 // CHECKBOX
 // ============================================================
 
 input[type="checkbox"]
+  appearance: none
+  -moz-appearance: none
+  -webkit-appearance: none
   width: 14px
   height: 14px
   margin-right: 8px
@@ -147,10 +161,10 @@ input[type="checkbox"]
     content: ""
     display: block
     position: absolute
-    top: -1px
-    left: -1px
-    right: -1px
-    bottom: -1px
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
     background: white
     @extend .border
     +border-radius(3px)
@@ -158,6 +172,8 @@ input[type="checkbox"]
     color: $dk-grey
 
   &:checked
+    background: transparent
+    
     &:after
       content: "✓"
 
@@ -170,9 +186,12 @@ input[type="checkbox"]
 // ============================================================
 
 input[type="radio"]
+  appearance: none
+  -moz-appearance: none
+  -webkit-appearance: none
   width: 14px
   height: 14px
-  margin: 0 8px 8px 0
+  margin: 0 8px 0 0
   position: relative
   @extend .hoverable
   border: none
@@ -182,10 +201,10 @@ input[type="radio"]
     content: ""
     display: block
     position: absolute
-    top: -1px
-    left: -1px
-    right: -1px
-    bottom: -1px
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
     background: white
     @extend .border
     +border-radius(50%)
@@ -205,6 +224,8 @@ input[type="radio"]
     opacity: 0
 
   &:checked
+    background: transparent
+    
     &:after
       opacity: 1
 

@@ -4,9 +4,9 @@
     .col-xs-6.text-center: .tab.hoverable#tab-folders: span.font-wgsn Workspace
 
   .panel-filters.block-hor-xxs
-    .scroll-container
+    .scroll-container.block-top-xxs
       mixin filter-btn(name)
-        .filter-btn.block-ver-xs.block-left-sm.block-right-xs.hoverable(id!=attributes.id)
+        .filter-btn.hoverable(id!=attributes.id)
           span= name
           i.icon.icon-angle-right.pull-right.tight
 

@@ -21,19 +21,21 @@ ul.context-menu#utility-row-settings-context-menu
       .block-bot-xs
         p Images:
         form
-          input(type="radio" name="image-quality" value="best-quality" checked)
-          | Best quality
-          br
-          input(type="radio" name="image-quality" value="standard-quality")
-          | Standard quality
+          label(for="best-quality")
+            input#best-quality(type="radio" name="image-quality" value="best-quality" checked)
+            | Best quality
+          label(for="standard-quality")
+            input#standard-quality(type="radio" name="image-quality" value="standard-quality")
+            | Standard quality
       .block
         p Design Assets:
         form
-          input(type="radio" name="design-quality" value="design-file" checked)
-          | Design file
-          br
-          input(type="radio" name="design-quality" value="flat-image")
-          | Flat image
+          label(for="#design-file")
+            input(type="radio" name="design-quality" value="design-file" checked)
+            | Design file
+          label(for="#flat-image")
+            input(type="radio" name="design-quality" value="flat-image")
+            | Flat image
   .block-ver-xxs.text-center
     li
       span.text-underline More Settings

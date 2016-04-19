@@ -13,12 +13,13 @@ mixin filter(id, search, anchors, ...items)
         for letter, i in "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
           span.anchor-letter.text-bold.hoverable.inline-block= letter
 
-    .filter-list.block-sm
+    .filter-list.block-hor-sm.block-top-sm
       ul.clean
         each item in items
-          li.hoverable.block-bot-sm.tight
-            input.pull-left(type="checkbox" id=item)
-            label.pull-left(for=item)= item
+          li
+            label(for=item)
+              input.pull-left(type="checkbox" id=item)
+              span= item
 
     .filter-bottom-row.text-right.block-xs
       .btn.btn-clear.pull-right
