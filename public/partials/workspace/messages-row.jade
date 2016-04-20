@@ -6,9 +6,9 @@ mixin message(unread, img, initials, name, time, attachments, subject, message)
       if unread
         .unread-dot.pull-left
       if img
-        .block-right-xs.pull-left: .avatar(style="background-image: url('" + img + "')")
+        .avatar.pull-left(style="background-image: url('" + img + "')")
       else
-        .block-right-xs.pull-left: .avatar= initials
+        .avatar.pull-left(data-initials=initials)
 
       .pull-left
         p.tight

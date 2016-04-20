@@ -3,6 +3,7 @@
   position: absolute
   top: 4px
   right: 0
+  pointer-events: none
 
 .floating-utility-row
   // position: absolute
@@ -42,6 +43,9 @@
     opacity: 0
     pointer-events: none
     +transform(translate3d(0, -100%, 0))
+
+  .floating-utility-row-container
+    pointer-events: all
 
   .floating-utility-row
     opacity: 1

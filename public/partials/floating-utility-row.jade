@@ -1,8 +1,5 @@
 .floating-utility-row-container
   .row.floating-utility-row
-    //- .block-sm.pull-left
-    //-   i.icon.icon-cross.hoverable
-
     .block-ver-xs.block-right-md.block-left-xs.pull-right
       .btn.btn-colored.select-all Select all
 
@@ -10,10 +7,10 @@
       .displaying-results 
 
     .multi-utility-icons.pull-right
-      i.icon.icon-plus-circle.block-xs.hoverable.btn-add-to-board.hidden-workspace: span.tooltip.nowrap Add to Board
-      i.icon.icon-move.block-xs.hoverable.btn-move.hidden-image-library.hidden-workspace-favourites: span.tooltip.nowrap Move
-      i.icon.icon-clone.block-xs.hoverable.btn-copy.hidden-image-library.hidden-workspace-favourites: span.tooltip.nowrap Copy
-      i.icon.icon-download.block-xs.hoverable: span.tooltip.nowrap Download
-      i.icon.icon-print.block-xs.hoverable.btn-print: span.tooltip.nowrap Print
-      i.icon.icon-paper-plane.block-xs.hoverable.btn-send: span.tooltip.nowrap Send
-      i.icon.icon-trash.block-xs.hoverable.hidden-image-library: span.tooltip.nowrap Delete
+      .has-tooltip.tooltip-down(data-tooltip="Add to Board"): i.icon.icon-plus-circle.block-xs.hoverable.btn-add-to-board.hidden-workspace
+      .has-tooltip.tooltip-down(data-tooltip="Move"): i.icon.icon-move.block-xs.hoverable.btn-move.hidden-image-library.hidden-workspace-favourites
+      .has-tooltip.tooltip-down(data-tooltip="Copy"): i.icon.icon-clone.block-xs.hoverable.btn-copy.hidden-image-library.hidden-workspace-favourites
+      .has-tooltip.tooltip-down(data-tooltip="Download"): i.icon.icon-download.block-xs.hoverable
+      .has-tooltip.tooltip-down(data-tooltip="Print"): i.icon.icon-print.block-xs.hoverable.btn-print
+      .has-tooltip.tooltip-down(data-tooltip="Send"): i.icon.icon-paper-plane.block-xs.hoverable.btn-send
+      .has-tooltip.tooltip-down(data-tooltip="Delete"): i.icon.icon-trash.block-xs.hoverable.hidden-image-library

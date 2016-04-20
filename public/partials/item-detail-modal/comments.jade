@@ -3,9 +3,9 @@
     mixin comment(img, initials, comment, time)
       .comment.block-ver-sm.border-bottom
         if img
-          .block-right-xs.pull-left: .avatar(style="background-image: url('" + img + "')")
+          .avatar.pull-left(style="background-image: url('" + img + "')")
         else
-          .block-right-xs.pull-left: .avatar= initials
+          .avatar.pull-left(data-initials=initials)
         .text.pull-left
           p= comment
           p.comment-time.tight.text-grey= time

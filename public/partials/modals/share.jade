@@ -21,27 +21,27 @@
       .border.share-user-container
         mixin share-user(img, initials, name, owner, permission)
           .row.share-user.border-bottom
-            .col-xs-6
+            .pull-left.block-hor-xs
               if img
-                .avatar(style="background-image: url('" + img + "')")
+                .avatar.avatar-sm.pull-left(style="background-image: url('" + img + "')")
               else
-                .avatar= initials
+                .avatar.avatar-sm.pull-left(data-initials=initials)
 
-              .block-ver-xs.inline-block: span= name
+              .block-ver-xs.pull-left: span= name
             
-            .col-xs-6.text-right.text-grey
+            .pull-right.text-right.text-grey.block-xs
               if owner == "yes"
-                .block-xs.inline-block: span Is Owner
+                .inline-block: span Is Owner
 
               if owner == "no"
                 if permission == "edit"
-                  .block-left-xs.inline-block.hoverable: span Can edit
+                  .inline-block.hoverable: span Can edit
 
                 if permission == "view"
-                  .block-left-xs.inline-block.hoverable: span Can view
+                  .inline-block.hoverable: span Can view
 
                 .block-left-xs.inline-block.hoverable: i.icon.icon-caret-down
-                .block-xs.inline-block.hoverable: i.icon.icon-cross-circle
+                .block-left-xs.inline-block.hoverable: i.icon.icon-cross-circle
 
         +share-user("https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/7/005/05b/332/0aa54b4.jpg", "AL", "Amelia Lewis", "yes", "")
         +share-user("https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAT6AAAAJGZiMmIwM2E3LTMzNzMtNDEzNi1iN2JhLWJlZmYzM2MwNmI2Nw.jpg", "JR", "Julian Ramirez", "no", "edit")
@@ -55,7 +55,7 @@
         +share-user("", "PT", "Pathik Tanna", "no", "view")
 
         .row.hoverable#make-folder-public
-          .col-xs-12.text-center
+          .text-center
             p.tight.block-ver-sm
               span.text-underline Make folder public
               i.icon.icon-info-circle.block-left-xs
