@@ -96,14 +96,12 @@ checkforhover = function(){
       $('.btn-back-to-top').css({transform: "translate3d(0, -50px, 0)"})
       $('.file-checkbox').css({opacity: "1"})
       $('.floating-utility-row .displaying-results').text(myaccount + ' item selected');
-      // $('.page-content').removeClass('show-comments-panel');
       $('.btn-comments').removeClass('active');
     };
     
     // if more than one file is selected
     if (myaccount > 1) { 
       $('.right-side-panel').addClass('has-multiple-files-selected');
-      // $('.page-content').removeClass('show-comments-panel');
       $('.btn-comments').removeClass('active');
     };
   } else {
