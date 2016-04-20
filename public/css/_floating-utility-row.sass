@@ -1,11 +1,8 @@
 .floating-utility-row
-  position: fixed
-  bottom: 0
+  position: absolute
+  top: 4px
   right: 0
-  left: 0
-  z-index: 250
-  background: $dk-grey
-  color: white
+  color: $dk-grey
   opacity: 0
   +transform(translate3d(0, 100%, 0))
   pointer-events: none
@@ -15,18 +12,18 @@
     padding-top: 4px
 
   .icon
-    color: rgba(white, 0.75)
+    color: $md-grey
     font-size: 16px
     +border-radius(3px)
 
     &:hover
-      color: white
+      color: $dk-grey
 
   .multi-utility-icons
-    position: absolute
-    top: 16px
-    left: 50%
-    +transform(translate3d(-50%, 0, 0))
+    // position: absolute
+    margin-top: 16px
+    // left: 50%
+    // +transform(translate3d(-50%, 0, 0))
 
   .icon-cross
     position: absolute
@@ -34,6 +31,12 @@
 
 .right-side-panel.has-file-selected,
 .right-side-panel.has-mutliple-files-selected
+  .share-block,
+  .utility-block
+    opacity: 0
+    pointer-events: none
+    +transform(translate3d(0, -100%, 0))
+
   .floating-utility-row
     opacity: 1
     +transform(translate3d(0, 0, 0))

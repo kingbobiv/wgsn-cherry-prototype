@@ -103,7 +103,6 @@ checkforhover = function(){
     // if more than one file is selected
     if (myaccount > 1) { 
       $('.right-side-panel').addClass('has-multiple-files-selected');
-      $('.floating-utility-row .displaying-results').text(myaccount + ' items selected');
       $('.page-content').removeClass('show-comments-panel');
       $('.btn-comments').removeClass('active');
     };
@@ -114,7 +113,6 @@ checkforhover = function(){
     $('.right-side-panel').removeClass('has-file-selected').removeClass('has-multiple-files-selected');
     $('.btn-back-to-top').css({transform: "translate3d(0, 0, 0)"})
     $('.file-checkbox').css({opacity: "0"})
-    $('.floating-utility-row .displaying-results').text('Displaying 15 of 1000 results');
   }
 };
 
@@ -214,8 +212,7 @@ multiFileSelect = function(e) {
 
   // if no files are selected
   if (myaccount == 0) {
-    console.log(myaccount);
-    if($(e.target).is('.file-checkbox, .file-heart')) {
+    if($(e.target).is('.file-checkbox, .file-heart, .btn, .context-menu, .context-menu li')) {
       return;
     } else {
       $('.overlay').addClass('show');
@@ -234,15 +231,27 @@ multiFileSelect = function(e) {
       }
     };
 
-  // if 1 or more files are selected
-  } else if (myaccount >= 1) {
-    console.log(myaccount);
+  // if 1 file is selected
+  } else if (myaccount == 1) {
     if($(e.target).is('.file-heart')) {
       return;
     } else {
       checkforhover();
       $('.right-side-panel').addClass('has-file-selected');
-      $('.floating-utility-row .displaying-results').text(myaccount + ' items selected');
+      $('.floating-utility-row .displaying-results').text(myaccount + ' item selected');
+      $('.file-checkbox').css({'opacity': 1})
+      $(e.target).parent().addClass('selected');
+      $(e.target).siblings('.file-checkbox').removeClass('icon-tick-circle').addClass('icon-tick-circle-filled');
+    };
+
+  // if 1 or more files are selected
+  } else if (myaccount >= 1) {
+    if($(e.target).is('.file-heart')) {
+      return;
+    } else {
+      checkforhover();
+      $('.right-side-panel').addClass('has-multiple-files-selected');
+      $('.floating-utility-row .displaying-results').text((myaccount + 1) + ' items selected');
       $('.file-checkbox').css({'opacity': 1})
       $(e.target).parent().addClass('selected');
       $(e.target).siblings('.file-checkbox').removeClass('icon-tick-circle').addClass('icon-tick-circle-filled');
