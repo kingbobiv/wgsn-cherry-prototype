@@ -18,7 +18,7 @@ mixin board-row(link, name, number, level, label, caret, shared)
         i.icon.icon-circle
       //- span.board-number= number
       i.icon.icon-ellipsis
-      include ../context-menus/board-context-menu
+      //- include ../context-menus/board-context-menu
   else
     .board-row(class="level-" + level)
       if caret == "open"
@@ -38,7 +38,7 @@ mixin board-row(link, name, number, level, label, caret, shared)
         i.icon.icon-circle
       //- span.board-number= number
       i.icon.icon-ellipsis
-      include ../context-menus/board-context-menu
+      //- include ../context-menus/board-context-menu
 
 mixin person-row(name, level, caret)
   .person-row.hoverable(class="level-" + level)
@@ -65,12 +65,12 @@ mixin team-row(name, level, caret)
 //- ============================================================
 
 
-.header-row.hoverable.btn-my-boards
+.header-row.hoverable.accordion-btn-my-boards
   i.icon.icon-folder
   span.font-wgsn My Boards
   i.icon.icon-angle-up.pull-right
   
-.block-bot-xxs.content-my-boards
+.block-bot-xxs.accordion-content-my-boards
   .block-xs
     .btn.btn-clear.btn-create-new-board
       //- i.icon.icon-plus
@@ -90,12 +90,12 @@ mixin team-row(name, level, caret)
   +board-row(false, "Opening Ceremony", "200", "2 label-red", true, "closed", true)
   +board-row(false, "Lookbooks", "200", "1", false, "closed", true)
 
-.header-row.hoverable.btn-shared-boards
+.header-row.hoverable.accordion-btn-shared-boards
   i.icon.icon-user
   span.font-wgsn Shared With Me
   i.icon.icon-angle-up.pull-right
 
-.block-bot-xxs.content-shared-boards
+.block-bot-xxs.accordion-content-shared-boards
   +team-row("Product", "1", "open", "yes")
   +person-row("Julian Ramirez", "2", "open")
   +board-row(false, "Board name", "200", "3", false, "closed", "no")

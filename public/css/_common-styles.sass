@@ -69,26 +69,8 @@
   @media (min-width: $screen-xl-min)
     display: none !important
 
-body.workspace-view
-  .hidden-workspace
-    display: none !important
 
-body.workspace-inbox-view
-  .hidden-workspace-inbox
-    display: none !important
-
-body.workspace-sent-messages-view
-  .hidden-workspace-sent-messages
-    display: none !important
-
-body.workspace-favourites-view
-  .hidden-workspace-favourites
-    display: none !important
-
-body.image-library-view
-  .hidden-image-library
-    display: none !important
-
-body.mood-library-view
-  .hidden-mood-library
-    display: none !important
+@each $view in workspace, workspace-messages, workspace-inbox, workspace-sent-messages, workspace-favourites, workspace-trash, image-library, mood-library
+  body.#{$view}-view
+    .hidden-#{$view}
+      display: none !important

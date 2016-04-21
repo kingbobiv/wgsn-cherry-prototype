@@ -1,11 +1,11 @@
 .left-side-panel.block-hor-xxs
   .scroll-container
-    .header-row.hoverable.btn-messages
+    .header-row.hoverable.accordion-btn-messages
       i.icon.icon-envelope
       span.font-wgsn Messages
       i.icon.icon-angle-up.pull-right
 
-    .block-bot-xxs.content-messages
+    .block-bot-xxs.accordion-content-messages
       a.misc-row.btn-inbox(href="/workspace/inbox")
         //- i.icon.icon-envelope
         span Inbox
@@ -42,6 +42,13 @@
     
     include folder-structure
 
-    .header-row.hoverable.btn-my-boards
+    .header-row.hoverable.accordion-btn-trash
       i.icon.icon-trash
       span.font-wgsn Trash
+      i.icon.icon-angle-up.pull-right
+
+    .block-bot-xxs.accordion-content-trash
+      +board-row("/workspace/trash", "All trash", "200", "1", false, "open", false)
+      +board-row(false, "Board name", "200", "2", false, "", false)
+      +board-row(false, "Supercalifragilisticexpialidocious", "200", "2", false, "", false)
+      +board-row(false, "Old stuff", "200", "2", false, "closed", false)

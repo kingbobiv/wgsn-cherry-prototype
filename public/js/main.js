@@ -93,7 +93,7 @@ checkforhover = function(){
       // $('.file.selected .file-heart').show();  
       $('.file.selected .btn').show();
       $('.right-side-panel').addClass('has-file-selected');
-      $('.btn-back-to-top').css({transform: "translate3d(0, -50px, 0)"})
+      // $('.btn-back-to-top').css({transform: "translate3d(0, -50px, 0)"})
       $('.file-checkbox').css({opacity: "1"})
       $('.floating-utility-row .displaying-results').text(myaccount + ' item selected');
       $('.btn-comments').removeClass('active');
@@ -109,7 +109,7 @@ checkforhover = function(){
     $('.file .btn').show(); 
     $('.floating.context-menu .count').hide();
     $('.right-side-panel').removeClass('has-file-selected').removeClass('has-multiple-files-selected');
-    $('.btn-back-to-top').css({transform: "translate3d(0, 0, 0)"})
+    // $('.btn-back-to-top').css({transform: "translate3d(0, 0, 0)"})
     $('.file-checkbox').css({opacity: "0"})
   }
 };
@@ -240,6 +240,11 @@ multiFileSelect = function(e) {
       $('.file-checkbox').css({'opacity': 1})
       $(e.target).parent().addClass('selected');
       $(e.target).siblings('.file-checkbox').removeClass('icon-tick-circle').addClass('icon-tick-circle-filled');
+
+      // remove overflow on a timeout to display tooltips, not quite working though
+      // setTimeout(function(){
+      //   $('.floating-utility-row-container').css({'overflow-y': 'visible'});
+      // }, 200);
     };
 
   // if 1 or more files are selected
@@ -568,9 +573,9 @@ $('.btn-left-side-panel').on('click', function() {
 
 // left side panel accordion
 accordion = function(name) {
-  $('.left-side-panel .btn-' + name).on('click', function() {
+  $('.left-side-panel .accordion-btn-' + name).on('click', function() {
     $(this).toggleClass('closed')
-    $('.content-' + name).toggle();
+    $('.accordion-content-' + name).toggle();
   });
 }
 
@@ -578,6 +583,7 @@ accordion('messages');
 accordion('favourites');
 accordion('my-boards');
 accordion('shared-boards');
+accordion('trash');
 
 //- image library left-side tabs
 $('#tab-filters').on('click', function() {

@@ -1,10 +1,10 @@
 extends ../../layout
 
 block append vars
-  - bodyclass = 'workspace-view workspace-favourites-view product-none'
+  - bodyclass = 'workspace-view workspace-trash-view product-none'
 
 block prepend title
-  | Favourites | Workspace |
+  | Trash | Workspace | 
 
 block content
   .row.page-content.show-left-side-panel
@@ -14,8 +14,12 @@ block content
       .row.title-row.border-bottom.block-hor-md
         .block-ver-xs.block-right-xs.pull-left
           h1.tight.inline-block.multi-line
-            span Workspace
-            | Favourites
+            span Workspace / Trash
+            | All Trash
+          h4.text-grey.inline-block &nbsp;&nbsp;&nbsp; 452 items
+
+        .block-ver-sm.pull-right
+          .btn.btn-white.has-tooltip.tooltip-left(data-tooltip="This will empty all of your trash") Empty trash
 
         include ../../partials/floating-utility-row
 
