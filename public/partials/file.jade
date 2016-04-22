@@ -11,13 +11,12 @@ mixin file(type, img, original, comments, filename, ...caption)
     .file-select-state
     
     .file-utilities
-      .btn-container.text-center.block-ver-sm
-        .btn.btn-clear.btn-add-to-board.hidden-workspace Add to Board
-        .btn.btn-clear.hidden-image-library Download
-        .btn.btn-clear.btn-print.hidden-image-library.hidden-sm Print
-        //- .btn.btn-colored.btn-open Open
-        .btn.btn-clear.btn-item-menu: i.icon.icon-ellipsis
-        include context-menus/item-context-menu
+      .btn.btn-clear.btn-add-to-board.hidden-workspace.hidden-workspace-trash Add to Board
+      .btn.btn-clear.hidden-image-library.hidden-workspace-trash Download
+      .btn.btn-clear.btn-print.hidden-image-library.hidden-workspace-trash.hidden-sm Print
+      //- .btn.btn-colored.btn-open Open
+      .btn.btn-clear.btn-item-menu.hidden-workspace-trash: i.icon.icon-ellipsis
+      include context-menus/item-context-menu
 
     i.file-checkbox.icon.icon-tick-circle
     i.file-heart.icon.icon-heart-o

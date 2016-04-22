@@ -9,15 +9,13 @@
   z-index: 200
   +transform(translate3d(-100%, 0, 0))
   display: none
-  background: lighten($dk-grey, 4)
-  color: rgba(white, 0.5)
 
   .filter-overlay
-    background: rgba(white, 0.8)
+    background: rgba($dk-grey, 0.8)
     position: absolute
     display: block
     top: 0
-    left: 100%
+    left: calc(100% + 1px)
     width: 100vw
     height: 100%
     opacity: 0
@@ -30,17 +28,20 @@
       opacity: 1
       pointer-events: all
   
-  &.filter-narrow
+  &.filter-sm
     width: 250px
 
-  &.filter-wide
-    width: 800px
+  &.filter-md
+    width: 500px
 
-  .filter-search
-    border-bottom: 1px solid rgba(white, 0.1)
-    
-    input[type="text"]
-      width: calc(100% - 40px)
+  &.filter-lg
+    width: 750px
+
+  .filter-top-row
+    overflow: auto
+
+    .tab-nav
+      margin-top: 1px
 
   .filter-anchors
     .anchor-letter
@@ -76,15 +77,40 @@
       
       li
         width: 200px
-        margin-bottom: 10px
+        // margin-bottom: 10px
         
         span
           display: inline-block
           width: calc(100% - 30px)
           line-height: 1.4em
 
-  .filter-search + .filter-anchors + .filter-list
-    top: 110px
+      .filter-subheading
+        @extend .text-bold
+
+  .filter-top-row + .filter-anchors + .filter-list
+    top: 100px
+
+  .filter-columns
+    height: calc(100% - 52px)
+
+    .filter-list
+      position: relative
+    
+    .col
+      float: left
+      height: 100%
+      width: 230px
+      @extend .border-right
+
+      &:last-of-type
+        border-right: none
+
+      ul
+        position: relative
+        
+        li
+          span
+            width: calc(100% - 60px)
 
   .filter-bottom-row
     position: absolute
@@ -92,7 +118,7 @@
     left: 0
     width: 100%
     color: $md-grey
-    border-top: 1px solid rgba(white, 0.1)
+    overflow: auto
 
     .icon
       margin: 0 6px 0 0

@@ -667,6 +667,9 @@ openFilter("products");
 openFilter("brand");
 openFilter("city");
 openFilter("season");
+openFilter("colour");
+openFilter("prints");
+openFilter("fabric");
 
 
 // ====================================================================================================

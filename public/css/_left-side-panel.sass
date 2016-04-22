@@ -77,10 +77,7 @@
       .icon-angle-up
         +transform(translate3d(0, 0, 0) rotate(90deg))
 
-    &.btn-messages
-      border-top: none
-
-    &.btn-messages
+    &.accordion-btn-messages
       border-top: none
 
   // .btn-sent-messages
@@ -134,10 +131,14 @@
   .panel-filters
     .scroll-container
       height: calc(100% - 51px)
+
+    .header-row
+      // border-bottom: 1px solid rgba(white, 0.1)
     
     .filter-btn
       position: relative
-      padding: 8px 12px
+      padding: 10px 12px
+      // border-bottom: 1px solid rgba(white, 0.1)
 
       &:hover
         background: rgba(white, 0.05)

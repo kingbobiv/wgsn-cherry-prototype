@@ -1,33 +1,86 @@
-mixin filter(id, search, anchors, ...items)
-  .filter(id="filter-" +id class!=attributes.class)
+mixin filter(id, type, tabbed, sortoption, search, anchors, subheadings, ...items)
+  .filter.bg-grey.border-right(id="filter-" +id class!=attributes.class)
     .filter-overlay
     
-    if search
-      .filter-search.block-sm
-        .input-container
-          input(type="text", placeholder="Search " + id)
-          span.icon-container.border: i.icon.icon-search
+    if type == "single-list"
+      if search
+        .filter-top-row.border-bottom.block-hor-xs
+          if tabbed
+            .filter-tabs.pull-left
+              ul.tab-nav
+                li.tab-nav-tab.active Top Brands
+                li.tab-nav-tab All Brands
+          .filter-search.block-ver-xs.pull-right
+            .input-container
+              input(type="text", placeholder="Search " + id)
+              span.icon-container.border: i.icon.icon-search
 
-    if anchors
-      .filter-anchors.block-top-sm.block-hor-sm.block-bot-xs.text-center
-        for letter, i in "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
-          span.anchor-letter.text-bold.hoverable.inline-block= letter
+      if anchors
+        .filter-anchors.block-top-sm.block-hor-sm.block-bot-xs.text-center
+          for letter, i in "#ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
+            span.anchor-letter.text-bold.hoverable.inline-block= letter
 
-    .filter-list.block-hor-sm.block-top-sm
-      ul.clean
-        each item in items
-          li
-            label(for=item)
-              input.pull-left(type="checkbox" id=item)
-              span= item
+      .filter-list.block-hor-sm.block-top-sm
+        ul.clean
+          if subheadings
+            li.filter-subheading= subheadings
+          
+          each item in items
+            li
+              label(for=item)
+                input.pull-left(type="checkbox" id=item)
+                span= item
 
-    .filter-bottom-row.text-right.block-xs
-      .btn.btn-clear.pull-right
-        i.icon.icon-reset
-        span Reset filter
+    if type == "hierarchical-list"
+      .filter-columns
+        .col
+          .filter-list.block-hor-sm.block-top-sm
+            ul.clean
+              each item in items
+                li
+                  label(for=item)
+                    input.pull-left(type="checkbox" id=item)
+                    span= item
+                    i.icon.icon-angle-right.pull-right.tight
+
+        .col
+          .filter-list.block-hor-sm.block-top-sm
+            ul.clean
+              each item in items
+                li
+                  label(for=item)
+                    input.pull-left(type="checkbox" id=item)
+                    span= item
+                    i.icon.icon-angle-right.pull-right.tight
+        
+        .col
+          .filter-list.block-hor-sm.block-top-sm
+            ul.clean
+                each item in items
+                  li
+                    label(for=item)
+                      input.pull-left(type="checkbox" id=item)
+                      span= item
+
+    .filter-bottom-row.block-hor-xs.border-top
+      if sortoption
+        .filter-tabs.pull-left
+          ul.tab-nav
+            li.tab-nav-tab.tab-nav-subheading Sort by:
+            li.tab-nav-tab.active A—Z
+            li.tab-nav-tab Count
+
+      .block-ver-xs.pull-right
+        .btn.btn-white
+          i.icon.icon-reset
+          span Reset filter
 
 +filter(
   "category",
+  "single-list",
+  false,
+  false,
+  false,
   false,
   false,
   "Catwalk (5.59 mil.)", 
@@ -39,31 +92,43 @@ mixin filter(id, search, anchors, ...items)
   "Street Style (1.79 mil.)", 
   "Trade Shows & Exhibits (2.66 mil.)", 
   "Vintage (122,285)", 
-  "Celebrity Fashion (135,456)")(class="filter-narrow")
+  "Celebrity Fashion (135,456)")(class="filter-sm")
 
 +filter(
   "market",
+  "single-list",
+  false,
+  false,
+  false,
   false,
   false,
   "Women (4.54 mil.)",
   "Men (1.07 mil.)",
   "Kids (110,973)",
   "Girls (68,496)",
-  "Boys (21,562)")(class="filter-narrow")
+  "Boys (21,562)")(class="filter-sm")
 
 +filter(
   "products",
+  "hierarchical-list",
+  false,
+  false,
+  false,
   false,
   false,
   "Apparel (4.54 mil.)",
   "Accessories (1.07 mil.)",
   "Beauty (110,973)",
-  "Footwear (68,496)")(class="filter-narrow")
+  "Footwear (68,496)")
 
 +filter(
   "brand",
+  "single-list",
   true,
   true,
+  true,
+  true,
+  "A",
   "AA de Amaya Arzuaga (44)",
   "Aalto (109)",
   "Aanchal Chanda (33)",
@@ -851,117 +916,120 @@ mixin filter(id, search, anchors, ...items)
   "AZ Araujo (498)",
   "Azzaro (1648)",
   "Azzedine Alaia (326)",
-  "Azzurra Gronchi (10)")(class="filter-wide")
+  "Azzurra Gronchi (10)")(class="filter-lg")
 
 +filter(
   "city",
+  "single-list",
+  false,
+  false,
   true,
   true,
-  "Amsterdam (34811)",
-  "Antwerp (21536)",
-  "Aspen (363)",
-  "Auckland (11)",
-  "Austin (1773)",
-  "Barcelona (46060)",
+  "Asia",
   "Beijing (5119)",
-  "Belo Horizonte (265)",
+  "Chengdu (5276)",
+  "Chongqing (1236)",
+  "Guangzhou (1242)",
+  "Hong Kong (144504)",
+  "Manila (275)",
+  "Mumbai (547)",
+  "Okayama (207)",
+  "Seoul (97284)",
+  "Shanghai (75136)",
+  "Suzhou (2)",
+  "Tokyo (225881)",
+  "Yokohama (77)",
+  "Auckland (11)",
+  "Melbourne (11411)",
+  "Sydney (1427)",
+  "Amsterdam (32576)",
+  "Antwerp (19226)",
+  "Barcelona (44201)",
   "Berlin (121456)",
   "Biarritz (289)",
-  "Brasilia (12)",
   "Brighton (337)",
-  "Brooklyn (2758)",
-  "Buenos Aires (4110)",
-  "Burlington (43)",
-  "Campos do Jordao (188)",
   "Cannes (7070)",
   "Chamonix (1657)",
-  "Chengdu (5276)",
-  "Chicago (7479)",
-  "Chongqing (1236)",
-  "Cleveland (901)",
-  "Copenhagen (32119)",
-  "Dallas (28)",
-  "Dubai (6)",
+  "Copenhagen (30391)",
   "Dusseldorf (1775)",
-  "East Hanover (109)",
-  "Florence (7784)",
-  "Fortaleza (16)",
+  "Florence (5990)",
   "Forte dei Marmi (472)",
   "Frankfurt (16)",
-  "Guangzhou (1242)",
   "Hamburg (7)",
-  "Hamptons (2488)",
-  "Hawaii (154)",
   "Helsinki (670)",
-  "Hong Kong (144840)",
-  "Honolulu (1443)",
-  "Huntington Beach (50)",
-  "Kahala (11)",
   "Laax (88)",
-  "Lahaina (258)",
-  "Las Vegas (1775)",
   "Lille (345)",
-  "London (632913)",
-  "Los Angeles (344024)",
-  "Maceio (26)",
+  "London (619725)",
   "Madrid (1224)",
-  "Manila (275)",
-  "Maui (283)",
-  "Melbourne (16442)",
-  "Mexico City (264)",
-  "Miami (4124)",
-  "Milan (282898)",
+  "Milan (279579)",
   "Milano Marittima (2187)",
-  "Mina Gerais (14)",
-  "Montclair (66)",
   "Monte Carlo (1152)",
-  "Montreal (1054)",
   "Moscow (3567)",
-  "Mumbai (547)",
   "Munich (1681)",
-  "Nashville (631)",
-  "New York (444549)",
   "Nice (5067)",
-  "Okayama (207)",
-  "Orlando (234)",
   "Oslo (333)",
-  "Paramus (1284)",
-  "Paris (398377)",
-  "Park City (137)",
-  "Portland (3023)",
+  "Paris (389919)",
   "Prague (877)",
   "Reykjavik (205)",
   "Riccione (1069)",
   "Rimini (1871)",
-  "Rio de Janeiro (3380)",
   "Rome (2113)",
   "Saint Petersburg (472)",
   "Saint Tropez (22648)",
+  "Sevnica (25)",
+  "Stockholm (15486)",
+  "St. Petersburg (152)",
+  "The Hague (448)",
+  "Vienna (635)",
+  "Aspen (363)",
+  "Austin (214)",
+  "Brooklyn (2758)",
+  "Burlington (43)",
+  "Chicago (7479)",
+  "Cleveland (901)",
+  "Dallas (28)",
+  "East Hanover (109)",
+  "Hamptons (2488)",
+  "Hawaii (154)",
+  "Honolulu (1443)",
+  "Huntington Beach (50)",
+  "Kahala (11)",
+  "Lahaina (258)",
+  "Las Vegas (1775)",
+  "Los Angeles (336895)",
+  "Maui (283)",
+  "Mexico City (264)",
+  "Miami (4124)",
+  "Montclair (66)",
+  "Montreal (1054)",
+  "New York (435607)",
+  "Orlando (234)",
+  "Paramus (1284)",
+  "Park City (234)",
+  "Portland (3023)",
   "San Francisco (2101)",
   "Santa Monica (320)",
-  "Sao Paulo (46671)",
   "Seattle (1790)",
-  "Seoul (99455)",
-  "Sevnica (25)",
-  "Shanghai (77443)",
-  "Shenzhen (876)",
   "Short Hills (5596)",
-  "Singapore (12)",
-  "Stockholm (17592)",
-  "St. Petersburg (152)",
-  "Suzhou (2)",
-  "Sydney (1427)",
-  "The Hague (448)",
-  "Tokyo (227859)",
   "Toronto (2866)",
-  "Vienna (635)",
-  "Warsaw (8)",
-  "Yokohama (77)")(class="filter-wide")
+  "Belo Horizonte (265)",
+  "Brasilia (12)",
+  "Buenos Aires (4110)",
+  "Campos do Jordao (188)",
+  "Fortaleza (16)",
+  "Maceio (26)",
+  "Mina Gerais (14)",
+  "Rio de Janeiro (3380)",
+  "Sao Paulo (45097)")(class="filter-lg")
 
 +filter(
   "season",
+  "single-list",
+  false,
+  false,
   true,
   true,
+  "2016",
   "Autumn/Winter 2016 (284225)",
   "Bridal Autumn/Winter 2016 (9125)",
   "Bridal Spring/Summer 2016 (17780)",
@@ -1055,4 +1123,68 @@ mixin filter(id, search, anchors, ...items)
   "Spring/Summer 2005 (129721)",
   "Autumn/Winter 2004 (70186)",
   "Haute Couture AutumnWinter 2004 (6373)",
-  "Autumn/Winter 2003 (161)")(class="filter-wide")
+  "Autumn/Winter 2003 (161)")(class="filter-lg")
+
++filter(
+  "colour",
+  "single-list",
+  false,
+  false,
+  false,
+  false,
+  "Colours",
+  "Black (5.59 mil.)",
+  "White (425,589)",
+  "Grey (217,336)",
+  "Red (123,456)",
+  "Orange (3.24 mil.)",
+  "Yellow (109,454)",
+  "Green (1.79 mil.)",
+  "Blue (2.66 mil.)",
+  "Navy (122,285)",
+  "Purple (135,456)",
+  "Pink (109,454)",
+  "Cream (1.79 mil.)",
+  "Gold (2.66 mil.)",
+  "Silver (122,285)",
+  "Multi (135,456)",
+  "Black/White (1413)",
+  "Cosmetics (13730)",
+  "Darks (220096)",
+  "Dusty (11967)",
+  "Earth Tones (27975)",
+  "Jewels/Vegetals (16864)",
+  "Metallic (11939)",
+  "Midtone (26457)",
+  "Midtone Brights (9341)",
+  "Neon (1077)",
+  "Neutrals (106034)",
+  "Pastels (8881)")(class="filter-md")
+
++filter(
+  "prints",
+  "single-list",
+  false,
+  false,
+  false,
+  false,
+  "Animal Prints",
+  "Lorem ipsum (100)",
+  "Lorem ipsum (100)",
+  "Lorem ipsum (100)")(class="filter-sm")
+
++filter(
+  "fabric",
+  "single-list",
+  false,
+  false,
+  false,
+  false,
+  "Denim",
+  "Lorem ipsum (100)",
+  "Lorem ipsum (100)",
+  "Lorem ipsum (100)")(class="filter-sm")
+
+
+
+
