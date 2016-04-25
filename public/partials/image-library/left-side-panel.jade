@@ -1,7 +1,7 @@
 .left-side-panel.image-library-filters-active
   .row.tabs
-    .col-xs-6.text-center: .tab.active.hoverable#tab-filters: span.font-wgsn Filters
-    .col-xs-6.text-center: .tab.hoverable#tab-folders: span.font-wgsn Workspace
+    .col-xs-6.text-center: .tab.active.hoverable#tab-filters: span.wgsn-font Filters
+    .col-xs-6.text-center: .tab.hoverable#tab-folders: span.wgsn-font Workspace
 
   .panel-filters.block-hor-xxs
     .scroll-container.block-top-xxs
@@ -20,7 +20,7 @@
       .item.block-xs
 
       .header-row
-        span.font-wgsn Advanced filter options
+        span.wgsn-font Advanced filter options
 
       +filter-btn("Colour")(id="filter-btn-colour")
       +filter-btn("Prints & Graphics")(id="filter-btn-prints")
@@ -37,7 +37,7 @@
 
     .board-preview.closed.hoverable
       .block-xs
-        span.font-wgsn Board preview
+        span.wgsn-font Board preview
         i.icon.icon-double-angle-down.pull-right
     
       mixin board-preview-image(img)
