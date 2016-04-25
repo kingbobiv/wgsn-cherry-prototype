@@ -11,13 +11,13 @@ mixin file(type, img, original, comments, filename, ...caption)
     .file-select-state
     
     .file-utilities
-      .btn.btn-clear.btn-add-to-board.hidden-workspace.hidden-workspace-trash: i.icon.icon-plus-circle
-      .btn.btn-clear.hidden-image-library.hidden-workspace-trash: i.icon.icon-download
-      .btn.btn-clear.btn-print.hidden-image-library.hidden-workspace-trash.hidden-sm: i.icon.icon-print
-      .btn.btn-clear.btn-move.hidden-image-library.hidden-workspace-folder: i.icon.icon-move
-      //- .btn.btn-coloured.btn-open Open
-      .btn.btn-clear.btn-item-menu.hidden-workspace-trash: i.icon.icon-ellipsis
-      include context-menus/item-context-menu
+      .icon-container.text-center
+        i.icon.icon-plus-circle.btn-add-to-board.hidden-workspace.hidden-workspace-trash
+        i.icon.icon-download.hidden-image-library.hidden-workspace-trash
+        i.icon.icon-print.btn-print.hidden-image-library.hidden-workspace-trash
+        i.icon.icon-move.btn-move.hidden-image-library.hidden-workspace-folder
+        i.icon.icon-ellipsis.btn-item-menu.hidden-workspace-trash
+        include context-menus/item-context-menu
 
     i.file-checkbox.icon.icon-tick-circle
     i.file-heart.icon.icon-heart-o.hidden-workspace-trash
