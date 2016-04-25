@@ -212,7 +212,7 @@ multiFileSelect = function(e) {
 
   // if no files are selected
   if (myaccount == 0) {
-    if($(e.target).is('.file-checkbox, .file-heart, .icon, .context-menu, .context-menu li')) {
+    if($(e.target).is('.file-checkbox, .file-heart, .icon, .context-menu, .context-menu li, .context-menu li .icon, .context-menu li span')) {
       return;
     } else if(!($('body').hasClass('workspace-trash-view'))) {
       $('.overlay').addClass('show');
