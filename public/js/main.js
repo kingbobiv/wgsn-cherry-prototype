@@ -198,6 +198,8 @@ checkforhover = function(){
 // ===== end SELECT FILE ON SINGLE CLICK, OPEN FILE ON DOUBLE CLICK =====
 
 
+// ===== SELECT FILE ON CHECKBOX, OPEN FILE ON SINGLE CLICK =====
+
 $('.file-checkbox').click(function() {
   $(this).parentsUntil('.collage').toggleClass('selected');
   $(this).toggleClass('icon-tick-circle icon-tick-circle-filled');
@@ -212,7 +214,7 @@ multiFileSelect = function(e) {
   if (myaccount == 0) {
     if($(e.target).is('.file-checkbox, .file-heart, .btn, .context-menu, .context-menu li')) {
       return;
-    } else {
+    } else if(!($('body').hasClass('workspace-trash-view'))) {
       $('.overlay').addClass('show');
       $('#item-detail-modal').addClass('show');
       $('#item-detail-modal .modal-image-panel .img').css({"background-image": "url('" + selectedImg + "')"});
@@ -265,6 +267,8 @@ multiFileSelect = function(e) {
 $('.file').on('click', function(e) {
   multiFileSelect(e);
 });
+
+// ===== end SELECT FILE ON CHECKBOX, OPEN FILE ON SINGLE CLICK =====
 
 
 // select all files
@@ -604,6 +608,7 @@ $('#tab-folders').on('click', function() {
 $('.btn-comments').on('click', function() {
   $('.page-content').toggleClass('show-comments-panel');
   $('.btn-comments').toggleClass('active');
+  $('.btn-back-to-top').toggleClass('show-comments-panel');
 });
 
 // board preview

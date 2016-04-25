@@ -206,33 +206,40 @@
       opacity: 0
       pointer-events: none
 
-    .modal-inner-arrow-left,
-    .modal-inner-arrow-right
+    // MODAL PAGE CONTROLS (for reports) & ZOOM CONTROLS (for images)
+    .modal-page-controls,
+    .modal-zoom-controls
       position: absolute
+      display: none
+      opacity: 0
+
+    .modal-page-controls
       bottom: 0
+      left: calc(50% - 40px)
+
+    .modal-zoom-controls
+      bottom: 0
+      right: 10px
+
+    .modal-page-left,
+    .modal-page-right,
+    .modal-zoom-in,
+    .modal-zoom-out
       color: white
       font-size: 16px
       background: rgba(black, 0.2)
       width: 40px
       height: 40px
       padding: 11px 12px
-      opacity: 0
-      display: none
+      @extend .inline-block
 
       &:hover
         background: rgba(black, 0.4)
 
-    .modal-inner-arrow-left
-      left: calc(50% - 40px)
-
-    .modal-inner-arrow-right
-      right: calc(50% - 40px)
-
     &:hover
-      .modal-inner-arrow-left,
-      .modal-inner-arrow-right
+      .modal-page-controls,
+      .modal-zoom-controls
         opacity: 1
-
   
   //- ============================================================
   //- TOOL PANEL
@@ -347,6 +354,9 @@
       .modal-scroll-container
         height: calc((100vh - 60px) - #{$modal-info-caption-height} - 40px - 84px - 15px) // height of modal - caption - tabs - comment input - borders
 
+    .modal-zoom-controls
+      display: block
+
   &.file-type-report
     .modal-info-panel-image,
     .modal-info-panel-video,
@@ -367,8 +377,7 @@
       .modal-scroll-container
         height: calc((100vh - 60px) - #{$modal-info-caption-height} - 40px - 84px - 15px) // height of modal - caption - tabs - comment input - borders
     
-    .modal-inner-arrow-left,
-    .modal-inner-arrow-right
+    .modal-page-controls
       display: block
 
   &.file-type-video
