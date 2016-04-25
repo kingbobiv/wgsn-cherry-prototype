@@ -27,6 +27,12 @@ h1, h2, h3, h4, h5, p, li, span
   @extend .text-normal
 
 
+// STYLE
+.text-italic,
+em
+  font-style: italic
+
+
 // ALIGNMENT
 .text-left
   text-align: left
@@ -51,11 +57,8 @@ h1, h2, h3, h4, h5, p, li, span
 .text-capitalize
   text-transform: capitalize
 
-.text-underline
-  border-bottom: 1px solid
-
-.text-italic
-  font-style: italic
+.text-no-transform
+  text-transform: none
 
 
 // MARGINS
@@ -66,15 +69,22 @@ h1, h2, h3, h4, h5, p, li
   margin: 0 0 0.5em
 
 
-// SIZE
+// SIZING
 h1
   font-size: 1.6em
 
 h2
-  font-size: 1.3em
+  font-size: 1.4em
 
 h3
-  font-size: 1.0em 
+  font-size: 1em
+
+h4
+  font-size: 0.8em
+
+.text-smaller,
+small
+  font-size: 0.8em
 
 
 // STYLES
