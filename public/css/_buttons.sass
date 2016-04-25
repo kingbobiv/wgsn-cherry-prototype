@@ -1,66 +1,118 @@
-// standard button, must be used with one of the color classes below
+// Standard button, must be used with one of the colour classes below
+button,
 .btn
-  @extend .border
-  @extend .text-center
   display: inline-block
-  padding: 8px 12px
-  +border-radius(3px)
+  margin: 0 10px 0 0
+  padding: 9px 20px 10px
+  height: 36px
+  line-height: 16px
   @extend .wgsn-font
+  @extend .text-center
+  +border-radius(3px)
   +transition(all 300ms)
-  color: $dk-grey
-  @extend .hoverable
+  +transform(translate3d(0, 0, 0))
+  cursor: pointer
 
-  // white button
-  &.btn-white
-    background: white
+  span
+    @extend .wgsn-font
+    font-size: 1em
 
-    &:hover
-      border-color: $md-grey
+  &:active
+    +transform(translate3d(0, 2px, 0))
 
-    &.btn-disabled
-      color: $lt-grey
-      background: darken(white, 20)
+  &:focus
+    outline: none
 
-  // black button
-  &.btn-black
-    background: black
-    border-color: black
-    color: white
-
-    &:hover
-      background: lighten(black, 20)
-
-  // clear button
-  &.btn-clear
-    border-color: white
-    color: white
-
-    &:hover
-      background: rgba(black, 0.5)
-      +transition-delay(0ms !important)
-
-// colored button
-body.product-none
-  .btn-colored
-    border-color: $yellow
+  // coloured
+  &.btn-coloured
+    border: 1px solid $yellow
     background: $yellow
     color: white
 
-    &:hover
+    &:not(.btn-disabled):hover
       background: lighten($yellow, 10)
-      +transition-delay(0ms !important)
 
-body.product-fashion
-  .btn-colored
-    border-color: $fashion
-    background: $fashion
+  // black
+  &.btn-black
+    border: 1px solid $dk-grey
+    background: $dk-grey
     color: white
 
-    &:hover
+    &:not(.btn-disabled):hover
+      background: lighten($dk-grey, 10)
+
+  // white
+  &.btn-white
+    border: 1px solid $md-grey
+    background: white
+    color: $md-grey
+
+    &:not(.btn-disabled):hover
+      background: darken(white, 2)
+
+  // clear
+  &.btn-clear
+    border: 1px solid white
+    background: transparent
+    color: white
+
+    &:not(.btn-disabled):hover
+      background: rgba(black, 0.2)
+
+  // disabled
+  &.btn-disabled
+    opacity: 0.5
+    cursor: default
+
+  // full-width, block
+  &.btn-full
+    display: block
+    width: 100%
+    margin: 0
+
+  // big
+  &.btn-big
+    height: 48px
+    padding: 17px 20px
+
+// coloured button takes on product colour
+body.product-fashion
+  .btn-coloured
+    border-color: $fashion
+    background: $fashion
+
+    &:not(.btn-disabled):hover
       background: lighten($fashion, 10)
       +transition-delay(0ms !important)
 
-// back to top
+body.product-li
+  .btn-coloured
+    border-color: $li
+    background: $li
+
+    &:not(.btn-disabled):hover
+      background: lighten($li, 10)
+      +transition-delay(0ms !important)
+
+body.product-instock
+  .btn-coloured
+    border-color: $instock
+    background: $instock
+
+    &:not(.btn-disabled):hover
+      background: lighten($instock, 10)
+      +transition-delay(0ms !important)
+
+body.product-styletrial
+  .btn-coloured
+    border-color: $styletrial
+    background: $styletrial
+
+    &:not(.btn-disabled):hover
+      background: lighten($styletrial, 10)
+      +transition-delay(0ms !important)
+
+// BACK TO TOP BUTTON
 .btn-back-to-top
   position: fixed
   bottom: 20px
