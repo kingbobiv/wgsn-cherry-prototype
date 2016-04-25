@@ -5,21 +5,27 @@
     i.icon.icon-cross.pull-right.hoverable.close-modal
 
   .modal-content
-    .block-bot-sm
-      h3 Choose a Board
+    .row
+      .col-xs-12
+        h3 Choose a Board
 
-      .row.border.hoverable.bg-grey
-        .block-xs.pull-left: i.icon.icon-folder
-        .block-ver-xs.pull-left: span Spring/Summer 2016
-        .block-xs.pull-right: i.icon.icon-caret-down
+    .row.block-bot-sm
+      .col-xs-12
+        select
+          option Spring/Summer 2016
     
-    .block-bot-sm
-      h3 or
-      input(type="text", placeholder="Enter a name for your new board")
+    .row
+      .col-xs-12
+        h3 or
+
+    .row.block-bot-sm
+      .col-xs-12
+        input(type="text", placeholder="Enter a name for your new board")
 
     .row
-      .image-preview.border.pull-left(style="background-image: url('https://www.wgsn.com/storage/vol20/ss_image_store/45/39/44/42/media_blm_aw16_004.jpg');")
-      .text-container.pull-left: textarea(placeholder="Add a comment (optional)")
+      .col-xs-12
+        img.pull-left(src="https://www.wgsn.com/storage/vol20/ss_image_store/45/39/44/42/media_blm_aw16_004.jpg")
+        textarea.pull-left(placeholder="Add a comment (optional)")
 
   .modal-footer
     p.tight.block-top-xs.hoverable.pull-left.close-modal Cancel

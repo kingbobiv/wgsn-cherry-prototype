@@ -5,94 +5,109 @@
     i.icon.icon-cross.pull-right.hoverable.close-modal
 
   .modal-content
-    .block-bot-sm
-      h3 Layout
+    .row
+      .col-xs-12
+        h3 Layout
 
-      .block-right-xs.inline-block.hoverable
-        .print-layout-tile.pp-1.active
-          .layout-tile-container
-            .block
-          p 1 per page
+    .row.block-bot-md
+      .col-xs-12
+        .block-right-xs.inline-block.hoverable
+          .print-layout-tile.pp-1.active
+            .layout-tile-container
+              .block
+            p 1 per page
 
-      .block-right-xs.inline-block.hoverable
-        .print-layout-tile.pp-2
-          .layout-tile-container
-            .block
-            .block
-          p 2 per page
+        .block-right-xs.inline-block.hoverable
+          .print-layout-tile.pp-2
+            .layout-tile-container
+              .block
+              .block
+            p 2 per page
 
-      .block-right-xs.inline-block.hoverable
-        .print-layout-tile.pp-3
-          .layout-tile-container
-            .block
-            .block
-            .block
-          p 3 per page
+        .block-right-xs.inline-block.hoverable
+          .print-layout-tile.pp-3
+            .layout-tile-container
+              .block
+              .block
+              .block
+            p 3 per page
 
-      .block-right-xs.inline-block.hoverable
-        .print-layout-tile.pp-4
-          .layout-tile-container
-            .block
-            .block
-            .block
-            .block
-          p 4 per page
+        .block-right-xs.inline-block.hoverable
+          .print-layout-tile.pp-4
+            .layout-tile-container
+              .block
+              .block
+              .block
+              .block
+            p 4 per page
 
-      .block.inline-block.hoverable
-        .print-layout-tile.pp-thumbnails
-          .layout-tile-container
-            .block
-            .block
-            .block
-            .block
-            .block
-            .block
-            .block
-            .block
-            .block
-          p Thumbnails
+        .block.inline-block.hoverable
+          .print-layout-tile.pp-thumbnails
+            .layout-tile-container
+              .block
+              .block
+              .block
+              .block
+              .block
+              .block
+              .block
+              .block
+              .block
+            p Thumbnails
 
-    h3 Page Options
-    .block-bot-sm
-      .block-bot-xs
+    .row
+      .col-xs-12
+        h3 Page Options
+
+    .row.block-bot-sm
+      .col-xs-2
         .block-ver-xs.block-right-xs.inline-block Paper size:
-        select.inline-block
+        
+      .col-xs-4
+        select
           option Letter (8.5" x 11")
           option Legal (8.5" x 14")
           option Tabloid (11" x 17")
           option A4 (297 x 210mm)
           option A3 (420 x 297mm)
-      
-      .block-bot-xs
+          
+      .col-xs-2
         .block-ver-xs.block-right-xs.inline-block Orientation
-        select.inline-block
+      
+      .col-xs-4
+        select
           option Landscape
           option Portrait
 
-    .block-bot-sm
-      .block-right-md.block-bot-sm.inline-block
-        input#print-page-count(type='checkbox')
-        label.hoverable(for='print-page-count') Page count
+    .row.block-bot-sm
+      .col-xs-3
+        label(for='print-page-count')
+          input#print-page-count(type='checkbox')
+          span Page count
 
-      .block-right-md.block-bot-sm.inline-block
-        input#print-filename(type='checkbox')
-        label.hoverable(for='print-filename') Filename
+      .col-xs-3
+        label(for='print-filename')
+          input#print-filename(type='checkbox')
+          span Filename
 
-      .block-right-md.block-bot-sm.inline-block
-        input#print-details(type='checkbox')
-        label.hoverable(for='print-details') Details
+      .col-xs-3
+        label(for='print-details')
+          input#print-details(type='checkbox')
+          span Details
 
-      .block-right-md.block-bot-sm.inline-block
-        input#print-comments(type='checkbox')
-        label.hoverable(for='print-comments') Comments
+      .col-xs-3
+        label(for='print-comments')
+          input#print-comments(type='checkbox')
+          span Comments
 
-      br
+    .row
+      .col-xs-2
+        label(for='print-page-title')
+          input#print-page-title(type='checkbox')
+          span Page title
 
-      .block
-        .block-ver-xs.block-right-sm.inline-block
-          input(type='checkbox' id='print-page-title')
-          label(for='print-page-title') Page title
-        input.inline-block(type='text')
+      .col-xs-10
+        input(type='text', placeholder='Page title')
 
   .modal-footer
     p.tight.block-top-xs.hoverable.pull-left.close-modal Cancel

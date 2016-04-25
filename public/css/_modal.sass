@@ -104,24 +104,17 @@
 #add-to-board-modal,
 #move-modal,
 #copy-modal
-  input[type="text"]
-    width: 100%
-
-  .image-preview
-    width: 220px
-    height: 220px
-    background: white no-repeat center / contain
+  img
+    width: 150px
     margin-right: 15px
 
   textarea
-    width: 314px
-    height: 220px
+    width: calc(100% - 165px)
+    height: 226px
 
   &.add-multiple-files
-    .image-preview
+    img
       display: none
-
-    .text-container,
     textarea
       width: 100%
       height: 120px

@@ -1,21 +1,21 @@
 extends ../../layout
 
 block append vars
-  - bodyclass = 'workspace-view workspace-folder-view workspace-balmain-2016-view product-none'
+  - bodyclass = 'workspace-view workspace-folder-view workspace-inspiration-images-view workspace-view-only-view product-none'
 
 block prepend title
-  | Balmain 2016 | Workspace | 
+  | Inspiration Images | Workspace | 
 
 block content
-  .page-content.show-left-side-panel
+  .row.page-content.show-left-side-panel
     include ../../partials/workspace/left-side-panel
     
     .right-side-panel
-      .title-row.border-bottom.block-hor-md
+      .row.title-row.border-bottom.block-hor-md
         .block-ver-xs.block-right-xs.pull-left
           h1.tight.inline-block.multi-line
             span Workspace
-            | Balmain 2016
+            | Inspiration Images
         
         .block-ver-md.block-right-sm.pull-left.hoverable.btn-top-board-context-menu
           span.text-grey.wgsn-font 200
@@ -23,6 +23,11 @@ block content
           include ../../partials/context-menus/top-board-context-menu
 
         include ../../partials/workspace/share-block
+        
+        .view-only-block.block-ver-sm.pull-left
+          i.icon.icon-eye
+          span.has-tooltip.tooltip-down.tooltip-wrap(data-tooltip="You can only view this board. To make changes, ask the board owner for edit permissions.") View only access
+
         include ../../partials/workspace/utility-block
         include ../../partials/floating-utility-row
 

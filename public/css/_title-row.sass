@@ -40,11 +40,26 @@
       > .icon
         font-size: 16px
 
-    .input-container
-      input
-        width: 100%
-        max-width: 300px
-        min-width: 200px
+    input.search
+      width: 260px
+
+      @media screen and (max-width: 1500px)
+        width: 36px
+
+        ::-webkit-input-placeholder
+          color: transparent
+
+        &:focus
+          width: 200px
+
+          ::-webkit-input-placeholder
+            color: $md-grey
+
+  .view-only-block
+    padding-top: 23px
+    
+    .icon
+      margin: 0 10px 0 0
 
   .btn-view-option
     padding: 8.5px 10px

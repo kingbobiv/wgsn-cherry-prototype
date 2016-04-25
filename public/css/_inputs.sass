@@ -3,24 +3,42 @@
 // ============================================================
 
 input[type="text"],
-textarea
-  appearance: none
-  -moz-appearance: none
+input[type="password"],
+textarea, 
+select
+  display: block
   -webkit-appearance: none
-  @extend .border
-  background: $xlt-grey
-  height: 34px
+  background: white
+  border: 1px solid $lt-grey
+  height: 36px
+  width: 100%
   padding: 10px
   color: $dk-grey
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif
   font-size: 12px
-  font-family: Helvetica, Arial, sans-serif
-  @extend .text-normal
-  +border-radius(0px)
+  +border-radius(0)
+  +transition(all 300ms)
 
   &:focus
     outline: none
     border-color: $md-grey
-    background: lighten($xlt-grey, 2)
+
+  &:disabled
+    background: $xlt-grey
+
+  &.has-error
+    border-color: $label-red
+    background: white url('http://dropbox.github.io/scooter/assets/images/icon-form-invalid.svg') no-repeat right 10px center / 14px
+
+  &.is-valid
+    background: white url('http://dropbox.github.io/scooter/assets/images/icon-form-valid.svg') no-repeat right 10px center / 14px
+
+select
+  background: white url('http://dropbox.github.io/scooter/assets/images/icon-form-dropdown.svg') no-repeat right 10px center / 7px 14px
+
+textarea
+  resize: vertical
+  min-height: 80px
 
 ::-webkit-input-placeholder
    color: $md-grey
@@ -34,111 +52,111 @@ textarea
 :-ms-input-placeholder
    color: $md-grey
 
-// input[type="text"]
-//   min-width: 300px
+input.search
+  background: white url('../img/icons/icon-font_search.svg') no-repeat center right 10px / 12px 12px
 
-textarea
-  background: $xlt-grey
-
-  &:focus
-    outline: none
-    border-color: $md-grey
-    background: lighten($xlt-grey, 2)
-
-.input-container
-  +clearfix()
+// .input-container
+//   +clearfix()
   
-  input
-    border-right: none
-    float: left
-    width: 300px
-    // +border-radius(3px 0 0 3px)
+//   input
+//     border-right: none
+//     float: left
+//     width: 300px
+//     // +border-radius(3px 0 0 3px)
 
-  .icon-container
-    border-left: none
-    height: 34px
-    background: $xlt-grey
-    width: 40px
-    float: left
-    position: relative
-    @extend .flex-center
-    color: $md-grey
-    // +border-radius(0 3px 3px 0)
+//   .icon-container
+//     border-left: none
+//     height: 34px
+//     background: $xlt-grey
+//     width: 40px
+//     float: left
+//     position: relative
+//     @extend .flex-center
+//     color: $md-grey
+//     // +border-radius(0 3px 3px 0)
 
-    .fa
-      +transition(all 300ms)
+//     .fa
+//       +transition(all 300ms)
 
-  input:focus
-    + .icon-container
-      background: lighten($xlt-grey, 2)
-      border-color: $md-grey
+//   input:focus
+//     + .icon-container
+//       background: lighten($xlt-grey, 2)
+//       border-color: $md-grey
 
-      i
-        color: $dk-grey
+//       i
+//         color: $dk-grey
 
-// grey background containers
-.bg-grey
-  input[type="text"],
-  textarea,
-  .input-container .icon-container
-    background: white
+// // grey background containers
+// .bg-grey
+//   input[type="text"],
+//   textarea,
+//   .input-container .icon-container
+//     background: white
 
-  input:focus
-    border-color: $md-grey
+//   input:focus
+//     border-color: $md-grey
     
-    + .icon-container
-      background: white
-      border-color: $md-grey
+//     + .icon-container
+//       background: white
+//       border-color: $md-grey
 
-// white background containers
-.bg-white
-  input[type="text"],
-  textarea,
-  .input-container .icon-container
-    background: $xlt-grey
+// // white background containers
+// .bg-white
+//   input[type="text"],
+//   textarea,
+//   .input-container .icon-container
+//     background: $xlt-grey
 
-  input:focus
-    background: rgba($xlt-grey, 0.5)
-    border-color: $md-grey
+//   input:focus
+//     background: rgba($xlt-grey, 0.5)
+//     border-color: $md-grey
     
-    + .icon-container
-      background: rgba($xlt-grey, 0.5)
-      border-color: $md-grey
+//     + .icon-container
+//       background: rgba($xlt-grey, 0.5)
+//       border-color: $md-grey
 
-      i
-        color: $dk-grey
+//       i
+//         color: $dk-grey
 
 
 // ============================================================
 // DROPDOWN
 // ============================================================
 
-select
-  appearance: none
-  -moz-appearance: none
-  -webkit-appearance: none
-  @extend .border
-  @extend .hoverable
-  background: white
-  height: 34px
-  padding: 10px 30px 10px 10px
-  color: $dk-grey
-  font-family: "Helvetica", sans-serif
-  background: white url('http://dropbox.github.io/scooter/assets/images/icon-form-dropdown.svg') no-repeat right 10px center / 7px 14px
-  @extend .text-normal
-  margin-left: 10px
-  +border-radius(3px)
+// select
+//   appearance: none
+//   -moz-appearance: none
+//   -webkit-appearance: none
+//   @extend .border
+//   @extend .hoverable
+//   background: white
+//   height: 34px
+//   padding: 10px 30px 10px 10px
+//   color: $dk-grey
+//   font-family: "Helvetica", sans-serif
+//   background: white url('http://dropbox.github.io/scooter/assets/images/icon-form-dropdown.svg') no-repeat right 10px center / 7px 14px
+//   @extend .text-normal
+//   margin-left: 10px
+//   +border-radius(3px)
 
-  &:focus
-    outline: none
+//   &:focus
+//     outline: none
 
 
 // ============================================================
 // LABEL
 // ============================================================
+
 label
   display: block
-  margin-bottom: 5px
+  // margin-bottom: 20px
+  // line-height: 2em
+  // font-size: 10px
+
+  span.error-message
+    color: $label-red
+    margin-left: 5px
+    @extend .wgsn-font
 
 
 // ============================================================

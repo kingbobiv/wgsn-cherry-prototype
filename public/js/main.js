@@ -111,7 +111,7 @@ checkforhover = function(){
     $('.right-side-panel').removeClass('has-file-selected').removeClass('has-multiple-files-selected');
     // $('.btn-back-to-top').css({transform: "translate3d(0, 0, 0)"})
     $('.file-checkbox').css({opacity: "0"})
-  }
+  };
 };
 
 // ===== SELECT FILE ON SINGLE CLICK, OPEN FILE ON DOUBLE CLICK =====
@@ -391,7 +391,6 @@ $(".file").contextmenu(function(e){
   var posX = $(this).offset().left, posY = $(this).offset().top;
   $("#floating-item-context-menu").addClass('show');
   $("#floating-item-context-menu").css({"left": (e.pageX), "top":(e.pageY)});
-  console.log("yello");
 
   // Count number of items selected
   var myaccount = $('.file.selected').length;
@@ -413,7 +412,6 @@ $(".board-row").contextmenu(function(e){
   var posX = $(this).offset().left, posY = $(this).offset().top;
   $("#floating-board-context-menu").addClass('show');
   $("#floating-board-context-menu").css({"left": (e.pageX), "top":(e.pageY)});
-  console.log("yello board style");
 });
 
 // click anywhere on the screen to close the context menus and deselect all items
@@ -690,18 +688,18 @@ openModal = function(modalname) {
   $('.btn-' + modalname).on('click', function() {
     $('.overlay').addClass('show');
     $('#' + modalname + '-modal').addClass('show');
+
+    var myaccount = $('.file.selected').length;
+
+    if (myaccount > 1) {
+      $('#add-to-board-modal').addClass('add-multiple-files');
+      $('.num-of-files').text(myaccount + ' images');
+      console.log(myaccount + ' helllooo')
+    } else {
+      return;
+    }
   });
-
-  var myaccount = $('.file.selected').length;
-
-  if (myaccount > 1) {
-    $('#add-modal').addClass('add-multiple-files');
-    $('.num-of-files').text(myaccount + ' images');
-    console.log(myaccount);
-  } else {
-    return;
-  }
-}
+};
 
 openModal('share');
 openModal('add-to-board');

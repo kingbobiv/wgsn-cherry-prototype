@@ -70,7 +70,7 @@
     display: none !important
 
 
-@each $view in workspace, workspace-folder, workspace-messages, workspace-inbox, workspace-sent-messages, workspace-favourites, workspace-trash, image-library, mood-library
+@each $view in workspace, workspace-folder, workspace-messages, workspace-inbox, workspace-sent-messages, workspace-favourites, workspace-trash, workspace-view-only, image-library, mood-library
   body.#{$view}-view
     .hidden-#{$view}
       display: none !important
