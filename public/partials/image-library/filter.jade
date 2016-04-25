@@ -10,10 +10,8 @@ mixin filter(id, type, tabbed, sortoption, search, anchors, subheadings, ...item
               ul.tab-nav
                 li.tab-nav-tab.active Top Brands
                 li.tab-nav-tab All Brands
-          .filter-search.block-ver-xs.pull-right
-            .input-container
-              input(type="text", placeholder="Search " + id)
-              span.icon-container.border: i.icon.icon-search
+          .block-ver-xs.pull-right
+            input.search(type="text", placeholder="Search " + id)
 
       if anchors
         .filter-anchors.block-top-sm.block-hor-sm.block-bot-xs.text-center

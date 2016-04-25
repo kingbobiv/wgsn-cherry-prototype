@@ -42,15 +42,21 @@
 
     input.search
       width: 260px
+      +transition(all 500ms)
 
       @media screen and (max-width: 1500px)
         width: 36px
+        padding-left: 10px
+        border: none
+        cursor: pointer
 
         ::-webkit-input-placeholder
           color: transparent
 
         &:focus
           width: 200px
+          padding-left: 36px
+          border: 1px solid $md-grey
 
           ::-webkit-input-placeholder
             color: $md-grey
