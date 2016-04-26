@@ -39,20 +39,17 @@
         color: $yellow
 
   .scroll-container
-    height: calc(100% - 104px)
+    height: calc(100% - 101px)
     overflow-y: auto
   
   .comment
     overflow: auto
 
-    &:first-of-type
-      padding-top: 0
+    .text-container
+      width: calc(100% - 42px)
 
     &:last-of-type
-      border: none
-
-    .text-smaller
-      line-height: 1.8em
+      border-bottom: none
 
   .comment-input
     position: absolute

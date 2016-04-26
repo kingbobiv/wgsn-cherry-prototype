@@ -1,0 +1,10 @@
+mixin comment(img, initials, comment, name, time)
+  .comment.block-sm.bg-white.border-bottom
+    if img
+      .avatar.avatar-sm.pull-left(style="background-image: url('" + img + "')")
+    else
+      .avatar.avatar-sm.pull-left(data-initials=initials)
+    .text-container.pull-left
+      p.comment-name.text-bold= name
+      p.comment-text= comment
+      p.tight.text-grey.text-smaller.pull-left= time 

@@ -71,6 +71,12 @@
     // bottom section
     .modal-section-other
       .modal-tabs
+        margin: 0
+        
+        .col-xs-4, 
+        .col-xs-6
+          padding: 0
+        
         .tab
           height: 40px
           @extend .flex-center
@@ -84,16 +90,11 @@
         .comment
           overflow: auto
 
-          &:last-of-type
-            border: none
-
-          .text
-            float: left
+          .text-container
             width: calc(100% - 42px)
 
-            .comment-time
-              font-size: 11px
-              color: $md-grey
+          &:last-of-type
+            border-bottom: none
 
         .comment-input
           position: absolute
@@ -347,11 +348,11 @@
 
     .modal-scroll-container
       overflow-y: auto
-      height: calc((100vh - 60px) - #{$modal-info-caption-height} - 20px - 15px) // height of modal - caption - tabs - comment input - borders
+      height: calc((100vh - 60px) - #{$modal-info-caption-height} - 20px) // height of modal - caption - tabs - comment input - borders
     
     .modal-comments
       .modal-scroll-container
-        height: calc((100vh - 60px) - #{$modal-info-caption-height} - 40px - 84px - 15px) // height of modal - caption - tabs - comment input - borders
+        height: calc((100vh - 60px) - #{$modal-info-caption-height} - 40px - 81px) // height of modal - caption - tabs - comment input - borders
 
     .modal-zoom-controls
       display: block
@@ -370,11 +371,11 @@
 
     .modal-scroll-container
       overflow-y: auto
-      height: calc((100vh - 60px) - #{$modal-info-caption-height} - 20px - 15px) // height of modal - caption - tabs - comment input - borders
+      height: calc((100vh - 60px) - #{$modal-info-caption-height} - 20px) // height of modal - caption - tabs - comment input - borders
     
     .modal-comments
       .modal-scroll-container
-        height: calc((100vh - 60px) - #{$modal-info-caption-height} - 40px - 84px - 15px) // height of modal - caption - tabs - comment input - borders
+        height: calc((100vh - 60px) - #{$modal-info-caption-height} - 40px - 81px) // height of modal - caption - tabs - comment input - borders
     
     .modal-page-controls
       display: block
@@ -396,11 +397,11 @@
 
     .modal-scroll-container
       overflow-y: auto
-      height: calc((100vh - 60px) - #{$modal-info-caption-height} - 20px - 15px) // height of modal - caption - tabs - comment input - borders
+      height: calc((100vh - 60px) - #{$modal-info-caption-height} - 20px) // height of modal - caption - tabs - comment input - borders
     
     .modal-comments
       .modal-scroll-container
-        height: calc((100vh - 60px) - #{$modal-info-caption-height} - 84px - 15px) // height of modal - caption - tabs - comment input - borders
+        height: calc((100vh - 60px) - #{$modal-info-caption-height} - 81px) // height of modal - caption - tabs - comment input - borders
 
     .modal-image-panel
       &:after
