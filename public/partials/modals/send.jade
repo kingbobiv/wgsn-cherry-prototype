@@ -5,23 +5,29 @@
     i.icon.icon-cross.pull-right.hoverable.close-modal
 
   .modal-content
-    .block-bot-sm
-      //- input#send-modal-recipients(type="text", placeholder="Recipient(s). You can enter your co-workers names or comma-seperated emails.")
-      ul#myTags
+    .row.block-bot-sm
+      .col-xs-12
+        ul#myTags
 
     .row.block-bot-sm
-      //- .image-preview.border.pull-left(style="background-image: url('http://www.wgsn.com/storage/vol20/ss_image_store/96/53/61/42/media_yzy_aw16_009.jpg');")
-      //- .block-left-sm.pull-left
-      input(type="text", placeholder="Subject (optional)")
-      .block-top-sm: textarea(placeholder="Message (optional)")
+      .col-xs-12
+        input(type="text", placeholder="Subject (optional)")
 
     .row.block-bot-sm
-      input(type="checkbox")
-      span Notify me when message is received.
+      .col-xs-12
+        textarea(placeholder="Message (optional)")
+
+    .row.block-bot-sm
+      .col-xs-12
+        label(for="receipt-notification")
+          input#receipt-notification(type="checkbox")
+          span Notify me when message is received.
 
     .row
-      input(type="checkbox")
-      span Send comments with items
+      .col-xs-12
+        label(for="send-comments")
+          input#send-comments(type="checkbox")
+          span Send comments with items
 
   .modal-footer
     p.tight.block-top-xs.hoverable.pull-left.close-modal Cancel
