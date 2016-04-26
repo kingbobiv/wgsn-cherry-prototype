@@ -9,12 +9,12 @@
 
 //- heart icons
 $('.file-heart').on('click', function() {
-  $(this).toggleClass('icon-heart-o icon-heart');
+  $(this).toggleClass('icon-heart icon-heart-filled');
 });
 
 $(document).ready(function() {
   if($('body').hasClass('workspace-favourites-view')) {
-    $('.file-heart').removeClass('icon-heart-o').addClass('icon-heart');
+    $('.file-heart').removeClass('icon-heart').addClass('icon-heart-filled');
   };
 });
 
