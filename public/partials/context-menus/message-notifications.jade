@@ -18,7 +18,7 @@ mixin message-notification(unread, img, initials, name, attachments, message, ti
           span.message-preview= message
 
 ul.context-menu.text-left#message-notifications-context-menu
-  li.header-row.border-bottom.bg-grey
+  li.header-row.border-bottom.bg-xlt-grey
     h3.tight Messages
 
   .scroll-container
@@ -32,5 +32,5 @@ ul.context-menu.text-left#message-notifications-context-menu
     +message-notification(false, "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/1/005/06d/1ea/349ef69.jpg", "AH", "Andrew Harris", 2, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "04/04/2016 at 9:00am")
     +message-notification(false, "", "AG", "Anna Glassman", 2, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "04/04/2016 at 8:52am")
 
-  li.footer-row.border-top.bg-grey.text-right
+  li.footer-row.border-top.bg-xlt-grey.text-right
     a.underlined.tight.wgsn-font.text-grey(href="/workspace/inbox") Go to your Inbox

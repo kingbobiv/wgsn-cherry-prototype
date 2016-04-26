@@ -1,0 +1,28 @@
+body.mobile
+  .hidden-mobile
+    display: none !important
+
+  .show-tablet,
+  .show-desktop
+    display: none !important
+
+body.tablet
+  .hidden-tablet
+    display: none !important
+
+  .show-mobile,
+  .show-desktop
+    display: none !important
+
+body.desktop
+  .hidden-desktop
+    display: none !important
+
+  .show-mobile,
+  .show-tablet
+    display: none !important
+
+@each $view in workspace, workspace-folder, workspace-messages, workspace-inbox, workspace-sent-messages, workspace-favourites, workspace-trash, workspace-view-only, image-library, mood-library
+  body.#{$view}-view
+    .hidden-#{$view}
+      display: none !important

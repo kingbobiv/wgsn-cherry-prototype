@@ -2,11 +2,13 @@
 @import "vars"
 @import "mixins"
 @import "blocks"
-@import "common-styles"
 @import "typography" 
 @import "grid"
 
 // elements
+@import "layout"
+@import "hiders"
+
 @import "inputs"
 @import "tag-list"
 @import "buttons"
@@ -49,7 +51,7 @@ body
   background: white
   font-size: 12px
   overflow: hidden
-  color: $dk-grey
+  color: $xdk-grey
   -moz-user-select: none
   -ms-user-select: none
   -khtml-user-select: none
@@ -103,7 +105,7 @@ body
           left: 0
           width: 100%
           height: 2px
-          background: $dk-grey
+          background: $xdk-grey
           +transition(all 400ms)
           +transform-origin(center top)
           z-index: -1
@@ -119,7 +121,7 @@ body
   width: 100%
   height: 100%
   z-index: 1000
-  background: $dk-grey
+  background: $xdk-grey
   color: white
   display: none
 
