@@ -1,17 +1,15 @@
 .comments-panel.border-left.comments-board-active
   mixin comment(comment, img, initials, name, time)
     .comment.block-ver-sm.border-bottom
-      .row
-        p= comment
-      .row
-        if img
-          .avatar.avatar-xs.pull-left(style="background-image: url('" + img + "')")
-        else
-          .avatar.avatar-xs.pull-left(data-initials=initials)
-        p.tight.text-grey.text-smaller.pull-left
-          span= name
-          span  &middot; 
-          span= time
+      p= comment
+      if img
+        .avatar.avatar-xs.pull-left(style="background-image: url('" + img + "')")
+      else
+        .avatar.avatar-xs.pull-left(data-initials=initials)
+      p.tight.text-grey.text-smaller.pull-left
+        span= name
+        span  &middot; 
+        span= time
 
   .scroll-container.block-top-sm.block-hor-sm
     +comment("Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac ante mauris.", "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/7/005/05b/332/0aa54b4.jpg", "AL", "Amelia Lewis", "02/03/2016 at 11:00am")
