@@ -1,63 +1,71 @@
+mixin share-user(img, initials, name, owner, permission)
+  .row.share-user.border-bottom
+    .col-xs-8
+      .block-left-xs.block-ver-xxs
+        if img
+          .avatar.avatar-sm.pull-left(style="background-image: url('" + img + "')")
+        else
+          .avatar.avatar-sm.pull-left(data-initials=initials)
+
+        .block-top-xxs.pull-left= name
+
+    if owner
+      .col-xs-4.text-right
+        .block-xs: p.tight Owner
+    
+    if !owner
+      .col-xs-3
+        select.pull-right
+          option Can edit
+          option Can view
+
+      .col-xs-1
+        .block-ver-xs: i.icon.icon-cross-circle
+
+//- ==================================================
+
 .modal#share-modal
   .modal-header
     h2.pull-left.tight Share
     i.icon.icon-cross.pull-right.hoverable.close-modal
 
   .modal-content
-    .block-sm.border
-      h3 Invite people
-      .border.row
-        .block-xs.pull-left.hoverable.border-right
-          span Can edit
-          .block-left-xs.inline-block: i.icon.icon-caret-down
+    .block-bot-md
+      .block-sm.border
+        .row
+          .col-xs-12
+            h3 Invite people
+        
+        .row
+          .col-xs-3
+            select
+              option Can edit
+              option Can view
+          
+          .col-xs-9
+            input(type="text", placeholder="Name")
 
-        .input-container.pull-left
-          input(type="text", placeholder="Enter a name")
-          span.icon-container.border: i.icon.icon-caret-down
+    .row
+      .col-xs-12
+        h3 Who has access
 
-    .block-top-sm
-      h3 Who has access
+    .border.share-user-container
+      +share-user("https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/7/005/05b/332/0aa54b4.jpg", "AL", "Amelia Lewis", true, "")
+      +share-user("https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAT6AAAAJGZiMmIwM2E3LTMzNzMtNDEzNi1iN2JhLWJlZmYzM2MwNmI2Nw.jpg", "JR", "Julian Ramirez", false, "edit")
+      +share-user("https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/1/005/06d/1ea/349ef69.jpg", "AH", "Andrew Harris", false, "view")
+      +share-user("https://media.licdn.com/media/AAEAAQAAAAAAAAZVAAAAJDBlZWUwZWE0LTk1OWYtNGMyYi1iYmU5LTA3NDNlNDYxZmYwMQ.jpg", "SC", "Sansan Chen", false, "view")
+      +share-user("", "SF", "Sarah Freiser", false, "view")
+      +share-user("https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAFZAAAAJDM1YTk4OTc5LTJjZGUtNGJkMS1iMTM4LTBmMjIzYTM3NGYzMQ.jpg", "NA", "Nicky Ashwell", false, "view")
+      +share-user("", "HS", "Hema Sivaram", false, "view")
+      +share-user("", "AG", "Anna Glassman", false, "view")
+      +share-user("", "HZ", "Hans Zhou", false, "view")
+      +share-user("", "PT", "Pathik Tanna", false, "view")
 
-      .border.share-user-container
-        mixin share-user(img, initials, name, owner, permission)
-          .row.share-user.border-bottom
-            .pull-left.block-hor-xs
-              if img
-                .avatar.avatar-sm.pull-left(style="background-image: url('" + img + "')")
-              else
-                .avatar.avatar-sm.pull-left(data-initials=initials)
-
-              .block-ver-xs.pull-left: span= name
-            
-            .pull-right.text-right.text-grey.block-xs
-              if owner == "yes"
-                .inline-block: span Is Owner
-
-              if owner == "no"
-                if permission == "edit"
-                  .inline-block.hoverable: span Can edit
-
-                if permission == "view"
-                  .inline-block.hoverable: span Can view
-
-                .block-left-xs.inline-block.hoverable: i.icon.icon-caret-down
-                .block-left-xs.inline-block.hoverable: i.icon.icon-cross-circle
-
-        +share-user("https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/7/005/05b/332/0aa54b4.jpg", "AL", "Amelia Lewis", "yes", "")
-        +share-user("https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAT6AAAAJGZiMmIwM2E3LTMzNzMtNDEzNi1iN2JhLWJlZmYzM2MwNmI2Nw.jpg", "JR", "Julian Ramirez", "no", "edit")
-        +share-user("https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/1/005/06d/1ea/349ef69.jpg", "AH", "Andrew Harris", "no", "view")
-        +share-user("https://media.licdn.com/media/AAEAAQAAAAAAAAZVAAAAJDBlZWUwZWE0LTk1OWYtNGMyYi1iYmU5LTA3NDNlNDYxZmYwMQ.jpg", "SC", "Sansan Chen", "no", "view")
-        +share-user("", "SF", "Sarah Freiser", "no", "view")
-        +share-user("https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAFZAAAAJDM1YTk4OTc5LTJjZGUtNGJkMS1iMTM4LTBmMjIzYTM3NGYzMQ.jpg", "NA", "Nicky Ashwell", "no", "view")
-        +share-user("", "HS", "Hema Sivaram", "no", "view")
-        +share-user("", "AG", "Anna Glassman", "no", "view")
-        +share-user("", "HZ", "Hans Zhou", "no", "view")
-        +share-user("", "PT", "Pathik Tanna", "no", "view")
-
-        .row.hoverable#make-folder-public
-          .text-center
-            p.tight.block-ver-sm
-              span.text-underline Make folder public
+      .row.hoverable
+        .col-xs-12.text-center
+          .block-ver-sm
+            p.tight.has-tooltip(data-tooltip="Share folder with your entire organisation")
+              | Make folder public
               i.icon.icon-info-circle.block-left-xs
 
   .modal-footer

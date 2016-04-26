@@ -63,20 +63,17 @@
 // ==================================================
 
 #share-modal
-  .input-container
-    width: calc(100% - 89px)
-    
-    input[type="text"],
-    .icon-container
-      border: none
+  .modal-content
+    > .block-bot-md .block-sm.border .row
+      .col-xs-3
+        padding-right: 0
 
-    input[type="text"]
-      width: calc(100% - 40px)
+      .col-xs-9
+        padding-left: 0
+
+        input
+          border-left: none
   
-  .permission-dropdown
-    height: 100%
-    min-height: 40px
-
   .share-user-container
     height: 36vh
     min-height: 100px
@@ -84,10 +81,10 @@
     overflow: scroll
     
     .share-user
-      padding: 2px
-      
-      .avatar
-        margin-top: 4px
+      select
+        height: 35px
+        border: none
+        max-width: 100px
 
       &:last-of-type
         border: none
