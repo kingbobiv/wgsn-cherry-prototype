@@ -683,7 +683,6 @@ openFilter("fabric");
 
 downloadTimer = function(){
   $('#download-modal').removeClass('show minimise');
-  console.log("download");
 };
 
 openModal = function(modalname) {
@@ -694,6 +693,10 @@ openModal = function(modalname) {
 
     $('#' + modalname + '-modal').addClass('show');
 
+    setTimeout(function() {
+      downloadTimer();
+    }, 5000);
+
     var myaccount = $('.file.selected').length;
 
     if (myaccount > 1) {
@@ -703,11 +706,8 @@ openModal = function(modalname) {
     } else {
       return;
     }
-  });
 
-  setTimeout(function() {
-    downloadTimer();
-  }, 5000);
+  });
 };
 
 openModal('share');
