@@ -34,8 +34,11 @@
     overflow: auto
     vertical-align: bottom
 
-    p
+    h2 + p
       margin: 4px 0 0 6px
+
+    h3 + p
+      margin: 1px 0 0 6px
 
     .icon-cross
       font-size: 18px
@@ -212,6 +215,41 @@
 
   input[type="text"]
     width: 300px
+
+
+// ==================================================
+// DOWNLOAD
+// ==================================================
+
+#download-modal
+  top: auto
+  bottom: 0
+  right: 20px
+  left: auto
+  width: 400px
+  +transform(translate3d(0, 100%, 0))
+
+  &.show
+    +transform(translate3d(0, 0, 0))
+
+  &.minimise
+    +transform(translate3d(0, calc(100% - 46px), 0))
+
+  .modal-content
+    padding: 0 10px
+
+    .row:last-of-type
+      border: none
+
+  .download-row
+    position: relative
+  
+    .download-status-bar
+      position: absolute
+      top: 0
+      left: 0
+      height: 100%
+      background: $xlt-grey
 
 
 // ==================================================

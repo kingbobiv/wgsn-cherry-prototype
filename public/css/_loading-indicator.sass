@@ -1,0 +1,44 @@
+.loading-indicator
+  width: 32px
+  height: 32px
+  clear: both
+  margin: 20px auto
+  border: 4px solid rgba($md-grey, 0.4)
+  border-top: 4px solid $md-grey
+  +border-radius(50%)
+  -webkit-animation: spCircRot 1s infinite linear
+  animation: spCircRot 1s infinite linear
+
+  &.loading-indicator-fashion
+    border-color: rgba($fashion, 0.4)
+    border-top-color: $fashion
+
+  &.loading-indicator-li
+    border-color: rgba($li, 0.4)
+    border-top-color: $li
+
+  &.loading-indicator-instock
+    border-color: rgba($instock, 0.4)
+    border-top-color: $instock
+
+  &.loading-indicator-styletrial
+    border-color: rgba($styletrial, 0.4)
+    border-top-color: $styletrial
+
+  &.loading-indicator-sm
+    width: 16px
+    height: 16px
+    margin: 0
+    border-width: 2px
+
+@-webkit-keyframes spCircRot
+  from
+    -webkit-transform: rotate(0deg)
+  to
+    -webkit-transform: rotate(359deg)
+
+@keyframes spCircRot
+  from
+    transform: rotate(0deg)
+  to
+    transform: rotate(359deg)

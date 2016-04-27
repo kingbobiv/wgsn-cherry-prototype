@@ -1,0 +1,31 @@
+mixin download-item(status, name, percent)
+  .row.download-row.border-bottom.block-ver-xs
+    .download-status-bar(style="width: " + percent + ";")
+
+    .col-xs-8
+      p.tight
+        if status != "Complete"
+          span= status
+          span &nbsp;
+        span.text-bold= name
+        span &nbsp;
+        span.text-grey= percent
+    
+    .col-xs-4.text-right
+      if status == "Cancelling"
+        .loading-indicator.loading-indicator-sm.pull-right
+      else if status == "Complete"
+        i.icon.icon-tick
+      else
+        p.tight.text-underline.hoverable Cancel
+
+.modal#download-modal
+  .modal-header
+    h3.pull-left.tight Downloads
+    i.icon.icon-minimise.pull-right.hoverable.minimise-modal
+
+  .modal-content
+    +download-item("Queueing", "name_of_download", "")
+    +download-item("Processing", "name_of_download", "36%")
+    +download-item("Cancelling", "name_of_download", "")
+    +download-item("Complete", "name_of_download", "100%")

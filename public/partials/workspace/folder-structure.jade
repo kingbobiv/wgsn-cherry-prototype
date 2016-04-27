@@ -18,7 +18,6 @@ mixin board-row(link, name, number, level, label, caret, shared)
         i.icon.icon-circle
       //- span.board-number= number
       i.icon.icon-ellipsis
-      //- include ../context-menus/board-context-menu
   else
     .board-row(class="level-" + level)
       if caret == "open"
@@ -38,7 +37,6 @@ mixin board-row(link, name, number, level, label, caret, shared)
         i.icon.icon-circle
       //- span.board-number= number
       i.icon.icon-ellipsis
-      //- include ../context-menus/board-context-menu
 
 mixin person-row(name, level, caret)
   .person-row.hoverable(class="level-" + level)

@@ -319,9 +319,6 @@ $(".board-row .icon-ellipsis").click(function(e){
   $("#floating-board-context-menu").css({"left": (e.pageX), "top":(e.pageY)});
   console.log("yello board style");
 });
-// $('.board-row .icon-ellipsis').on('click', function() {
-//   $(this).siblings('#board-context-menu').toggleClass('show');
-// });
 
 // prevent link from loading when clicking the ellipsis/context menu on the link row
 $('a.board-row').click(function(e, evt) {
@@ -684,9 +681,17 @@ openFilter("fabric");
 // |_|  |_|\___/ \__,_|\__,_|_|___/
 // ====================================================================================================
 
+downloadTimer = function(){
+  $('#download-modal').removeClass('show minimise');
+  console.log("download");
+};
+
 openModal = function(modalname) {
   $('.btn-' + modalname).on('click', function() {
-    $('.overlay').addClass('show');
+    if(modalname != 'download') {
+      $('.overlay').addClass('show');
+    }
+
     $('#' + modalname + '-modal').addClass('show');
 
     var myaccount = $('.file.selected').length;
@@ -699,12 +704,17 @@ openModal = function(modalname) {
       return;
     }
   });
+
+  setTimeout(function() {
+    downloadTimer();
+  }, 5000);
 };
 
 openModal('share');
 openModal('add-to-board');
 openModal('copy');
 openModal('move');
+openModal('download');
 openModal('send');
 openModal('print');
 openModal('create-new-board');
@@ -722,6 +732,11 @@ $('.modal .close-modal').on('click', function() {
     $(this).parentsUntil('body').removeClass('show');
     $('.overlay').removeClass('show');
   }
+});
+
+//- minimise modal
+$('.modal .minimise-modal').on('click', function() {
+  $(this).parentsUntil('body').toggleClass('minimise');
 });
 
 // close modal with escape key
